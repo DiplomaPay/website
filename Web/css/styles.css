@@ -1,0 +1,115 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input, button {
+    margin-bottom: 10px;
+  }
+
+  article{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100vh;
+    width: 40vw;
+  }
+
+  article img{
+    width: 15vw;
+  }
+
+  article h3{
+    font-size: 1vw;
+    font-weight: 100;
+    color: var(--cinza);
+    margin-bottom: 7vh;
+  }
+
+  article form{
+    width: 40%;
+  }
+
+  article form label{
+    font-size: 1vw;
+    font-weight: 100;
+    color: var(--cinza)
+  }
+
+  article form input{
+    border-color: var(--verdeClaro);
+    border-style: ridge;
+    border-radius: 5px;
+    padding: 1.5vh 1vw
+  }
+
+  article form button{
+    background-color: var(--verde);
+    border:none;
+    border-radius: 5px;
+    padding: 1.5vh 1vw;
+    color: var(--branco);
+    font-size: 1vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    transition: .2s;
+
+  }
+
+  article form button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: var(--verdeEscuro);
+  }
+
+  article a{
+    font-size: 1vw;
+    font-weight: 100;
+    color: var(--cinza);
+    margin-bottom: 7vh;
+    transition: .2s;
+  }
+
+  article a:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  article p{
+    font-size: 0.8vw;
+    font-weight: 100;
+    color: var(--cinza);
+    margin-bottom: 7vh;
+    transition: .2s;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .slides{
+    background-color: var(--verde);
+    width: 60vw;
+  }
+
+  .slides h1{
+    font-size: 3vw;
+    color: var(--branco);
+    font-weight: 100;
+  }
