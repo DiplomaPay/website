@@ -90,7 +90,7 @@
 	        })
 	        .then(e=>e.json())
 	        .then(e=>{
-	            res_login.innerText = JSON.stringify(e);
+	            res_signup.innerText = JSON.stringify(e);
 	        })
 	    }
 	</script>
