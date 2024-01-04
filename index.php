@@ -29,7 +29,8 @@
                 <button type="button" onclick="login()">Login</button>
               </form>
     
-              <a>Cadastrar</a>
+              <a href="">Cadastrar</a>
+              <!-- https://dpay.trive.fun/sys/user/account/login -->
 
               <p>Copyright @ 2023</p>
         </article>
