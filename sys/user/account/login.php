@@ -12,12 +12,12 @@ $password = $json->password;
 
 // Processed data
 $email = mysqli_real_escape_string($conexao, $email);
-$password = mysqli_real_escape_string($conexao, $email);
+$password = mysqli_real_escape_string($conexao, $password);
 
 // STEP 1 -> Verify data
-if(!$email or $password){
+if(!$email or !$password){
     $obj = array(status => $__STATUS__, response => false, message => "Something is missing!");
-    endCode();
+    endCode($obj);
 }
 
 // STEP 2 -> Check database
@@ -25,7 +25,7 @@ $queryUserByEmail = mysqli_query($conexao, "select * from users where email='$em
 
 if(mysqli_num_rows($queryUserByEmail) < 1){
     $obj = array(status => $__STATUS__, response => false, message => "User not found.");
-    endCode();
+    endCode($obj);
 }
 
 // STEP 3 -> Check password
@@ -35,17 +35,17 @@ $userPasswordHash = $userFullData['password'];
 
 if(!password_verify($password, $userPasswordHash)){
     $obj = array(status => $__STATUS__, response => false, message => "Wrong password.");
-    endCode();
+    endCode($obj);
 }
 
 // STEP 3 -> Sucess auth
 $obj = array(status => $__STATUS__, response => true, message => "Success.");
-endCode();
+endCode($obj);
 
 
 // FUNCTIONS 
 
-function endCode(){
+function endCode($obj){
     echo json_encode($obj);
     exit;
 }
