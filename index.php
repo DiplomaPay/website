@@ -17,7 +17,7 @@
         <article>
             <img src="./items/img/Pitch DiplomaPay.svg" alt="DiplomaPay Logo">
     
-            <h3>LOGIN</h3>
+            <h3>baa</h3>
     
             <form id="loginForm">
                 <label for="email">Email:</label>
@@ -29,7 +29,8 @@
                 <button type="button" onclick="login()">Login</button>
               </form>
     
-              <a>Cadastrar</a>
+              <a href="">Cadastrar</a>
+              <!-- https://dpay.trive.fun/sys/user/account/login -->
 
               <p>Copyright @ 2023</p>
         </article>
