@@ -17,7 +17,7 @@
         <article>
             <img src="./items/img/Pitch DiplomaPay.svg" alt="DiplomaPay Logo">
     
-            <h3>baa</h3>
+            <h3>LOGIN</h3>
     
             <form id="loginForm">
                 <label for="email">Email:</label>
