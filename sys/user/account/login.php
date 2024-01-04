@@ -21,7 +21,7 @@ if(!$email or $password){
 }
 
 // STEP 2 -> Check database
-$queryUserByEmail = mysqli_query($conexao, "select * from users where email='$email'");
+$queryUserByEmail = mysqli_query($conexao, "select * from users where email='$email'") or die("Erro");
 
 if(mysqli_num_rows($queryUserByEmail) < 1){
     $obj = array(status => $__STATUS__, response => false, message => "User not found.");
