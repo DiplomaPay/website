@@ -32,7 +32,7 @@
               <hr>
 	
     
-              <a href="">Cadastrar</a>
+              <a href="./items/html/signup.php">Cadastrar</a>
               <!-- https://dpay.trive.fun/sys/user/account/login -->
 
               <p>Copyright @ 2023</p>
