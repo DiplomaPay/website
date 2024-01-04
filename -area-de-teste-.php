@@ -93,7 +93,7 @@
 	            res_signup.innerText = JSON.stringify(e);
 	        })
 	    }
-	</script>
+	</script> 
 
 </body>
 </html>
