@@ -17,8 +17,6 @@ if($email and $password == $confirm_password){
     
 }
 
-// $password_verify = password_verify($password, $password_hash);
-
 $obj = array(status => $__STATUS__, log_status => false, message => "Failed to login", email => $email_verify, password => $password_hash);
 
 echo json_encode($obj);
