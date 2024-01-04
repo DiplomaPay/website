@@ -19,15 +19,18 @@
     
             <h3>LOGIN</h3>
     
-            <form id="loginForm">
+            <form  action="javascript:void(0)" onsubmit="sendLogin()" id="loginForm">
                 <label for="email">Email:</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email_login" required>
                 
                 <label for="password">Password:</label>
-                <input type="password" id="password" required>
+                <input type="password" id="password_login" required>
                 
-                <button type="button" onclick="login()">Login</button>
+                <button type="button">Login</button>
               </form>
+              <p id='res_login'></p>
+              <hr>
+	
     
               <a href="">Cadastrar</a>
               <!-- https://dpay.trive.fun/sys/user/account/login -->
@@ -41,6 +44,32 @@
     </div>
 
     <!-- /*teste webhook git -> hostinger 6.0*/ -->
+
+    <script>
+        const email_login = document.getElementById("email_login");
+        const password_login = document.getElementById("password_login");
+        const res_login = document.getElementById("res_login");
+        
+	    const sendLogin = () => {
+	        let email = email_login.value;
+	        let password = password_login.value;
+	        
+	        let data = {
+	            email: email,
+	            password: password
+	        }
+	        
+	        fetch("./sys/user/account/login", {
+	            method: "POST",
+	            body: JSON.stringify(data),
+	        })
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_login.innerText = JSON.stringify(e);
+	        })
+	    }
+	</script>
   
 </body>
 </html>
+
