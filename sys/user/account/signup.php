@@ -78,10 +78,14 @@ $message = "
             body { font-family: Arial, sans-serif; }
         </style>
     </head>
-    <body style='background-color:black; color:white; text-align:center;'>
-        <p style='color:white;'>Seu código de verificação é</p>
-        <h1 style='color:white;'>$randomCode</h1>
-        <p style='color:white;'>Todos os direitos reservados</p>
+    <body>
+        <div style='background-color:black; color:white; text-align:center; padding: 5px'>
+            <p style='color:white;'>Seu código de verificação é</p>
+        <div>
+        <div style='text-align:center; padding: 5px'>
+            <h1 style='color:black;'>$randomCode</h1>
+            <p style='color:black;'>Todos os direitos reservados</p>
+        </div>
     </body>
 </html>
 ";
