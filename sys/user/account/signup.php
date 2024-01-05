@@ -70,10 +70,10 @@ mysqli_query($conexao, "insert into users (email, password, cpf, full_name, crea
 
 //STEP 7 -> SEND EMAIL
 $to = 'brunoricardowotzke@gmail.com';
-$subject = 'Assunto do Email';
-$message = 'Olá! Este é um exemplo de mensagem.';
-$headers = 'From: adm@trive.fun' . "\r\n" .
-    'Reply-To: adm@trive.fun' . "\r\n" .
+$subject = "Seu código de ativação é $randomCode";
+$message = "Esse é um email teste para o código de ativação $randomCode";
+$headers = 'From: contato@dpay.trive.fun' . "\r\n" .
+    'Reply-To: contato@dpay.trive.fun' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
 $sendEmail = mail($to, $subject, $message, $headers);
