@@ -36,10 +36,11 @@ $userPasswordHash = $userFullData['password'];
 $userActive = $userFullData['active'];
 
 // STEP 4 -> Check Active
-if($userActive == "false")){
+if($userActive == "false"){
     $obj = array(status => $__STATUS__, response => false, message => "Activate your account.");
     endCode($obj);
 }
+
 
 // STEP 5 -> Check password
 if(!password_verify($password, $userPasswordHash)){
