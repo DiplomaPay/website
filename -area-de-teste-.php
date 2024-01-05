@@ -46,7 +46,7 @@
 	</script>
 
 
-<!--Login-->
+<!--SIGNUP-->
 	
 	<hr>
 	<h1>SignUp área </h1>
@@ -61,7 +61,7 @@
 	<p id='res_signup'></p>
 	<hr>
 	
-    <!--Login	-->
+    <!--SIGNUP	-->
 	<script>
         const email_signup = document.getElementById("email_signup");
         const password_signup = document.getElementById("password_signup");
@@ -91,6 +91,41 @@
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_signup.innerText = JSON.stringify(e);
+	        })
+	    }
+	</script> 
+
+
+<!--Activate-->
+	
+<hr>
+	<h1>Activate account </h1>
+	<form action="javascript:void(0)" onsubmit="sendActivate()">
+	    <input id='code_activate' type="text" placeholder="Code"/>
+	    <button>Enviar</button>
+	</form>
+	<p id='res_activate'></p>
+	<hr>
+	
+    <!--Activate	-->
+	<script>
+        const code_activate = document.getElementById("code_activate");
+
+        
+	    const sendActivate = () => {
+	        let code = code_activate.value;
+
+	        let data = {
+	            code: code,
+	        }
+	        
+	        fetch("./sys/user/account/activate.php", {
+	            method: "POST",
+	            body: JSON.stringify(data),
+	        })
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_activate.innerText = JSON.stringify(e);
 	        })
 	    }
 	</script> 

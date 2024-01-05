@@ -55,7 +55,7 @@ if(mysqli_num_rows($queryCheckUserEmail) > 0){
 }
 
 //STEP 5 -> Generate activation code
-$characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 $charactersLength = strlen($characters);
 $randomCode = '';
 
