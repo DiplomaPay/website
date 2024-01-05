@@ -31,6 +31,7 @@ if(mysqli_num_rows($queryUserByEmail) < 1){
 // STEP 3 -> Check password
 $userFullData = mysqli_fetch_assoc($queryUserByEmail);
 
+$userEmail = $userFullData['email'];
 $userPasswordHash = $userFullData['password'];
 
 if(!password_verify($password, $userPasswordHash)){
@@ -38,7 +39,11 @@ if(!password_verify($password, $userPasswordHash)){
     endCode($obj);
 }
 
-// STEP 3 -> Sucess auth
+// STEP 4 -> Update last login
+$time = time();
+mysqli_query($conexao, "update users set last_login='$time' where email='$userEmail'");
+
+// STEP 5 -> Sucess auth
 $obj = array(status => $__STATUS__, response => true, message => "Success.");
 endCode($obj);
 
