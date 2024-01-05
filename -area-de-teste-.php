@@ -34,7 +34,7 @@
 	            password: password
 	        }
 	        
-	        fetch("./sys/user/account/login.php", {
+	        fetch("https://dpay.trive.fun/sys/user/account/login.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
@@ -84,7 +84,7 @@
 				name: name
 	        }
 	        
-	        fetch("./sys/user/account/signup.php", {
+	        fetch("https://dpay.trive.fun/sys/user/account/signup.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
@@ -119,7 +119,7 @@
 	            code: code,
 	        }
 	        
-	        fetch("./sys/user/account/activate.php", {
+	        fetch("https://dpay.trive.fun/sys/user/account/activate.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
