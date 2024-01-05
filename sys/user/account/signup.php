@@ -67,6 +67,22 @@ for ($i = 0; $i < 5; $i++) {
 $time = time();
 
 mysqli_query($conexao, "insert into users (email, password, cpf, full_name, created, activation_code) values ('$email', '$password', '$cpf', '$name', '$time', '$randomCode')") or endCodeError();
+
+//STEP 7 -> SEND EMAIL
+$to = 'brunoricardowotzke@gmail.com';
+$subject = 'Assunto do Email';
+$message = 'Olá! Este é um exemplo de mensagem.';
+$headers = 'From: adm@trive.fun' . "\r\n" .
+    'Reply-To: adm@trive.fun' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
+
+$sendEmail = mail($to, $subject, $message, $headers);
+
+if(!$sendEmail) {
+    echo json_encode(array(status => $__STATUS__, response => false, message => "Falha ao enviar email, clique para tentar reenviar."));
+    endCode($obj);
+}
+
 $obj = array(status => $__STATUS__, response => false, message => "Sucess.");
 endCode($obj);
 
