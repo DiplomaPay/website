@@ -70,7 +70,7 @@ mysqli_query($conexao, "insert into users (email, password, cpf, full_name, crea
 
 //STEP 7 -> SEND EMAIL
 $to = $email;
-$subject = "Seu código de ativação é $randomCode";
+$subject = "Seu código de verificação é $randomCode";
 $message = "
 <html>
     <head>
