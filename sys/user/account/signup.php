@@ -57,7 +57,7 @@ if(mysqli_num_rows($queryCheckUserEmail) > 0){
 //STEP 5 -> Register user
 $time = time();
 
-mysqli_query($conexao, "insert into users (email, password, cpf, full_name, created) values ('$email', '$password', '$cpf', '$full_name', '$time')") or endCodeError();
+mysqli_query($conexao, "insert into users (email, password, cpf, full_name, created) values ('$email', '$password', '$cpf', '$name', '$time')") or endCodeError();
 $obj = array(status => $__STATUS__, response => false, message => "Sucess.");
 endCode($obj);
 
