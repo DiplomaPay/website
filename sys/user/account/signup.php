@@ -74,6 +74,7 @@ $subject = "Seu código de ativação é $randomCode";
 $message = "
 <html>
     <head>
+        <title>Seu código de ativação é $randomCode</title>
         <style>
             body { font-family: Arial, sans-serif; }
         </style>
