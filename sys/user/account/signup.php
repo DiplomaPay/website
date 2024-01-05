@@ -39,7 +39,7 @@ if($password !== $confirm_password){
 $password = password_hash($password, PASSWORD_DEFAULT);
 
 //STEP 3 -> Check user email database
-$queryCheckUserEmail = mysqli_query($conexao, "seledct * from users where email='$email'") or endCodeError();
+$queryCheckUserEmail = mysqli_query($conexao, "select * from users where email='$email'") or endCodeError();
 
 if(mysqli_num_rows($queryCheckUserEmail) > 0){
     $obj = array(status => $__STATUS__, response => false, message => "Email already in use.");
