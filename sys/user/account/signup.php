@@ -71,15 +71,33 @@ mysqli_query($conexao, "insert into users (email, password, cpf, full_name, crea
 //STEP 7 -> SEND EMAIL
 $to = 'brunoricardowotzke@gmail.com';
 $subject = "Seu código de ativação é $randomCode";
-$message = "Esse é um email teste para o código de ativação $randomCode";
-$headers = 'From: contato@dpay.trive.fun' . "\r\n" .
-    'Reply-To: contato@dpay.trive.fun' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
+$message = "
+    <html>
+    <head>
+    <title>Seu Título Aqui</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+    </style>
+    </head>
+    <body>
+    <p>Aqui estão alguns exemplos de como personalizar seu e-mail:</p>
+    <table>
+        <h2>$randomCode</h2>
+    </table>
+    </body>
+    </html>
+";
 
-$sendEmail = mail($to, $subject, $message, $headers);
+$headers[] = 'MIME-Version: 1.0';
+$headers[] = 'Content-type: text/html; charset=iso-8859-1';
+$headers[] = 'From: contato@dpay.trive.fun';
+$headers[] = 'Reply-To: contato@dpay.trive.fun';
+$headers[] = 'X-Mailer: PHP/' . phpversion();
+
+$sendEmail = mail($to, $subject, $message, implode("\r\n", $headers));
 
 if(!$sendEmail) {
-    echo json_encode(array(status => $__STATUS__, response => false, message => "Falha ao enviar email, clique para tentar reenviar."));
+    echo json_encode(array(status => $__STATUS__, response => false, message => "Falha ao enviar email, clique para reenviar."));
     endCode($obj);
 }
 
