@@ -82,7 +82,7 @@ $message = "
     <body>
         <div style='background-color:black; color:white; text-align:center; padding: 5px'>
             <p style='color:white;'>Seu código de verificação é</p>
-        <div>
+        </div>
         <div style='text-align:center; padding: 5px'>
             <h1 style='color:black;'>$randomCode</h1>
             <p style='color:black;'>Todos os direitos reservados</p>
