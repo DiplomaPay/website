@@ -54,14 +54,21 @@ if(mysqli_num_rows($queryCheckUserEmail) > 0){
     endCode($obj);
 }
 
-//STEP 5 -> Register user
+//STEP 5 -> Generate activation code
+$characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+$charactersLength = strlen($characters);
+$randomCode = '';
+
+for ($i = 0; $i < 5; $i++) {
+    $randomCode .= $characters[rand(0, $charactersLength - 1)];
+}
+
+//STEP 6 -> Register user
 $time = time();
 
-mysqli_query($conexao, "insert into users (email, password, cpf, full_name, created) values ('$email', '$password', '$cpf', '$name', '$time')") or endCodeError();
+mysqli_query($conexao, "insert into users (email, password, cpf, full_name, created, activation_code) values ('$email', '$password', '$cpf', '$name', '$time', '$randomCode')") or endCodeError();
 $obj = array(status => $__STATUS__, response => false, message => "Sucess.");
 endCode($obj);
-
-
 
 function endCode($obj){
     echo json_encode($obj);
