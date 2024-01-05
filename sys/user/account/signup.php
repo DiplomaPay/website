@@ -82,7 +82,7 @@ $message = "
     <body>
     <p>Aqui estão alguns exemplos de como personalizar seu e-mail:</p>
     <table>
-        <div style='display: flex'> <p>Seu código é<p> <h2>$randomCode</h2> </div>
+        <div style='display: flex; align-items: center; gap: 2px'> <p>Seu código é<p> <h2>$randomCode</h2> </div>
     </table>
     </body>
     </html>
