@@ -80,7 +80,7 @@ $message = "
         </style>
     </head>
     <body>
-        <div style='background-color:black; color:white; text-align:center; padding: 5px; border-radius: 5px'>
+        <div style='background-color:#269C72; color:white; text-align:center; padding: 5px; border-radius: 5px'>
             <h2 style='color:white;'>DiplomaPay</h2>
         </div>
         <div style='text-align:center; padding: 5px'>
