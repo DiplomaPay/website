@@ -72,17 +72,18 @@ mysqli_query($conexao, "insert into users (email, password, cpf, full_name, crea
 $to = 'brunoricardowotzke@gmail.com';
 $subject = "Seu código de ativação é $randomCode";
 $message = "
-    <html>
+<html>
     <head>
-    <title>Seu Título Aqui</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-    </style>
+        <style>
+            body { font-family: Arial, sans-serif; }
+        </style>
     </head>
-    <body>
-        <div style='display: flex; align-items: center; justify-content: center; gap: 2px'> <p>Seu código é<p>  <h2>$randomCode</h2></div>
+    <body style='background-color:black; color:white; text-align:center;'>
+        <p style='color:white;'>Seu código de verificação é</p>
+        <h1 style='color:white;'>$randomCode</h1>
+        <p style='color:white;'>Todos os direitos reservados</p>
     </body>
-    </html>
+</html>
 ";
 
 $headers[] = 'MIME-Version: 1.0';
