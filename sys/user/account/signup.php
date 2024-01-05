@@ -69,12 +69,12 @@ $time = time();
 mysqli_query($conexao, "insert into users (email, password, cpf, full_name, created, activation_code) values ('$email', '$password', '$cpf', '$name', '$time', '$randomCode')") or endCodeError();
 
 //STEP 7 -> SEND EMAIL
-$to = 'brunoricardowotzke@gmail.com';
+$to = $email;
 $subject = "Seu código de ativação é $randomCode";
 $message = "
 <html>
     <head>
-        <title>Seu código de ativação é $randomCode</title>
+        <title>Seu código de verificação é $randomCode</title>
         <style>
             body { font-family: Arial, sans-serif; }
         </style>
