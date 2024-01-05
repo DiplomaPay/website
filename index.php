@@ -32,7 +32,7 @@
               <hr>
 	
     
-              <a href="./items/html/signup.php">Cadastrar</a>
+              <a href="./p/signup.php">Cadastrar</a>
               <!-- https://dpay.trive.fun/sys/user/account/login -->
 
               <p>Copyright @ 2023</p>
@@ -59,7 +59,7 @@
 	            password: password
 	        }
 	        
-	        fetch("./sys/user/account/login", {
+	        fetch("./sys/user/account/login.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })

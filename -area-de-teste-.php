@@ -34,7 +34,7 @@
 	            password: password
 	        }
 	        
-	        fetch("./sys/user/account/login", {
+	        fetch("./sys/user/account/login.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
@@ -84,7 +84,7 @@
 				name: name
 	        }
 	        
-	        fetch("./sys/user/account/signup", {
+	        fetch("./sys/user/account/signup.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })

@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="./items/css/styles.css">
   <title>Cadastro</title>
 </head>
 <body>
@@ -30,6 +30,6 @@
     </form>
   </div>
   
-  <script src="../js/signup.js"></script>
+  <script src="./items/js/signup.js"></script>
 </body>
 </html>
