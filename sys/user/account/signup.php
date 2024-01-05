@@ -80,12 +80,13 @@ $message = "
         </style>
     </head>
     <body>
-        <div style='background-color:black; color:white; text-align:center; padding: 5px'>
-            <p style='color:white;'>Seu código de verificação é</p>
+        <div style='background-color:black; color:white; text-align:center; padding: 5px; border-radius: 5px'>
+            <h2 style='color:white;'>DiplomaPay</h2>
         </div>
         <div style='text-align:center; padding: 5px'>
+            <p style='color:black;'>Seu código de verificação é</p>
             <h1 style='color:black;'>$randomCode</h1>
-            <p style='color:black;'>Todos os direitos reservados</p>
+            <p style='color:black; font-size: 12px'>Todos os direitos reservados - DiplomaPay 2024</p>
         </div>
     </body>
 </html>
