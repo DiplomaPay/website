@@ -65,7 +65,7 @@ function sendMail($email){
         $randomCode .= $characters[rand(0, $charactersLength - 1)];
     }
 
-    mysqli_query($conexao, "update users set activation_code='$randomCode' where email='$email'") or endCodeError();
+    // mysqli_query($conexao, "update users set activation_code='$randomCode' where email='$email'") or endCodeError();
 
     $to = $email;
     $subject = "Seu código de recuperação é $randomCode";
