@@ -10,33 +10,29 @@ $code = $json->code;
 $password = $json->password;
 $new_password = $json->new_password;
 
-echo "$email, $code, $password, $new_password";
-
-
 $email = mysqli_real_escape_string($conexao, $email);
 $code = mysqli_real_escape_string($conexao, $code);
 $password = mysqli_real_escape_string($conexao, $password);
 $new_password = mysqli_real_escape_string($conexao, $new_password);
 
-echo "$email, $code, $password, $new_password";
 
-// if(!$email and !$code){
-//     $obj = array(status => $__STATUS__, response => false, message => "$email, $code, $password, $new_password");
-//     endCode($obj);
-// }
+if(!$email and !$code){
+    $obj = array(status => $__STATUS__, response => false, message => "$email, $code, $password, $new_password");
+    endCode($obj);
+}
 
-// if($email and !$code){
-//     $queryEmail = mysqli_query($conexao, "select * from users where email='$email'") or endCodeError();
+if($email and !$code){
+    $queryEmail = mysqli_query($conexao, "select * from users where email='$email'") or endCodeError();
 
-//     if(mysqli_num_rows($queryEmail) > 0){
-//         sendMail($email);
-//         $obj = array(status => $__STATUS__, response => true, message => "Código de recuperação enviado.");
-//         endCode($obj);
-//     };
+    if(mysqli_num_rows($queryEmail) > 0){
+        sendMail($email);
+        $obj = array(status => $__STATUS__, response => true, message => "Código de recuperação enviado.");
+        endCode($obj);
+    };
 
-//     $obj = array(status => $__STATUS__, response => false, message => "Email não encontrado.");
-//     endCode($obj);
-// }
+    $obj = array(status => $__STATUS__, response => false, message => "Email não encontrado.");
+    endCode($obj);
+}
 
 // if($email and $code and !$password and !$new_password){
 //     $queryCode = mysqli_query($conexao, "select * from users where email='$email' and code='$code'") or endCodeError();
