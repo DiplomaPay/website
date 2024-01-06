@@ -2,13 +2,13 @@
 include"../../conexao.php";
 header('Content-Type: application/json; charset=utf-8');
 
-// $request = file_get_contents('php://input');
-// $json = json_decode($request);
+$request = file_get_contents('php://input');
+$json = json_decode($request);
 
-$email = $_GET["email"];
-$code = $_GET["code"];
-$password = $_GET["password"];
-$new_password = $_GET["new_password"];
+$email = $json->email;
+$code = $json->code;
+$password = $json->password;
+$new_password = $json->new_password;
 
 $email = mysqli_real_escape_string($conexao, $email);
 $code = mysqli_real_escape_string($conexao, $code);
