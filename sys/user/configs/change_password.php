@@ -16,7 +16,7 @@ $password = mysqli_real_escape_string($conexao, $password);
 $new_password = mysqli_real_escape_string($conexao, $new_password);
 
 if(!$email and !$code){
-    $obj = array(status => $__STATUS__, response => false, message => "Envie os dados corretamente.");
+    $obj = array(status => $__STATUS__, response => false, message => "$email, $code, $password, $new_password");
     endCode($obj);
 }
 
