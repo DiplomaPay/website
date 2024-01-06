@@ -52,7 +52,7 @@ if(!$password or !$new_password or $password != $new_password){
 
 $password = password_hash($new_password, PASSWORD_DEFAULT);
 
-$queryLast = mysqli_query($conexao, "select * from users where email='$email' and activation_code='$code'");
+$queryLast = mysqli_query($conexao, "select * from users where email='$email' and activation_code='$code'") or endCodeError();
 
 if(mysqli_num_rows($queryLast) > 0){
     $queryFinal = mysqli_query($conexao, "update users set password='$password' where email='$email' and activation_code='$code'") or endCodeError();
