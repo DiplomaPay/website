@@ -1,5 +1,5 @@
 <?php
-include"../conexao.php";
+include"../../conexao.php";
 header('Content-Type: application/json; charset=utf-8');
 
 $request = file_get_contents('php://input');
@@ -10,10 +10,10 @@ $code = $json->code;
 $password = $json->password;
 $new_password = $json->new_password;
 
-// $email = mysqli_real_escape_string($conexao, $email);
-// $code = mysqli_real_escape_string($conexao, $code);
-// $password = mysqli_real_escape_string($conexao, $password);
-// $new_password = mysqli_real_escape_string($conexao, $new_password);
+$email = mysqli_real_escape_string($conexao, $email);
+$code = mysqli_real_escape_string($conexao, $code);
+$password = mysqli_real_escape_string($conexao, $password);
+$new_password = mysqli_real_escape_string($conexao, $new_password);
 
 if(!$email and !$code){
     $obj = array(status => $__STATUS__, response => false, message => "$email, $code, $password, $new_password");
