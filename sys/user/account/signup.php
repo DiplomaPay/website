@@ -101,11 +101,11 @@ $headers[] = 'X-Mailer: PHP/' . phpversion();
 $sendEmail = mail($to, $subject, $message, implode("\r\n", $headers));
 
 if(!$sendEmail) {
-    echo json_encode(array(status => $__STATUS__, response => false, message => "Falha ao enviar email, clique para reenviar."));
+    $obj = array(status => $__STATUS__, response => false, message => "Falha ao enviar email, clique para reenviar.");
     endCode($obj);
 }
 
-$obj = array(status => $__STATUS__, response => false, message => "Sucess.");
+$obj = array(status => $__STATUS__, response => true, message => "Sucess.");
 endCode($obj);
 
 function endCode($obj){

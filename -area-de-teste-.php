@@ -130,5 +130,50 @@
 	    }
 	</script> 
 
+	<!--Change password-->
+	
+<hr>
+	<h1>Change password </h1>
+	<form action="javascript:void(0)" onsubmit="sendChangePassword()">
+	    <input id='email_change_password' type="text" placeholder="Email"/>
+	    <input id='code_change_password' type="text" placeholder="Code"/>
+	    <input id='password_change_password' type="text" placeholder="New password"/>
+	    <input id='new_password_change_password' type="text" placeholder="Confirm new password"/>
+	    <button>Enviar</button>
+	</form>
+	<p id='res_change_password'></p>
+	<hr>
+	
+    <!--Change password	-->
+	<script>
+        const email_change_password = document.getElementById("email_change_password");
+        const code_change_password = document.getElementById("code_change_password");
+        const password_change_password = document.getElementById("password_change_password");
+        const new_password_change_password = document.getElementById("new_password_change_password");
+        
+	    const sendChangePassword = () => {
+	        let email = email_change_password.value;
+	        let code = code_change_password.value;
+	        let password = password_change_password.value;
+	        let new_password = new_password_change_password.value;
+
+	        let data = {
+				email: email,
+	            code: code,
+				password: password,
+				new_password: new_password
+	        }
+	        
+	        fetch("https://dpay.trive.fun/sys/user/configs/change_password.php", {
+	            method: "POST",
+	            body: JSON.stringify(data),
+	        })
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_change_password.innerText = JSON.stringify(e);
+	        })
+	    }
+	</script> 
+
 </body>
 </html>

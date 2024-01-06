@@ -22,7 +22,7 @@ if(mysqli_num_rows($queryCode) < 1){
 
 //STEP 2 -> Activate accound
 mysqli_query($conexao, "update users set active='true' where activation_code='$code'") or endCodeError();
-$obj = array(status => $__STATUS__, response => false, message => "Account activated.");
+$obj = array(status => $__STATUS__, response => true, message => "Account activated.");
 endCode($obj);
 
 // FUNCTION 
