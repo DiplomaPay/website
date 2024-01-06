@@ -54,7 +54,7 @@ $password = password_hash($new_password, PASSWORD_DEFAULT);
 
 $queryFinal = mysqli_query($conexao, "update users set password='$password' where email='$email' and activation_code='$code'") or endCodeError();
 
-if(mysqli_num_rows($queryFinal) > 0){
+if($queryFinal){
     $obj = array(status => $__STATUS__, response => true, message => "Senha alterada com sucesso.");
     endCode($obj);  
 }
