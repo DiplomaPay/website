@@ -15,7 +15,7 @@ $code = mysqli_real_escape_string($conexao, $code);
 $password = mysqli_real_escape_string($conexao, $password);
 $new_password = mysqli_real_escape_string($conexao, $new_password);
 
-if(!$email and !$code){
+if(!$email and !$code or $code and !$email){
     $obj = array(status => $__STATUS__, response => false, message => "$email, $code, $password, $new_password");
     endCode($obj);
 }
@@ -24,7 +24,7 @@ if($email and !$code){
     $queryEmail = mysqli_query($conexao, "select * from users where email='$email'") or endCodeError();
 
     if(mysqli_num_rows($queryEmail) > 0){
-        sendMail($email);
+        sendMail($conexao, $email);
         $obj = array(status => $__STATUS__, response => true, message => "Código de recuperação enviado.");
         endCode($obj);
     };
@@ -56,7 +56,7 @@ mysqli_query($conexao, "update users set password='$password' where email='$emai
 $obj = array(status => $__STATUS__, response => true, message => "Senha alterada com sucesso.");
 endCode($obj);
 
-function sendMail($email){
+function sendMail($conexao, $email){
     $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     $charactersLength = strlen($characters);
     $randomCode = '';
@@ -65,7 +65,7 @@ function sendMail($email){
         $randomCode .= $characters[rand(0, $charactersLength - 1)];
     }
 
-    // mysqli_query($conexao, "update users set activation_code='$randomCode' where email='$email'") or endCodeError();
+    mysqli_query($conexao, "update users set activation_code='$randomCode' where email='$email'") or endCodeError();
 
     $to = $email;
     $subject = "Seu código de recuperação é $randomCode";
