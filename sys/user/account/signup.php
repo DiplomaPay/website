@@ -66,7 +66,7 @@ for ($i = 0; $i < 5; $i++) {
 //STEP 6 -> Register user
 $time = time();
 
-mysqli_query($conexao, "insert into users (email, password, cpf, full_name, created, activation_code) values ('$email', '$password', '$cpf', '$name', '$time', '$randomCode')") or endCodeError();
+mysqli_query($conexao, "insert into users (email, password, cpf, full_name, created, set_code) values ('$email', '$password', '$cpf', '$name', '$time', '$randomCode')") or endCodeError();
 
 //STEP 7 -> SEND EMAIL
 $to = $email;

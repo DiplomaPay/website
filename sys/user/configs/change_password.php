@@ -34,7 +34,7 @@ if($email and !$code){
 }
 
 if($email and $code and !$password and !$new_password){
-    $queryCode = mysqli_query($conexao, "select * from users where email='$email' and activation_code='$code'") or endCodeError();
+    $queryCode = mysqli_query($conexao, "select * from users where email='$email' and set_code='$code'") or endCodeError();
 
     if(mysqli_num_rows($queryCode) > 0){
         $obj = array(status => $__STATUS__, response => true, message => "Código válido.");
@@ -52,10 +52,10 @@ if(!$password or !$new_password or $password != $new_password){
 
 $password = password_hash($new_password, PASSWORD_DEFAULT);
 
-$queryLast = mysqli_query($conexao, "select * from users where email='$email' and activation_code='$code'") or endCodeError();
+$queryLast = mysqli_query($conexao, "select * from users where email='$email' and set_code='$code'") or endCodeError();
 
 if(mysqli_num_rows($queryLast) > 0){
-    $queryFinal = mysqli_query($conexao, "update users set password='$password' where email='$email' and activation_code='$code'") or endCodeError();
+    $queryFinal = mysqli_query($conexao, "update users set password='$password' where email='$email' and set_code='$code'") or endCodeError();
 
     if($queryFinal){
         $obj = array(status => $__STATUS__, response => true, message => "Senha alterada com sucesso.");
@@ -78,7 +78,7 @@ function sendMail($conexao, $email){
         $randomCode .= $characters[rand(0, $charactersLength - 1)];
     }
 
-    mysqli_query($conexao, "update users set activation_code='$randomCode' where email='$email'") or endCodeError();
+    mysqli_query($conexao, "update users set set_code='$randomCode' where email='$email'") or endCodeError();
 
     $to = $email;
     $subject = "Seu código de recuperação é $randomCode";
