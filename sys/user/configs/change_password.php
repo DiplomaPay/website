@@ -55,7 +55,7 @@ $password = password_hash($new_password, PASSWORD_DEFAULT);
 $queryLast = mysqli_query($conexao, "select * from users where email='$email' and set_code='$code'") or endCodeError();
 
 if(mysqli_num_rows($queryLast) > 0){
-    $queryFinal = mysqli_query($conexao, "update users set password='$password' where email='$email' and set_code='$code'") or endCodeError();
+    $queryFinal = mysqli_query($conexao, "update users set password='$password', set_code='' where email='$email' and set_code='$code'") or endCodeError();
 
     if($queryFinal){
         $obj = array(status => $__STATUS__, response => true, message => "Senha alterada com sucesso.");
