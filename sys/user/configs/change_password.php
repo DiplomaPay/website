@@ -34,7 +34,7 @@ if($email and !$code){
 }
 
 if($email and $code and !$password and !$new_password){
-    $queryCode = mysqli_query($conexao, "select * from users where email='$email' and code='$code'") or endCodeError();
+    $queryCode = mysqli_query($conexao, "select * from users where email='$email' and activation_code='$code'") or endCodeError();
 
     if(mysqli_num_rows($queryCode) > 0){
         $obj = array(status => $__STATUS__, response => true, message => "Código válido.");
