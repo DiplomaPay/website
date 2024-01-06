@@ -15,10 +15,10 @@ $code = mysqli_real_escape_string($conexao, $code);
 $password = mysqli_real_escape_string($conexao, $password);
 $new_password = mysqli_real_escape_string($conexao, $new_password);
 
-if($email == "" and $code == ""){
-    $obj = array(status => $__STATUS__, response => false, message => "Envie os dados corretamente.");
-    endCode($obj);
-}
+// if(!$email and !$code){
+//     $obj = array(status => $__STATUS__, response => false, message => "Envie os dados corretamente.");
+//     endCode($obj);
+// }
 
 if($email and !$code){
     $queryEmail = mysqli_query($conexao, "select * from users where email='$email'") or endCodeError();
