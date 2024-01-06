@@ -22,7 +22,7 @@ if(!$email and !$code){
 }
 
 if($email and !$code){
-    $queryEmail = mysqli_query($conexao, "select * from users where email='$email'") or endCodeError();
+    $queryEmail = mysqli_query($conexao, "select * from users where email='$email'") or die("email: $email");
 
     if(mysqli_num_rows($queryEmail) > 0){
         sendMail($email);
