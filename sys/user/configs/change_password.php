@@ -52,14 +52,21 @@ if(!$password or !$new_password or $password != $new_password){
 
 $password = password_hash($new_password, PASSWORD_DEFAULT);
 
-$queryFinal = mysqli_query($conexao, "update users set password='$password' where email='$email' and activation_code='$code'") or endCodeError();
+$queryLast = mysqli_query($conexao, "select * from users where email='$email' and activation_code='$code'");
 
-if($queryFinal){
-    $obj = array(status => $__STATUS__, response => true, message => "Senha alterada com sucesso.");
-    endCode($obj);  
+if(mysqli_num_rows($queryLast) > 0){
+    $queryFinal = mysqli_query($conexao, "update users set password='$password' where email='$email' and activation_code='$code'") or endCodeError();
+
+    if($queryFinal){
+        $obj = array(status => $__STATUS__, response => true, message => "Senha alterada com sucesso.");
+        endCode($obj);  
+    }
+
+    $obj = array(status => $__STATUS__, response => false, message => "Erro ao alterar a senha.");
+    endCode($obj);
 }
 
-$obj = array(status => $__STATUS__, response => false, message => "Erro ao alterar a senha.");
+$obj = array(status => $__STATUS__, response => false, message => "Verifique os dados e tente novamente.");
 endCode($obj);
 
 function sendMail($conexao, $email){
