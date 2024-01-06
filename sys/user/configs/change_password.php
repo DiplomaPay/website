@@ -1,6 +1,6 @@
 <?php
 include"../conexao.php";
-header('Content-Type: application/json');
+header('Content-Type: application/json; charset=utf-8');
 
 $request = file_get_contents('php://input');
 $json = json_decode($request);
@@ -15,7 +15,7 @@ $code = mysqli_real_escape_string($conexao, $code);
 $password = mysqli_real_escape_string($conexao, $password);
 $new_password = mysqli_real_escape_string($conexao, $new_password);
 
-if(!isset($email) and !isset($code)){
+if(!$email and !$code){
     $obj = array(status => $__STATUS__, response => false, message => "Envie os dados corretamente.");
     endCode($obj);
 }
