@@ -14,6 +14,9 @@ $confirm_password = $json->confirm_password;
 $cpf = $json->cpf;
 $name = $json->name;
 
+$email = str_replace(" ", "", $email);
+$cpf = preg_replace("/[^0-9]/", "", $cpf);
+
 // Processed data
 $email = mysqli_real_escape_string($conexao, $email);
 $password = mysqli_real_escape_string($conexao, $password);
