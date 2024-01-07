@@ -9,6 +9,8 @@ $json = json_decode($request);
 // Recived data 
 $code = $json->code;
 
+$code = str_replace(" ", "", $code);
+
 // Processed data
 $code = mysqli_real_escape_string($conexao, $code);
 

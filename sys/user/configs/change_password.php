@@ -10,6 +10,10 @@ $code = $json->code;
 $password = $json->password;
 $new_password = $json->new_password;
 
+$email = str_replace(" ", "", $email);
+$code = str_replace(" ", "", $code);
+
+
 $email = mysqli_real_escape_string($conexao, $email);
 $code = mysqli_real_escape_string($conexao, $code);
 $password = mysqli_real_escape_string($conexao, $password);

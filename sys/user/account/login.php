@@ -10,6 +10,8 @@ $json = json_decode($request);
 $email = $json->email;
 $password = $json->password;
 
+$email = str_replace(" ", "", $email);
+
 // Processed data
 $email = mysqli_real_escape_string($conexao, $email);
 $password = mysqli_real_escape_string($conexao, $password);
