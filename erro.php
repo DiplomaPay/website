@@ -33,6 +33,7 @@ if(!$status or !in_array($status, $valid_status)){
             flex-direction: column;
             gap: 20px;
             background: black;
+            height: 100svh;
         }
         h1{
             font-size: 60px;
