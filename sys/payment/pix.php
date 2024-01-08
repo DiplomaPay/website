@@ -36,6 +36,8 @@ $response = curl_exec($curl);
 $res = json_decode($response);
 curl_close($curl);
 
+var_dump($res);
+
 // $pay_id = $res["id"];
 // $status = $res["status"];
 // $ammount = $res["transaction_amount"];
