@@ -181,6 +181,7 @@
 	<h1>Pix pay (R$0.01) </h1>
 	<button onclick="sendPixPay()">Generate pix</button>
 	<input id='pix_id' type="number" placeholder="ID PIX VERIFY"/>
+	<img id="pix_img">
 	<button onclick="sendPixVerify()">Check pix</button>
 	<p id='res_pix'></p>
 	<hr>
@@ -197,11 +198,15 @@
 	    }
 
 		const sendPixVerify = () => {
+			let src = "data:image/png;base64,";
 			let pix_id = document.getElementById("pix_id").value;
+			let pix_img = document.getElementById("pix_img");
+
 	        fetch(`https://dpay.trive.fun/sys/payment/pix/verify.php?id=${pix_id}`)
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_pix.innerText = JSON.stringify(e);
+				pix_img = `${src}${e.pay_code_img}`;
 	        })
 	    }
 	</script> 
