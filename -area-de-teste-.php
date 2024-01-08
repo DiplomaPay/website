@@ -175,10 +175,10 @@
 	    }
 	</script> 
 
-	<!--Change password-->
+	<!--Pix-->
 	
-<hr>
-	<h1>Pix pay (R$0.01) </h1>
+	<hr>
+	<h1>Pix pay (R$1.00) </h1>
 	<button onclick="sendPixPay()">Generate pix</button>
 	<input id='pix_id' type="number" placeholder="ID PIX VERIFY"/>
 	<img style="max-width: 200px; width: calc(100% - 20px)" id="pix_img">
@@ -186,7 +186,7 @@
 	<p id='res_pix'></p>
 	<hr>
 	
-    <!--Change password	-->
+    <!--Pix	-->
 	<script>
         
 	    const sendPixPay= () => {
@@ -209,6 +209,28 @@
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_pix.innerText = JSON.stringify(e);
+	        })
+	    }
+	</script> 
+
+	<!--Credit-->
+	
+	<hr>
+	<h1>Credit (R$1.00) </h1>
+	<button onclick="sendCreditPay()">Pay</button>
+	<p id='res_credit'></p>
+	<hr>
+	
+    <!--Credit-->
+	<script>
+        
+	    const sendCreditPay= () => {
+
+	        fetch("https://dpay.trive.fun/sys/payment/credit_card/pay.php")
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_credit.innerText = JSON.stringify(e);
+
 	        })
 	    }
 	</script> 
