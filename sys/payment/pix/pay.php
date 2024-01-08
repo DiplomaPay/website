@@ -46,7 +46,7 @@ $pay_id = $res->id;
 $status = $res->status;
 $ammount = $res->transaction_amount;
 $pay_code = $res->point_of_interaction->transaction_data->qr_code;
-$pay_code_img = $res->point_of_interaction->transaction_data->qr_code;
+$pay_code_img = $res->point_of_interaction->transaction_data->qr_code_base64;
 
 mysqli_query($conexao, "insert into payment_pix (status, pay_id, pay_code, ammount) values ('$status','$pay_id','$pay_code','$ammount')");
 
