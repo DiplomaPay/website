@@ -3,7 +3,7 @@
 $curl = curl_init();
 
 $data = array(
-    'transaction_amount' => '100.0',
+    'transaction_amount' => 100,
     'description' => 'Teste de produto pix DP',
     'payment_method_id' => 'pix',
 );
