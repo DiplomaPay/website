@@ -17,14 +17,14 @@ $data = array(
       'last_name' => "Ciclano",
       'identification' => [ // Adicionado para pagamento com cartão
         'type' => 'CPF',
-        'number' => '12345678909'
+        'number' => 12345678909
       ]
     ],
     'payment_method' => [ // Movido para fora do objeto "payer"
-        'card_number' => '4235647728025682',
-        'card_expiration_month' => '11',
-        'card_expiration_year' => '2025',
-        'security_code' => '123'
+        'card_number' => 4235647728025682,
+        'card_expiration_month' => 11,
+        'card_expiration_year' => 2025,
+        'security_code' => 123
     ]
 );
 
