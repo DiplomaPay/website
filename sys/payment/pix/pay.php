@@ -30,11 +30,11 @@ curl_setopt_array($curl, array(
   CURLOPT_POSTFIELDS => json_encode($data),
   CURLOPT_HTTPHEADER => array(
     // TESTES ->
-    // 'Authorization: Bearer TEST-5056284625992718-010720-0ed75a2e6c7caf2596f0d792490b4134-50812775',
-    // 'Public-Key: TEST-8442b5ef-d877-4ecf-a391-1ca734da9d21',
+    'Authorization: Bearer TEST-5056284625992718-010720-0ed75a2e6c7caf2596f0d792490b4134-50812775',
+    'Public-Key: TEST-8442b5ef-d877-4ecf-a391-1ca734da9d21',
     // REAL ->
-    'Authorization: Bearer APP_USR-5056284625992718-010720-8f3ef5796104ab4ed6dd46bda8cc493c-50812775',
-    'Public-Key: APP_USR-7fb9bd3b-0834-4195-8c52-2c22ba74253c',
+    // 'Authorization: Bearer APP_USR-5056284625992718-010720-8f3ef5796104ab4ed6dd46bda8cc493c-50812775',
+    // 'Public-Key: APP_USR-7fb9bd3b-0834-4195-8c52-2c22ba74253c',
     'Content-Type: application/json'
   ),
 ));
