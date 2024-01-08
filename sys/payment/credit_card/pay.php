@@ -10,21 +10,21 @@ $ammount = 1.00;
 $data = array(
     'transaction_amount' => $ammount,
     'description' => "Teste produto",
-    'payment_method_id' => "credit_card", // Alterado de "pix" para "credit_card"
+    'payment_method_id' => "credit_card", 
     'payer' => [
       'email' => "fulano@gmail.com",
       'first_name' => "Fulano",
       'last_name' => "Ciclano",
-      'identification' => [ // Adicionado para pagamento com cartão
+      'identification' => [
         'type' => 'CPF',
-        'number' => 12345678909
+        'number' => '12345678909'
+      ],
+      'card' => [
+        'number' => '4235647728025682',
+        'expiration_month' => '11',
+        'expiration_year' => '2025',
+        'security_code' => '123'
       ]
-    ],
-    'payment_method' => [ // Movido para fora do objeto "payer"
-        'card_number' => 4235647728025682,
-        'card_expiration_month' => 11,
-        'card_expiration_year' => 2025,
-        'security_code' => 123
     ]
 );
 
