@@ -5,8 +5,10 @@ header('Content-Type: application/json; charset=utf-8');
 
 $curl = curl_init();
 
+$ammount = 0.01;
+
 $data = array(
-    'transaction_amount' => 0.01,
+    'transaction_amount' => $ammount,
     'token' => "2323",
     'description' => "Teste produto",
     'payment_method_id' => "pix",
@@ -44,7 +46,6 @@ curl_close($curl);
 
 $pay_id = $res->id;
 $status = $res->status;
-$ammount = $res->transaction_amount;
 $pay_code = $res->point_of_interaction->transaction_data->qr_code;
 $pay_code_img = $res->point_of_interaction->transaction_data->qr_code_base64;
 
