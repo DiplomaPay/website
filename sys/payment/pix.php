@@ -47,4 +47,4 @@ mysqli_query($conexao, "insert into payment_pix (status, pay_id, pay_code, ammou
 
 $obj = array(response => true, message => "Pagamento pendente.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount);
 
-echo json_encode($obj)
+echo json_encode($obj);
