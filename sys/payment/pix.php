@@ -1,4 +1,7 @@
 <?php
+include"../conexao.php";
+
+header('Content-Type: application/json; charset=utf-8');
 
 $curl = curl_init();
 
@@ -32,6 +35,16 @@ curl_setopt_array($curl, array(
 ));
 
 $response = curl_exec($curl);
-
+$res = json_decode($response);
 curl_close($curl);
-echo $response;
+
+$pay_id = $res->id;
+$status = $res->status;
+$ammount = $res->transaction_amount;
+$pay_code = $res->point_of_interaction->transaction_data->qr_code;
+
+mysqli_query($conexao, "insert into payment_pix (status, pay_id, pay_code, ammount) values ('$status','$pay_id','$pay_code','$ammount')");
+
+$obj = array(status => $__STATUS__, response => true, message => "Pagamento pendente.", status_pix => $status, id_pix => $pay_id, code_pix => $pay_code, ammount_pix => $ammount);
+
+echo json_encode($obj)
