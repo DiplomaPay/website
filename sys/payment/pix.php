@@ -1,8 +1,6 @@
 <?php
 include"../conexao.php";
 
-header('Content-Type: application/json; charset=utf-8');
-
 $curl = curl_init();
 
 $data = array(
