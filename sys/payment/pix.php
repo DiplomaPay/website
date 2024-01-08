@@ -15,7 +15,7 @@ $data = array(
 );
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://api.mercadopago.com/v1/payments',
+  CURLOPT_URL => 'https://api.mercadopago.com/v1/payments/1320525853',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
