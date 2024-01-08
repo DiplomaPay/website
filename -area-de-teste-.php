@@ -175,5 +175,36 @@
 	    }
 	</script> 
 
+	<!--Change password-->
+	
+<hr>
+	<h1>Pix pay (R$0.01) </h1>
+	<button onclick="sendPixPay()">Generate pix</button>
+	<input id='pix_id' type="number" placeholder="ID PIX VERIFY"/>
+	<button onclick="sendPixVerify()">Check pix</button>
+	<p id='res_pix'></p>
+	<hr>
+	
+    <!--Change password	-->
+	<script>
+        
+	    const sendPixPay= () => {
+	        fetch("https://dpay.trive.fun/sys/payment/pix/pay.php")
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_pix.innerText = JSON.stringify(e);
+	        })
+	    }
+
+		const sendPixVerify = () => {
+			let pix_id = document.getElementById("pix_id").value;
+	        fetch(`https://dpay.trive.fun/sys/payment/pix/verify.php?id=${pix_id}`)
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_pix.innerText = JSON.stringify(e);
+	        })
+	    }
+	</script> 
+
 </body>
 </html>
