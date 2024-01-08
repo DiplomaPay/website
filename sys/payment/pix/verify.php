@@ -10,7 +10,7 @@ $curl = curl_init();
 curl_setopt_array($curl, array(
   CURLOPT_URL => "https://api.mercadopago.com/v1/payments/$pay_id",
   CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_CUSTOMREQUEST => 'GET',
   CURLOPT_HTTPHEADER => array(
     // TESTES ->
     'Authorization: Bearer TEST-5056284625992718-010720-0ed75a2e6c7caf2596f0d792490b4134-50812775',
