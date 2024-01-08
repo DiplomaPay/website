@@ -3,9 +3,15 @@
 $curl = curl_init();
 
 $data = array(
-    'transaction_amount' => 100,
-    'description' => 'Teste de produto pix DP',
-    'payment_method_id' => 'pix',
+    'transaction_amount' => 100.0,
+    'token' => "2323",
+    'description' => "Teste produto",
+    'payment_method_id' => "pix",
+    'payer' => [
+      'email' => "fulano@gmail.com",
+      'first_name' => "Fulano",
+      'last_name' => "Ciclano",
+    ]
 );
 
 curl_setopt_array($curl, array(
