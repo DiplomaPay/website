@@ -43,7 +43,7 @@ $status = $res->status;
 $ammount = $res->transaction_amount;
 $pay_code = $res->point_of_interaction->transaction_data->qr_code;
 
-// mysqli_query($conexao, "insert into payment_pix (status, pay_id, pay_code, ammount) values ('$status','$pay_id','$pay_code','$ammount')");
+mysqli_query($conexao, "insert into payment_pix (status, pay_id, pay_code, ammount) values ('$status','$pay_id','$pay_code','$ammount')");
 
 // $obj = array(status => $__STATUS__, response => true, message => "Pagamento pendente.", status_pix => $status, id_pix => $pay_id, code_pix => $pay_code, ammount_pix => $ammount);
 
