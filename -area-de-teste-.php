@@ -206,7 +206,7 @@
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_pix.innerText = JSON.stringify(e);
-				pix_img = `${src}${e.pay_code_img}`;
+				pix_img.src = `${src}${e.pay_code_img}`;
 	        })
 	    }
 	</script> 
