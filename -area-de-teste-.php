@@ -190,23 +190,25 @@
 	<script>
         
 	    const sendPixPay= () => {
+			let src = "data:image/png;base64,";
+			let pix_img = document.getElementById("pix_img");
+
 	        fetch("https://dpay.trive.fun/sys/payment/pix/pay.php")
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_pix.innerText = JSON.stringify(e);
+				pix_img.src = `${src}${e.pay_code_img}`;
+
 	        })
 	    }
 
 		const sendPixVerify = () => {
-			let src = "data:image/png;base64,";
 			let pix_id = document.getElementById("pix_id").value;
-			let pix_img = document.getElementById("pix_img");
 
 	        fetch(`https://dpay.trive.fun/sys/payment/pix/verify.php?id=${pix_id}`)
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_pix.innerText = JSON.stringify(e);
-				pix_img.src = `${src}${e.pay_code_img}`;
 	        })
 	    }
 	</script> 
