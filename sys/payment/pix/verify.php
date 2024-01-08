@@ -31,6 +31,6 @@ $status = $res->status;
 
 mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'");
 
-$obj = array(response => true, message => "Pagamento atualizado.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount);
+$obj = array(response => true, message => "Pagamento atualizado.", status_pix => "$status", id_pix => $pay_id);
 
 echo json_encode($obj);
