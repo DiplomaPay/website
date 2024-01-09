@@ -205,7 +205,7 @@
 		const sendPixVerify = () => {
 			let pix_id = document.getElementById("pix_id").value;
 
-	        fetch(`https://dpay.trive.fun/sys/payment/pix/verify.php?id=${pix_id}`)
+	        fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${pix_id}`)
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_pix.innerText = JSON.stringify(e);
