@@ -29,7 +29,13 @@ curl_close($curl);
 $status = $res->status;
 $pay_id = $res->id;
 
-mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'") or array(response => true, message => "Erro ao atualizar bd.", status_pix => "Erro ao atualizar bd", id_pix => $pay_id);;
+$q = mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'");
+
+if(!$q){
+  $obj = array(response => false, message => "Pagamento atualizado.", status_pix => "Erro", id_pix => $pay_id);
+echo json_encode($obj);
+  exit;
+}
 
 $obj = array(response => true, message => "Pagamento atualizado.", status_pix => "$status", id_pix => $pay_id);
 
