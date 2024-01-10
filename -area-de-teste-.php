@@ -210,7 +210,8 @@
 		const verifyPix = (e) => {
 			let xx = setInterval(() => {
 				let x = sendPixVerify(e.id_pix);
-				if(x.status_pix == "approved"){
+				console.log(x)
+				if(x == "approved"){
 					clearInterval(xx)
 				}
 			}, 3000);
@@ -224,8 +225,7 @@
 	        .then(e=>{
 	            res_pix_status.innerText = e.status_pix;
 	            res_pix.innerText = JSON.stringify(e);
-				return e;
-				
+				return e.status_pix;
 	        })
 	    }
 	</script> 
