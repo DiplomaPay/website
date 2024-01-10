@@ -201,7 +201,7 @@
 	            res_pix_status.innerText = e.status_pix;
 				pix_img.src = `${src}${e.pay_code_img}`;
 				if(e.status_pix != "approved"){
-					verifyPix();
+					verifyPix(e);
 				}
 
 	        })
@@ -209,17 +209,17 @@
 
 		const verifyPix = (e) => {
 			let xx = setInterval(() => {
-				let x = sendPixVerify();
+				let x = sendPixVerify(e.id_pix);
 				if(x.status_pix == "approved"){
 					clearInterval(xx)
 				}
 			}, 3000);
 		}
 
-		const sendPixVerify = () => {
+		const sendPixVerify = (e) => {
 			let pix_id = document.getElementById("pix_id").value;
 
-	        fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${pix_id}`)
+	        fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${e}`)
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_pix_status.innerText = e.status_pix;
