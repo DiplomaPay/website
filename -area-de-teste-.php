@@ -184,6 +184,7 @@
 	<img style="max-width: 200px; width: calc(100% - 20px)" id="pix_img">
 	<button onclick="sendPixVerify()">Check pix</button>
 	<p id='res_pix'></p>
+	<p id='res_pix_status'></p>
 	<hr>
 	
     <!--Pix	-->
@@ -197,10 +198,23 @@
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_pix.innerText = JSON.stringify(e);
+	            res_pix_status.innerText = e.status_pix;
 				pix_img.src = `${src}${e.pay_code_img}`;
+				if(e.status_pix != "approved"){
+					verifyPix();
+				}
 
 	        })
 	    }
+
+		const verifyPix = (e) => {
+			let xx = setInterval(() => {
+				let x = sendPixVerify();
+				if(x.status_pix == "approved"){
+					clearInterval(xx)
+				}
+			}, 3000);
+		}
 
 		const sendPixVerify = () => {
 			let pix_id = document.getElementById("pix_id").value;
@@ -208,21 +222,24 @@
 	        fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${pix_id}`)
 	        .then(e=>e.json())
 	        .then(e=>{
+	            res_pix_status.innerText = e.status_pix;
 	            res_pix.innerText = JSON.stringify(e);
+				return e;
+				
 	        })
 	    }
 	</script> 
 
 	<!--Credit-->
 	
-	<hr>
+	<!-- <hr>
 	<h1>Credit (R$1.00) </h1>
 	<button onclick="sendCreditPay()">Pay</button>
 	<p id='res_credit'></p>
 	<hr>
-	
+	 -->
     <!--Credit-->
-	<script>
+	<!-- <script>
         
 	    const sendCreditPay= () => {
 
@@ -233,7 +250,7 @@
 
 	        })
 	    }
-	</script> 
+	</script>  -->
 
 </body>
 </html>
