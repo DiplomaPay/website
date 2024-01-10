@@ -178,7 +178,7 @@
 	<!--Pix-->
 	
 	<hr>
-	<h1>Pix pay (R$1.00) </h1>
+	<h1>Pix pay (R$0.01) </h1>
 	<button onclick="sendPixPay()">Generate pix</button>
 	<img style="max-width: 200px; width: calc(100% - 20px)" id="pix_img">
 	<p id='res_pix'></p>
