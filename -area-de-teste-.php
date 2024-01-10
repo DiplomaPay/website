@@ -211,16 +211,13 @@
 			let xx = setInterval(() => {
 				let x = sendPixVerify(e.id_pix);
 				console.log(x)
-				if(x == "approved"){
-					clearInterval(xx)
-				}
 			}, 3000);
 		}
 
-		const sendPixVerify = (e) => {
+		const sendPixVerify = async (e) => {
 			let pix_id = document.getElementById("pix_id").value;
 
-	        let xx = fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${e}`)
+	        let xx = await fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${e}`)
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_pix_status.innerText = e.status_pix;
