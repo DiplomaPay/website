@@ -180,9 +180,7 @@
 	<hr>
 	<h1>Pix pay (R$1.00) </h1>
 	<button onclick="sendPixPay()">Generate pix</button>
-	<input id='pix_id' type="number" placeholder="ID PIX VERIFY"/>
 	<img style="max-width: 200px; width: calc(100% - 20px)" id="pix_img">
-	<button onclick="sendPixVerify()">Check pix</button>
 	<p id='res_pix'></p>
 	<p id='res_pix_status'></p>
 	<hr>
@@ -190,42 +188,45 @@
     <!--Pix	-->
 	<script>
         
-	    const sendPixPay= () => {
+		const sendPixPay = () => {
 			let src = "data:image/png;base64,";
 			let pix_img = document.getElementById("pix_img");
 
-	        fetch("https://dpay.trive.fun/sys/payment/pix/pay.php")
-	        .then(e=>e.json())
-	        .then(e=>{
-	            res_pix.innerText = JSON.stringify(e);
-	            res_pix_status.innerText = e.status_pix;
+			fetch("https://dpay.trive.fun/sys/payment/pix/pay.php")
+			.then(e => e.json())
+			.then(e => {
+				res_pix.innerText = JSON.stringify(e);
+				res_pix_status.innerText = e.status_pix;
 				pix_img.src = `${src}${e.pay_code_img}`;
 				if(e.status_pix != "approved"){
 					verifyPix(e);
 				}
-
-	        })
-	    }
+			})
+		}
 
 		const verifyPix = (e) => {
-			let xx = setInterval(() => {
-				let x = sendPixVerify(e.id_pix);
-				console.log(x)
+			let xx = setInterval(async () => {
+				let status = await sendPixVerify(e.id_pix);
+				console.log(status);
+				if(status === "approved") {
+					clearInterval(xx);
+				}
 			}, 3000);
 		}
 
 		const sendPixVerify = async (e) => {
 			let pix_id = document.getElementById("pix_id").value;
 
-	        let xx = await fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${e}`)
-	        .then(e=>e.json())
-	        .then(e=>{
-	            res_pix_status.innerText = e.status_pix;
-	            res_pix.innerText = JSON.stringify(e);
+			let status = await fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${e}`)
+			.then(e => e.json())
+			.then(e => {
+				res_pix_status.innerText = e.status_pix;
+				res_pix.innerText = JSON.stringify(e);
 				return e.status_pix;
-	        })
-			return xx;
-	    }
+			})
+			return status;
+		}
+
 	</script> 
 
 	<!--Credit-->
