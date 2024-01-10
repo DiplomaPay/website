@@ -211,7 +211,7 @@
 				if(status === "approved") {
 					clearInterval(xx);
 				}
-			}, 3000);
+			}, 5000);
 		}
 
 		const sendPixVerify = async (e) => {

@@ -5,7 +5,7 @@ header('Content-Type: application/json; charset=utf-8');
 
 $curl = curl_init();
 
-$ammount = 1.00;
+$ammount = 0.01;
 
 $data = array(
     'transaction_amount' => $ammount,
