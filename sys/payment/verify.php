@@ -27,9 +27,9 @@ $res = json_decode($response);
 curl_close($curl);
 
 $status = $res->status;
+$pay_id = $res->id;
 
-
-mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'");
+mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'") or array(response => true, message => "Erro ao atualizar bd.", status_pix => "Erro ao atualizar bd", id_pix => $pay_id);;
 
 $obj = array(response => true, message => "Pagamento atualizado.", status_pix => "$status", id_pix => $pay_id);
 
