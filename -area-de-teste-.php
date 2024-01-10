@@ -215,8 +215,6 @@
 		}
 
 		const sendPixVerify = async (e) => {
-			let pix_id = document.getElementById("pix_id").value;
-
 			let status = await fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${e}`)
 			.then(e => e.json())
 			.then(e => {
