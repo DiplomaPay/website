@@ -187,21 +187,28 @@
 	
     <!--Pix	-->
 	<script>
+
+		let blocked = false;
         
 		const sendPixPay = () => {
 			let src = "data:image/png;base64,";
 			let pix_img = document.getElementById("pix_img");
 
-			fetch("https://dpay.trive.fun/sys/payment/pix/pay.php")
-			.then(e => e.json())
-			.then(e => {
-				res_pix.innerText = JSON.stringify(e);
-				res_pix_status.innerText = e.status_pix;
-				pix_img.src = `${src}${e.pay_code_img}`;
-				if(e.status_pix != "approved"){
-					verifyPix(e);
-				}
-			})
+			if(!blocked){
+				blocked = true;
+				fetch("https://dpay.trive.fun/sys/payment/pix/pay.php")
+				.then(e => e.json())
+				.then(e => {
+					res_pix.innerText = JSON.stringify(e);
+					res_pix_status.innerText = e.status_pix;
+					pix_img.src = `${src}${e.pay_code_img}`;
+					if(e.status_pix != "approved"){
+						verifyPix(e);
+					}
+				})
+			} else {
+				alert("Pague primeiro para gerar outro")
+			}
 		}
 
 		const verifyPix = (e) => {
@@ -210,6 +217,7 @@
 				console.log(status);
 				if(status === "approved") {
 					clearInterval(xx);
+					blocked = false;
 				}
 			}, 5000);
 		}
