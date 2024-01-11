@@ -146,6 +146,7 @@
 	
     <!--Change password	-->
 	<script>
+		
         const email_change_password = document.getElementById("email_change_password");
         const code_change_password = document.getElementById("code_change_password");
         const password_change_password = document.getElementById("password_change_password");
@@ -256,6 +257,33 @@
 	        })
 	    }
 	</script>  -->
+
+	<!--Create room-->
+	
+	<hr>
+	<h1>Create room </h1>
+	<input id='room_name' type="text" placeholder="Room name"/>
+	<button onclick="sendCreateRoom()">Create Room</button>
+	<p id='res_create_room'></p>
+	<hr>
+    <!--Create room-->
+	 <script>
+        const room_name = document.getElementById("room_name");
+	    const sendCreateRoom= () => {
+			let data = {
+				room_name: room_name
+			}
+
+	        fetch("https://dpay.trive.fun/sys/room/create.php", {
+	            method: "POST",
+	            body: JSON.stringify(data),
+	        })
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_create_room.innerText = JSON.stringify(e);
+	        })
+	    }
+	</script> 
 
 </body>
 </html>
