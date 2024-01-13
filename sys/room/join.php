@@ -10,3 +10,4 @@ $room_code = $json->room_code;
 
 $room_code = mysqli_real_escape_string($conexao, $room_code);
 
+ 
