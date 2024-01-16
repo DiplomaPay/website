@@ -11,7 +11,6 @@ $ammount = floatval($ammount);
 $ammount = number_format($ammount, 2);
 
 $ammount = mysqli_real_escape_string($conexao, $ammount);
-$assinatura = mysqli_real_escape_string($conexao, $assinatura);
 
 $data = array(
     'transaction_amount' => $ammount,
