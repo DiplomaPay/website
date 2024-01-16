@@ -197,7 +197,12 @@
 
 			if(!blocked){
 				blocked = true;
-				fetch("https://dpay.trive.fun/sys/payment/pix/pay.php")
+				fetch("https://dpay.trive.fun/sys/payment/pix/pay.php",{
+					method: "POST",
+					body: JSON.stringify({
+						value: 0.01
+					})
+				})
 				.then(e => e.json())
 				.then(e => {
 					res_pix.innerText = JSON.stringify(e);
@@ -235,31 +240,6 @@
 		}
 
 	</script> 
-
-	<!--Credit-->
-	
-	<!-- <hr>
-	<h1>Credit (R$1.00) </h1>
-	<button onclick="sendCreditPay()">Pay</button>
-	<p id='res_credit'></p>
-	<hr>
-	 -->
-    <!--Credit-->
-	<!-- <script>
-        
-	    const sendCreditPay= () => {
-
-	        fetch("https://dpay.trive.fun/sys/payment/credit_card/pay.php")
-	        .then(e=>e.json())
-	        .then(e=>{
-	            res_credit.innerText = JSON.stringify(e);
-
-	        })
-	    }
-	</script>  -->
-
-	<!--Create room-->
-	
 	<hr>
 	<h1>Create room </h1>
 	<input id='room_name' type="text" placeholder="Room name"/>
