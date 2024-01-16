@@ -200,7 +200,7 @@
 				fetch("https://dpay.trive.fun/sys/payment/pix/pay.php",{
 					method: "POST",
 					body: JSON.stringify({
-						value: 1
+						value: 0.01
 					})
 				})
 				.then(e => e.json())
