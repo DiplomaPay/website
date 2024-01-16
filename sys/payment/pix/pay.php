@@ -9,8 +9,8 @@ $request = file_get_contents('php://input');
 $json = json_decode($request);
 
 $ammount = $json->value;
-// $ammount = floatval($ammount);
-$ammount = number_format($ammount, 2);
+$ammount = floatval($ammount);
+$ammount = number_format($ammount, 2, '.', '');
 
 // $ammount = mysqli_real_escape_string($conexao, $ammount);
 
