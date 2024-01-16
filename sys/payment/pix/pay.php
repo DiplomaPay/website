@@ -13,6 +13,7 @@ $ammount = int($ammount);
 $ammount = number_format($ammount, 2, '.', '');
 
 $ammount = mysqli_real_escape_string($conexao, $ammount);
+$ammount = int($ammount);
 
 $data = array(
     'transaction_amount' => $ammount,
