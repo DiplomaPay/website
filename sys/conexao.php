@@ -32,14 +32,16 @@ $__URL__ = $_SERVER["HTTP_HOST"];
 
 function cantLog($__EMAIL__){
     if($__EMAIL__){
-        echo "boo";
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode(array(status => 401, response => false, message => "You're logged"));
         exit;
     }
 }
 
 function justLog($__EMAIL__){
     if(!$__EMAIL__){
-        echo "BOO";
+        header('Content-Type: application/json; charset=utf-8');
+        echo json_encode(array(status => 401, response => false, message => "You're not logged in."));
         exit;
     }
 }
