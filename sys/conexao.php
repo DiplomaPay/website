@@ -12,5 +12,4 @@ $__METHOD__ = $_SERVER["REQUEST_METHOD"];
 $__STATUS__ = $_SERVER["REDIRECT_STATUS"];
 $__URL__ = $_SERVER["HTTP_HOST"];
 
-$
 ?>
