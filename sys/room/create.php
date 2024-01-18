@@ -24,23 +24,16 @@ if(!$assinatura or $assinatura != "concordo"){
 }
 
 function generateCode(){
-    $code = uniqid(microtime());
-    $code = substr($code, 0, 6);
-
-    $queryRoom = mysqli_num_rows($conexao, "select * from room where room_code='$code'");
-
-    if(mysqli_num_rows($queryRoom) > 0){
-        return false;
-    }
+    global $conexao;
+    do {
+        $code = bin2hex(random_bytes(3));
+        $queryRoom = mysqli_query($conexao, "SELECT * FROM room WHERE room_code='$code'");
+    } while(mysqli_num_rows($queryRoom) > 0);
 
     return $code;
 }
 
 $randomCode = generateCode();
-
-if(!$randomCode){
-    $randomCode = generateCode();
-}
 
 $checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'") or endCodeError();
 
