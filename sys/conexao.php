@@ -14,7 +14,7 @@ $__URL__ = $_SERVER["HTTP_HOST"];
 
 //IF LOGGED CANT ACCESS
 
-echo $__EMAIL__;
+
 
 function cantLog(){
     if($__EMAIL__ && $__EMAIL__ != ""){
@@ -22,5 +22,5 @@ function cantLog(){
         exit;
     }
 }
-
+echo $__EMAIL__;
 ?>
