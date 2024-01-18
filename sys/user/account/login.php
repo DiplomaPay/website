@@ -62,6 +62,7 @@ $obj = array(status => $__STATUS__, response => true, message => "Success.");
 
 $_SESSION["__EMAIL__"] = $userEmail;
 $_SESSION["__USER__"] = $userName;
+$_SESSION['__PASSWORD__'] = $userPasswordHash;
 
 endCode($obj);
 

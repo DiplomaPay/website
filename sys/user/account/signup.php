@@ -111,6 +111,11 @@ if(!$sendEmail) {
 }
 
 $obj = array(status => $__STATUS__, response => true, message => "Sucess.");
+
+$_SESSION["__EMAIL__"] = $email;
+$_SESSION["__USER__"] = $name;
+$_SESSION['__PASSWORD__'] = $password;
+
 endCode($obj);
 
 function endCode($obj){

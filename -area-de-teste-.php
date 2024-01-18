@@ -251,7 +251,8 @@
         const room_name = document.getElementById("room_name");
 	    const sendCreateRoom= () => {
 			let data = {
-				room_name: room_name
+				room_name: room_name,
+				assinatura: "concordo"
 			}
 
 	        fetch("https://dpay.trive.fun/sys/room/create.php", {
