@@ -25,7 +25,7 @@ if(!$assinatura or $assinatura != "concordo"){
 
 function generateCode(){
     $code = uniqid();
-    $code = substr($uniqueId, 0, 6);
+    $code = substr($code, 0, 6);
 
     $queryRoom = mysqli_num_rows($conexao, "select * from room where room_code='$code'");
 
