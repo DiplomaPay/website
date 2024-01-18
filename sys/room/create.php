@@ -41,6 +41,13 @@ $checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__
 
 $__ID__ = mysqli_fetch_assoc($checkUser)["id"];
 
+$checkMaxRoom = mysqli_query($conexao, "select * from room where creatorid='$__ID__'");
+
+if(mysqli_num_rows($checkMaxRoom) >= 5){
+    $obj = array(status => $__STATUS__, response => false, message => "Você atingiu o número máximo de salas criadas");
+    endCode($obj);
+}
+
 mysqli_query($conexao, "insert into room (creatorid, room_name, room_code) values ('$__ID__', '$room_name', '$randomCode')") or endCodeError();
 mysqli_query($conexao, "insert into join_room (iduser, room_code, typeuser) values ('$__ID__', '$randomCode', 'owner')") or endCodeError();
 
