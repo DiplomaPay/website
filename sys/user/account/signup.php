@@ -1,10 +1,7 @@
 <?php
 include"../../conexao.php";
 
-if($__EMAIL__){
-    echo "nop";
-    exit;
-}
+cantLog($__EMAIL__);
 
 header('Content-Type: application/json; charset=utf-8');
 
