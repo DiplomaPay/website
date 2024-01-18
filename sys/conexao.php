@@ -3,6 +3,12 @@ session_start();
 date_default_timezone_set('America/Sao_Paulo');
 $conexao = mysqli_connect('localhost','u752370168_dpay','Easycodex123','u752370168_dpay') or die ("Atualize a página e tente novamente!");
 
+header('Access-Control-Allow-Origin: *');
+
+header('Access-Control-Allow-Methods: *');
+
+header('Access-Control-Allow-Headers: *');
+
 // USER ACCOUNT
 $__USER__ = $_SESSION["__USER__"];
 $__EMAIL__ = $_SESSION["__EMAIL__"];

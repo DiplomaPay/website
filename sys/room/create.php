@@ -39,11 +39,6 @@ $randomCode = generateCode();
 
 $checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'") or endCodeError();
 
-if(mysqli_num_rows($checkUser) < 1){
-    $obj = array(status => $__STATUS__, response => false, message => "Erro de usuário");
-    endCode($obj);
-};
-
 $__ID__ = mysqli_fetch_assoc($checkUser)["id"];
 
 mysqli_query($conexao, "insert into room (creatorid, room_name, room_code) values ('$__ID__', '$room_name', '$randomCode')") or endCodeError();
