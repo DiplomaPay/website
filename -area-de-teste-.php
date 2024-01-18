@@ -251,7 +251,7 @@
         const room_name = document.getElementById("room_name");
 	    const sendCreateRoom= () => {
 			let data = {
-				room_name: room_name,
+				room_name: room_name.value,
 				assinatura: "concordo"
 			}
 
