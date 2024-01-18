@@ -16,7 +16,8 @@ $__URL__ = $_SERVER["HTTP_HOST"];
 
 function cantLog(){
     if($__EMAIL__ && $__EMAIL__ != ""){
-        return exit;
+        header("Location: ../../");
+        exit;
     }
 }
 
