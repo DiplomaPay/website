@@ -28,11 +28,11 @@ $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 $charactersLength = strlen($characters);
 $randomCode = '';
 
-for ($i = 0; $i < 5; $i++) {
+for ($i = 0; $i < 6; $i++) {
     $randomCode .= $characters[rand(0, $charactersLength - 1)];
 }
 
-$checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'");
+$checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'") or endCodeError();
 
 if(mysqli_num_rows($checkUser) < 1){
     $obj = array(status => $__STATUS__, response => false, message => "Erro de usuário");
@@ -41,7 +41,8 @@ if(mysqli_num_rows($checkUser) < 1){
 
 $__ID__ = mysqli_fetch_assoc($checkUser)["id"];
 
-mysqli_query($conexao, "insert into room (creatorid, room_name, room_code) values ('$__ID__', '$room_name', '$randomCode')");
+mysqli_query($conexao, "insert into room (creatorid, room_name, room_code) values ('$__ID__', '$room_name', '$randomCode')") or endCodeError();
+mysqli_query($conexao, "insert into join_room (iduser, room_code, typeuser) values ('$__ID__', '$randomCode', 'owner')") or endCodeError();
 
 $obj = array(status => $__STATUS__, response => true, message => "Sala criada com sucesso!");
 endCode($obj);
