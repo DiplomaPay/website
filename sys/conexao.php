@@ -30,4 +30,11 @@ function cantLog($__EMAIL__){
         exit;
     }
 }
+
+function justLog($__EMAIL__){
+    if(!$__EMAIL__){
+        echo "BOO";
+        exit;
+    }
+}
 ?>

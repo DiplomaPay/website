@@ -1,7 +1,7 @@
 <?php
 include"../conexao.php";
 
-cantLog($__EMAIL__);
+justLog($__EMAIL__);
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -12,4 +12,3 @@ $room_code = $json->room_code;
 
 $room_code = mysqli_real_escape_string($conexao, $room_code);
 
- 
