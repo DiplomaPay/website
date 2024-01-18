@@ -12,6 +12,7 @@ $_query_ = mysqli_query($conexao, "select * from users where email='$__EMAIL__' 
 
 if(mysqli_num_rows($_query_) < 1){
     session_destroy();
+    session_start();
 
     $__USER__ = $_SESSION["__USER__"];
     $__EMAIL__ = $_SESSION["__EMAIL__"];
