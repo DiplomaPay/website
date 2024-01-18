@@ -23,27 +23,22 @@ if(!$assinatura or $assinatura != "concordo"){
     endCode($obj);
 }
 
-//STEP 5 -> Generate activation code
-$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-$charactersLength = strlen($characters);
-
-
 function generateCode(){
-    $randomCode = uniqid();
-    $randomCode = substr($uniqueId, 0, 6);
+    $code = uniqid();
+    $code = substr($uniqueId, 0, 6);
 
-    $queryRoom = mysqli_num_rows($conexao, "select * from room where room_code='$randomCode'");
+    $queryRoom = mysqli_num_rows($conexao, "select * from room where room_code='$code'");
 
     if(mysqli_num_rows($queryRoom) > 0){
-        return true;
+        return false;
     }
 
-    return false;
+    return $code;
 }
 
 $randomCode = generateCode();
 
-if($randomCode){
+if(!$randomCode){
     $randomCode = generateCode();
 }
 
