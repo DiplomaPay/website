@@ -16,8 +16,7 @@ $__URL__ = $_SERVER["HTTP_HOST"];
 
 function cantLog(){
     if($__EMAIL__ && $__EMAIL__ != ""){
-        echo json_encode(array(status => $__STATUS__, response => false, message => "You're logged"));
-        exit;
+        return exit;
     }
 }
 
