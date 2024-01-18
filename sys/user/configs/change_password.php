@@ -73,14 +73,17 @@ if(mysqli_num_rows($queryLast) > 0){
 $obj = array(status => $__STATUS__, response => false, message => "Verifique os dados e tente novamente.");
 endCode($obj);
 
-function sendMail($conexao, $email){
-    $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    $charactersLength = strlen($characters);
-    $randomCode = '';
+function generateCode(){
+    global $conexao;
+    do {
+        $code = bin2hex(random_bytes(3));
+        $queryRoom = mysqli_query($conexao, "select * from users where set_code='$code'");
+    } while(mysqli_num_rows($queryRoom) > 0);
 
-    for ($i = 0; $i < 5; $i++) {
-        $randomCode .= $characters[rand(0, $charactersLength - 1)];
-    }
+    return $code;
+}
+
+$randomCode = generateCode();
 
     mysqli_query($conexao, "update users set set_code='$randomCode' where email='$email'") or endCodeError();
 

@@ -27,7 +27,7 @@ function generateCode(){
     global $conexao;
     do {
         $code = bin2hex(random_bytes(3));
-        $queryRoom = mysqli_query($conexao, "SELECT * FROM room WHERE room_code='$code'");
+        $queryRoom = mysqli_query($conexao, "select * from room where room_code='$code'");
     } while(mysqli_num_rows($queryRoom) > 0);
 
     return $code;

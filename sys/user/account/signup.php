@@ -60,13 +60,17 @@ if(mysqli_num_rows($queryCheckUserEmail) > 0){
 }
 
 //STEP 5 -> Generate activation code
-$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-$charactersLength = strlen($characters);
-$randomCode = '';
+function generateCode(){
+    global $conexao;
+    do {
+        $code = bin2hex(random_bytes(3));
+        $queryRoom = mysqli_query($conexao, "select * from users where set_code='$code'");
+    } while(mysqli_num_rows($queryRoom) > 0);
 
-for ($i = 0; $i < 5; $i++) {
-    $randomCode .= $characters[rand(0, $charactersLength - 1)];
+    return $code;
 }
+
+$randomCode = generateCode();
 
 //STEP 6 -> Register user
 $time = time();
