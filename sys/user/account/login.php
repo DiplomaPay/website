@@ -1,7 +1,9 @@
 <?php
 include"../../conexao.php";
 
-cantLog();
+if($__EMAIL__){
+    exit;
+}
 
 header('Content-Type: application/json; charset=utf-8');
 

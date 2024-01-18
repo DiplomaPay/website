@@ -12,13 +12,4 @@ $__METHOD__ = $_SERVER["REQUEST_METHOD"];
 $__STATUS__ = $_SERVER["REDIRECT_STATUS"];
 $__URL__ = $_SERVER["HTTP_HOST"];
 
-//IF LOGGED CANT ACCESS
-
-function cantLog(){
-    echo $__EMAIL__;
-    if($__EMAIL__ && $__EMAIL__ != ""){
-        header("Location: ../../");
-        exit;
-    }
-}
 ?>
