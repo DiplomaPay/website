@@ -1,6 +1,8 @@
 <?php
 include"../../conexao.php";
 
+cantLog();
+
 header('Content-Type: application/json; charset=utf-8');
 
 $request = file_get_contents('php://input');

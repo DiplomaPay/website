@@ -1,6 +1,8 @@
 <?php
 include"../../conexao.php";
 
+cantLog();
+
 header('Content-Type: application/json; charset=utf-8');
 
 $request = file_get_contents('php://input');
@@ -34,6 +36,7 @@ if(mysqli_num_rows($queryUserByEmail) < 1){
 $userFullData = mysqli_fetch_assoc($queryUserByEmail);
 
 $userEmail = $userFullData['email'];
+$userName = $userFullData['full_name'];
 $userPasswordHash = $userFullData['password'];
 $userActive = $userFullData['active'];
 
@@ -56,6 +59,10 @@ mysqli_query($conexao, "update users set last_login='$time' where email='$userEm
 
 // STEP 7 -> Sucess auth
 $obj = array(status => $__STATUS__, response => true, message => "Success.");
+
+$_SESSION["__EMAIL__"] = $userEmail;
+$_SESSION["__USER__"] = $userName;
+
 endCode($obj);
 
 
