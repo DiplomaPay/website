@@ -26,7 +26,7 @@ if(!$assinatura or $assinatura != "concordo"){
 //STEP 5 -> Generate activation code
 $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 $charactersLength = strlen($characters);
-$randomCode = "";
+
 
 function generateCode(){
     $randomCode = uniqid();
@@ -41,8 +41,10 @@ function generateCode(){
     return false;
 }
 
-if(generateCode()){
-    generateCode();
+$randomCode = generateCode();
+
+if($randomCode){
+    $randomCode = generateCode();
 }
 
 $checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'") or endCodeError();
