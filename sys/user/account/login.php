@@ -2,6 +2,7 @@
 include"../../conexao.php";
 
 if($__EMAIL__){
+    echo "nop";
     exit;
 }
 
