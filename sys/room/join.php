@@ -31,6 +31,15 @@ if(mysqli_num_rows($queryRoomUser) > 0){
     endCode($obj);
 }
 
+$checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'") or endCodeError();
+
+if(mysqli_num_rows($checkUser) < 1){
+    $obj = array(status => $__STATUS__, response => false, message => "Logue para continuar");
+    endCode($obj);
+}
+
+$__ID__ = mysqli_fetch_assoc($checkUser)["id"];
+
 mysqli_query($conexao, "insert into join_room (iduser, room_code) values ('$__ID__', '$room_code')");
 
 $obj = array(status => $__STATUS__, response => true, message => "Entrou na sala com sucesso!");
