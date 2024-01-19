@@ -59,6 +59,41 @@ $pay_code_img = $res->point_of_interaction->transaction_data->qr_code_base64;
 if($pay_code){
   mysqli_query($conexao, "insert into payment_pix (status, iduser, pay_id, pay_code, ammount) values ('$status', '$__ID__','$pay_id','$pay_code','$ammount')");
 
+  //STEP 7 -> SEND EMAIL
+  $to = $__EMAIL__;
+  $subject = "Pagamento pix gerado - #$pay_id";
+
+  $img = "https://chart.apis.google.com/chart?cht=qr&chl=$pay_code&chs=150x150";
+  $message = "
+  <html>
+      <head>
+          <title>Pagamento pix gerado - #$pay_id</title>
+          <style>
+              body { font-family: Arial, sans-serif; }
+          </style>
+      </head>
+      <body>
+          <div style='background-color:#269C72; color:white; text-align:center; padding: 5px; border-radius: 5px'>
+              <h2 style='color:white;'>DiplomaPay</h2>
+          </div>
+          <div style='text-align:center; padding: 5px'>
+              <h1 style='color:black;'>Pagamento pix gerado - #$pay_id</h1>
+              <img src='$img'/>
+              <p style='color:black; font-size: 12px'>$pay_code</p>
+              <p style='color:black; font-size: 12px'>Todos os direitos reservados - DiplomaPay 2024</p>
+          </div>
+      </body>
+  </html>
+  ";
+
+  $headers[] = 'MIME-Version: 1.0';
+  $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+  $headers[] = 'From: contato@dpay.trive.fun';
+  $headers[] = 'Reply-To: contato@dpay.trive.fun';
+  $headers[] = 'X-Mailer: PHP/' . phpversion();
+
+  $sendEmail = mail($to, $subject, $message, implode("\r\n", $headers));
+
   $obj = array(response => true, message => "Pagamento pendente.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount, pay_code_img => "$pay_code_img");
   echo json_encode($obj);
   exit;
