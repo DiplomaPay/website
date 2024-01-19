@@ -3,7 +3,7 @@ include"../conexao.php";
 
 $queryPendings = mysqli_query($conexao, "select * from payment_pix where status='pending'");
 
-$idPendings = array();
+$idPendings = array(70901316212);
 
 while($dados = mysqli_fetch_array($queryPendings)){
     $idPay = $dados['pay_id'];
