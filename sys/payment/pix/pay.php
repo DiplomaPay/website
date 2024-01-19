@@ -61,6 +61,7 @@ if($pay_code){
 
   $obj = array(response => true, message => "Pagamento pendente.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount, pay_code_img => "$pay_code_img");
   echo json_encode($obj);
+  exit;
 }
 
 $obj = array(response => false, message => "Erro ao gerar pix.");
