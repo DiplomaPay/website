@@ -48,6 +48,13 @@ if(mysqli_num_rows($checkMaxRoom) >= 5){
     endCode($obj);
 }
 
+$checkRoomName = mysqli_query($conexao, "select * from room where creatorid='$__ID__' and room_name='$room_name'");
+
+if(mysqli_num_rows($checkRoomName) > 0){
+    $obj = array(status => $__STATUS__, response => false, message => "Você já criou uma sala com esse nome");
+    endCode($obj);
+}
+
 mysqli_query($conexao, "insert into room (creatorid, room_name, room_code) values ('$__ID__', '$room_name', '$randomCode')") or endCodeError();
 mysqli_query($conexao, "insert into join_room (iduser, room_code, typeuser) values ('$__ID__', '$randomCode', 'owner')") or endCodeError();
 
