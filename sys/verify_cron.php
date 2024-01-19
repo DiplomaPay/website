@@ -1,9 +1,9 @@
 <?php
-include"../conexao.php";
+include"./conexao.php";
 
-$queryPendings = mysqli_query($conexao, "select * from payment_pix where status='pending'");
+$queryPendings = mysqli_query($conexao, "select * from payment_pix where status='pending'") or die("Erro ao procurar dados");
 
-$idPendings = array(70901316212);
+$idPendings = array();
 
 while($dados = mysqli_fetch_array($queryPendings)){
     $idPay = $dados['pay_id'];
@@ -40,7 +40,7 @@ for($i = 0; $i < count($idPendings); $i++){
     $status_res = $status == "approved" ? true : false;
 
     if($status_res){
-        $q = mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'");
+        $q = mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'") or die("erro ao atualizar $status");
     }
     sleep(5);
 }
