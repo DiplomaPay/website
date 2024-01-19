@@ -35,11 +35,11 @@
           </div>
           <div class="field">
             <div class="label">CPF</div>
-            <input type="number" name="000.000.000-00" id="">
+            <input type="number" placeholder="000.000.000-00" id="">
           </div>
           <div class="field">
             <div class="label">Email</div>
-            <input type="text" name="fulano@gmail.com" id="">
+            <input type="text" placeholder="fulano@gmail.com" id="">
           </div>
 
           <div class="field  btns">
@@ -54,11 +54,11 @@
           </div>
           <div class="field">
             <div class="label">Senha</div>
-            <input type="password" name="*********" id="">
+            <input type="password" placeholder="*********" id="">
           </div>
           <div class="field">
             <div class="label">Confirmar Senha</div>
-            <input type="password" name="*********" id="">
+            <input type="password" placeholder="*********" id="">
           </div>
 
           <div class="field  btns">
