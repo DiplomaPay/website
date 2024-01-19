@@ -59,7 +59,7 @@ input::placeholder{
     border-radius: 5px;
     background-color: var(--verde);
     padding: 1.7vh 0;
-    width: 14.8vw;
+    width: 100%;
     border:none;
     color: var(--branco);
     font-size: 0.9vw;
@@ -133,9 +133,9 @@ button:hover{
     gap: 0.5vw
 }
 
-.codigo div{
-    width: 1.5vw;
-    height: 4vh;
+.codigo input{
+    width: 1vw;
+    height: 3vh;
     border-radius: 5px;
     border: 2px solid var(--verdeClaro);
     opacity: 70%;
