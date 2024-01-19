@@ -1,8 +1,6 @@
 <?php
 include"../conexao.php";
 
-header('Content-Type: application/json; charset=utf-8');
-
 $queryPendings = mysqli_query($conexao, "select * from payment_pix where status='pending'");
 
 $idPendings = array();
@@ -43,8 +41,9 @@ for($i = 0; $i < count($idPendings); $i++){
     if($status_res){
         $q = mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'");
     }
-
+    sleep(5);
 }
 
+echo json_encode($idPendings);
 
 
