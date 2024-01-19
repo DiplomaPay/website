@@ -79,6 +79,8 @@ if($pay_code){
           <div style='text-align:center; padding: 5px'>
               <h1 style='color:black;'>Pagamento pix gerado - #$pay_id</h1>
               <img src='$img'/>
+              <h5 style='color:black;'>Seu pagamento será verificado automaticamente ao entrar no painel de controle</h5>
+              <a href='https://dpay.trive.fun/p/dashboard.php'>Acessar painel</a>
               <p style='color:black; font-size: 12px'>$pay_code</p>
               <p style='color:black; font-size: 12px'>Todos os direitos reservados - DiplomaPay 2024</p>
           </div>
