@@ -54,4 +54,3 @@ prevBtnFourth.addEventListener("click", function(){
   progress.style.display = "flex"
   container.style.height = "40vh"
 })
-

@@ -38,7 +38,7 @@ input{
     border-radius: 5px;
     padding: 1.5vh 0.5vw;
     margin-bottom: 2.5vh;
-    width: 13.8vw;
+    width: 13.5vw;
     color: var(--cinza);
     font-size: 1vw;
 }
@@ -59,7 +59,7 @@ input::placeholder{
     border-radius: 5px;
     background-color: var(--verde);
     padding: 1.7vh 0;
-    width: 15vw;
+    width: 14.8vw;
     border:none;
     color: var(--branco);
     font-size: 0.9vw;
