@@ -1,6 +1,8 @@
 <?php
 include"../../conexao.php";
 
+justLog($__EMAIL__);
+
 header('Content-Type: application/json; charset=utf-8');
 
 $curl = curl_init();
