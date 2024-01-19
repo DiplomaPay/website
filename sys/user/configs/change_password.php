@@ -64,6 +64,32 @@ if(mysqli_num_rows($queryLast) > 0){
 
     if($queryFinal){
         $obj = array(status => $__STATUS__, response => true, message => "Senha alterada com sucesso.");
+
+        $to = $email;
+        $subject = "Sua senha foi alterada";
+        $message = "
+        <html>
+            <head>
+                <title>Sua senha foi alterada</title>
+                <style>
+                    body { font-family: Arial, sans-serif; }
+                </style>
+            </head>
+            <body>
+                <div style='background-color:#269C72; color:white; text-align:center; padding: 5px; border-radius: 5px'>
+                    <h2 style='color:white;'>DiplomaPay</h2>
+                </div>
+                <div style='text-align:center; padding: 5px'>
+                    <h1 style='color:black;'>Sua senha foi alterada com sucesso!</h1>
+                    <p style='color:black; font-size: 12px'>$password</p>
+                    <p style='color:black; font-size: 12px'>Todos os direitos reservados - DiplomaPay 2024</p>
+                </div>
+            </body>
+        </html>
+        ";
+
+        $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
+
         endCode($obj);  
     }
 
