@@ -35,11 +35,11 @@ $__URL__ = $_SERVER["HTTP_HOST"];
 $__CODE__ = bin2hex(random_bytes(3)).bin2hex(random_bytes(3));
 
 
-global $__HEADERS__[] = 'MIME-Version: 1.0';
-global $__HEADERS__[] = 'Content-type: text/html; charset=iso-8859-1';
-global $__HEADERS__[] = "From: DiplomaPay <contato_$__CODE__@dpay.trive.fun>";
-global $__HEADERS__[] = "Reply-To: noreply_$__CODE__@dpay.trive.fun";
-global $__HEADERS__[] = 'X-Mailer: PHP/' . phpversion();
+$__HEADERS__[] = 'MIME-Version: 1.0';
+$__HEADERS__[] = 'Content-type: text/html; charset=iso-8859-1';
+$__HEADERS__[] = "From: DiplomaPay <contato_$__CODE__@dpay.trive.fun>";
+$__HEADERS__[] = "Reply-To: noreply_$__CODE__@dpay.trive.fun";
+$__HEADERS__[] = 'X-Mailer: PHP/' . phpversion();
 
 // FUNCTIONS 
 

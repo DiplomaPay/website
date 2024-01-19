@@ -2,8 +2,6 @@
 include"../../conexao.php";
 header('Content-Type: application/json; charset=utf-8');
 
-// ini_set('display_errors','On');
-//     error_reporting(E_ALL);
 
 $request = file_get_contents('php://input');
 $json = json_decode($request);
@@ -31,7 +29,7 @@ if($email and !$code){
     $queryEmail = mysqli_query($conexao, "select * from users where email='$email'") or endCodeError();
 
     if(mysqli_num_rows($queryEmail) > 0){
-        sendMail($conexao, $email);
+        sendMail($conexao, $email, $__HEADERS__);
         $obj = array(status => $__STATUS__, response => true, message => "Código de recuperação enviado.");
         endCode($obj);
     };
@@ -76,7 +74,7 @@ if(mysqli_num_rows($queryLast) > 0){
 $obj = array(status => $__STATUS__, response => false, message => "Verifique os dados e tente novamente.");
 endCode($obj);
 
-function sendMail($conexao, $email){
+function sendMail($conexao, $email, $__HEADERS__){
     function generateCode(){
         global $conexao;
         do {
