@@ -1,15 +1,16 @@
 <?php
 include"../conexao.php";
 
-header('Content-Type: application/json; charset=utf-8');
-
 $queryPendings = mysqli_query($conexao, "select * from payment_pix where status='pending'");
 
 $idPendings = array();
 
 while($dados = mysqli_fetch_array($queryPendings)){
+    array_push($idPendings, $dados['pay_id']);
+}
 
-    $pay_id  = $dados['pay_id'];
+for($i = 0; $i < count($idPendings); $i++){
+    $pay_id  = $idPendings[$i];
 
     $curl = curl_init();
 
@@ -41,7 +42,6 @@ while($dados = mysqli_fetch_array($queryPendings)){
         $q = mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'");
     }
 
-    sleep(3);
 }
 
 
