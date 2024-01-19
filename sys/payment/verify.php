@@ -64,6 +64,12 @@ if($status_res){
   ";
 
   $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
+
+  if(!$sendEmail) {
+    $obj = array(status => $__STATUS__, response => false, message => "Falha ao enviar email, tente novamente.");
+    echo json_encode($obj);
+    exit;
+  }
 }
 
 $status_res = $status == "approved" ? true : false;

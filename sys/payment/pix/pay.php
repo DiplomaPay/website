@@ -89,6 +89,12 @@ if($pay_code){
 
   $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 
+  if(!$sendEmail) {
+    $obj = array(status => $__STATUS__, response => false, message => "Falha ao enviar email, tente novamente.");
+    echo json_encode($obj);
+    exit;
+  }
+
   $obj = array(response => true, message => "Pagamento pendente.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount, pay_code_img => "$pay_code_img");
   echo json_encode($obj);
   exit;

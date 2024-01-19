@@ -112,10 +112,10 @@ function sendMail($conexao, $email){
 
     $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 
-    // if(!$sendEmail) {
-    //     $obj = array(status => $__STATUS__, response => false, message => "Falha ao enviar email, tente novamente.");
-    //     endCode($obj);
-    // }
+    if(!$sendEmail) {
+        $obj = array(status => $__STATUS__, response => false, message => "Falha ao enviar email, tente novamente.");
+        endCode($obj);
+    }
 }
 
 function endCode($obj){
