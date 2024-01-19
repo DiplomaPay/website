@@ -32,7 +32,7 @@ $__URL__ = $_SERVER["HTTP_HOST"];
 
 // EMAIL SERVICE
 
-$__CODE__ = substr(uniqid(), 0, 2);
+$__CODE__ = substr(bin2hex(random_bytes(3)));
 
 
 $__HEADERS__[] = 'MIME-Version: 1.0';
