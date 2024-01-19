@@ -291,5 +291,24 @@
 	    }
 	</script> 
 
+	<h1>Limpar todos os dados do BD</h1>
+	<button onclick="cleanbd('users')">Limpar usuarios</button>
+	<button onclick="cleanbd('room')">Limpar salas</button>
+	<button onclick="cleanbd('join_room')">Salas entradas</button>
+	<button onclick="cleanbd('payment_pix')">Limpar pagamentos pix</button>
+	<p id='cleanbd'></p>
+	<hr>
+    <!--join room-->
+	 <script>
+	    const cleanbd= (e) => {
+
+	        fetch("https://dpay.trive.fun/sys/cleanbd.php?name="+e)
+	        .then(e=>e.json())
+	        .then(e=>{
+	            cleanbd.innerText = JSON.stringify(e);
+	        })
+	    }
+	</script> 
+
 </body>
 </html>
