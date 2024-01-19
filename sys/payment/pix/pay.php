@@ -21,7 +21,7 @@ $data = array(
     'description' => "[R:0][U:$__ID__] - Produto pix",
     'payment_method_id' => "pix",
     'payer' => [
-      'email' => "$__EMAIL__",
+      'email' => "e-$__EMAIL__",
       'first_name' => "$__USER__",
     ]
 );
