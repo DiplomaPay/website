@@ -241,6 +241,7 @@
 
 	</script> 
 	<hr>
+
 	<h1>Create room </h1>
 	<input id='room_name' type="text" placeholder="Room name"/>
 	<button onclick="sendCreateRoom()">Create Room</button>
@@ -262,6 +263,30 @@
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_create_room.innerText = JSON.stringify(e);
+	        })
+	    }
+	</script> 
+
+<h1>join room </h1>
+	<input id='join_room_name' type="text" placeholder="Room code"/>
+	<button onclick="sendjoinRoom()">join Room</button>
+	<p id='res_join_room'></p>
+	<hr>
+    <!--join room-->
+	 <script>
+        const room_name = document.getElementById("join_room_name");
+	    const sendCreateRoom= () => {
+			let data = {
+				room_code: join_room_name.value,
+			}
+
+	        fetch("https://dpay.trive.fun/sys/room/join.php", {
+	            method: "POST",
+	            body: JSON.stringify(data),
+	        })
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_join_room.innerText = JSON.stringify(e);
 	        })
 	    }
 	</script> 
