@@ -18,12 +18,12 @@ $ammount = $json->value;
 
 $data = array(
     'transaction_amount' => $ammount,
-    'description' => "Teste produto",
+    'description' => "[0][$__ID__] - R:U - Produto pix",
     'payment_method_id' => "pix",
     'payer' => [
       'email' => "$__EMAIL__",
       'first_name' => "$__USER__",
-      'second_name' => " - $__ID__",
+      'second_name' => "user",
     ]
 );
 
