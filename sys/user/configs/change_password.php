@@ -2,6 +2,9 @@
 include"../../conexao.php";
 header('Content-Type: application/json; charset=utf-8');
 
+ini_set('display_errors','On');
+    error_reporting(E_ALL);
+
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
@@ -110,13 +113,7 @@ function sendMail($conexao, $email){
     </html>
     ";
 
-    $headers[] = 'MIME-Version: 1.0';
-    $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-    $headers[] = 'From: contatoasdsad@dpay.trive.fun';
-    $headers[] = 'Reply-To: contato@dpay.trive.fun';
-    $headers[] = 'X-Mailer: PHP/' . phpversion();
-
-    $sendEmail = mail($to, $subject, $message, implode("\r\n", $headers));
+    $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 
     if(!$sendEmail) {
         $obj = array(status => $__STATUS__, response => false, message => "Falha ao enviar email, tente novamente.");
