@@ -274,7 +274,7 @@
 	<hr>
     <!--join room-->
 	 <script>
-        const room_name = document.getElementById("join_room_name");
+        const join_room_name = document.getElementById("join_room_name");
 	    const sendjoinRoom= () => {
 			let data = {
 				room_code: join_room_name.value,
