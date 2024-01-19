@@ -30,6 +30,18 @@ $__METHOD__ = $_SERVER["REQUEST_METHOD"];
 $__STATUS__ = $_SERVER["REDIRECT_STATUS"];
 $__URL__ = $_SERVER["HTTP_HOST"];
 
+// EMAIL SERVICE
+
+$__CODE__ = bin2hex(random_bytes(3));
+
+$__HEADERS__[] = 'MIME-Version: 1.0';
+$__HEADERS__[] = 'Content-type: text/html; charset=iso-8859-1';
+$__HEADERS__[] = "From: contato_$__CODE__@dpay.trive.fun";
+$__HEADERS__[] = "Reply-To: noreply_$__CODE__@dpay.trive.fun";
+$__HEADERS__[] = 'X-Mailer: PHP/' . phpversion();
+
+// FUNCTIONS 
+
 function cantLog($__EMAIL__){
     if($__EMAIL__){
         header('Content-Type: application/json; charset=utf-8');

@@ -110,13 +110,7 @@ function sendMail($conexao, $email){
     </html>
     ";
 
-    $headers[] = 'MIME-Version: 1.0';
-    $headers[] = 'Content-type: text/html; charset=iso-8859-1';
-    $headers[] = 'From: contato@dpay.trive.fun';
-    $headers[] = 'Reply-To: contato@dpay.trive.fun';
-    $headers[] = 'X-Mailer: PHP/' . phpversion();
-
-    $sendEmail = mail($to, $subject, $message, implode("\r\n", $headers));
+    $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 
     if(!$sendEmail) {
         $obj = array(status => $__STATUS__, response => false, message => "Falha ao enviar email, tente novamente.");

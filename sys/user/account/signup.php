@@ -101,13 +101,7 @@ $message = "
 </html>
 ";
 
-$headers[] = 'MIME-Version: 1.0';
-$headers[] = 'Content-type: text/html; charset=iso-8859-1';
-$headers[] = 'From: contatos@dpay.trive.fun';
-$headers[] = 'Reply-To: contatos@dpay.trive.fun';
-$headers[] = 'X-Mailer: PHP/' . phpversion();
-
-$sendEmail = mail($to, $subject, $message, implode("\r\n", $headers));
+$sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 
 if(!$sendEmail) {
     $obj = array(status => $__STATUS__, email=>$sendEmail ,response => false, message => "Falha ao enviar email, clique para reenviar.");
