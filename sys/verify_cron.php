@@ -51,7 +51,7 @@ if(mysqli_num_rows($queryPendings) > 0){
                 $email = mysqli_fetch_assoc($queryUser)['email'];
 
                 $to = $email;
-                $subject = "Pagamento pix gerado - #$pay_id";
+                $subject = "Pagamento confirmado - #$pay_id";
 
                 $img = "https://chart.apis.google.com/chart?cht=qr&chl=$pay_code&chs=150x150";
                 $message = "
