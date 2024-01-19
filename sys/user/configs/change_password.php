@@ -2,8 +2,8 @@
 include"../../conexao.php";
 header('Content-Type: application/json; charset=utf-8');
 
-ini_set('display_errors','On');
-    error_reporting(E_ALL);
+// ini_set('display_errors','On');
+//     error_reporting(E_ALL);
 
 $request = file_get_contents('php://input');
 $json = json_decode($request);
