@@ -32,11 +32,12 @@ $__URL__ = $_SERVER["HTTP_HOST"];
 
 // EMAIL SERVICE
 
-$__CODE__ = bin2hex(random_bytes(2));
+$__CODE__ = substr(uniqid(), 0, 3);
+
 
 $__HEADERS__[] = 'MIME-Version: 1.0';
 $__HEADERS__[] = 'Content-type: text/html; charset=iso-8859-1';
-$__HEADERS__[] = "From: DiplomaPay <contato_$__CODE__@dpay.trive.fun>";
+$__HEADERS__[] = "From: DiplomaPay $__CODE__ <contato_$__CODE__@dpay.trive.fun>";
 $__HEADERS__[] = "Reply-To: noreply_$__CODE__@dpay.trive.fun";
 $__HEADERS__[] = 'X-Mailer: PHP/' . phpversion();
 
