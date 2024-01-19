@@ -101,6 +101,7 @@ $message = "
 </html>
 ";
 
+
 $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 
 if(!$sendEmail) {
