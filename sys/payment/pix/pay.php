@@ -17,9 +17,8 @@ $data = array(
     'description' => "Teste produto",
     'payment_method_id' => "pix",
     'payer' => [
-      'email' => "fulano@gmail.com",
-      'first_name' => "Fulano",
-      'last_name' => "Ciclano",
+      'email' => "$__EMAIL__",
+      'first_name' => "$__USER__",
     ]
 );
 
