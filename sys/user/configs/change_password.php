@@ -88,11 +88,11 @@ function sendMail($conexao, $email){
     mysqli_query($conexao, "update users set set_code='$randomCode' where email='$email'") or endCodeError();
 
     $to = $email;
-    $subject = "Seu código de recuperação é $randomCode";
+    $subject = "Seu código de verificação é $randomCode";
     $message = "
     <html>
         <head>
-            <title>Seu código de recuperação é $randomCode</title>
+            <title>Seu código de verificação é $randomCode</title>
             <style>
                 body { font-family: Arial, sans-serif; }
             </style>
@@ -102,14 +102,15 @@ function sendMail($conexao, $email){
                 <h2 style='color:white;'>DiplomaPay</h2>
             </div>
             <div style='text-align:center; padding: 5px'>
-                <p style='color:black;'>Seu código de recuperação é</p>
+                <p style='color:black;'>Seu código de verificação é</p>
                 <h1 style='color:black;'>$randomCode</h1>
                 <p style='color:black; font-size: 12px'>Todos os direitos reservados - DiplomaPay 2024</p>
             </div>
         </body>
     </html>
     ";
-
+    
+    
     $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 
     if(!$sendEmail) {
