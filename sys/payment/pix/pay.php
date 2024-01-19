@@ -23,6 +23,7 @@ $data = array(
     'payer' => [
       'email' => "$__EMAIL__",
       'first_name' => "$__USER__",
+      'second_name' => "",
     ]
 );
 
