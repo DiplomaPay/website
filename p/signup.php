@@ -20,7 +20,7 @@
           </div>
           <div class="field">
             <div class="label">Nome Completo</div>
-            <input type="text" name="" id="" placeholder="Fulano da Silva">
+            <input type="text" name="nome" id="" placeholder="Fulano da Silva">
           </div>
 
           <div class="field">
@@ -35,8 +35,7 @@
           </div>
           <div class="field">
             <div class="label">CPF</div>
-            <input type="number" placeholder="000.000.000-00" id="">
-          </div>
+            <input type="text" placeholder="000.000.000-00" id="cpf" inputmode="numeric" maxlength="14">          </div>
           <div class="field">
             <div class="label">Email</div>
             <input type="text" placeholder="fulano@gmail.com" id="">
@@ -77,11 +76,11 @@
                 <p class="email">exemplo@gmail.com</p>
             </div>
             <div class="codigo">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
+            <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="1">
+            <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="1">
+            <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="1">
+            <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="1">
+            <input type="text" inputmode="numeric" pattern="[0-9]" maxlength="1">
             </div>
           </div>
 
