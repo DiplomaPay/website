@@ -3,6 +3,10 @@ include"../../conexao.php";
 
 justLog($__EMAIL__);
 
+$checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'") or endCodeError();
+
+$__ID__ = mysqli_fetch_assoc($checkUser)["id"];
+
 header('Content-Type: application/json; charset=utf-8');
 
 $curl = curl_init();
@@ -52,7 +56,7 @@ $status = $res->status;
 $pay_code = $res->point_of_interaction->transaction_data->qr_code;
 $pay_code_img = $res->point_of_interaction->transaction_data->qr_code_base64;
 
-mysqli_query($conexao, "insert into payment_pix (status, pay_id, pay_code, ammount) values ('$status','$pay_id','$pay_code','$ammount')");
+mysqli_query($conexao, "insert into payment_pix (status, iduser, pay_id, pay_code, ammount) values ('$status', '$__ID__','$pay_id','$pay_code','$ammount')");
 
 $obj = array(response => true, message => "Pagamento pendente.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount, pay_code_img => "$pay_code_img");
 
