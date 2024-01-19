@@ -56,8 +56,13 @@ $status = $res->status;
 $pay_code = $res->point_of_interaction->transaction_data->qr_code;
 $pay_code_img = $res->point_of_interaction->transaction_data->qr_code_base64;
 
-mysqli_query($conexao, "insert into payment_pix (status, iduser, pay_id, pay_code, ammount) values ('$status', '$__ID__','$pay_id','$pay_code','$ammount')");
+if($pay_code){
+  mysqli_query($conexao, "insert into payment_pix (status, iduser, pay_id, pay_code, ammount) values ('$status', '$__ID__','$pay_id','$pay_code','$ammount')");
 
-$obj = array(response => true, message => "Pagamento pendente.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount, pay_code_img => "$pay_code_img");
+  $obj = array(response => true, message => "Pagamento pendente.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount, pay_code_img => "$pay_code_img");
+  echo json_encode($obj);
+}
 
+$obj = array(response => false, message => "Erro ao gerar pix.");
 echo json_encode($obj);
+
