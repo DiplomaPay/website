@@ -86,7 +86,7 @@ if(mysqli_num_rows($queryPendings) > 0){
 
             $q = mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'") or die("erro ao atualizar $status");
         }
-        sleep(2);
+        sleep(3);
     }
 
     echo json_encode($idPendings);
