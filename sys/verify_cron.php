@@ -1,6 +1,8 @@
 <?php
 include"../conexao.php";
 
+header('Content-Type: application/json; charset=utf-8');
+
 $queryPendings = mysqli_query($conexao, "select * from payment_pix where status='pending'");
 
 $idPendings = array();
