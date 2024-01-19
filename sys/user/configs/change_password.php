@@ -74,14 +74,17 @@ $obj = array(status => $__STATUS__, response => false, message => "Verifique os 
 endCode($obj);
 
 function sendMail($conexao, $email){
-    $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    $charactersLength = strlen($characters);
-    $randomCode = '';
-
-    for ($i = 0; $i < 5; $i++) {
-        $randomCode .= $characters[rand(0, $charactersLength - 1)];
+    function generateCode(){
+        global $conexao;
+        do {
+            $code = bin2hex(random_bytes(3));
+            $queryRoom = mysqli_query($conexao, "select * from users where set_code='$code'");
+        } while(mysqli_num_rows($queryRoom) > 0);
+    
+        return $code;
     }
-
+    
+    $randomCode = generateCode();
     mysqli_query($conexao, "update users set set_code='$randomCode' where email='$email'") or endCodeError();
 
     $to = $email;

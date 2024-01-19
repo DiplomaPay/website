@@ -1,6 +1,8 @@
 <?php
 include"../../conexao.php";
 
+cantLog($__EMAIL__);
+
 header('Content-Type: application/json; charset=utf-8');
 
 $request = file_get_contents('php://input');
@@ -58,13 +60,17 @@ if(mysqli_num_rows($queryCheckUserEmail) > 0){
 }
 
 //STEP 5 -> Generate activation code
-$characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-$charactersLength = strlen($characters);
-$randomCode = '';
+function generateCode(){
+    global $conexao;
+    do {
+        $code = bin2hex(random_bytes(3));
+        $queryRoom = mysqli_query($conexao, "select * from users where set_code='$code'");
+    } while(mysqli_num_rows($queryRoom) > 0);
 
-for ($i = 0; $i < 5; $i++) {
-    $randomCode .= $characters[rand(0, $charactersLength - 1)];
+    return $code;
 }
+
+$randomCode = generateCode();
 
 //STEP 6 -> Register user
 $time = time();
@@ -109,6 +115,11 @@ if(!$sendEmail) {
 }
 
 $obj = array(status => $__STATUS__, response => true, message => "Sucess.");
+
+$_SESSION["__EMAIL__"] = $email;
+$_SESSION["__USER__"] = $name;
+$_SESSION['__PASSWORD__'] = $password;
+
 endCode($obj);
 
 function endCode($obj){
