@@ -31,12 +31,46 @@ curl_close($curl);
 $status = $res->status;
 $pay_id = $res->id;
 
-$q = mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'");
 
-if(!$q){
-  $obj = array(response => false, message => "Pagamento atualizado.", status_pix => "Erro", id_pix => $pay_id);
-  echo json_encode($obj);
-  exit;
+
+
+
+
+if($status_res){
+  $q = mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'") or die("");
+
+  $to = $__EMAIL__;
+  $subject = "Pagamento confirmado - #$pay_id";
+
+  $img = "https://chart.apis.google.com/chart?cht=qr&chl=$pay_code&chs=150x150";
+  $message = "
+  <html>
+      <head>
+          <title>Pagamento confirmado - #$pay_id</title>
+          <style>
+              body { font-family: Arial, sans-serif; }
+          </style>
+      </head>
+      <body>
+          <div style='background-color:#269C72; color:white; text-align:center; padding: 5px; border-radius: 5px'>
+              <h2 style='color:white;'>DiplomaPay</h2>
+          </div>
+          <div style='text-align:center; padding: 5px'>
+              <h1 style='color:black;'>Pagamento confirmado - #$pay_id</h1>
+              <h4 style='color:black;'>Seu pagamento foi confirmado!</h4>
+              <p style='color:black; font-size: 12px'>Todos os direitos reservados - DiplomaPay 2024</p>
+          </div>
+      </body>
+  </html>
+  ";
+
+  $headers[] = 'MIME-Version: 1.0';
+  $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+  $headers[] = 'From: contato@dpay.trive.fun';
+  $headers[] = 'Reply-To: contato@dpay.trive.fun';
+  $headers[] = 'X-Mailer: PHP/' . phpversion();
+
+  $sendEmail = mail($to, $subject, $message, implode("\r\n", $headers));
 }
 
 $status_res = $status == "approved" ? true : false;
