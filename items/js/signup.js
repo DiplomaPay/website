@@ -1,39 +1,57 @@
-function signup() {
-    // Obtenha os valores dos campos de entrada
-    var fullName = document.getElementById("full_name").value;
-    var cpf = document.getElementById("cpf").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
-    var confirmPassword = document.getElementById("confirm_password").value;
-  
-    // Verifique se os campos não estão vazios
-    if (fullName === "" || cpf === "" || email === "" || password === "" || confirmPassword === "") {
-      alert("Por favor, preencha todos os campos.");
-      return;
-    }
-  
-    // Verifique se as senhas coincidem
-    if (password !== confirmPassword) {
-      alert("As senhas não coincidem.");
-      return;
-    }
-  
-    // Simule a requisição assíncrona (pode ser substituída por uma chamada real usando fetch)
-    setTimeout(function() {
-      // Simule a resposta do servidor
-      var response = {
-        signup_status: true,
-        status: true,
-        message: "Cadastro bem-sucedido. Redirecionando para o painel."
-      };
-  
-      // Verifique se o cadastro foi bem-sucedido
-      if (response.signup_status) {
-        alert(response.message);
-        // Redirecione para o painel/dashboard
-        window.location.href = "/dashboard";
-      } else {
-        alert(response.message);
-      }
-    }, 1000); // Simula um atraso de 1 segundo (pode ser removido em uma implementação real)
-  }
+const slidePage = document.querySelector(".slidePage");
+const firstNextBtn = document.querySelector(".nextBtn");
+const container = document.querySelector(".container");
+const prevBtnSec = document.querySelector(".prev-1");
+const nextBtnSec = document.querySelector(".next-1");
+const prevBtnThird = document.querySelector(".prev-2");
+const nextBtnThird = document.querySelector(".next-2");
+const prevBtnFourth = document.querySelector(".prev-3");
+const submit = document.querySelector(".submit");
+const progress = document.querySelector(".progress-bar")
+const two = document.querySelector(".two");
+const three = document.querySelector(".three");
+
+
+firstNextBtn.addEventListener("click", function(){
+  slidePage.style.marginLeft = "-50%";
+  container.style.height = "40vh";
+  two.style.backgroundColor = "var(--verdeClaro)";
+  two.style.color = "var(--branco)";
+  two.style.border = "3px solid var(--branco)";
+})
+
+nextBtnSec.addEventListener("click", function(){
+  slidePage.style.marginLeft = "-100%";
+  three.style.backgroundColor = "var(--verdeClaro)";
+  three.style.color = "var(--branco)";
+  three.style.border = "3px solid var(--branco)";
+})
+
+nextBtnThird.addEventListener("click", function(){
+  slidePage.style.marginLeft = "-150%"
+  progress.style.display = "none"
+  container.style.height = "30vh"
+})
+
+
+prevBtnSec.addEventListener("click", function(){
+  slidePage.style.marginLeft = "0%"
+  container.style.height = "30vh";
+  two.style.backgroundColor = "var(--branco)";
+  two.style.color = "var(--verde)";
+  two.style.border = "3px solid var(--verdeClaro)";
+})
+
+prevBtnThird.addEventListener("click", function(){
+  slidePage.style.marginLeft = "-50%";
+  three.style.backgroundColor = "var(--branco)";
+  three.style.color = "var(--verde)";
+  three.style.border = "3px solid var(--verdeClaro)";
+})
+
+prevBtnFourth.addEventListener("click", function(){
+  slidePage.style.marginLeft = "-100%"
+  progress.style.display = "flex"
+  container.style.height = "40vh"
+})
+
