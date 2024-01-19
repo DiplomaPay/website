@@ -53,7 +53,6 @@ if(mysqli_num_rows($queryPendings) > 0){
                 $to = $email;
                 $subject = "Pagamento confirmado - #$pay_id";
 
-                $img = "https://chart.apis.google.com/chart?cht=qr&chl=$pay_code&chs=150x150";
                 $message = "
                 <html>
                     <head>

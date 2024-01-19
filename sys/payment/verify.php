@@ -42,7 +42,6 @@ if($status_res){
   $to = $__EMAIL__;
   $subject = "Pagamento confirmado - #$pay_id";
 
-  $img = "https://chart.apis.google.com/chart?cht=qr&chl=$pay_code&chs=150x150";
   $message = "
   <html>
       <head>
