@@ -6,7 +6,8 @@ $queryPendings = mysqli_query($conexao, "select * from payment_pix where status=
 $idPendings = array();
 
 while($dados = mysqli_fetch_array($queryPendings)){
-    array_push($idPendings, $dados['pay_id']);
+    $idPay = $dados['pay_id'];
+    array_push($idPendings, $idPay);
 }
 
 for($i = 0; $i < count($idPendings); $i++){
