@@ -64,7 +64,7 @@ if($pay_code){
   $to = $__EMAIL__;
   $subject = "Novo pagamento pix gerado - #$pay_id";
 
-  $img = "https://chart.apis.google.com/chart?cht=qr&chl=$pay_code&chs=150x150";
+  $img = "https://chart.apis.google.com/chart?cht=qr&chl=$pay_code&chs=200x200";
   $message = "
   <html>
       <head>
@@ -79,7 +79,7 @@ if($pay_code){
           </div>
           <div style='text-align:center; padding: 5px'>
               <h1 style='color:black;'>Novo pagamento pix gerado - #$pay_id</h1>
-              <h3 style='color:black;'>R$$pay_ammount</h3>
+              <h2 style='color:black;'>R$$pay_ammount</h2>
               <img src='$img'/>
               <h4 style='color:black;'>Seu pagamento será verificado automaticamente</h4>
               <p style='color:black; font-size: 12px'>$pay_code</p>
