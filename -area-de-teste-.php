@@ -317,7 +317,7 @@
 		myrooms();
 
 		const newPayment = (e) => {
-			sendPixPay(0.10, e);
+			sendPixPay(0.10, Number(e));
 		}
 	</script> 
 
