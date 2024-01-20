@@ -19,8 +19,9 @@ while($dados = mysqli_fetch_array($queryRooms)){
 
     $room_name = $d['room_name'];
     $room_id = $d['id'];
+    $room_code = $d['room_code'];
 
-    $data = array(id=>$room_id, room_name=>$room_name);
+    $data = array(id=>$room_id, room_name=>$room_name, room_code=>$room_code);
 
     array_push($rooms, $data);
 }
