@@ -17,7 +17,7 @@ while($dados = mysqli_fetch_array($queryRooms)){
 
     $queryUniqueRoom = mysqli_query($conexao, "select * from room where room_code='$room_code'");
 
-    $queryValueRoom = mysqli_query($conexao, "select sum(ammount) as total_room from payment_pix where room_code='$room_code'");
+    $queryValueRoom = mysqli_query($conexao, "select sum(ammount) as total_room from payment_pix where room_code='$room_code' and status='approved'");
 
     $ammount_room = mysqli_fetch_assoc($queryValueRoom)["total_room"];
 
