@@ -274,6 +274,7 @@
 				if(status === "approved") {
 					clearInterval(xx);
 					blocked = false;
+					myrooms();
 				}
 			}, 5000);
 		}
@@ -305,7 +306,7 @@
 				console.log(data)
 	            for(let i = 0; i < data.length; i++){
 					myrooms_list.innerHTML += `
-						<div>id: ${data[i].id} - Name: ${data[i].room_name} - Code: ${data[i].room_code} - Usuário: ${data[i].typeuser} <button onclick='newPayment("${data[i].room_code}")'>Novo pagamento R$0.01</button></div>
+						<div>id: ${data[i].id} - Name: ${data[i].room_name} - Code: ${data[i].room_code} - Valor na sala: ${data[i].ammount_room}- Usuário: ${data[i].typeuser} <button onclick='newPayment("${data[i].room_code}")'>Novo pagamento R$0.01</button></div>
 					`;
 				}
 	        })
