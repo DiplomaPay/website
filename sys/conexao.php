@@ -23,6 +23,8 @@ if(mysqli_num_rows($_query_) < 1){
     $__USER__ = $_SESSION["__USER__"];
     $__EMAIL__ = $_SESSION["__EMAIL__"];
     $__PASSWORD__ = $_SESSION["__PASSWORD__"];
+} else {
+    global $__ID__ = mysqli_fetch_assoc($_query_)['id'];
 }
 
 // SERVER

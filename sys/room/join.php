@@ -24,16 +24,9 @@ if(mysqli_num_rows($queryRoom) < 1){
     endCode($obj);
 }
 
-$checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'") or endCodeError();
+$idroom = mysqli_fetch_assoc($queryRoom)['id'];
 
-if(mysqli_num_rows($checkUser) < 1){
-    $obj = array(status => $__STATUS__, response => false, message => "Logue para continuar");
-    endCode($obj);
-}
-
-$__ID__ = mysqli_fetch_assoc($checkUser)["id"];
-
-$queryRoomUser = mysqli_query($conexao, "select * from join_room where room_code='$room_code' and iduser='$__ID__'");
+$queryRoomUser = mysqli_query($conexao, "select * from join_room where idroom='$idroom' and iduser='$__ID__'");
 
 if(mysqli_num_rows($queryRoomUser) > 0){
     $obj = array(status => $__STATUS__, response => false, message => "Você já está nessa sala");
@@ -42,7 +35,7 @@ if(mysqli_num_rows($queryRoomUser) > 0){
 
 
 
-mysqli_query($conexao, "insert into join_room (iduser, room_code) values ('$__ID__', '$room_code')");
+mysqli_query($conexao, "insert into join_room (iduser, idroom) values ('$__ID__', '$idroom')");
 
 $obj = array(status => $__STATUS__, response => true, message => "Entrou na sala com sucesso!");
 endCode($obj);
