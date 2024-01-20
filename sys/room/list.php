@@ -13,6 +13,8 @@ while($dados = mysqli_fetch_array($queryRooms)){
 
     $room_code = $dados['room_code'];
 
+    $typeuser = $dados['typeuser'];
+
     $queryUniqueRoom = mysqli_query($conexao, "select * from room where room_code='$room_code'");
 
     $d = mysqli_fetch_assoc($queryUniqueRoom);
@@ -21,7 +23,7 @@ while($dados = mysqli_fetch_array($queryRooms)){
     $room_id = $d['id'];
     $room_code = $d['room_code'];
 
-    $data = array(id=>$room_id, room_name=>$room_name, room_code=>$room_code);
+    $data = array(id=>$room_id, room_name=>$room_name, room_code=>$room_code, typeuser=>$typeuser);
 
     array_push($rooms, $data);
 }
