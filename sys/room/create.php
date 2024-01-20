@@ -56,7 +56,7 @@ if(mysqli_num_rows($checkRoomName) > 0){
 }
 
 mysqli_query($conexao, "insert into room (creatorid, room_name, room_code) values ('$__ID__', '$room_name', '$randomCode')") or endCodeError();
-mysqli_query($conexao, "insert into join_room (iduser, idroom, room_code, typeuser) values ('$__ID__', '$idroom', '$randomCode', 'owner')") or endCodeError();
+mysqli_query($conexao, "insert into join_room (iduser, room_code, typeuser) values ('$__ID__', '$randomCode', 'owner')") or endCodeError();
 
 $obj = array(status => $__STATUS__, response => true, message => "Sala criada com sucesso!");
 endCode($obj);
