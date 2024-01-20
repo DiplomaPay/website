@@ -263,6 +263,7 @@
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_create_room.innerText = JSON.stringify(e);
+				myrooms();
 	        })
 	    }
 	</script> 
@@ -287,8 +288,32 @@
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_join_room.innerText = JSON.stringify(e);
+				myrooms();
 	        })
 	    }
+	</script> 
+
+	<h1>Minhas salas</h1>
+	<p id='myrooms_list'></p>
+	<hr>
+    <!--join room-->
+	 <script>
+	    const myrooms = (e) => {
+
+	        fetch("https://dpay.trive.fun/sys/room/list.php")
+	        .then(e=>e.json())
+	        .then(e=>{
+				let data = JSON.stringify(e);
+				console.log(data)
+	            for(let i = 0; i < data.length; i++){
+					myrooms_list.innerHTML += `
+						<div>id: ${data[i].id} - Name: ${data[i].room_name}</div>
+					`;
+				}
+	        })
+	    }
+
+		myrooms();
 	</script> 
 
 	<h1>Limpar todos os dados do BD</h1>
