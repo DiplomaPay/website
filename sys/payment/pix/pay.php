@@ -62,7 +62,7 @@ if($pay_code){
 
   //STEP 7 -> SEND EMAIL
   $to = $__EMAIL__;
-  $subject = "Novo pagamento pix gerado - $pay_id";
+  $subject = "Novo pix gerado - $pay_id";
 
   $img = "https://chart.apis.google.com/chart?cht=qr&chl=$pay_code&chs=200x200";
   $message = "
