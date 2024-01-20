@@ -60,43 +60,6 @@ $pay_ammount = $res->transaction_amount;
 if($pay_code){
   mysqli_query($conexao, "insert into payment_pix (status, iduser, pay_id, pay_code, ammount) values ('$status', '$__ID__','$pay_id','$pay_code','$ammount')");
 
-  //STEP 7 -> SEND EMAIL
-  $to = $__EMAIL__;
-  $subject = "Novo pix gerado - $pay_id";
-
-  $img = "https://chart.apis.google.com/chart?cht=qr&chl=$pay_code&chs=200x200";
-  $message = "
-  <html>
-      <head>
-          <title>Novo pix gerado - $pay_id</title>
-          <style>
-              body { font-family: Arial, sans-serif; }
-          </style>
-      </head>
-      <body>
-          <div style='background-color:#269C72; color:white; text-align:center; padding: 5px; border-radius: 5px'>
-              <h2 style='color:white;'>DiplomaPay</h2>
-          </div>
-          <div style='text-align:center; padding: 5px'>
-              <h1 style='color:black;'>Novo pagamento pix gerado - $pay_id</h1>
-              <h2 style='color:black;'>R$$pay_ammount</h2>
-              <img src='$img'/>
-              <h4 style='color:black;'>Seu pagamento será verificado automaticamente</h4>
-              <p style='color:black; font-size: 12px'>$pay_code</p>
-              <p style='color:black; font-size: 12px'>Todos os direitos reservados - DiplomaPay 2024</p>
-          </div>
-      </body>
-  </html>
-  ";
-
-  $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
-
-  if(!$sendEmail) {
-    $obj = array(status => $__STATUS__, response => false, message => "Falha ao enviar email, tente novamente.");
-    echo json_encode($obj);
-    exit;
-  }
-
   $obj = array(response => true, message => "Pagamento pendente.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount, pay_code_img => "$pay_code_img");
   echo json_encode($obj);
   exit;
