@@ -1,6 +1,6 @@
 
 <?php
-include"./sys/conexao.php";
+include"../sys/conexao.php";
 //se estiver logado, não pode entrar
 cantLog($__EMAIL__);
 ?>

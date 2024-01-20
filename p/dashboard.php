@@ -1,6 +1,6 @@
 
 <?php
-include"./sys/conexao.php";
+include"../sys/conexao.php";
 //só consegue entrar logado
 justLog($__EMAIL__);
 ?>
