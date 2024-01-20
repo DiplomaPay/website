@@ -38,7 +38,7 @@ curl_setopt_array($curl, array(
     'Content-Type: application/json'
   ),
   CURLOPT_POSTFIELDS => json_encode(array(
-    'amount' => $ammountPayment
+    'amount' => floatval($ammountPayment)
   ))
 ));
 
