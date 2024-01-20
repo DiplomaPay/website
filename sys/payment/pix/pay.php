@@ -20,7 +20,7 @@ $idroom = $json->idroom;
 $queryRoom = mysqli_query($conexao, "select * from join_room where iduser='$__ID__' and idroom='$idroom'");
 
 if(mysqli_num_rows($queryRoom) < 1){
-  $obj = array(response => false, message => "Não autorizado.");
+  $obj = array(response => false, message => "Não autorizado. $__ID__ $idroom");
   echo json_encode($obj);
   exit;
 }
