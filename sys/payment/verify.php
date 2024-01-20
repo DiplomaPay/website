@@ -30,6 +30,7 @@ curl_close($curl);
 
 $status = $res->status;
 $pay_id = $res->id;
+$pay_ammount = $res->charges_details[0]->ammounts->original;
 
 
 
@@ -55,7 +56,8 @@ if($status_res){
               <h2 style='color:white;'>DiplomaPay</h2>
           </div>
           <div style='text-align:center; padding: 5px'>
-              <h1 style='color:black;'>Pagamento confirmado - #$pay_id</h1>
+              <h3 style='color:black;'>Pagamento confirmado - #$pay_id</h3>
+              <h3 style='color:black;'>R$$pay_ammount</h3>
               <h4 style='color:black;'>Seu pagamento foi confirmado!</h4>
               <p style='color:black; font-size: 12px'>Todos os direitos reservados - DiplomaPay 2024</p>
           </div>
