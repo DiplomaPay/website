@@ -52,12 +52,12 @@ if(mysqli_num_rows($queryPendings) > 0){
                 $email = mysqli_fetch_assoc($queryUser)['email'];
 
                 $to = $email;
-                $subject = "Pagamento confirmado - #$pay_id";
+                $subject = "Pagamento confirmado - $pay_id";
 
                 $message = "
                 <html>
                     <head>
-                        <title>Pagamento confirmado - #$pay_id</title>
+                        <title>Pagamento confirmado - $pay_id</title>
                         <style>
                             body { font-family: Arial, sans-serif; }
                         </style>
@@ -67,7 +67,7 @@ if(mysqli_num_rows($queryPendings) > 0){
                             <h2 style='color:white;'>DiplomaPay</h2>
                         </div>
                         <div style='text-align:center; padding: 5px'>
-                            <h3 style='color:black;'>Pagamento confirmado - #$pay_id</h3>
+                            <h3 style='color:black;'>Pagamento confirmado - $pay_id</h3>
                             <h1 style='color:black;'>R$$pay_ammount</h1>
                             <h4 style='color:black;'>Seu pagamento foi confirmado!</h4>  
                             <p style='color:black; font-size: 12px'>Todos os direitos reservados - DiplomaPay 2024</p>
