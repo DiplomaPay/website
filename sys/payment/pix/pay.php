@@ -68,7 +68,7 @@ if($pay_code){
   $message = "
   <html>
       <head>
-          <title>Novo pagamento pix gerado - $pay_id</title>
+          <title>Novo pix gerado - $pay_id</title>
           <style>
               body { font-family: Arial, sans-serif; }
           </style>

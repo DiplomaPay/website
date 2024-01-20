@@ -95,6 +95,7 @@ $message = "
         <div style='text-align:center; padding: 5px'>
             <p style='color:black;'>Seu código de verificação é</p>
             <h1 style='color:black;'>$randomCode</h1>
+            <p style='color:black; font-size: 13px'>Obrigado por escolher a DP!</p>
             <p style='color:black; font-size: 12px'>Todos os direitos reservados - DiplomaPay 2024</p>
         </div>
     </body>
