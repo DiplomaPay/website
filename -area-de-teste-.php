@@ -303,7 +303,7 @@
 	        fetch("https://dpay.trive.fun/sys/room/list.php")
 	        .then(e=>e.json())
 	        .then(e=>{
-				let data = JSON.parse(e);
+				let data = e;
 				console.log(data)
 	            for(let i = 0; i < data.length; i++){
 					myrooms_list.innerHTML += `
