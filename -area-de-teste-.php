@@ -183,6 +183,7 @@
 	<button onclick="sendPixPay(0.01)">Generate pix - 0.01</button>
 	<button onclick="sendPixPay(0.10)">Generate pix - 0.10</button>
 	<button onclick="sendPixPay(1)">Generate pix - 1.00</button>
+	<button onclick="sendPixPay(2)">Generate pix - 2.00</button>
 	<img style="max-width: 200px; width: calc(100% - 20px)" id="pix_img">
 	<p id='res_pix'></p>
 	<p id='res_pix_status'></p>
