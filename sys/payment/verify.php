@@ -78,4 +78,4 @@ $status_res = $status == "approved" ? true : false;
 
 $obj = array(response => $status_res, message => "Pagamento atualizado.", status_pix => "$status", id_pix => $pay_id);
 
-echo json_encode($obj);
+echo json_encode($res);
