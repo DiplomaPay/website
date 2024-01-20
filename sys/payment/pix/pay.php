@@ -15,6 +15,15 @@ $request = file_get_contents('php://input');
 $json = json_decode($request);
 
 $ammount = $json->value;
+$idroom = $json->idroom;
+
+$queryRoom = mysqli_query($conexao, "select * from join_room where iduser='$__ID__' and idroom='$idroom'");
+
+if(mysqli_num_rows($queryRoom) < 1){
+  $obj = array(response => false, message => "Não autorizado.");
+  echo json_encode($obj);
+  exit;
+}
 
 $data = array(
     'transaction_amount' => $ammount,
@@ -58,7 +67,7 @@ $pay_code_img = $res->point_of_interaction->transaction_data->qr_code_base64;
 $pay_ammount = $res->transaction_amount;
 
 if($pay_code){
-  mysqli_query($conexao, "insert into payment_pix (status, iduser, pay_id, pay_code, ammount) values ('$status', '$__ID__','$pay_id','$pay_code','$ammount')");
+  mysqli_query($conexao, "insert into payment_pix (status, iduser, idroom, pay_id, pay_code, ammount) values ('$status', '$__ID__','$idroom','$pay_id','$pay_code','$ammount')");
 
   $obj = array(response => true, message => "Pagamento pendente.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount, pay_code_img => "$pay_code_img");
   echo json_encode($obj);

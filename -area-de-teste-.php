@@ -176,73 +176,7 @@
 	    }
 	</script> 
 
-	<!--Pix-->
 	
-	<hr>
-	<h1>Pix pay</h1>
-	<button onclick="sendPixPay(0.01)">Generate pix - 0.01</button>
-	<button onclick="sendPixPay(0.10)">Generate pix - 0.10</button>
-	<button onclick="sendPixPay(1)">Generate pix - 1.00</button>
-	<button onclick="sendPixPay(2)">Generate pix - 2.00</button>
-	<img style="max-width: 200px; width: calc(100% - 20px)" id="pix_img">
-	<p id='res_pix'></p>
-	<p id='res_pix_status'></p>
-	<hr>
-	
-    <!--Pix	-->
-	<script>
-
-		let blocked = false;
-        
-		const sendPixPay = (e) => {
-			let src = "data:image/png;base64,";
-			let pix_img = document.getElementById("pix_img");
-
-			if(!blocked){
-				blocked = true;
-				fetch("https://dpay.trive.fun/sys/payment/pix/pay.php",{
-					method: "POST",
-					body: JSON.stringify({
-						value: e
-					})
-				})
-				.then(e => e.json())
-				.then(e => {
-					res_pix.innerText = JSON.stringify(e);
-					res_pix_status.innerText = e.status_pix;
-					pix_img.src = `${src}${e.pay_code_img}`;
-					if(e.status_pix != "approved"){
-						verifyPix(e);
-					}
-				})
-			} else {
-				alert("Pague primeiro para gerar outro")
-			}
-		}
-
-		const verifyPix = (e) => {
-			let xx = setInterval(async () => {
-				let status = await sendPixVerify(e.id_pix);
-				console.log(status);
-				if(status === "approved") {
-					clearInterval(xx);
-					blocked = false;
-				}
-			}, 5000);
-		}
-
-		const sendPixVerify = async (e) => {
-			let status = await fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${e}`)
-			.then(e => e.json())
-			.then(e => {
-				res_pix_status.innerText = e.status_pix;
-				res_pix.innerText = JSON.stringify(e);
-				return e.status_pix;
-			})
-			return status;
-		}
-
-	</script> 
 	<hr>
 
 	<h1>Create room </h1>
@@ -295,7 +229,70 @@
 	        })
 	    }
 	</script> 
+	<!--Pix-->
+		
+	<hr>
+	<h1>Pix pay</h1>
+	<img style="max-width: 200px; width: calc(100% - 20px)" id="pix_img">
+	<p id='res_pix'></p>
+	<p id='res_pix_status'></p>
+	<hr>
+	
+    <!--Pix	-->
+	<script>
 
+		let blocked = false;
+        
+		const sendPixPay = (e, room) => {
+			let src = "data:image/png;base64,";
+			let pix_img = document.getElementById("pix_img");
+
+			if(!blocked){
+				blocked = true;
+				fetch("https://dpay.trive.fun/sys/payment/pix/pay.php",{
+					method: "POST",
+					body: JSON.stringify({
+						value: e,
+						idroom: room
+					})
+				})
+				.then(e => e.json())
+				.then(e => {
+					res_pix.innerText = JSON.stringify(e);
+					res_pix_status.innerText = e.status_pix;
+					pix_img.src = `${src}${e.pay_code_img}`;
+					if(e.status_pix != "approved"){
+						verifyPix(e);
+					}
+				})
+			} else {
+				alert("Pague primeiro para gerar outro")
+			}
+		}
+
+		const verifyPix = (e) => {
+			let xx = setInterval(async () => {
+				let status = await sendPixVerify(e.id_pix);
+				console.log(status);
+				if(status === "approved") {
+					clearInterval(xx);
+					blocked = false;
+				}
+			}, 5000);
+		}
+
+		const sendPixVerify = async (e) => {
+			let status = await fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${e}`)
+			.then(e => e.json())
+			.then(e => {
+				res_pix_status.innerText = e.status_pix;
+				res_pix.innerText = JSON.stringify(e);
+				return e.status_pix;
+			})
+			return status;
+		}
+
+	</script> 
 	<h1>Minhas salas</h1>
 	<p id='myrooms_list'></p>
 	<hr>
@@ -311,13 +308,17 @@
 				console.log(data)
 	            for(let i = 0; i < data.length; i++){
 					myrooms_list.innerHTML += `
-						<div>id: ${data[i].id} - Name: ${data[i].room_name} - Code: ${data[i].room_code} - Usuário: ${data[i].typeuser} </div>
+						<div>id: ${data[i].id} - Name: ${data[i].room_name} - Code: ${data[i].room_code} - Usuário: ${data[i].typeuser} <button onclick='newPayment(${data[i].id})'>Novo pagamento</button></div>
 					`;
 				}
 	        })
 	    }
 
 		myrooms();
+
+		const newPayment = (e) => {
+			sendPixPay(0.10, e);
+		}
 	</script> 
 
 	<h1>Limpar todos os dados do BD</h1>
