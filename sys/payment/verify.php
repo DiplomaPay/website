@@ -30,7 +30,7 @@ curl_close($curl);
 
 $status = $res->status;
 $pay_id = $res->id;
-$pay_ammount = $res->charges_details[0]->ammounts->original;
+$pay_ammount = $res->transaction_amount;
 
 
 

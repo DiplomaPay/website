@@ -41,7 +41,7 @@ if(mysqli_num_rows($queryPendings) > 0){
 
         $status = $res->status;
         $pay_id = $res->id;
-        $pay_ammount = $res->charges_details[0]->ammounts->original;
+        $pay_ammount = $res->transaction_amount;
 
         $status_res = $status == "approved" ? true : false;
 

@@ -55,6 +55,7 @@ $pay_id = $res->id;
 $status = $res->status;
 $pay_code = $res->point_of_interaction->transaction_data->qr_code;
 $pay_code_img = $res->point_of_interaction->transaction_data->qr_code_base64;
+$pay_ammount = $res->transaction_amount;
 
 if($pay_code){
   mysqli_query($conexao, "insert into payment_pix (status, iduser, pay_id, pay_code, ammount) values ('$status', '$__ID__','$pay_id','$pay_code','$ammount')");
@@ -78,6 +79,7 @@ if($pay_code){
           </div>
           <div style='text-align:center; padding: 5px'>
               <h1 style='color:black;'>Novo pagamento pix gerado - #$pay_id</h1>
+              <h3 style='color:black;'>R$$pay_ammount</h3>
               <img src='$img'/>
               <h4 style='color:black;'>Seu pagamento será verificado automaticamente</h4>
               <p style='color:black; font-size: 12px'>$pay_code</p>
