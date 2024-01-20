@@ -61,13 +61,13 @@ if($pay_code){
 
   //STEP 7 -> SEND EMAIL
   $to = $__EMAIL__;
-  $subject = "Pagamento pix gerado - #$pay_id";
+  $subject = "Novo pagamento pix gerado - #$pay_id";
 
   $img = "https://chart.apis.google.com/chart?cht=qr&chl=$pay_code&chs=150x150";
   $message = "
   <html>
       <head>
-          <title>Pagamento pix gerado - #$pay_id</title>
+          <title>Novo pagamento pix gerado - #$pay_id</title>
           <style>
               body { font-family: Arial, sans-serif; }
           </style>
@@ -77,7 +77,7 @@ if($pay_code){
               <h2 style='color:white;'>DiplomaPay</h2>
           </div>
           <div style='text-align:center; padding: 5px'>
-              <h1 style='color:black;'>Pagamento pix gerado - #$pay_id</h1>
+              <h1 style='color:black;'>Novo pagamento pix gerado - #$pay_id</h1>
               <img src='$img'/>
               <h4 style='color:black;'>Seu pagamento será verificado automaticamente</h4>
               <p style='color:black; font-size: 12px'>$pay_code</p>
