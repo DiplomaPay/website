@@ -179,8 +179,10 @@
 	<!--Pix-->
 	
 	<hr>
-	<h1>Pix pay (R$0.01) </h1>
-	<button onclick="sendPixPay()">Generate pix</button>
+	<h1>Pix pay</h1>
+	<button onclick="sendPixPay(0.01)">Generate pix - 0.01</button>
+	<button onclick="sendPixPay(0.10)">Generate pix - 0.01</button>
+	<button onclick="sendPixPay(1)">Generate pix - 0.01</button>
 	<img style="max-width: 200px; width: calc(100% - 20px)" id="pix_img">
 	<p id='res_pix'></p>
 	<p id='res_pix_status'></p>
@@ -191,7 +193,7 @@
 
 		let blocked = false;
         
-		const sendPixPay = () => {
+		const sendPixPay = (e) => {
 			let src = "data:image/png;base64,";
 			let pix_img = document.getElementById("pix_img");
 
@@ -200,7 +202,7 @@
 				fetch("https://dpay.trive.fun/sys/payment/pix/pay.php",{
 					method: "POST",
 					body: JSON.stringify({
-						value: 0.01
+						value: e
 					})
 				})
 				.then(e => e.json())
