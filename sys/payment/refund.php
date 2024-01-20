@@ -7,10 +7,10 @@ header('Content-Type: application/json; charset=utf-8');
 
 $pay_id = $_GET["id"];
 
-$queryPayment = mysqli_query($conexao, "select * from payment_pix where pay_id='$pay_id'")or endCodeError();
+$queryPayment = mysqli_query($conexao, "select * from payment_pix where pay_id='$pay_id' and iduser='$__ID__'")or endCodeError();
 
 if(mysqli_num_rows($queryPayment) < 1){
-    $obj = array(status => $__STATUS__, response => false, message => "Nenhum pagamento com esse id");
+    $obj = array(status => $__STATUS__, response => false, message => "Id incorreto");
     endCode($obj);
 }
 
