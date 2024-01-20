@@ -19,6 +19,8 @@ $d = mysqli_fetch_assoc($queryPayment);
 $statusPayment = $d['status'];
 $ammountPayment = $d['ammount'];
 
+echo $ammountPayment;
+
 if($statusPayment != "approved"){
     $obj = array(status => $__STATUS__, response => false, message => "Não elegivel para reembolso");
     endCode($obj);
