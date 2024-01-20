@@ -231,12 +231,9 @@
 	</script> 
 	<!--Pix-->
 		
-	<hr>
-	<h1>Pix pay</h1>
 	<img style="max-width: 200px; width: calc(100% - 20px)" id="pix_img">
 	<p id='res_pix'></p>
 	<p id='res_pix_status'></p>
-	<hr>
 	
     <!--Pix	-->
 	<script>
@@ -308,7 +305,7 @@
 				console.log(data)
 	            for(let i = 0; i < data.length; i++){
 					myrooms_list.innerHTML += `
-						<div>id: ${data[i].id} - Name: ${data[i].room_name} - Code: ${data[i].room_code} - Usuário: ${data[i].typeuser} <button onclick='newPayment("${data[i].room_code}")'>Novo pagamento</button></div>
+						<div>id: ${data[i].id} - Name: ${data[i].room_name} - Code: ${data[i].room_code} - Usuário: ${data[i].typeuser} <button onclick='newPayment("${data[i].room_code}")'>Novo pagamento R$0.01</button></div>
 					`;
 				}
 	        })
@@ -317,7 +314,7 @@
 		myrooms();
 
 		const newPayment = (e) => {
-			sendPixPay(0.10, e);
+			sendPixPay(0.01, e);
 		}
 	</script> 
 
