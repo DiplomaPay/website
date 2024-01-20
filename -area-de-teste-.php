@@ -243,7 +243,7 @@
 
 		let blocked = false;
         
-		const sendPixPay = (e, room) => {
+		const sendPixPay = (val, room) => {
 			let src = "data:image/png;base64,";
 			let pix_img = document.getElementById("pix_img");
 
@@ -252,7 +252,7 @@
 				fetch("https://dpay.trive.fun/sys/payment/pix/pay.php",{
 					method: "POST",
 					body: JSON.stringify({
-						value: e,
+						value: val,
 						idroom: room
 					})
 				})
