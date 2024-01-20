@@ -46,7 +46,19 @@ $response = curl_exec($curl);
 $res = json_decode($response);
 curl_close($curl);
 
+$id = $res->id;
+$status = $res->status;
+
+if($status == "approved"){
+    $query = mysqli_query($conexao, "update payment_pix set status='refund', refundid='$id'");
+    $obj = array(status => $__STATUS__, response => true, message => "Reembolsado com sucesso");
+    endCode($res);
+}
+
+$obj = array(status => $__STATUS__, response => true, message => "Não aprovado");
 endCode($res);
+
+
 
 function endCode($obj){
     echo json_encode($obj);
