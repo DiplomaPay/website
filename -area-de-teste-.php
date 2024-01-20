@@ -253,7 +253,7 @@
 					method: "POST",
 					body: JSON.stringify({
 						value: val,
-						idroom: room
+						room_code: room
 					})
 				})
 				.then(e => e.json())
