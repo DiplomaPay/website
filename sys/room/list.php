@@ -21,6 +21,10 @@ while($dados = mysqli_fetch_array($queryRooms)){
 
     $ammount_room = mysqli_fetch_assoc($queryValueRoom)["total_room"];
 
+    if(!$ammount_room){
+        $ammount_room = 0;
+    }
+
     $d = mysqli_fetch_assoc($queryUniqueRoom);
 
     $room_name = $d['room_name'];
