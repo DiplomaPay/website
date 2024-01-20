@@ -37,6 +37,10 @@ $pay_ammount = $res->transaction_amount;
 
 
 
+
+
+$status_res = $status == "approved" ? true : false;
+
 if($status_res){
   $q = mysqli_query($conexao, "update payment_pix set status='$status' where pay_id='$pay_id'") or die("");
 
@@ -66,15 +70,7 @@ if($status_res){
   ";
 
   $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
-
-  if(!$sendEmail) {
-    $obj = array(status => $__STATUS__, response => false, message => "Falha ao enviar email, tente novamente.");
-    echo json_encode($obj);
-    exit;
-  }
 }
-
-$status_res = $status == "approved" ? true : false;
 
 $obj = array(response => $status_res, message => "Pagamento atualizado.", status_pix => "$status", id_pix => $pay_id);
 
