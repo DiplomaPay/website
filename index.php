@@ -14,35 +14,35 @@
   <script src="./items/js/login.js"></script>
 </head>
 <body>
-    <div class="container">
-        <article>
-            <img src="./items/img/Pitch DiplomaPay.svg" alt="DiplomaPay Logo">
-    
-            <h3>LOGIN</h3>
-    
-            <form  action="javascript:void(0)" onsubmit="sendLogin()" id="loginForm">
-                <label for="email">Email:</label>
-                <input type="email" id="email_login" required>
-                
-                <label for="password">Password:</label>
-                <input type="password" id="password_login" required>
-                
-                <button type="button">Login</button>
-              </form>
-              <p id='res_login'></p>
-              <hr>
-	
-    
-              <a href="./p/signup.php">Cadastrar</a>
-              <!-- https://dpay.trive.fun/sys/user/account/login -->
+<img src="./items/img/IconBranco.svg" alt="DiplomaPay Logo">
+  <div class="container">
+    <div class="form-outer">
+      <form action="javascript:void(0)">
+        <div class="page slidePage">
+          <div class="title">
+                Logar
+          </div>
+          <div class="field">
+            <div class="label">Email</div>
+            <input type="text" name="email" id="email" placeholder="fulano@gmail.com">
+          </div>
 
-              <p>Copyright @ 2023</p>
-        </article>
-        <article class="slides">
-            <h1>Frase de efeito passando</h1>
-        </article>
+          <div class="field">
+            <div class="label">Senha</div>
+            <input type="password" name="password" id="password" placeholder="*********">
+          </div>
 
+          <div class="field">
+            <button class="next nextBtn" >Entrar</button>
+          </div>
+          <a class="prev" href="../index.php">Recuperar Senha</a>
+          <br>
+          <a class="prev" href="./p/signup.php">Cadastrar</a>
+        </div>
+      </form>
     </div>
+  </div>
+
 
     <!-- /*teste webhook git -> hostinger 6.0*/ -->
 
