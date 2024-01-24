@@ -21,8 +21,7 @@ $queryRoom = mysqli_query($conexao, "select * from join_room where iduser='$__ID
 
 if(mysqli_num_rows($queryRoom) < 1){
   $obj = array(response => false, message => "Não autorizado. $__ID__ $idroom");
-  echo json_encode($obj);
-  exit;
+  endCode($obj);
 }
 
 $data = array(
@@ -70,10 +69,21 @@ if($pay_code){
   mysqli_query($conexao, "insert into payment_pix (status, iduser, room_code, pay_id, pay_code, ammount) values ('$status', '$__ID__','$room_code','$pay_id','$pay_code','$ammount')");
 
   $obj = array(response => true, message => "Pagamento pendente.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount, pay_code_img => "$pay_code_img");
+  endCode($obj);
+}
+
+$obj = array(response => false, message => "Erro ao gerar pix.");
+endCode($obj);
+
+
+function endCode($obj){
   echo json_encode($obj);
   exit;
 }
 
-$obj = array(response => false, message => "Erro ao gerar pix.");
-echo json_encode($obj);
+function endCodeError(){
+  echo json_encode(array(status => $__STATUS__, response => false, message => "Failed to connect the server, try again."));
+  exit;
+}
+
 

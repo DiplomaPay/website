@@ -68,7 +68,7 @@ if($status == "approved"){
             </div>
             <div style='text-align:center; padding: 5px'>
                 <h3 style='color:black;'>Pagamento reembolsado - $id</h3>
-                <h3 style='color:black;'>R$$ammountPayment</h3>
+                <h1 style='color:black;'>R$$ammountPayment</h1>
                 <h4 style='color:black;'>Seu pagamento foi reembolsado!</h4>
                 <p style='color:black; font-size: 12px'>Todos os direitos reservados - DiplomaPay 2024</p>
             </div>
