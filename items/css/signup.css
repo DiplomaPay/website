@@ -15,13 +15,14 @@ body{
     width: 15vw;
     height: 30vh;
     transition: height 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
 }
 
 .title{
-    font-size: 1.2vw;
+    font-size: 1.3vw;
     color: var(--cinza);
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
     margin-bottom: 3vh;
 }
 
@@ -139,6 +140,7 @@ button:hover{
     border-radius: 5px;
     border: 2px solid var(--verdeClaro);
     opacity: 70%;
+    text-align: center;
 }
 
 .progress-bar{

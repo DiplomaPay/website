@@ -8,7 +8,7 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-// Recived data 
+// Recived data     
 $code = $json->code;
 
 $code = str_replace(" ", "", $code);
