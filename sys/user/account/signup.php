@@ -26,14 +26,10 @@ $confirm_password = mysqli_real_escape_string($conexao, $confirm_password);
 $cpf = mysqli_real_escape_string($conexao, $cpf);
 $name = mysqli_real_escape_string($conexao, $name);
 
-var_dump($json);
-
-exit;
-
 
 // STEP 1 -> Verify data
 if(!$email or !$password or !$confirm_password or !$cpf or !$name){
-    $obj = array(status => $__STATUS__, response => false, message => "Something is missing! $email, $password, $confirm_password, $cpf, $name");
+    $obj = array(status => $__STATUS__, response => false, message => "Something is missing!");
     endCode($obj);
 }
 

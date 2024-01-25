@@ -1,7 +1,7 @@
 <?php
 session_start();
 date_default_timezone_set('America/Sao_Paulo');
-// $conexao = mysqli_connect('localhost','u752370168_dpay','Easycodex123','u752370168_dpay') or die ("Atualize a página e tente novamente!");
+$conexao = mysqli_connect('localhost','u752370168_dpay','Easycodex123','u752370168_dpay') or die ("Atualize a página e tente novamente!");
 
 
 header('Access-Control-Allow-Origin: *');
