@@ -142,6 +142,13 @@ button:hover{
     text-align: center;
 }
 
+.Resend{
+    font-size: 1vw;
+    color: var(--verde);
+    text-align: center;
+    text-decoration: underline;
+}
+
 .progress-bar{
     display: flex;
     width: 23vw;

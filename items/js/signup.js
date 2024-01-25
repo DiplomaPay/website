@@ -36,6 +36,10 @@ const sendSignup = () => {
           cpf: cpf,
           name: name
       }
+
+      document.querySelector(".email").textContent = email;
+
+      console.log("Dados de inscrição:", data);
       
       fetch("https://dpay.trive.fun/sys/user/account/signup.php", {
           method: "POST",
@@ -71,6 +75,26 @@ const sendSignup = () => {
     })
   }
 
+  const ReSendEmail = () => {
+    let email = email_signup.value;
+        
+        let data = {
+            email: email,
+        }
+  
+        document.querySelector(".email").textContent = email;
+  
+        console.log("Email:", data);
+        
+        fetch("https://dpay.trive.fun/sys/user/account/newcode.php", {
+            method: "POST",
+            body: JSON.stringify(data),
+        })
+        .then(e=>e.json())
+        .then(e=>{
+          console.log(e);
+        })
+    }
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -190,7 +214,6 @@ prevBtnThird.addEventListener("click", function() {
   codigoInputs.forEach(function (input) {
     input.addEventListener('input', function () {
       // Limita o valor do campo a apenas um número
-      this.value = this.value.replace(/[^0-9]/g, '');
 
       // Move o foco para o próximo campo após inserir um número
       if (this.value.length === 1) {

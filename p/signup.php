@@ -78,20 +78,21 @@
           <div class="field">
             <div class="text">
                 <p>Código enviado para seu email</p>
-                <p class="email">exemplo@gmail.com</p>
+                <p class="email"></p>
             </div>
             <div class="codigo">
             <input type="text" maxlength="1" id="input1">
-<input type="text" maxlength="1" id="input2">
-<input type="text" maxlength="1" id="input3">
-<input type="text" maxlength="1" id="input4">
-<input type="text" maxlength="1" id="input5">
-<input type="text" maxlength="1" id="input6">
+            <input type="text" maxlength="1" id="input2">
+            <input type="text" maxlength="1" id="input3">
+            <input type="text" maxlength="1" id="input4">
+            <input type="text" maxlength="1" id="input5">
+            <input type="text" maxlength="1" id="input6">
             </div>
           </div>
 
           <div class="field  btns">
             <button class="submit next" onclick="sendCode()">Finalizar</button>
+            <a class="Resend" onclick="ReSendEmail()">Reenviar E-mail</a>
           </div>
         </div>
 
