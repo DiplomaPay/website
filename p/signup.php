@@ -40,7 +40,8 @@
           </div>
           <div class="field">
             <div class="label">CPF</div>
-            <input type="text" placeholder="000.000.000-00" id="cpf" inputmode="numeric" maxlength="14" oninput="clean(this)">          </div>
+            <input type="text" placeholder="000.000.000-00" id="cpf" inputmode="numeric" maxlength="14" oninput="clean(this)">          
+          </div>
           <div class="field">
             <div class="label">Email</div>
             <input type="text" placeholder="fulano@gmail.com" id="email">

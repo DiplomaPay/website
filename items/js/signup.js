@@ -21,6 +21,30 @@ const password_signup = document.getElementById("password");
 const confirm_password_signup = document.getElementById("confPassword");
 const cpf_signup = document.getElementById("cpf");
 const name_signup = document.getElementById("nome");
+const slidePage = document.querySelector(".slidePage");
+const firstNextBtn = document.querySelector(".nextBtn");
+const container = document.querySelector(".container");
+const prevBtnSec = document.querySelector(".prev-1");
+const nextBtnSec = document.querySelector(".next-1");
+const prevBtnThird = document.querySelector(".prev-2");
+const nextBtnThird = document.querySelector(".next-2");
+const prevBtnFourth = document.querySelector(".prev-3");
+const submit = document.querySelector(".submit");
+const progress = document.querySelector(".progress-bar");
+const two = document.querySelector(".two");
+const three = document.querySelector(".three");
+const pages = document.querySelectorAll(".page");
+
+document.getElementById("cpf").addEventListener("input", function () {
+  this.parentNode.removeAttribute("data-error");
+});
+document.getElementById("email").addEventListener("input", function () {
+  this.parentNode.removeAttribute("data-error");
+});
+document.getElementById("confPassword").addEventListener("input", function () {
+  this.parentNode.removeAttribute("data-error");
+});
+
 
 const sendSignup = () => {
   let email = email_signup.value;
@@ -48,6 +72,50 @@ const sendSignup = () => {
       .then(e=>e.json())
       .then(e=>{
         console.log(e);
+        let mensagem = e.message;
+
+        console.log(mensagem)
+  
+        if (mensagem !="Sucess.") {
+        if (mensagem === "CPF already in use."){
+          document.querySelector("#cpf").parentNode.setAttribute("data-error", "Esse CPF Já esta em uso");          
+          pages[0].style.height = "0px";
+          pages[1].style.height = "auto";
+          slidePage.style.marginLeft = "-50%";
+          two.style.backgroundColor = "var(--verdeClaro)";
+          two.style.color = "var(--branco)";
+          two.style.border = "3px solid var(--branco)";
+        
+        } else
+         if (mensagem === "Check password and try again."){
+          document.querySelector("#confPassword").parentNode.setAttribute("data-error", "Senhas não estão iguais");          
+          pages[1].style.height = "0px";
+          pages[2].style.height = "auto";
+          slidePage.style.marginLeft = "-100%";
+          three.style.backgroundColor = "var(--verdeClaro)";
+          three.style.color = "var(--branco)";
+          three.style.border = "3px solid var(--branco)";
+        } else 
+        if (mensagem === "Email already in use."){
+          document.querySelector("#email").parentNode.setAttribute("data-error", "Esse Email Já esta em uso");          
+          pages[0].style.height = "0px";
+          pages[1].style.height = "auto";
+          pages[2].style.height = "0px";
+          pages[3].style.height = "0px";
+          slidePage.style.marginLeft = "-50%";
+          two.style.backgroundColor = "var(--verdeClaro)";
+          two.style.color = "var(--branco)";
+          two.style.border = "3px solid var(--branco)";
+        }
+        return;
+      } 
+      pages[1].style.height = "0px"
+      pages[2].style.height = "0px";
+      pages[3].style.height = "auto";
+      slidePage.style.marginLeft = "-129%";
+      progress.style.display = "none";
+      container.style.height = "35vh";
+      container.style.width = "20vw"
       })
   }
 
@@ -86,7 +154,7 @@ const sendSignup = () => {
   
         console.log("Email:", data);
         
-        fetch("https://dpay.trive.fun/sys/user/account/newcode.php", {
+        fetch("https://dpay.trive.fun/sys/user/configs/newcode.php", {
             method: "POST",
             body: JSON.stringify(data),
         })
@@ -96,22 +164,14 @@ const sendSignup = () => {
         })
     }
 
+    
+
 document.addEventListener("DOMContentLoaded", function () {
 
-const slidePage = document.querySelector(".slidePage");
-const firstNextBtn = document.querySelector(".nextBtn");
-const container = document.querySelector(".container");
-const prevBtnSec = document.querySelector(".prev-1");
-const nextBtnSec = document.querySelector(".next-1");
-const prevBtnThird = document.querySelector(".prev-2");
-const nextBtnThird = document.querySelector(".next-2");
-const prevBtnFourth = document.querySelector(".prev-3");
-const submit = document.querySelector(".submit");
-const progress = document.querySelector(".progress-bar");
-const two = document.querySelector(".two");
-const three = document.querySelector(".three");
-
-
+pages.forEach(function (page) {
+  pages[0].style.height = "auto";
+  page.style.height = "0px";
+});
 
 firstNextBtn.addEventListener("click", function() {
   const nomeInput = document.querySelector("input[name='nome']");
@@ -122,8 +182,11 @@ firstNextBtn.addEventListener("click", function() {
     }, 2000);
     return;
   }
+ 
+
+  pages[0].style.height = "0px";
+  pages[1].style.height = "auto";
   slidePage.style.marginLeft = "-50%";
-  container.style.height = "40vh";
   two.style.backgroundColor = "var(--verdeClaro)";
   two.style.color = "var(--branco)";
   two.style.border = "3px solid var(--branco)";
@@ -149,8 +212,8 @@ nextBtnSec.addEventListener("click", function() {
     return;
   }
 
-  
-
+  pages[1].style.height = "0px";
+  pages[2].style.height = "auto";
   slidePage.style.marginLeft = "-100%";
   three.style.backgroundColor = "var(--verdeClaro)";
   three.style.color = "var(--branco)";
@@ -166,7 +229,7 @@ function isValidEmail(email) {
 nextBtnThird.addEventListener("click", function() {
   const senhaInput = document.querySelector("input[type='password']");
   const confirmarSenhaInput = document.querySelectorAll("input[type='password']")[1];
-  if (senhaInput.value === "" || confirmarSenhaInput.value === "") {
+  if (senhaInput.value === "" || confirmarSenhaInput.value === "" || senhaInput.value != confirmarSenhaInput.value) {
     if (senhaInput.value === "") {
       senhaInput.style.border = "2px solid red";
       setTimeout(() => {
@@ -181,21 +244,24 @@ nextBtnThird.addEventListener("click", function() {
     }
     return;
   }
-  slidePage.style.marginLeft = "-129%";
-  progress.style.display = "none";
-  container.style.height = "35vh";
-  container.style.width = "20vw"
+
 });
 
 prevBtnSec.addEventListener("click", function() {
+
+  
+  pages[1].style.height = "0px";
+  pages[0].style.height = "auto";
   slidePage.style.marginLeft = "0%";
-  container.style.height = "30vh";
   two.style.backgroundColor = "var(--branco)";
   two.style.color = "var(--verde)";
   two.style.border = "3px solid var(--verdeClaro)";
 });
 
 prevBtnThird.addEventListener("click", function() {
+  
+  pages[2].style.height = "0px";
+  pages[1].style.height = "auto";
   slidePage.style.marginLeft = "-50%";
   three.style.backgroundColor = "var(--branco)";
   three.style.color = "var(--verde)";
@@ -225,8 +291,20 @@ prevBtnThird.addEventListener("click", function() {
     });
   });
 
+  // const formOuterContainer = document.querySelector(".container .form-outer");
+  // window.addEventListener("resize", function () {
+  //   // Largura desejada para o contêiner
+  //   const desiredWidth = 768; // Altere conforme necessário
 
-
+  //   // Verifica se a largura da janela é menor que a largura desejada
+  //   if (window.innerWidth < desiredWidth) {
+  //     // Ajusta a altura para 0px
+  //     formOuterContainer.style.height = "0px";
+  //   } else {
+  //     // Restaura a altura para o valor desejado (pode ser ajustado conforme necessário)
+  //     formOuterContainer.style.height = "40vh";
+  //   }
+  // });
 
  
 });
