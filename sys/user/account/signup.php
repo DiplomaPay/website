@@ -29,7 +29,7 @@ $name = mysqli_real_escape_string($conexao, $name);
 
 // STEP 1 -> Verify data
 if(!$email or !$password or !$confirm_password or !$cpf or !$name){
-    $obj = array(status => $__STATUS__, response => false, message => "Something is missing! $email, $password, $confirm_password, $cpf, $name");
+    $obj = array(status => $__STATUS__, response => false, message => "Something is missing! $email, $password, $confirm_password, $cpf, $name, $json");
     endCode($obj);
 }
 
