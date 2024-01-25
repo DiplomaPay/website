@@ -178,12 +178,7 @@ prevBtnThird.addEventListener("click", function() {
   three.style.border = "3px solid var(--verdeClaro)";
 });
 
-prevBtnFourth.addEventListener("click", function() {
-  slidePage.style.marginLeft = "-100%";
-  progress.style.display = "flex";
-  container.style.height = "40vh";
-  container.style.width = "15vw"
-});
+
 
 
 

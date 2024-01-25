@@ -43,7 +43,7 @@
             <input type="text" placeholder="000.000.000-00" id="cpf" inputmode="numeric" maxlength="14" oninput="clean(this)">          </div>
           <div class="field">
             <div class="label">Email</div>
-            <input type="text" placeholder="fulano@gmail.com" id="email" onblur="validateEmail(this)">
+            <input type="text" placeholder="fulano@gmail.com" id="email">
           </div>
 
           <div class="field  btns">
@@ -81,11 +81,11 @@
                 <p class="email">exemplo@gmail.com</p>
             </div>
             <div class="codigo">
-            <input type="text" maxlength="1" id="input1" oninput="moveToNext(this)">
-<input type="text" maxlength="1" id="input2" oninput="moveToNext(this)">
-<input type="text" maxlength="1" id="input3" oninput="moveToNext(this)">
-<input type="text" maxlength="1" id="input4" oninput="moveToNext(this)">
-<input type="text" maxlength="1" id="input5" oninput="moveToNext(this)">
+            <input type="text" maxlength="1" id="input1">
+<input type="text" maxlength="1" id="input2">
+<input type="text" maxlength="1" id="input3">
+<input type="text" maxlength="1" id="input4">
+<input type="text" maxlength="1" id="input5">
 <input type="text" maxlength="1" id="input6">
             </div>
           </div>
