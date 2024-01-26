@@ -82,12 +82,12 @@
                 <p class="email"></p>
             </div>
             <div class="codigo">
-            <input type="text" maxlength="1" id="input1">
-            <input type="text" maxlength="1" id="input2">
-            <input type="text" maxlength="1" id="input3">
-            <input type="text" maxlength="1" id="input4">
-            <input type="text" maxlength="1" id="input5">
-            <input type="text" maxlength="1" id="input6">
+            <input type="text" maxlength="1" id="input1" class="inputCode">
+            <input type="text" maxlength="1" id="input2" class="inputCode">
+            <input type="text" maxlength="1" id="input3" class="inputCode">
+            <input type="text" maxlength="1" id="input4" class="inputCode">
+            <input type="text" maxlength="1" id="input5" class="inputCode">
+            <input type="text" maxlength="1" id="input6" class="inputCode">
             </div>
           </div>
 

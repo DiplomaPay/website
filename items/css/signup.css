@@ -63,7 +63,24 @@ input{
     color: red;
     display: block;
     margin-bottom: 1.5vh;
+
+}.codigo[data-error] input{
+    border-color: red;
+    margin-bottom: 0.5vh;
+    color: red
 }
+
+.codigo[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.7vw;
+    color: red;
+    display: block;
+    margin-bottom: 1.5vh;
+    position: absolute;
+    bottom: -3.5vh;
+}
+
+
 
 input:focus{
     border-color: var(--verde);
@@ -157,7 +174,8 @@ button:hover{
     margin-bottom: 3vh;
     justify-content: center;
     align-items: center;
-    gap: 0.5vw
+    gap: 0.5vw;
+    position: relative;
 }
 
 .codigo input{

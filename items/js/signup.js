@@ -119,6 +119,13 @@ const sendSignup = () => {
       })
   }
 
+  var inputCodes = document.getElementsByClassName("inputCode");
+  for (var i = 0; i < inputCodes.length; i++) {
+    inputCodes[i].addEventListener("input", function () {
+          this.closest(".codigo").removeAttribute("data-error");
+    });
+  }
+
   const sendCode =() => {
     var input1 = document.getElementById("input1").value;
     var input2 = document.getElementById("input2").value;
@@ -140,7 +147,19 @@ const sendSignup = () => {
     .then(e=>e.json())
     .then(e=>{
       console.log(e);
-    })
+      let mensagem = e.message;
+      console.log(mensagem)
+      if (mensagem != 'Account activated.'){
+        if (mensagem === 'Code not found.'){
+          console.log("aaa");
+          document.querySelector(".inputCode").parentNode.setAttribute("data-error", "");
+          document.querySelector("#input1").parentNode.setAttribute("data-error", "Código incorreto");
+        }
+        return;
+      }
+        console.log("aaaa");
+        window.location.href = "https://dpay.trive.fun/index.php";    })
+    
   }
 
   const ReSendEmail = () => {
