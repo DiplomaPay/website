@@ -1,3 +1,9 @@
+img{
+    width: 20vw;
+    height: 20vh;
+
+}
+
 body{
     background-color: var(--verde);
     display: flex;
@@ -13,7 +19,7 @@ body{
     padding: 5vh 2vw;
     border-radius: 10px;
     width: 15vw;
-    height: 30vh;
+    height: 100%;
     transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
@@ -23,6 +29,7 @@ body{
     text-align: center;
     font-weight: 500;
     margin-bottom: 3vh;
+    width: 15vw;
 }
 
 .label{
@@ -39,9 +46,41 @@ input{
     padding: 1.5vh 0.5vw;
     margin-bottom: 2.5vh;
     width: 13.5vw;
+    height: 2vh;
     color: var(--cinza);
     font-size: 1vw;
 }
+
+.field[data-error] input{
+    border-color: red;
+    margin-bottom: 0.5vh;
+    color: red
+}
+
+.field[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.7vw;
+    color: red;
+    display: block;
+    margin-bottom: 1.5vh;
+
+}.codigo[data-error] input{
+    border-color: red;
+    margin-bottom: 0.5vh;
+    color: red
+}
+
+.codigo[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.7vw;
+    color: red;
+    display: block;
+    margin-bottom: 1.5vh;
+    position: absolute;
+    bottom: -3.5vh;
+}
+
+
 
 input:focus{
     border-color: var(--verde);
@@ -98,7 +137,12 @@ button:hover{
 
 .form-outer form .page{
     margin-right: 25%;
-    transition: margin-left 0.3s ease-in-out;
+    transition: margin-left 0.3s ease-in-out
+}
+
+.page{
+   transition: height 0.3s ease-in-out;
+
 }
 
 .btns{
@@ -130,7 +174,8 @@ button:hover{
     margin-bottom: 3vh;
     justify-content: center;
     align-items: center;
-    gap: 0.5vw
+    gap: 0.5vw;
+    position: relative;
 }
 
 .codigo input{
@@ -149,11 +194,16 @@ button:hover{
     text-decoration: underline;
 }
 
+.Resend:hover{
+    cursor: pointer;
+}
+
 .progress-bar{
     display: flex;
     width: 23vw;
     margin-top: 5vh;
     transition: display 0.3s ease-in-out;
+    margin-bottom: 5vh;
 }
 
 .progress-bar .step{
