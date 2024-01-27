@@ -24,7 +24,7 @@ if(mysqli_num_rows($queryCode) < 1){
     endCode($obj);
 }
 
-$email = mysqli_fetch_assoc($queryCode)['email'];
+$email = mysqli_fetch_assoc($queryCode)['email']; 
 
 //STEP 2 -> Activate accound
 mysqli_query($conexao, "update users set active='true', set_code='' where set_code='$code'") or endCodeError();
