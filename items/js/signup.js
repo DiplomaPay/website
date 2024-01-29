@@ -124,7 +124,7 @@ const sendSignup = () => {
     inputCodes[i].addEventListener("input", function () {
           this.closest(".codigo").removeAttribute("data-error");
     });
-  }
+}
 
   const sendCode =() => {
     var input1 = document.getElementById("input1").value;
@@ -152,13 +152,13 @@ const sendSignup = () => {
       if (mensagem != 'Account activated.'){
         if (mensagem === 'Code not found.'){
           console.log("aaa");
+          document.querySelector("#input1").parentNode.setAttribute("data-error", "Esse CPF Já esta em uso");
           document.querySelector(".inputCode").parentNode.setAttribute("data-error", "");
-          document.querySelector("#input1").parentNode.setAttribute("data-error", "Código incorreto");
         }
-        return;
       }
-        console.log("aaaa");
-        window.location.href = "https://dpay.trive.fun/index.php";    })
+        
+        window.location.href = "https://dpay.trive.fun/index.php"
+    })
     
   }
 

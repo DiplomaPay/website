@@ -6,30 +6,30 @@ header('Content-Type: application/json; charset=utf-8');
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
-$email = $json->email;
+$mail = $json->mail;
 $code = $json->code;
 $password = $json->password;
 $new_password = $json->new_password;
 
-$email = str_replace(" ", "", $email);
+$mail = str_replace(" ", "", $mail);
 $code = str_replace(" ", "", $code);
 
 
-$email = mysqli_real_escape_string($conexao, $email);
+$mail = mysqli_real_escape_string($conexao, $mail);
 $code = mysqli_real_escape_string($conexao, $code);
 $password = mysqli_real_escape_string($conexao, $password);
 $new_password = mysqli_real_escape_string($conexao, $new_password);
 
-if(!$email and !$code or $code and !$email){
+if(!$mail and !$code or $code and !$mail){
     $obj = array(status => $__STATUS__, response => false, message => "Insira os dados corretamente.");
     endCode($obj);
 }
 
-if($email and !$code){
-    $queryEmail = mysqli_query($conexao, "select * from users where email='$email'") or endCodeError();
+if($mail and !$code){
+    $queryEmail = mysqli_query($conexao, "select * from users where email='$mail'") or endCodeError();
 
     if(mysqli_num_rows($queryEmail) > 0){
-        sendMail($conexao, $email, $__HEADERS__);
+        sendMail($conexao, $mail, $__HEADERS__);
         $obj = array(status => $__STATUS__, response => true, message => "Código de recuperação enviado.");
         endCode($obj);
     };
@@ -38,8 +38,8 @@ if($email and !$code){
     endCode($obj);
 }
 
-if($email and $code and !$password and !$new_password){
-    $queryCode = mysqli_query($conexao, "select * from users where email='$email' and set_code='$code'") or endCodeError();
+if($mail and $code and !$password and !$new_password){
+    $queryCode = mysqli_query($conexao, "select * from users where email='$mail' and set_code='$code'") or endCodeError();
 
     if(mysqli_num_rows($queryCode) > 0){
         $obj = array(status => $__STATUS__, response => true, message => "Código válido.");
@@ -47,7 +47,7 @@ if($email and $code and !$password and !$new_password){
     }
 
     $obj = array(status => $__STATUS__, response => false, message => "Código inválido.");
-    endCode($obj);
+    endCode($obj); 
 }
 
 if(!$password or !$new_password or $password != $new_password){
@@ -57,15 +57,15 @@ if(!$password or !$new_password or $password != $new_password){
 
 $password = password_hash($new_password, PASSWORD_DEFAULT);
 
-$queryLast = mysqli_query($conexao, "select * from users where email='$email' and set_code='$code'") or endCodeError();
+$queryLast = mysqli_query($conexao, "select * from users where email='$mail' and set_code='$code'") or endCodeError();
 
 if(mysqli_num_rows($queryLast) > 0){
-    $queryFinal = mysqli_query($conexao, "update users set password='$password', set_code='' where email='$email' and set_code='$code'") or endCodeError();
+    $queryFinal = mysqli_query($conexao, "update users set password='$password', set_code='' where email='$mail' and set_code='$code'") or endCodeError();
 
     if($queryFinal){
         $obj = array(status => $__STATUS__, response => true, message => "Senha alterada com sucesso.");
 
-        $to = $email;
+        $to = $mail;
         $subject = "Sua senha foi alterada";
         $message = "
         <html>
@@ -100,7 +100,7 @@ if(mysqli_num_rows($queryLast) > 0){
 $obj = array(status => $__STATUS__, response => false, message => "Verifique os dados e tente novamente.");
 endCode($obj);
 
-function sendMail($conexao, $email, $__HEADERS__){
+function sendMail($conexao, $mail, $__HEADERS__){
     function generateCode(){
         global $conexao;
         do {
@@ -112,9 +112,9 @@ function sendMail($conexao, $email, $__HEADERS__){
     }
     
     $randomCode = generateCode();
-    mysqli_query($conexao, "update users set set_code='$randomCode' where email='$email'") or endCodeError();
+    mysqli_query($conexao, "update users set set_code='$randomCode' where email='$mail'") or endCodeError();
 
-    $to = $email;
+    $to = $mail;
     $subject = "Seu código de recuperação é $randomCode";
     $message = "
     <html>

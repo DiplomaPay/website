@@ -1,0 +1,254 @@
+img{
+    width: 20vw;
+    height: 20vh;
+
+}
+
+body{
+    background-color: var(--verde);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    
+}
+
+.container{
+    background-color: var(--branco);
+    padding: 5vh 2vw;
+    border-radius: 10px;
+    width: 15vw;
+    height: 100%;
+    transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+.title{
+    font-size: 1.3vw;
+    color: var(--cinza);
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 3vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.label{
+    font-size: 0.9vw;
+    color: var(--cinza);
+    font-weight: 600;
+    margin-bottom: 1vh;
+}
+
+input{
+    border-color: var(--verdeClaro);
+    border-style: ridge;
+    border-radius: 5px;
+    padding: 1.5vh 0.5vw;
+    margin-bottom: 2.5vh;
+    width: 13.5vw;
+    height: 2vh;
+    color: var(--cinza);
+    font-size: 1vw;
+}
+
+.field[data-error] input{
+    border-color: red;
+    margin-bottom: 0.5vh;
+    color: red
+}
+
+.field[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.7vw;
+    color: red;
+    display: block;
+    margin-bottom: 1.5vh;
+
+}.codigo[data-error] input{
+    border-color: red;
+    margin-bottom: 0.5vh;
+    color: red
+}
+
+.codigo[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.7vw;
+    color: red;
+    display: block;
+    margin-bottom: 1.5vh;
+    position: absolute;
+    bottom: -3.5vh;
+}
+
+
+
+input:focus{
+    border-color: var(--verde);
+    outline: 0;
+}
+
+input::placeholder{
+    color: var(--cinzaClaro);
+    font-size: 0.8vw;
+}
+
+
+
+.next{
+    border-radius: 5px;
+    background-color: var(--verde);
+    padding: 1.7vh 0;
+    width: 100%;
+    border:none;
+    color: var(--branco);
+    font-size: 0.9vw;
+    margin-bottom: 2vh;
+    transition: .3s;
+}
+
+button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: .3s;
+}
+
+.prev{
+    font-size: 0.9vw;
+    color: var(--cinza);
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    width: 15vw;
+    background-color: transparent;
+    border: none;
+    margin-bottom: 2vh ;
+
+}
+
+.container .form-outer{
+    width: 100%;
+    /* overflow: hidden; */
+}
+
+.form-outer form{
+    display: flex;
+    width: 400%;
+}
+
+.form-outer form .page{
+    margin-right: 25%;
+    transition: margin-left 0.3s ease-in-out
+}
+
+.page{
+   transition: height 0.3s ease-in-out;
+
+}
+
+.btns{
+    display: flex;
+    flex-direction: column;
+}
+
+.field{
+    display: flex;
+    flex-direction: column;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 3vh;
+    opacity: 80%;
+    color: var(--cinza);
+    font-size: 0.9vw;
+}
+
+.email{
+  color: var(--verde)
+}
+
+.codigo{
+    display: flex;
+    margin-bottom: 3vh;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5vw;
+    position: relative;
+}
+
+.codigo input{
+    width: 1vw;
+    height: 3vh;
+    border-radius: 5px;
+    border: 2px solid var(--verdeClaro);
+    opacity: 70%;
+    text-align: center;
+}
+
+.Resend{
+    font-size: 1vw;
+    color: var(--verde);
+    text-align: center;
+    text-decoration: underline;
+}
+
+.Resend:hover{
+    cursor: pointer;
+}
+
+.progress-bar{
+    display: flex;
+    width: 23vw;
+    margin-top: 5vh;
+    transition: display 0.3s ease-in-out;
+    margin-bottom: 5vh;
+}
+
+.progress-bar .step{
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.bullet{
+    background-color: var(--branco);
+    border-radius: 50%;
+    width: 1.7vw;
+    height: 1.7vw;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--cinza);
+    font-size: 1vw;
+    font-weight: 600;
+    border: 3px solid var(--verdeClaro);
+    position: relative;
+    transition: 0.3s ease-in-out;
+
+}
+
+.one{
+    background-color: var(--verdeClaro);
+    color: var(--branco);
+    border: 3px solid var(--branco);
+}
+
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after{
+    display: none;
+}
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after{
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 6vw;
+    left: 1.7vw;
+    background-color: var(--branco)
+};

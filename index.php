@@ -20,7 +20,7 @@
       <form action="javascript:void(0)">
         <div class="page slidePage">
           <div class="title">
-                Logar
+                LOGAR
           </div>
           <div class="field">
             <div class="label">Email</div>
@@ -35,7 +35,7 @@
           <div class="field">
             <button class="next nextBtn" >Entrar</button>
           </div>
-          <a class="prev" href="../index.php">Recuperar Senha</a>
+          <a class="prev" href="./p/change_password.php">Recuperar Senha</a>
           <br>
           <a class="prev" href="./p/signup.php">Cadastrar</a>
         </div>

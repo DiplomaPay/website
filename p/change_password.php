@@ -10,7 +10,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../items/css/signup.css">
+  <link rel="stylesheet" href="../items/css/change.css">
   <link rel="stylesheet" href="../items/css/global.css">
   <title>Cadastro</title>
 </head>
@@ -21,44 +21,50 @@
       <form action="javascript:void(0)">
         <div class="page slidePage">
           <div class="title">
-                CADASTRAR
-          </div>
-          <div class="field">
-            <div class="label">Nome Completo</div>
-            <input type="text" name="nome" id="nome" placeholder="Fulano da Silva">
-          </div>
-
-          <div class="field">
-            <button class="next nextBtn" >Continuar</button>
-          </div>
-          <a class="prev" href="../index.php">Logar</a>
-        </div>
-
-        <div class="page">
-          <div class="title">
-                CADASTRAR
-          </div>
-          <div class="field">
-            <div class="label">CPF</div>
-            <input type="text" placeholder="000.000.000-00" id="cpf" inputmode="numeric" maxlength="14" oninput="clean(this)">          
+                RECUPERAR
           </div>
           <div class="field">
             <div class="label">Email</div>
             <input type="text" placeholder="fulano@gmail.com" id="email">
           </div>
 
+          <div class="field">
+            <button class="next nextBtn" onclick="sendMail()" >Continuar</button>
+          </div>
+          <a class="prev" href="../index.php">Logar</a>
+        </div>
+
+        <div class="page">
+          <div class="title">
+                VERFICIAÇÃO DE EMAIL
+          </div>
+          <div class="field">
+            <div class="text">
+                <p>Código enviado para seu email</p>
+                <p class="email"></p>
+            </div>
+            <div class="codigo">
+            <input type="text" maxlength="1" id="input1" class="inputCode">
+            <input type="text" maxlength="1" id="input2" class="inputCode">
+            <input type="text" maxlength="1" id="input3" class="inputCode">
+            <input type="text" maxlength="1" id="input4" class="inputCode">
+            <input type="text" maxlength="1" id="input5" class="inputCode">
+            <input type="text" maxlength="1" id="input6" class="inputCode">
+            </div>
+          </div>
+
           <div class="field  btns">
-            <button class="next-1 next">Continuar</button>
-            <button class="prev-1 prev">Voltar</button>
+            <button class="next-1 next" onclick="sendCode()" >Continuar</button>
+            <a class="Resend" onclick="ReSendEmail()">Reenviar E-mail</a>
           </div>
         </div>
 
         <div class="page">
           <div class="title">
-                CADASTRAR
+                RECUPERAR
           </div>
           <div class="field">
-            <div class="label">Senha</div>
+            <div class="label">Nova senha</div>
             <input type="password" placeholder="*********" id="password">
           </div>
           <div class="field">
@@ -67,12 +73,13 @@
           </div>
 
           <div class="field  btns">
-            <button class="next-2 next" onclick="sendSignup()">Continuar</button>
-            <button class="prev-2 prev">Voltar</button>
+            <button class="next-2 next" onclick="sendChange()">Finalizar</button>
           </div>
         </div>
 
-        <div class="page">
+       
+
+        <!-- <div class="page">
           <div class="title">
             VERFICIAÇÃO DE EMAIL      
        </div>
@@ -95,7 +102,7 @@
             <button class="submit next" onclick="sendCode()">Finalizar</button>
             <a class="Resend" onclick="ReSendEmail()">Reenviar E-mail</a>
           </div>
-        </div>
+        </div> -->
 
 
       </form>
@@ -123,6 +130,6 @@
     </div>
 
   
-  <script src="../items/js/signup.js"></script>
+  <script src="../items/js/change.js"></script>
 </body>
 </html>
