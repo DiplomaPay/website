@@ -193,3 +193,19 @@ color: var(--verde)
   left: 1.7vw;
   background-color: var(--branco)
 };
+
+.field[data-error] input{
+  border-color: red;
+  color: red;
+  background-color: aqua;
+}
+
+.field[data-error]::after {
+  content: attr(data-error);
+  font-size: 0.7vw;
+  color: red;
+  display: block;
+  margin-top: -1.5vh;
+  margin-bottom: 1.5vh;
+
+}

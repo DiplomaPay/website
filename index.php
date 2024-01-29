@@ -24,16 +24,16 @@
           </div>
           <div class="field">
             <div class="label">Email</div>
-            <input type="text" name="email" id="email" placeholder="fulano@gmail.com">
+            <input type="text" id="email_login" placeholder="fulano@gmail.com">
           </div>
 
           <div class="field">
             <div class="label">Senha</div>
-            <input type="password" name="password" id="password" placeholder="*********">
+            <input type="password" name="password" id="password_login" placeholder="*********">
           </div>
 
           <div class="field">
-            <button class="next nextBtn" >Entrar</button>
+            <button class="next nextBtn" onclick="sendLogin()">Entrar</button>
           </div>
           <a class="prev" href="./p/change_password.php">Recuperar Senha</a>
           <br>
@@ -49,8 +49,14 @@
     <script>
         const email_login = document.getElementById("email_login");
         const password_login = document.getElementById("password_login");
-        const res_login = document.getElementById("res_login");
         
+        document.getElementById("email_login").addEventListener("input", function () {
+          this.parentNode.removeAttribute("data-error");
+        });
+        document.getElementById("password_login").addEventListener("input", function () {
+          this.parentNode.removeAttribute("data-error");
+        });
+
 	    const sendLogin = () => {
 	        let email = email_login.value;
 	        let password = password_login.value;
@@ -66,8 +72,41 @@
 	        })
 	        .then(e=>e.json())
 	        .then(e=>{
-	            res_login.innerText = JSON.stringify(e);
-	        })
+            console.log(e);
+            let mensagem = e.message;
+
+            console.log(mensagem)
+
+            if (mensagem !="Success."){
+              if (mensagem === "User not found."){
+                document.querySelector("#email_login").parentNode.setAttribute("data-error", "Usuário não encontrado");
+                email_login.style.borderColor = "red" 
+                setTimeout(() => {
+                  email_login.style.borderColor = "var(--verde)" 
+                },2000);   
+                return;
+              }
+              else if (mensagem === "Activate your account."){
+                document.querySelector("#email_login").parentNode.setAttribute("data-error", "Ative sua conta");
+                email_login.style.borderColor = "red" 
+                setTimeout(() => {
+                  email_login.style.borderColor = "var(--verde)" 
+                },2000);   
+                return;
+              }
+              else if (mensagem === "Wrong password."){
+                document.querySelector("#password_login").parentNode.setAttribute("data-error", "Senha errada")
+                password_login.style.borderColor = "red" 
+                setTimeout(() => {
+                  password_login.style.borderColor = "var(--verde)" 
+                },2000);   
+                return;
+              }
+              return;
+             
+            }
+            window.location.href="./p/dashboard.php"
+        })
 	    }
 	</script>
   
