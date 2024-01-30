@@ -1,0 +1,353 @@
+
+body{
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    height: 100vh;
+    background-color: var(--bc);
+}
+
+/* -----------SIDEBAR------------ */
+
+.sidebar{
+    background-color: var(--verde);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo{
+    width: 14vw;
+}
+
+.sidebar div{
+    width: 100%;
+}
+
+.sidebar div div{
+    width: 95%;
+    color: var(--branco);
+    padding: 1.3vh 0;
+    margin-bottom: 1vh;
+    cursor: pointer;
+}
+
+.sidebar div div:hover{
+    width: 95%;
+    border-radius: 0px 100px 100px 0px;
+    background-color: var(--branco);
+    color: var(--preto);
+    padding: 1.3vh 0;
+    margin-bottom: 1vh;
+
+}
+
+.sidebar div div p{
+    margin-left: 1.5vw;
+    font-size: 1vw;
+    font-weight: 500;
+    width: 100%;
+    white-space: nowrap;
+}
+
+/* ------------------Main------------------ */
+.main{
+    margin: 5vh 3vw
+}
+
+/* -----------------Header---------------- */
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+header img{
+    width: 3vw;
+    height: 3vw;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--verde);
+
+}
+
+header h2{
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: var(--cinza)
+}
+
+header span{
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: var(--verde)
+}
+
+/* ---------------Legenda---------------- */
+.legend{
+    display: flex;
+    gap: 4vw;
+    margin-top: 3vh;
+}
+.legend p{
+    margin-left: 3vw;
+    color: var(--cinza);
+    font-size: 1.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw
+}
+
+.legend p:before{
+    content: "";
+    display: flex;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-radius: 5px;
+    background-color: var(--verdeClaro);
+}
+
+.legend p:first-child:before{
+    background-color: var(--cinza);
+}
+
+/* ---------------Nota---------------- */
+
+.notaContribuinte{
+    margin-top: 5vh;
+}
+
+.notaContribuinte h3{
+    font-size: 1.4vw;
+    color: var(--cinza);
+    font-weight: 500;
+}
+
+.nota{
+    font-size: 1.4vw;
+    font-weight: 500;
+    color: var(--verde)
+}
+
+.notaContribuinte h4{
+    font-size: 1vw;
+    color: var(--cinzaClaro);
+    font-weight: 500;
+    margin-top: 1vh;
+}
+
+.notaContribuinte span{
+    font-size: 1vw;
+    color: var(--verdeClaro);
+    font-weight: 500;
+}
+
+/* ----------------Enquete---------------- */
+.enquete{
+    background-color: var(--verde);
+    border-radius: 5px;
+    padding: 2.5vh 2.5vw;
+    position: relative;
+    margin-top: 5vh;
+}
+
+.enquete::before{
+    content: "";
+    position: absolute;
+    background-color: var(--branco);
+    width: 0.4vw;
+    height: 90%;
+    top: 5%;
+    left: 0.5vw;
+    border-radius: 20px;
+
+}
+
+.enquete div{
+    display: flex;
+    justify-content: space-between;
+    color: var(--branco);
+}
+
+.enquete h3{
+    font-size: 1.3vw;
+    font-weight: 500
+
+}
+.enquete p{
+    font-size: 0.9vw;
+    font-weight: 500;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
+}
+
+.enquete button{
+    border: none;
+    border-radius: 5px;
+    background-color: var(--branco);
+    color: var(--cinzaEscuro);
+    padding: 1vh 1.5vw;
+    font-size: 1vw;
+    font-family: 'Alata';
+    cursor: pointer;
+    transition: .5s;
+}
+
+.enquete button:hover{
+    transform: scale(1.1);
+    /* border: 3px solid var(--branco);
+    background-color: var(--verde);
+    color: var(--branco); */
+}
+
+.enquete img{
+    width: 1.5vw;
+}
+
+/* -----------Mensagem--------------- */
+.mensagem{
+    background-color: var(--branco);
+    border-radius: 5px;
+    padding: 2.5vh 2.5vw;
+    position: relative;
+    margin-top: 3vh;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    color: var(--cinza);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mensagem::before{
+    content: "";
+    position: absolute;
+    background-color: var(--verde);
+    width: 0.4vw;
+    height: 90%;
+    top: 5%;
+    left: 0.5vw;
+    border-radius: 20px;
+
+}
+
+.mensagem h3{
+    font-size: 1.3vw;
+    font-weight: 500
+
+}
+
+.mensagem h4{
+    font-size: 1vw;
+    font-weight: 500;
+    margin-top: 2vh;
+}
+.mensagem p{
+    font-size: 0.9vw;
+    font-weight: 500;
+    margin-top: 1.5vh;
+    margin-bottom: 1vh;
+
+}
+
+.mensagem button{
+    border: none;
+    border-radius: 5px;
+    background-color: var(--verde);
+    color: var(--branco);
+    padding: 1vh 1.5vw;
+    font-size: 1vw;
+    font-family: 'Alata';
+    cursor: pointer;
+    transition: .5s;
+
+}
+
+.mensagem button:hover{
+    transform: scale(1.1);
+    /* border: 3px solid var(--branco);
+    background-color: var(--verde);
+    color: var(--branco); */
+}
+
+/* --------------------SuaSala----------------- */
+.suaSala{
+    margin-top: 5vh;
+    Color: var(--cinza)
+}
+
+.suaSala h3{
+    font-size: 1.4vw;
+    font-weight: 500;
+}
+
+.suaSala a{
+    font-size: 1.4vw;
+    font-weight: 500;
+    color: var(--verde);
+}
+
+.grid{
+    margin-top: 3vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3vh 5vw;
+}
+
+.grid div{
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
+    border-bottom: 2px solid var(--cinzaEscuro);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3vh;
+    padding: 3vh 5vw 5vh 5vw
+}
+
+
+.grid h4{
+    font-size: 1.2vw;
+    font-weight: 500;
+
+}
+
+.grid p{
+    font-size: 1.7vw;
+    font-weight: 500;
+}
+
+.pessoal{
+    border-bottom: 2px solid var(--verdeClaro) !important;
+}
+
+.pessoal p{
+    color: var(--verde) !important;
+}
+
+.graphic{
+ margin-top: 5vh;
+}
+
+
+/* ------------------------------------------- */
+
+.question{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50px;
+    background-color: var(--verde);
+    border: 4px solid var(--branco);
+    font-size: 2vw;
+    font-family: 'Alata';
+    color: var(--branco);
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+    position: fixed;
+    bottom: 5vh;
+    right: 3vw;
+    transition: .2s;
+}
+
+.question:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}

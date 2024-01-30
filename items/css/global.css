@@ -13,9 +13,11 @@ html{
     --verdeClaro: #269c73a5;
     --verdeEscuro: #1c8661;
     --branco: #ffffff;
+    --bc: #F8F8F8;
     --preto: #000000;
     --cinza: #949494;
-    --cinzaClaro: #BEBEBE
+    --cinzaClaro: #BEBEBE;
+    --cinzaEscuro: #4A4A4A
 
 }
 
