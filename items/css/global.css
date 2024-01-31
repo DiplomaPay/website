@@ -17,7 +17,9 @@ html{
     --preto: #000000;
     --cinza: #949494;
     --cinzaClaro: #BEBEBE;
-    --cinzaEscuro: #4A4A4A
+    --cinzaEscuro: #4A4A4A;
+    --azul: #3E9BB9;
+    --azulClaro: rgb(62, 155, 185, 48)
 
 }
 

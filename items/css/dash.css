@@ -103,7 +103,7 @@ header span{
     width: 1.5vw;
     height: 1.5vw;
     border-radius: 5px;
-    background-color: var(--verdeClaro);
+    background-color: var(--azulClaro);
 }
 
 .legend p:first-child:before{
@@ -125,7 +125,7 @@ header span{
 .nota{
     font-size: 1.4vw;
     font-weight: 500;
-    color: var(--verde)
+    color: var(--verde);
 }
 
 .notaContribuinte h4{
@@ -135,7 +135,7 @@ header span{
     margin-top: 1vh;
 }
 
-.notaContribuinte span{
+.notaContribuinte h4 span{
     font-size: 1vw;
     color: var(--verdeClaro);
     font-weight: 500;

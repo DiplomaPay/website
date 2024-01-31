@@ -1,8 +1,8 @@
 
 <?php
-include"../sys/conexao.php";
+// include"../sys/conexao.php";
 //só consegue entrar logado
-justLog($__EMAIL__);
+// justLog($__EMAIL__);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@ justLog($__EMAIL__);
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
-    <title>Dash</title>
+    <title>ash</title>
 </head>
 <body>
     <section class="sidebar">
