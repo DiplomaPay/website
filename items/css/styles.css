@@ -89,7 +89,7 @@ button:hover{
 
 .container .form-outer{
   width: 100%;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .form-outer form{

@@ -31,7 +31,7 @@
   
         console.log("Email:", mail);
         
-        fetch("https://dpay.trive.fun/sys/user/configs/change_password.php", {
+        fetch("https://diplomapay.com/sys/user/configs/change_password.php", {
             method: "POST",
             body: JSON.stringify(mail),
         })
@@ -81,7 +81,7 @@
         mail: mail
       }
   
-      fetch("https://dpay.trive.fun/sys/user/configs/change_password.php", {
+      fetch("https://diplomapay.com/sys/user/configs/change_password.php", {
         method: "POST",
         body: JSON.stringify(code),
       })
@@ -121,7 +121,7 @@
     
           console.log("Email:", data);
           
-          fetch("https://dpay.trive.fun/sys/user/configs/change_password.php", {
+          fetch("https://diplomapay.com/sys/user/configs/change_password.php", {
               method: "POST",
               body: JSON.stringify(data),
           })

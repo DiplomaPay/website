@@ -66,7 +66,7 @@
 	            password: password
 	        }
 	        
-	        fetch("https://dpay.trive.fun/sys/user/account/login.php", {
+	        fetch("https://diplomapay.com/sys/user/account/login.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })

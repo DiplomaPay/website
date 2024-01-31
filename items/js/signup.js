@@ -65,7 +65,7 @@ const sendSignup = () => {
 
       console.log("Dados de inscrição:", data);
       
-      fetch("https://dpay.trive.fun/sys/user/account/signup.php", {
+      fetch("https://diplomapay.com/sys/user/account/signup.php", {
           method: "POST",
           body: JSON.stringify(data),
       })
@@ -140,7 +140,7 @@ const sendSignup = () => {
       code: codeJunto
     }
 
-    fetch("https://dpay.trive.fun/sys/user/account/activate.php", {
+    fetch("https://diplomapay.com/sys/user/account/activate.php", {
       method: "POST",
       body: JSON.stringify(code),
     })
@@ -157,7 +157,7 @@ const sendSignup = () => {
         }
       }
         
-        window.location.href = "https://dpay.trive.fun/index.php"
+        window.location.href = "https://diplomapay.com/index.php"
     })
     
   }
@@ -173,7 +173,7 @@ const sendSignup = () => {
   
         console.log("Email:", data);
         
-        fetch("https://dpay.trive.fun/sys/user/configs/newcode.php", {
+        fetch("https://diplomapay.com/sys/user/configs/newcode.php", {
             method: "POST",
             body: JSON.stringify(data),
         })
