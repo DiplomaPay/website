@@ -1,13 +1,24 @@
 <?php
-  session_start();
-  date_default_timezone_set('America/Sao_Paulo');
-  $conexao = mysqli_connect('localhost','u752370168_dpay','Easycodex123','u752370168_dpay') or die ("Atualize a página e tente novamente!");
-
-  $__EMAIL__ = $_SESSION["__EMAIL__"];
-  
-  if($__EMAIL__){
-    error_log("aa");
-  }
+ session_start();
+ date_default_timezone_set('America/Sao_Paulo');
+ $conexao = mysqli_connect('localhost','u752370168_dpay','Easycodex123','u752370168_dpay') or die ("Atualize a página e tente novamente!");
+ 
+ header('Access-Control-Allow-Origin: *');
+ header('Access-Control-Allow-Methods: *');
+ header('Access-Control-Allow-Headers: *');
+ 
+ // USER ACCOUNT
+ $__USER__ = $_SESSION["__USER__"];
+ $__CPF__ = $_SESSION["__CPF__"];
+ $__EMAIL__ = $_SESSION["__EMAIL__"];
+ $__PASSWORD__ = $_SESSION["__PASSWORD__"];
+ 
+ // Verifica se o usuário já está logado
+ if($__EMAIL__){
+     // O usuário já está logado, redirecione para a página desejada
+     header("Location: ./p/room.php");
+     exit;
+ }
 
 ?>
 <!DOCTYPE html>
