@@ -108,7 +108,7 @@
         <button onclick="sendCreateRoom()">Criar</button>
         <a id="voltarCriarSala" href="#">Voltar</a>
         <p id='res_create_room'></p>    
-        </dialog>
+    </dialog>
     <script>
         const buttonEntrarSala = document.querySelector('#entrarSala')
         const modalEntrarSala = document.querySelector('#modalEntrarSala')
@@ -187,7 +187,7 @@
 
         const myrooms = (e) => {
 
-        fetch("https://diplomapay.com.fun/sys/room/list.php")
+        fetch("https://diplomapay.com/sys/room/list.php")
         .then(e=>e.json())
         .then(e=>{
             myrooms_list.innerHTML = "";
