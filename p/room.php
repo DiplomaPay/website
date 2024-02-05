@@ -93,9 +93,10 @@
     </section>
     <dialog id="modalEntrarSala">
         <h1>Código da sala </h1>
-        <input type="text" placeholder="EX:AB1C2D">
-        <button>Entrar</button>
+        <input id='join_room_name' type="text" placeholder="EX:AB1C2D">
+        <button onclick="sendjoinRoom()">Entrar</button>
         <a id="voltarEntrarSala" href="">Voltar</a>
+        <p id='res_join_room'></p>
 
     </dialog>
 
@@ -165,6 +166,22 @@
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_create_room.innerText = JSON.stringify(e);
+				myrooms();
+	        })
+	    }
+        const join_room_name = document.getElementById("join_room_name");
+	    const sendjoinRoom= () => {
+			let data = {
+				room_code: join_room_name.value,
+			}
+
+	        fetch("https://dpay.trive.fun/sys/room/join.php", {
+	            method: "POST",
+	            body: JSON.stringify(data),
+	        })
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_join_room.innerText = JSON.stringify(e);
 				myrooms();
 	        })
 	    }
