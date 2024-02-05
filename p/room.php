@@ -188,29 +188,27 @@
 
         const myrooms = (e) => {
     fetch("https://diplomapay.com/sys/room/list.php")
-                .then(e => e.json())
-                .then(e => {
-                    myrooms_list.innerHTML = "";
-                    let data = e;
-                    console.log(data);
-                    for (let i = 0; i < data.length; i++) {
-                        const salaClass = i === 0 ? "salaAdmin" : "sala";
-
-                        myrooms_list.innerHTML += `
-                            <div class="${salaClass}">
-                                <h2>${data[i].room_name}</h2>
-                                <div class="qtnAlunos info">
-                                    <p>N</p><p>Alunos</p>
-                                </div>
-                                <div class="qtnSaldo info">
-                                    <p>R$${data[i]}</p><p>Saldo</p>
-                                </div>
-                                <button>Entrar no painel</button>
-                            </div>
-                        `;
-                    }
-                });
-        };
+        .then(e => e.json())
+        .then(e => {
+            myrooms_list.innerHTML = "";
+            let data = e;
+            console.log(data);
+            for (let i = 0; i < data.length; i++) {
+                myrooms_list.innerHTML += `
+                    <div class="sala salaAdmin">
+                        <h2>${data[i].room_name}</h2>
+                        <div class="qtnAlunos info">
+                            <p>N</p><p>Alunos</p>
+                        </div>
+                        <div class="qtnSaldo info">
+                            <p>R$${data[i]}</p><p>Saldo</p>
+                        </div>
+                        <button>Entrar no painel</button>
+                    </div>
+                `;
+            }
+        });
+};
 
         myrooms();
 
