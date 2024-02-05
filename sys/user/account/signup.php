@@ -1,30 +1,30 @@
 <?php
 include"../conexao.php";
 
-// cantLog($__EMAIL__);
+cantLog($__EMAIL__);
 
-// header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json; charset=utf-8');
 
-// $request = file_get_contents('php://input');
-// $json = json_decode($request);
+$request = file_get_contents('php://input');
+$json = json_decode($request);
 
 
-// // Recived data 
-// $email = $json->email;
-// $password = $json->password;
-// $confirm_password = $json->confirm_password;
-// $cpf = $json->cpf;
-// $name = $json->name;
+// Recived data 
+$email = $json->email;
+$password = $json->password;
+$confirm_password = $json->confirm_password;
+$cpf = $json->cpf;
+$name = $json->name;
 
-// $email = str_replace(" ", "", $email);
-// $cpf = preg_replace("/[^0-9]/", "", $cpf);
+$email = str_replace(" ", "", $email);
+$cpf = preg_replace("/[^0-9]/", "", $cpf);
 
-// // Processed data
-// $email = mysqli_real_escape_string($conexao, $email);
-// $password = mysqli_real_escape_string($conexao, $password);
-// $confirm_password = mysqli_real_escape_string($conexao, $confirm_password);
-// $cpf = mysqli_real_escape_string($conexao, $cpf);
-// $name = mysqli_real_escape_string($conexao, $name);
+// Processed data
+$email = mysqli_real_escape_string($conexao, $email);
+$password = mysqli_real_escape_string($conexao, $password);
+$confirm_password = mysqli_real_escape_string($conexao, $confirm_password);
+$cpf = mysqli_real_escape_string($conexao, $cpf);
+$name = mysqli_real_escape_string($conexao, $name);
 
 
 // // STEP 1 -> Verify data
