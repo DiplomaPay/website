@@ -44,7 +44,10 @@
         </div>
 
         <div id='myrooms_list' class="salas">
-          
+            <div id="entrarSala" class="entrarSala sala">
+                <p>Entrar em uma sala</p>
+            </div>
+            <button class="criar" id="criarSala">+ Criar turma</button>
         </div>
         
     </section>
@@ -169,13 +172,6 @@
                     </div>
                 `;
             }
-
-            myrooms_list.innerHTML += `
-                <div id="entrarSala" class="entrarSala sala">
-                    <p>Entrar em uma sala</p>
-                </div>
-                <button class="criar" id="criarSala">+ Criar turma</button>
-            `;
         });
 };
 
