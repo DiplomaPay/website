@@ -44,6 +44,10 @@
         </div>
 
         <div id='myrooms_list' class="salas">
+            <div id="entrarSala" class="entrarSala sala">
+                <p>Entrar em uma sala</p>
+            </div>
+            <button class="criar" id="criarSala">+ Criar turma</button>
         </div>
         
     </section>
@@ -66,18 +70,44 @@
         <p id='res_create_room'></p>    
     </dialog>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const buttonEntrarSala = document.querySelector('#entrarSala');
-            const modalEntrarSala = document.querySelector('#modalEntrarSala');
-            const voltarEntrarSala = document.querySelector('#voltarEntrarSala');
+        const buttonEntrarSala = document.querySelector('#entrarSala')
+        const modalEntrarSala = document.querySelector('#modalEntrarSala')
+        const voltarEntrarSala = document.querySelector('#voltarEntrarSala')
+    
+        buttonEntrarSala.onclick = function (){
+            modalEntrarSala.showModal()
+    
+        }
+    
+        voltarEntrarSala.onclick = function(){
+            modalEntrarSala.close()
+        }
 
-            buttonEntrarSala.onclick = function () {
-                modalEntrarSala.showModal();
-            };
-
-            voltarEntrarSala.onclick = function () {
+        document.addEventListener('click', function (event) {
+            if (event.target === modalEntrarSala) {
                 modalEntrarSala.close();
-            };
+            }
+        });
+
+
+
+        const buttonCriarSala = document.querySelector('#criarSala');
+        const modalCriarSala = document.querySelector('#modalCriarSala');
+        const voltarCriarSala = document.querySelector('#voltarCriarSala');
+
+        buttonCriarSala.onclick = function () {
+            modalCriarSala.showModal();
+        };
+
+        voltarCriarSala.onclick = function () {
+            modalCriarSala.close();
+        };
+
+        document.addEventListener('click', function (event) {
+            if (event.target === modalCriarSala) {
+                modalCriarSala.close();
+            }
+        });
 
 
         const room_name = document.getElementById("room_name");
@@ -116,21 +146,6 @@
 	        })
 	    }
 
-        const buttonCriarSala = document.querySelector('#criarSala');
-            const modalCriarSala = document.querySelector('#modalCriarSala');
-            const voltarCriarSala = document.querySelector('#voltarCriarSala');
-
-            buttonCriarSala.onclick = function () {
-                modalCriarSala.showModal();
-            };
-
-            voltarCriarSala.onclick = function () {
-                modalCriarSala.close();
-            };
-
-            myrooms();
-        });
-
         const myrooms = (e) => {
     fetch("https://diplomapay.com/sys/room/list.php")
         .then(e => e.json())
@@ -166,6 +181,7 @@
 };
 
 
+        myrooms();
 
 
 
