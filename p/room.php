@@ -17,124 +17,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 </head>
-<script>
-        const buttonEntrarSala = document.querySelector('#entrarSala')
-        const modalEntrarSala = document.querySelector('#modalEntrarSala')
-        const voltarEntrarSala = document.querySelector('#voltarEntrarSala')
-    
-        buttonEntrarSala.onclick = function (){
-            modalEntrarSala.showModal()
-    
-        }
-    
-        voltarEntrarSala.onclick = function(){
-            modalEntrarSala.close()
-        }
-
-        document.addEventListener('click', function (event) {
-            if (event.target === modalEntrarSala) {
-                modalEntrarSala.close();
-            }
-        });
-
-
-
-        const buttonCriarSala = document.querySelector('#criarSala');
-        const modalCriarSala = document.querySelector('#modalCriarSala');
-        const voltarCriarSala = document.querySelector('#voltarCriarSala');
-
-        buttonCriarSala.onclick = function () {
-            modalCriarSala.showModal();
-        };
-
-        voltarCriarSala.onclick = function () {
-            modalCriarSala.close();
-        };
-
-        document.addEventListener('click', function (event) {
-            if (event.target === modalCriarSala) {
-                modalCriarSala.close();
-            }
-        });
-
-
-        const room_name = document.getElementById("room_name");
-	    const sendCreateRoom= () => {
-            console.log("a");
-			let data = {
-				room_name: room_name.value,
-				assinatura: "concordo"
-			}
-            
-	        fetch("https://diplomapay.com/sys/room/create.php", {
-	            method: "POST",
-	            body: JSON.stringify(data),
-	        })
-	        .then(e=>e.json())
-	        .then(e=>{
-	            res_create_room.innerText = JSON.stringify(e);
-				myrooms();
-                
-	        })  
-	    }
-        const join_room_name = document.getElementById("join_room_name");
-	    const sendjoinRoom= () => {
-			let data = {
-				room_code: join_room_name.value,
-			}
-
-	        fetch("https://diplomapay.com/sys/room/join.php", {
-	            method: "POST",
-	            body: JSON.stringify(data),
-	        })
-	        .then(e=>e.json())
-	        .then(e=>{
-	            res_join_room.innerText = JSON.stringify(e);
-				myrooms();
-	        })
-	    }
-
-        const myrooms = (e) => {
-    fetch("https://diplomapay.com/sys/room/list.php")
-        .then(e => e.json())
-        .then(e => {
-            let data = e;
-            console.log(data);
-
-            myrooms_list.innerHTML = "";
-
-            for (let i = 0; i < data.length; i++) {
-                myrooms_list.innerHTML += `
-                    <div class="sala salaAdmin">
-                        <h2>${data[i].room_name}</h2>
-                        <div class="qtnAlunos info">
-                            <p>${data[i].user_room}</p>
-                            <p>Alunos</p>
-                        </div>
-                        <div class="qtnSaldo info">
-                            <p>R$${data[i]}</p><p>Saldo</p>
-                        </div>
-                        <button>Entrar no painel</button>
-                    </div>
-                `;
-            }
-
-            myrooms_list.innerHTML += `
-                <div id="entrarSala" class="entrarSala sala">
-                    <p>Entrar em uma sala</p>
-                </div>
-                <button class="criar" id="criarSala">+ Criar turma</button>
-            `;
-        });
-};
-
-
-        myrooms();
-
-
-
-    
-    </script>
 <body>
     <section class="sidebar">
             <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" class = "logo">
@@ -183,6 +65,111 @@
         <a id="voltarCriarSala" href="#">Voltar</a>
         <p id='res_create_room'></p>    
     </dialog>
-   
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttonEntrarSala = document.querySelector('#entrarSala');
+            const modalEntrarSala = document.querySelector('#modalEntrarSala');
+            const voltarEntrarSala = document.querySelector('#voltarEntrarSala');
+
+            buttonEntrarSala.onclick = function () {
+                modalEntrarSala.showModal();
+            };
+
+            voltarEntrarSala.onclick = function () {
+                modalEntrarSala.close();
+            };
+
+
+        const room_name = document.getElementById("room_name");
+	    const sendCreateRoom= () => {
+            console.log("a");
+			let data = {
+				room_name: room_name.value,
+				assinatura: "concordo"
+			}
+            
+	        fetch("https://diplomapay.com/sys/room/create.php", {
+	            method: "POST",
+	            body: JSON.stringify(data),
+	        })
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_create_room.innerText = JSON.stringify(e);
+				myrooms();
+                
+	        })  
+	    }
+        const join_room_name = document.getElementById("join_room_name");
+	    const sendjoinRoom= () => {
+			let data = {
+				room_code: join_room_name.value,
+			}
+
+	        fetch("https://diplomapay.com/sys/room/join.php", {
+	            method: "POST",
+	            body: JSON.stringify(data),
+	        })
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_join_room.innerText = JSON.stringify(e);
+				myrooms();
+	        })
+	    }
+
+        const buttonCriarSala = document.querySelector('#criarSala');
+            const modalCriarSala = document.querySelector('#modalCriarSala');
+            const voltarCriarSala = document.querySelector('#voltarCriarSala');
+
+            buttonCriarSala.onclick = function () {
+                modalCriarSala.showModal();
+            };
+
+            voltarCriarSala.onclick = function () {
+                modalCriarSala.close();
+            };
+
+            myrooms();
+        });
+
+        const myrooms = (e) => {
+    fetch("https://diplomapay.com/sys/room/list.php")
+        .then(e => e.json())
+        .then(e => {
+            let data = e;
+            console.log(data);
+
+            myrooms_list.innerHTML = "";
+
+            for (let i = 0; i < data.length; i++) {
+                myrooms_list.innerHTML += `
+                    <div class="sala salaAdmin">
+                        <h2>${data[i].room_name}</h2>
+                        <div class="qtnAlunos info">
+                            <p>${data[i].user_room}</p>
+                            <p>Alunos</p>
+                        </div>
+                        <div class="qtnSaldo info">
+                            <p>R$${data[i]}</p><p>Saldo</p>
+                        </div>
+                        <button>Entrar no painel</button>
+                    </div>
+                `;
+            }
+
+            myrooms_list.innerHTML += `
+                <div id="entrarSala" class="entrarSala sala">
+                    <p>Entrar em uma sala</p>
+                </div>
+                <button class="criar" id="criarSala">+ Criar turma</button>
+            `;
+        });
+};
+
+
+
+
+
+    
+    </script>
 </body>
 </html>
