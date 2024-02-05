@@ -17,59 +17,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 </head>
-<body>
-    <section class="sidebar">
-            <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" class = "logo">
-            <div>
-                <div>
-                    <img src="" alt="">
-                    <p>Salas
-                </div>
-                <div>
-                    <img src="" alt="">
-                    <p>Usuário
-                </div>
-                <div>
-                    <img src="" alt="">
-                    <p>Configurações
-                </div>
-            </div>
-    </section>
-
-    <section class="main">
-        <div class="header">
-            <h1>Suas turmas</h1>
-            <h4>Aluno</h4>
-            <h4 class="adminSquare">Admin</h4>
-        </div>
-
-        <div id='myrooms_list' class="salas">
-            <div id="entrarSala" class="entrarSala sala">
-                <p>Entrar em uma sala</p>
-            </div>
-            <button class="criar" id="criarSala">+ Criar turma</button>
-        </div>
-        
-    </section>
-    <dialog id="modalEntrarSala">
-        <h1>Código da sala </h1>
-        <input id='join_room_name' type="text" placeholder="EX:AB1C2D">
-        <button onclick="sendjoinRoom()">Entrar</button>
-        <a id="voltarEntrarSala" href="">Voltar</a>
-        <p id='res_join_room'></p>
-
-    </dialog>
-
-    <dialog id="modalCriarSala">
-        <h1>Criar sala</h1>
-        <input type="text" id='room_name' placeholder="Nome da sala">
-        <br>
-        <p>Digite <span>"Concordo"</span> para aceitar nossos <a href="#">Termos de uso</a></p>
-        <button onclick="sendCreateRoom()">Criar</button>
-        <a id="voltarCriarSala" href="#">Voltar</a>
-        <p id='res_create_room'></p>    
-    </dialog>
-    <script>
+<script>
         const buttonEntrarSala = document.querySelector('#entrarSala')
         const modalEntrarSala = document.querySelector('#modalEntrarSala')
         const voltarEntrarSala = document.querySelector('#voltarEntrarSala')
@@ -160,7 +108,8 @@
                     <div class="sala salaAdmin">
                         <h2>${data[i].room_name}</h2>
                         <div class="qtnAlunos info">
-                            <p>N</p><p>Alunos</p>
+                            <p>${data[i].user_room}</p>
+                            <p>Alunos</p>
                         </div>
                         <div class="qtnSaldo info">
                             <p>R$${data[i]}</p><p>Saldo</p>
@@ -186,5 +135,54 @@
 
     
     </script>
+<body>
+    <section class="sidebar">
+            <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" class = "logo">
+            <div>
+                <div>
+                    <img src="" alt="">
+                    <p>Salas
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <p>Usuário
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <p>Configurações
+                </div>
+            </div>
+    </section>
+
+    <section class="main">
+        <div class="header">
+            <h1>Suas turmas</h1>
+            <h4>Aluno</h4>
+            <h4 class="adminSquare">Admin</h4>
+        </div>
+
+        <div id='myrooms_list' class="salas">
+        </div>
+        
+    </section>
+    <dialog id="modalEntrarSala">
+        <h1>Código da sala </h1>
+        <input id='join_room_name' type="text" placeholder="EX:AB1C2D">
+        <button onclick="sendjoinRoom()">Entrar</button>
+        <a id="voltarEntrarSala" href="">Voltar</a>
+        <p id='res_join_room'></p>
+
+    </dialog>
+
+    <dialog id="modalCriarSala">
+        <h1>Criar sala</h1>
+        <input type="text" id='room_name' placeholder="Nome da sala">
+        <br>
+        <p>Digite <span>"Concordo"</span> para aceitar nossos <a href="#">Termos de uso</a></p>
+        <button onclick="sendCreateRoom()">Criar</button>
+        <a id="voltarCriarSala" href="#">Voltar</a>
+        <p id='res_create_room'></p>    
+    </dialog>
+   
 </body>
 </html>
