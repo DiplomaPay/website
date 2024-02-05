@@ -27,18 +27,18 @@ $cpf = mysqli_real_escape_string($conexao, $cpf);
 $name = mysqli_real_escape_string($conexao, $name);
 
 
-// // STEP 1 -> Verify data
-// if(!$email or !$password or !$confirm_password or !$cpf or !$name){
-//     $obj = array(status => $__STATUS__, response => false, message => "Something is missing!");
-//     endCode($obj);
-// }
+// STEP 1 -> Verify data
+if(!$email or !$password or !$confirm_password or !$cpf or !$name){
+    $obj = array(status => $__STATUS__, response => false, message => "Something is missing!");
+    endCode($obj);
+}
 
 
-// // STEP 2 -> Check password
-// if($password !== $confirm_password){
-//     $obj = array(status => $__STATUS__, response => false, message => "Check password and try again.");
-//     endCode($obj);
-// }
+// STEP 2 -> Check password
+if($password !== $confirm_password){
+    $obj = array(status => $__STATUS__, response => false, message => "Check password and try again.");
+    endCode($obj);
+}
 
 // // hash password 
 // $password = password_hash($password, PASSWORD_DEFAULT);
@@ -110,10 +110,10 @@ $name = mysqli_real_escape_string($conexao, $name);
 // $obj = array(status => $__STATUS__, response => true, message => "Sucess.");
 // endCode($obj);
 
-// function endCode($obj){
-//     echo json_encode($obj);
-//     exit;
-// }
+function endCode($obj){
+    echo json_encode($obj);
+    exit;
+}
 
 // function endCodeError(){
 //     echo json_encode(array(status => $__STATUS__, response => false, message => "Failed to connect the server, try again."));
