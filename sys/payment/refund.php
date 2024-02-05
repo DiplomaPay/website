@@ -1,5 +1,6 @@
 <?php
 include"../conexao.php";
+include"../auth.php";
 
 justLog($__EMAIL__);
 
@@ -32,8 +33,8 @@ curl_setopt_array($curl, array(
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_CUSTOMREQUEST => 'POST',
   CURLOPT_HTTPHEADER => array(
-    'Authorization: Bearer APP_USR-5056284625992718-010720-8f3ef5796104ab4ed6dd46bda8cc493c-50812775',
-    'Public-Key: APP_USR-7fb9bd3b-0834-4195-8c52-2c22ba74253c',
+    "Authorization: $__AUTH__",
+    "Public-Key: $__KEY__",
     'Content-Type: application/json'
   ),
   CURLOPT_POSTFIELDS => json_encode(array(
