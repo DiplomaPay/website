@@ -15,6 +15,8 @@ while($dados = mysqli_fetch_array($queryRooms)){
 
     $typeuser = $dados['typeuser'];
 
+    $numUsers = mysqli_query($conexao, "select * from join_room where room_code='$room_code'");
+
     $queryUniqueRoom = mysqli_query($conexao, "select * from room where room_code='$room_code'");
 
     $queryValueRoom = mysqli_query($conexao, "select sum(ammount) as total_room from payment_pix where room_code='$room_code' and status='approved'");
@@ -30,7 +32,7 @@ while($dados = mysqli_fetch_array($queryRooms)){
     $room_name = $d['room_name'];
     $room_id = $d['id'];
 
-    $data = array("id"=>$room_id, "room_name"=>$room_name, "room_code"=>$room_code, "typeuser"=>$typeuser, "ammount_room" => $ammount_room);
+    $data = array("id"=>$room_id, "room_name"=>$room_name, "room_code"=>$room_code, "typeuser"=>$typeuser, "ammount_room" => $ammount_room, 'users_room'=>mysqli_num_rows($numUsers));
 
     array_push($rooms, $data);
 }
