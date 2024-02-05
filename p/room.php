@@ -159,7 +159,7 @@
 			}
             
 
-	        fetch("https://dpay.trive.fun/sys/room/create.php", {
+	        fetch("https://diplomapay.com/sys/room/create.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
@@ -175,7 +175,7 @@
 				room_code: join_room_name.value,
 			}
 
-	        fetch("https://dpay.trive.fun/sys/room/join.php", {
+	        fetch("https://diplomapay.com/sys/room/join.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
