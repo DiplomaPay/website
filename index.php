@@ -72,7 +72,7 @@
 	        })
 	        .then(e=>e.json())
 	        .then(e=>{
-            console.log(e);
+            console.log(e); 
             let mensagem = e.message;
 
             console.log(mensagem)
