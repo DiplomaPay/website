@@ -34,7 +34,7 @@
 	            password: password
 	        }
 	        
-	        fetch("https://diplomapay.com/sys/user/account/login.php", {
+	        fetch("https://dpay.trive.fun/sys/user/account/login.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
@@ -84,7 +84,7 @@
 				name: name
 	        }
 	        
-	        fetch("https://diplomapay.com/sys/user/account/signup.php", {
+	        fetch("https://dpay.trive.fun/sys/user/account/signup.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
@@ -119,7 +119,7 @@
 	            code: code,
 	        }
 	        
-	        fetch("https://diplomapay.com/sys/user/account/activate.php", {
+	        fetch("https://dpay.trive.fun/sys/user/account/activate.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
@@ -165,7 +165,7 @@
 				new_password: new_password
 	        }
 	        
-	        fetch("https://diplomapay.com/sys/user/configs/change_password.php", {
+	        fetch("https://dpay.trive.fun/sys/user/configs/change_password.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
@@ -193,7 +193,7 @@
 				assinatura: "concordo"
 			}
 
-	        fetch("https://diplomapay.com/sys/room/create.php", {
+	        fetch("https://dpay.trive.fun/sys/room/create.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
@@ -218,7 +218,7 @@
 				room_code: join_room_name.value,
 			}
 
-	        fetch("https://diplomapay.com/sys/room/join.php", {
+	        fetch("https://dpay.trive.fun/sys/room/join.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
@@ -246,7 +246,7 @@
 
 			if(!blocked){
 				blocked = true;
-				fetch("https://diplomapay.com/sys/payment/pix/pay.php",{
+				fetch("https://dpay.trive.fun/sys/payment/pix/pay.php",{
 					method: "POST",
 					body: JSON.stringify({
 						value: val,
@@ -280,7 +280,7 @@
 		}
 
 		const sendPixVerify = async (e) => {
-			let status = await fetch(`https://diplomapay.com/sys/payment/verify.php?id=${e}`)
+			let status = await fetch(`https://dpay.trive.fun/sys/payment/verify.php?id=${e}`)
 			.then(e => e.json())
 			.then(e => {
 				res_pix_status.innerText = e.status_pix;
@@ -296,21 +296,21 @@
 	<hr>
     <!--join room-->
 	 <script>
-			const myrooms = (e) => {
+	    const myrooms = (e) => {
 
-				fetch("https://diplomapay.com/sys/room/list.php")
-				.then(e=>e.json())
-				.then(e=>{
-					myrooms_list.innerHTML = "";
-					let data = e;
-					console.log(data)
-					for(let i = 0; i < data.length; i++){
-						myrooms_list.innerHTML += `
-							<div>id: ${data[i].id} - Name: ${data[i].room_name} - Code: ${data[i].room_code} - Valor na sala: R$${data[i].ammount_room} - Usuário: ${data[i].typeuser} <button onclick='newPayment("${data[i].room_code}")'>Novo pagamento R$0.01</button></div>
-						`;
-					}
-				})
-			}
+	        fetch("https://dpay.trive.fun/sys/room/list.php")
+	        .then(e=>e.json())
+	        .then(e=>{
+				myrooms_list.innerHTML = "";
+				let data = e;
+				console.log(data)
+	            for(let i = 0; i < data.length; i++){
+					myrooms_list.innerHTML += `
+						<div>id: ${data[i].id} - Name: ${data[i].room_name} - Code: ${data[i].room_code} - Valor na sala: R$${data[i].ammount_room} - Usuário: ${data[i].typeuser} <button onclick='newPayment("${data[i].room_code}")'>Novo pagamento R$0.01</button></div>
+					`;
+				}
+	        })
+	    }
 
 		myrooms();
 
@@ -330,7 +330,7 @@
 	 <script>
 	    const cleanbd= (e) => {
 
-	        fetch("https://diplomapay.com/sys/cleanbd.php?name="+e)
+	        fetch("https://dpay.trive.fun/sys/cleanbd.php?name="+e)
 	        .then(e=>e.json())
 	        .then(e=>{
 	            cleanbdd.innerText = JSON.stringify(e);

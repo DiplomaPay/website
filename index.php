@@ -105,7 +105,7 @@
               return;
              
             }
-            window.location.href="./p/dashboard.php"
+            window.location.href="./p/room.php"
         })
 	    }
 	</script>

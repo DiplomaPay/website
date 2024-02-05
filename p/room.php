@@ -43,8 +43,8 @@
             <h4 class="adminSquare">Admin</h4>
         </div>
 
-        <div class="salas">
-            <div class="sala">
+        <div id='myrooms_list' class="salas">
+            <!-- <div class="sala">
                 <h2>Titulo</h2>
                 <div class="qtnAlunos info">
                     <p>N</p>
@@ -81,7 +81,7 @@
                 <button>Entrar no painel</button>
             </div>
             
-       
+        -->
            
             <div id="entrarSala" class="entrarSala sala">
                 <p>Entrar em uma sala</p>
@@ -158,7 +158,6 @@
 				assinatura: "concordo"
 			}
             
-
 	        fetch("https://diplomapay.com/sys/room/create.php", {
 	            method: "POST",
 	            body: JSON.stringify(data),
@@ -167,7 +166,7 @@
 	        .then(e=>{
 	            res_create_room.innerText = JSON.stringify(e);
 				myrooms();
-	        })
+	        })  
 	    }
         const join_room_name = document.getElementById("join_room_name");
 	    const sendjoinRoom= () => {
@@ -185,6 +184,24 @@
 				myrooms();
 	        })
 	    }
+
+        const myrooms = (e) => {
+
+        fetch("https://diplomapay.com.fun/sys/room/list.php")
+        .then(e=>e.json())
+        .then(e=>{
+            myrooms_list.innerHTML = "";
+            let data = e;
+            console.log(data)
+            for(let i = 0; i < data.length; i++){
+                myrooms_list.innerHTML += `
+                    <div class="sala"><h2>${data[i].room_name}</h2> <div class="qtnAlunos info"<p>N</p><p>Alunos></div><div class="qtnSaldo info"><p>R$${data[i]}</p><p>Saldo</p></div><button>Entrar no painel</button></div>
+                `;
+            }
+        })
+        }
+
+        myrooms();
 
 
 
