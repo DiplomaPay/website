@@ -75,7 +75,8 @@
         const voltarEntrarSala = document.querySelector('#voltarEntrarSala')
     
         buttonEntrarSala.onclick = function (){
-            modalEntrarSala.showModal()
+            modalEntrarSala.showModal();
+            console.log("bbbb");
     
         }
     
@@ -97,6 +98,7 @@
 
         buttonCriarSala.onclick = function () {
             modalCriarSala.showModal();
+            console.log("aaaa");
         };
 
         voltarCriarSala.onclick = function () {
