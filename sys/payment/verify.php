@@ -65,7 +65,7 @@ if($status_res){
   $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 }
 
-$obj = array(response => $status_res, message => "Pagamento atualizado.", status_pix => "$status", id_pix => $pay_id);
+$obj = array("response" => $status_res, "message" => "Pagamento atualizado.", "status_pix" => "$status", "id_pix" => $pay_id);
 endCode($obj);
 
 function endCode($obj){
@@ -74,7 +74,7 @@ function endCode($obj){
 }
 
 function endCodeError(){
-  echo json_encode(array(status => $__STATUS__, response => false, message => "Failed to connect the server, try again."));
+  echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Failed to connect the server, try again."));
   exit;
 }
 

@@ -20,7 +20,7 @@ $room_code = $json->room_code;
 $queryRoom = mysqli_query($conexao, "select * from join_room where iduser='$__ID__' and room_code='$room_code'");
 
 if(mysqli_num_rows($queryRoom) < 1){
-  $obj = array(response => false, message => "Não autorizado. $__ID__ $idroom");
+  $obj = array("response" => false, "message" => "Não autorizado. $__ID__ $idroom");
   endCode($obj);
 }
 
@@ -68,11 +68,11 @@ $pay_ammount = $res->transaction_amount;
 if($pay_code){
   mysqli_query($conexao, "insert into payment_pix (status, iduser, room_code, pay_id, pay_code, ammount) values ('$status', '$__ID__','$room_code','$pay_id','$pay_code','$ammount')");
 
-  $obj = array(response => true, message => "Pagamento pendente.", status_pix => "$status", id_pix => $pay_id, code_pix => "$pay_code", ammount_pix => $ammount, pay_code_img => "$pay_code_img");
+  $obj = array("response" => true, "message" => "Pagamento pendente.", "status_pix" => "$status", "id_pix" => $pay_id, "code_pix" => "$pay_code", "ammount_pix" => $ammount, "pay_code_img" => "$pay_code_img");
   endCode($obj);
 }
 
-$obj = array(response => false, message => "Erro ao gerar pix.");
+$obj = array("response" => false, "message" => "Erro ao gerar pix.");
 endCode($obj);
 
 
@@ -82,7 +82,7 @@ function endCode($obj){
 }
 
 function endCodeError(){
-  echo json_encode(array(status => $__STATUS__, response => false, message => "Failed to connect the server, try again."));
+  echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Failed to connect the server, try again."));
   exit;
 }
 

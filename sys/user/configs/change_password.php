@@ -21,7 +21,7 @@ $password = mysqli_real_escape_string($conexao, $password);
 $new_password = mysqli_real_escape_string($conexao, $new_password);
 
 if(!$mail and !$code or $code and !$mail){
-    $obj = array(status => $__STATUS__, response => false, message => "Insira os dados corretamente.");
+    $obj = array("status" => $__STATUS__, "response" => false, "message" => "Insira os dados corretamente.");
     endCode($obj);
 }
 
@@ -30,11 +30,11 @@ if($mail and !$code){
 
     if(mysqli_num_rows($queryEmail) > 0){
         sendMail($conexao, $mail, $__HEADERS__);
-        $obj = array(status => $__STATUS__, response => true, message => "Código de recuperação enviado.");
+        $obj = array("status" => $__STATUS__, "response" => true, "message" => "Código de recuperação enviado.");
         endCode($obj);
     };
 
-    $obj = array(status => $__STATUS__, response => false, message => "Email não encontrado.");
+    $obj = array("status" => $__STATUS__, "response" => false, "message" => "Email não encontrado.");
     endCode($obj);
 }
 
@@ -42,16 +42,16 @@ if($mail and $code and !$password and !$new_password){
     $queryCode = mysqli_query($conexao, "select * from users where email='$mail' and set_code='$code'") or endCodeError();
 
     if(mysqli_num_rows($queryCode) > 0){
-        $obj = array(status => $__STATUS__, response => true, message => "Código válido.");
+        $obj = array("status" => $__STATUS__, "response" => true, "message" => "Código válido.");
         endCode($obj);
     }
 
-    $obj = array(status => $__STATUS__, response => false, message => "Código inválido.");
+    $obj = array("status" => $__STATUS__, "response" => false, "message" => "Código inválido.");
     endCode($obj); 
 }
 
 if(!$password or !$new_password or $password != $new_password){
-    $obj = array(status => $__STATUS__, response => false, message => "Verifique as senhas.");
+    $obj = array("status" => $__STATUS__, "response" => false, "message" => "Verifique as senhas.");
     endCode($obj);
 }
 
@@ -63,7 +63,7 @@ if(mysqli_num_rows($queryLast) > 0){
     $queryFinal = mysqli_query($conexao, "update users set password='$password', set_code='' where email='$mail' and set_code='$code'") or endCodeError();
 
     if($queryFinal){
-        $obj = array(status => $__STATUS__, response => true, message => "Senha alterada com sucesso.");
+        $obj = array("status" => $__STATUS__, "response" => true, "message" => "Senha alterada com sucesso.");
 
         $to = $mail;
         $subject = "Sua senha foi alterada";
@@ -93,11 +93,11 @@ if(mysqli_num_rows($queryLast) > 0){
         endCode($obj);  
     }
 
-    $obj = array(status => $__STATUS__, response => false, message => "Erro ao alterar a senha.");
+    $obj = array("status" => $__STATUS__, "response" => false, "message" => "Erro ao alterar a senha.");
     endCode($obj);
 }
 
-$obj = array(status => $__STATUS__, response => false, message => "Verifique os dados e tente novamente.");
+$obj = array("status" => $__STATUS__, "response" => false, "message" => "Verifique os dados e tente novamente.");
 endCode($obj);
 
 function sendMail($conexao, $mail, $__HEADERS__){
@@ -140,7 +140,7 @@ function sendMail($conexao, $mail, $__HEADERS__){
     $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 
     if(!$sendEmail) {
-        $obj = array(status => $__STATUS__, response => false, message => "Falha ao enviar email, tente novamente.");
+        $obj = array("status" => $__STATUS__, "response" => false, "message" => "Falha ao enviar email, tente novamente.");
         endCode($obj);
     }
 }
@@ -151,6 +151,6 @@ function endCode($obj){
 }
 
 function endCodeError(){
-    echo json_encode(array(status => $__STATUS__, response => false, message => "Failed to connect the server, try again."));
+    echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Failed to connect the server, try again."));
     exit;
 }

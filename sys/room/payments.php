@@ -26,7 +26,7 @@ function endCode($obj){
 }
 
 function endCodeError(){
-    echo json_encode(array(status => $__STATUS__, response => false, message => "Failed to connect the server, try again."));
+    echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Failed to connect the server, try again."));
     exit;
 }
 

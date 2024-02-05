@@ -63,11 +63,11 @@ $message = "
 $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 
 if(!$sendEmail) {
-    $obj = array(status => $__STATUS__, email=>$sendEmail ,response => false, message => "Falha ao enviar email, clique para reenviar.");
+    $obj = array("status" => $__STATUS__, "email"=>$sendEmail ,"response" => false, "message" => "Falha ao enviar email, clique para reenviar.");
     endCode($obj);
 }
 
-$obj = array(status => $__STATUS__, response => true, message => "Sucess.");
+$obj = array("status" => $__STATUS__, "response" => true, "message" => "Sucess.");
 endCode($obj);
 
 function endCode($obj){
@@ -76,6 +76,6 @@ function endCode($obj){
 }
 
 function endCodeError(){
-    echo json_encode(array(status => $__STATUS__, response => false, message => "Failed to connect the server, try again."));
+    echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Failed to connect the server, try again."));
     exit;
 }

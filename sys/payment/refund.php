@@ -10,7 +10,7 @@ $pay_id = $_GET["id"];
 $queryPayment = mysqli_query($conexao, "select * from payment_pix where pay_id='$pay_id' and iduser='$__ID__'")or endCodeError();
 
 if(mysqli_num_rows($queryPayment) < 1){
-    $obj = array(status => $__STATUS__, response => false, message => "Id incorreto");
+    $obj = array("status" => $__STATUS__, "response" => false, "message" => "Id incorreto");
     endCode($obj);
 }
 
@@ -21,7 +21,7 @@ $ammountPayment = $d['ammount'];
 
 
 if($statusPayment != "approved"){
-    $obj = array(status => $__STATUS__, response => false, message => "Não elegivel para reembolso");
+    $obj = array("status" => $__STATUS__, "response" => false, "message" => "Não elegivel para reembolso");
     endCode($obj);
 }
 
@@ -78,11 +78,11 @@ if($status == "approved"){
 
     $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 
-    $obj = array(status => $__STATUS__, response => true, message => "Reembolsado com sucesso");
+    $obj = array("status" => $__STATUS__, "response" => true, "message" => "Reembolsado com sucesso");
     endCode($res);
 }
 
-$obj = array(status => $__STATUS__, response => true, message => "Não aprovado");
+$obj = array("status" => $__STATUS__, "response" => true, "message" => "Não aprovado");
 endCode($res);
 
 
@@ -93,7 +93,7 @@ function endCode($obj){
 }
 
 function endCodeError(){
-    echo json_encode(array(status => $__STATUS__, response => false, message => "Failed to connect the server, try again."));
+    echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Failed to connect the server, try again."));
     exit;
 }
 

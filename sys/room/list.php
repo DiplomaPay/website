@@ -30,7 +30,7 @@ while($dados = mysqli_fetch_array($queryRooms)){
     $room_name = $d['room_name'];
     $room_id = $d['id'];
 
-    $data = array(id=>$room_id, room_name=>$room_name, room_code=>$room_code, typeuser=>$typeuser, ammount_room => $ammount_room);
+    $data = array("id"=>$room_id, "room_name"=>$room_name, "room_code"=>$room_code, "typeuser"=>$typeuser, "ammount_room" => $ammount_room);
 
     array_push($rooms, $data);
 }

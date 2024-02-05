@@ -51,7 +51,7 @@ $__HEADERS__[] = 'X-Mailer: PHP/' . phpversion();
 function cantLog($__EMAIL__){
     if($__EMAIL__){
         header('Content-Type: application/json; charset=utf-8');
-        echo json_encode(array(status => 401, response => false, message => "You're logged"));
+        echo json_encode(array("status" => 401, "response" => false, "message" => "You're logged"));
         exit;
     }
 }
@@ -59,7 +59,7 @@ function cantLog($__EMAIL__){
 function justLog($__EMAIL__){
     if(!$__EMAIL__){
         header('Content-Type: application/json; charset=utf-8');
-        echo json_encode(array(status => 401, response => false, message => "You're not logged in."));
+        echo json_encode(array("status" => 401, "response" => false, "message" => "You're not logged in."));
         exit;
     }
 }
