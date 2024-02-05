@@ -84,7 +84,7 @@
 				name: name
 	        }
 	        
-	        fetch("https://dpay.trive.fun/sys/user/account/signup.php", {
+	        fetch("https://dpay.trive.fun/sys/user/account/signup.php", { 
 	            method: "POST",
 	            body: JSON.stringify(data),
 	        })
