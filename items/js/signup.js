@@ -162,7 +162,7 @@ const sendSignup = () => {
     
   }
 
-  const ReSendEmail = () => {
+  const ReSendEmail = () => { 
     let email = email_signup.value;
         
         let data = {
