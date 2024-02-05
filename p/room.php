@@ -44,50 +44,10 @@
         </div>
 
         <div id='myrooms_list' class="salas">
-            <!-- <div class="sala">
-                <h2>Titulo</h2>
-                <div class="qtnAlunos info">
-                    <p>N</p>
-                    <p>Alunos</p>
-                </div>
-                <div class="qtnSaldo info">
-                    <p>R$N</p>
-                    <p>Saldo</p>
-                </div>
-                <button>Entrar no painel</button>
-            </div>
-            <div class="sala salaAdmin">
-                <h2>Titulo</h2>
-                <div class="qtnAlunos info">
-                    <p>N</p>
-                    <p>Alunos</p>
-                </div>
-                <div class="qtnSaldo info">
-                    <p>R$N</p>
-                    <p>Saldo</p>
-                </div>
-                <button>Entrar no painel</button>
-            </div>
-            <div class="sala">
-                <h2>Titulo</h2>
-                <div class="qtnAlunos info">
-                    <p>N</p>
-                    <p>Alunos</p>
-                </div>
-                <div class="qtnSaldo info">
-                    <p>R$N</p>
-                    <p>Saldo</p>
-                </div>
-                <button>Entrar no painel</button>
-            </div>
-            
-        -->
-           
             <div id="entrarSala" class="entrarSala sala">
                 <p>Entrar em uma sala</p>
             </div>
-           <button class="criar" id="criarSala">+ Criar turma</button>
-
+            <button class="criar" id="criarSala">+ Criar turma</button>
         </div>
         
     </section>
@@ -187,28 +147,39 @@
 	    }
 
         const myrooms = (e) => {
-    fetch("https://diplomapay.com/sys/room/list.php")
-        .then(e => e.json())
-        .then(e => {
-            myrooms_list.innerHTML = "";
-            let data = e;
-            console.log(data);
-            for (let i = 0; i < data.length; i++) {
-                myrooms_list.innerHTML += `
-                    <div class="sala salaAdmin">
-                        <h2>${data[i].room_name}</h2>
-                        <div class="qtnAlunos info">
-                            <p>N</p><p>Alunos</p>
-                        </div>
-                        <div class="qtnSaldo info">
-                            <p>R$${data[i]}</p><p>Saldo</p>
-                        </div>
-                        <button>Entrar no painel</button>
-                    </div>
-                `;
-            }
-        });
-};
+                fetch("https://diplomapay.com/sys/room/list.php")
+                    .then(e => e.json())
+                    .then(e => {
+                        myrooms_list.innerHTML = "";
+                        let data = e;
+                        console.log(data);
+                        for (let i = 0; i < data.length; i++) {
+                            myrooms_list.innerHTML += `
+                                <div class="salaAdmin">
+                                    <h2>${data[i].room_name}</h2>
+                                    <div class="qtnAlunos info">
+                                        <p>N</p><p>Alunos</p>
+                                    </div>
+                                    <div class="qtnSaldo info">
+                                        <p>R$${data[i]}</p><p>Saldo</p>
+                                    </div>
+                                    <button>Entrar no painel</button>
+                                </div>
+                            `;
+                        }
+
+                        const entrarSala = document.getElementById("entrarSala");
+                        const criarSala = document.getElementById("criarSala");
+
+                        if (data.length === 0) {
+                            entrarSala.classList.remove("hidden");
+                            criarSala.classList.remove("hidden");
+                        } else {
+                            entrarSala.classList.add("hidden");
+                            criarSala.classList.add("hidden");
+                        }
+                    });
+            };
 
         myrooms();
 
