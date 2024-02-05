@@ -166,6 +166,8 @@
 	        .then(e=>{
 	            res_create_room.innerText = JSON.stringify(e);
 				myrooms();
+                const salaList = document.querySelectorAll('.sala');
+                 salaList[salaList.length - 1].classList.add('salaAdmin');
 	        })  
 	    }
         const join_room_name = document.getElementById("join_room_name");
