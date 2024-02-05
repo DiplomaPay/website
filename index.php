@@ -1,3 +1,13 @@
+<?php
+  session_start();
+  date_default_timezone_set('America/Sao_Paulo');
+  $conexao = mysqli_connect('localhost','u752370168_dpay','Easycodex123','u752370168_dpay') or die ("Atualize a página e tente novamente!");
+
+  if($__EMAIL__){
+    error_log("aa");
+  }
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
