@@ -101,11 +101,12 @@
 
     <dialog id="modalCriarSala">
         <h1>Criar sala</h1>
-        <input type="text" placeholder="Nome da sala">
+        <input type="text" id='room_name' placeholder="Nome da sala">
         <br>
         <p>Digite <span>"Concordo"</span> para aceitar nossos <a href="#">Termos de uso</a></p>
-        <button>Criar</button>
+        <button onclick="sendCreateRoom()">Criar</button>
         <a id="voltarCriarSala" href="#">Voltar</a>
+        <p id='res_create_room'></p>    
         </dialog>
     <script>
         const buttonEntrarSala = document.querySelector('#entrarSala')
@@ -146,6 +147,27 @@
                 modalCriarSala.close();
             }
         });
+
+
+        const room_name = document.getElementById("room_name");
+	    const sendCreateRoom= () => {
+            console.log("a");
+			let data = {
+				room_name: room_name.value,
+				assinatura: "concordo"
+			}
+            
+
+	        fetch("https://dpay.trive.fun/sys/room/create.php", {
+	            method: "POST",
+	            body: JSON.stringify(data),
+	        })
+	        .then(e=>e.json())
+	        .then(e=>{
+	            res_create_room.innerText = JSON.stringify(e);
+				myrooms();
+	        })
+	    }
 
 
 
