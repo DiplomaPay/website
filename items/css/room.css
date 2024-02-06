@@ -167,13 +167,13 @@ body{
     cursor: pointer;
 }
 
-.salaAdmin:before{
+.true:before{
     background-color: var(--azul);
 }
-.salaAdmin .info p:first-child{
+.true .info p:first-child{
     color: var(--azul)
 }
-.salaAdmin button{
+.true button{
     background-color: var(--azul);
 }
 

@@ -161,9 +161,8 @@
 
             for (let i = 0; i < data.length; i++) {
                 myrooms_list.innerHTML += `
-                    <div class="sala">
+                    <div class="sala ${data[i].typeuser_bool}">
                         <h2>${data[i].room_name}</h2>
-                        <h2>${data[i].typeuser_bool}</h2>
                         <div class="qtnAlunos info">
                             <p>${data[i].user_room}</p>
                             <p>Alunos</p>
