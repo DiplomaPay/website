@@ -32,7 +32,11 @@ while($dados = mysqli_fetch_array($queryRooms)){
     $room_name = $d['room_name'];
     $room_id = $d['id'];
 
-    $type_bool = $typeuser == "owner" ? true : false;
+    if($typeuser == "owner"){
+        $type_bool = true;
+    } else {
+        $type_bool = false;
+    }
 
     $data = array("id"=>$room_id, "room_name"=>$room_name, "room_code"=>$room_code, "typeuser"=>Bool($typeuser), "typeuser_bool"=>type_bool, "ammount_room" => $ammount_room, 'users_room'=>mysqli_num_rows($numUsers));
 
