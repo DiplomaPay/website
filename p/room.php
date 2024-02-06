@@ -113,6 +113,7 @@
 
 
         const room_name = document.getElementById("room_name");
+        const salaAdmin = document.querySelector(".sala")
 	    const sendCreateRoom= () => {
             console.log("a");
 			let data = {
@@ -127,7 +128,9 @@
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_create_room.innerText = JSON.stringify(e);
+                salaAdmin.classList.add('sala salaAdmin') = JSON.stringify(e);
 				myrooms();
+                reload();
                 
 	        })  
 	    }
@@ -159,7 +162,7 @@
 
             for (let i = 0; i < data.length; i++) {
                 myrooms_list.innerHTML += `
-                    <div class="sala salaAdmin">
+                    <div class="sala ${data[i].typeuser_bool}">
                         <h2>${data[i].room_name}</h2>
                         <div class="qtnAlunos info">
                             <p>${data[i].user_room}</p>
