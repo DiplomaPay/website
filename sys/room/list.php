@@ -38,7 +38,7 @@ while($dados = mysqli_fetch_array($queryRooms)){
         $type_bool = false;
     }
 
-    $data = array("id"=>$room_id, "room_name"=>$room_name, "room_code"=>$room_code, "typeuser"=>Bool($typeuser), "typeuser_bool"=>type_bool, "ammount_room" => $ammount_room, 'users_room'=>mysqli_num_rows($numUsers));
+    $data = array("id"=>$room_id, "room_name"=>$room_name, "room_code"=>$room_code, "typeuser"=>Boolean($typeuser), "typeuser_bool"=>type_bool, "ammount_room" => $ammount_room, 'users_room'=>mysqli_num_rows($numUsers));
 
     array_push($rooms, $data);
 }
