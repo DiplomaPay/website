@@ -130,6 +130,7 @@
 	            res_create_room.innerText = JSON.stringify(e);
                 salaAdmin.classList.add('sala salaAdmin') = JSON.stringify(e);
 				myrooms();
+                reload();
                 
 	        })  
 	    }
