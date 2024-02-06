@@ -11,6 +11,7 @@ if (in_array($_SERVER['HTTP_ORIGIN'], $allowed_domains)) {
 
 header('Access-Control-Allow-Methods: *');
 header('Access-Control-Allow-Headers: *');
+header('Access-Control-Allow-Credentials: true');
 // USER ACCOUNT
 $__USER__ = $_SESSION["__USER__"];
 $__CPF__ = $_SESSION["__CPF__"];
