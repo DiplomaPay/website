@@ -177,7 +177,7 @@ body{
     background-color: var(--azul);
 }
 
-.entrarSala p{
+/* .entrarSala p{
     color: var(--cinza);
     transition: .5s;
 }
@@ -195,9 +195,9 @@ body{
 .entrarSala:hover p{
     color: var(--verde);
     transform: scale(1.5);
-}
+} */
 
-.criar{
+/* .criar{
     border: none;
     background-color: transparent;
     width: fit-content;
@@ -212,7 +212,7 @@ body{
 
 .criar:hover{
     transform: scale(1.1);
-}
+} */
 
 
 /* --------Modal------------ */

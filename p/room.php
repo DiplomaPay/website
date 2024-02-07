@@ -33,6 +33,15 @@
                     <img src="" alt="">
                     <p>Configurações
                 </div>
+                <div id="entrarSala" class="entrarSala">
+                    <img src="" alt="">    
+                    <p>Entrar em uma sala</p>
+                </div>
+                <div class="criar" id="criarSala">
+                    <img src="" alt="">    
+                    <p>+ Criar turma</p>
+                </div>
+            </div>
             </div>
     </section>
 
@@ -44,12 +53,7 @@
         </div>
 
         <div id='myrooms_list' class="salas">
-            </div>
-            <div id="entrarSala" class="entrarSala sala">
-                <p>Entrar em uma sala</p>
-            </div>
-            <button class="criar" id="criarSala">+ Criar turma</button>
-        
+        </div>
     </section>
     <dialog id="modalEntrarSala">
         <h1>Código da sala </h1>
