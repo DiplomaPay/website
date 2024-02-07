@@ -3,13 +3,15 @@ session_start();
 date_default_timezone_set('America/Sao_Paulo');
 $conexao = mysqli_connect('localhost','u752370168_dpay','Easycodex123','u752370168_dpay') or die ("Atualize a página e tente novamente!");
 
+$allowed_domains = ['https://vale.anizero.cc', 'http://localhost', 'https://localhost'];
 
-header('Access-Control-Allow-Origin: *');
+if (in_array($_SERVER['HTTP_ORIGIN'], $allowed_domains)) {
+    header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
+}
 
 header('Access-Control-Allow-Methods: *');
-
 header('Access-Control-Allow-Headers: *');
-
+header('Access-Control-Allow-Credentials: true');
 // USER ACCOUNT
 $__USER__ = $_SESSION["__USER__"];
 $__CPF__ = $_SESSION["__CPF__"];
