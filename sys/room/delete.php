@@ -20,7 +20,7 @@ if(!$room_code){
 $queryUserRoom = mysqli_query($conexao, "select * from join_room where iduser='$__ID__' and room_code='$room_code'") or endCodeError();
 
 if(mysqli_num_rows($queryRoom) < 1){
-    $obj = array("status" => $__STATUS__, "response" => false, "message" => "Usuário não está nessa sala");
+    $obj = array("queryUserRoom" => $__STATUS__, "response" => false, "message" => "Usuário não está nessa sala");
     endCode($obj);
 }
 
