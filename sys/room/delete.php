@@ -25,7 +25,7 @@ if(mysqli_num_rows($queryUserRoom) < 1){
 }
 
 
-$queryRoom = mysqli_query($conexao, "delete from room where room_code='$room_code'") or endCodeError();
+$queryRoom = mysqli_query($conexao, "delete * from room where room_code='$room_code'") or endCodeError();
 
 if(!$queryRoom){
     $obj = array("status" => $__STATUS__, "response" => false, "message" => "Erro ao deletar");
