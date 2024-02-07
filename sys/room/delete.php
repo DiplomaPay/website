@@ -19,31 +19,31 @@ if(!$room_code){
 
 $queryUserRoom = mysqli_query($conexao, "select * from join_room where iduser='$__ID__' and room_code='$room_code'") or endCodeError();
 
-if(mysqli_num_rows($queryRoom) < 1){
-    $obj = array("queryUserRoom" => $__STATUS__, "response" => false, "message" => "Usuário não está nessa sala");
+if(mysqli_num_rows($queryUserRoom) < 1){
+    $obj = array("status" => $__STATUS__, "response" => false, "message" => "Usuário não está nessa sala");
     // endCode($obj);
 }
 
 
-// $queryRoom = mysqli_query($conexao, "delete from room where room_code='$room_code'") or endCodeError();
+$queryRoom = mysqli_query($conexao, "delete from room where room_code='$room_code'") or endCodeError();
 
-// if(!$queryRoom){
-//     $obj = array("status" => $__STATUS__, "response" => false, "message" => "Erro ao deletar");
-//     endCode($obj);
-// }
+if(!$queryRoom){
+    $obj = array("status" => $__STATUS__, "response" => false, "message" => "Erro ao deletar");
+    endCode($obj);
+}
 
 
-// $obj = array("status" => $__STATUS__, "response" => true, "message" => "Sala deletada!");
-// endCode($obj);
+$obj = array("status" => $__STATUS__, "response" => true, "message" => "Sala deletada!");
+endCode($obj);
 
-// function endCode($obj){
-//     echo json_encode($obj);
-//     exit;
-// }
+function endCode($obj){
+    echo json_encode($obj);
+    exit;
+}
 
-// function endCodeError(){
-//     echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Failed to connect the server, try again."));
-//     exit;
-// }
+function endCodeError(){
+    echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Failed to connect the server, try again."));
+    exit;
+}
 
 
