@@ -55,10 +55,13 @@ if(!password_verify($password, $userPasswordHash)){
 
 // STEP 6 -> Update last login
 $time = time();
-mysqli_query($conexao, "update users set last_login='$time' where email='$userEmail'") or endCodeError();;
+$token = hash(microtime());
+
+mysqli_query($conexao, "update users set last_login='$time', authToken='$token' where email='$userEmail'") or endCodeError();
+
 
 // STEP 7 -> Sucess auth
-$obj = array("status" => $__STATUS__, "response" => true, "message" => "Success.");
+$obj = array("status" => $__STATUS__, "response" => true, "message" => "Success.", "token" => $token);
 
 $_SESSION["__EMAIL__"] = $userEmail;
 $_SESSION["__USER__"] = $userName;
