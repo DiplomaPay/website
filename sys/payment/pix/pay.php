@@ -2,11 +2,20 @@
 include"../../conexao.php";
 include"../../auth.php";
 
-justLog($__EMAIL__);
+header('Content-Type: application/json; charset=utf-8');
 
-$checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'") or endCodeError();
+$request = file_get_contents('php://input');
+$json = json_decode($request);
+
+$token = $json->token;
+
+checkToken($conexao,$token);
+
+$checkUser = mysqli_query($conexao, "select * from users where authToken='$token'") or endCodeError();
 
 $__ID__ = mysqli_fetch_assoc($checkUser)["id"];
+$__EMAIL__ = mysqli_fetch_assoc($checkUser)["email"];
+$__USER__ = mysqli_fetch_assoc($checkUser)["full_name"];
 
 header('Content-Type: application/json; charset=utf-8');
 

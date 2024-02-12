@@ -50,6 +50,26 @@ $__HEADERS__[] = 'X-Mailer: PHP/' . phpversion();
 
 // FUNCTIONS 
 
+
+function newToken(){
+    $token = hash('sha256', password_hash(microtime(), PASSWORD_DEFAULT));
+    return $token;
+}
+
+function checkToken($conexao, $token){
+    if(!$token){
+        echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Invalid token"));
+        exit;
+    }
+    
+    $queryToken = mysqli_query($conexao, "select * from users where authToken='$token'");
+
+    if(mysqli_num_rows($queryToken) < 1){
+        echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Invalid token"));
+        exit;
+    }
+}
+
 function cantLog($__EMAIL__){
     if($__EMAIL__){
         header('Content-Type: application/json; charset=utf-8');

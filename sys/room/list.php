@@ -1,9 +1,19 @@
 <?php
 include"../conexao.php";
 
-justLog($__EMAIL__);
-
 header('Content-Type: application/json; charset=utf-8');
+
+$request = file_get_contents('php://input');
+$json = json_decode($request);
+
+$token = $json->token;
+
+checkToken($conexao,$token);
+
+
+$checkUser = mysqli_query($conexao, "select * from users where authToken='$token'") or endCodeError();
+
+$__ID__ = mysqli_fetch_assoc($checkUser)["id"];
 
 $queryRooms = mysqli_query($conexao, "select * from join_room where iduser='$__ID__'") or die("erro");
 
