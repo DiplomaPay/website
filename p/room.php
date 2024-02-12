@@ -53,6 +53,13 @@
         </div>
 
         <div id='myrooms_list' class="salas">
+            <div class="sala">
+                <button>
+                    Entrar em uma sala
+                </button>
+                <p>OU</p>
+                <p>+ Crie sua própria sala</p>
+            </div>
         </div>
     </section>
     <dialog id="modalEntrarSala">
