@@ -57,6 +57,11 @@ function newToken(){
 }
 
 function checkToken($conexao, $token){
+    if(!$token){
+        echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Invalid token"));
+        exit;
+    }
+    
     $queryToken = mysqli_query($conexao, "select * from users where authToken='$token'");
 
     if(mysqli_num_rows($queryToken) < 1){
