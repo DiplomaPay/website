@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="/assets/js/app.js"></script>
+    <title>Formulário</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="assets/img//undraw_shopping_re_3wst.svg" alt="">
+        </div>
+        <div class="form">
+            <form action="https://formsubmit.co/ajax/contato@diplomapay.com" method="POST" data-form>
+                <div class="Logo">
+                    <img src="./assets/img/DiplomaPayLogo.png" alt="Logo Diplomapay"width="40%">
+                </div>
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Inscreva-se</h1>
+                    </div>
+                </div>
+
+                <!--Dados gerais-->
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Primeiro Nome</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" maxlength="800" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="lastname">Sobrenome</label>
+                        <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" maxlength="800" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" maxlength="800" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="question01">Liste as habilidades técnicas específicas que possui para este
+                            trabalho.</label>
+                        <input id="question01" type="text" name="question01" maxlength="800" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="question02">Como você mantém suas habilidades técnicas atualizadas?</label>
+                        <input id="question02" type="text" name="question02" maxlength="800" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="question03">Como você lida com situações de pressão ou prazos apertados?</label>
+                        <input id="question03" type="text" name="question03" maxlength="800" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="link04">Forneça o link do seu currículo e/ou portfolio abaixo.</label>
+                        <input id="link04" type="text" name="question04" maxlength="800" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="link04">Estamos vendendo nosso serviço para a escola X, uma turma que apesar de
+                            termos apresentado para os pais e eles terem apoiado, não demonstra uma grande chance de
+                            fechar conosco, nem mesmo no gratuito, que abordagem voce tomaria para concluir o contrato?
+                            Descreva seu porte e estratégia para atrair a atenção dos jovens.</label>
+                        <input id="link04" type="text" name="question04" maxlength="800" required>
+                    </div>
+
+                    <!--Validação-->
+                    <div class="form-header">
+                        <div class="title">
+                        <p>As informações fornecidas abaixo serão usadas apenas para nossa pesquisa de
+                            mercado (de forma Anônima), não será considerada na candidatura.</p>
+                    </div>
+                </div>
+
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Gênero</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <select name="Genero">
+                                <option value="feminino">Feminino</option>
+                                <option value="masculino">Masculino</option>
+                                <option value="outros">Outros</option>
+                                <option value="prefiroN">Prefiro não dizer</option>
+                                <option value="na" selected> </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Qual a sua faixa etária?</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <select name="faixa">
+                                <option value="idade1517">15 - 17</option>
+                                <option value="idade1821">18 - 21</option>
+                                <option value="idade2231">22 - 31</option>
+                                <option value="idade3140">31 - 40</option>
+                                <option value="acimade41">Acima de 41</option>
+                                <option value="na" selected> </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Qual o nível da sua escolaridade?</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <select name="ensino">
+                                <option value="fundamental">Ensino Fundamental completo</option>
+                                <option value="Cmedio">Cursando o Ensino Médio</option>
+                                <option value="medioC">Ensino Médio completo</option>
+                                <option value="Graduacao">Graduação ou mais</option>
+                                <option value="na" selected> </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>No seu curso, sua turma ou amigos terão uma despedida ao se formar? </h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <select name="turmaDespedida">
+                                <option value="s">Sim</option>
+                                <option value="n">Não</option>
+                                <option value="na" selected> </option>
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <label for="question1">Se a resposta for sim: Consegue especificar o evento? (Festa,
+                                colação, formatura, etc)</label>
+                            <input id="question1" type="text" name="question0">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Você prefere financiar sua participação na formatura de que forma? (escolha as duas
+                            preferíveis)</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <select name="financiarparticipacao">
+                                <option value="pessoais">Economias pessoais</option>
+                                <option value="familiar">Apoio familiar</option>
+                                <option value="outros">Outros</option>
+                                <option value="arrecadacao">Arrecadação</option>
+                                <option value="vender">Busco vender coisas da faculdade para prencher o valor
+                                </option>
+                                <option value="na" selected> </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <label for="question2">De uma forma ampla, quais as principais preocupações financeiras que você
+                        ouviu ou opinião própria na hora de planejar sua participação em uma cerimônia de
+                        formatura?</label>
+                    <input id="question2" type="text" name="question1" maxlength="800" required>
+                </div>
+
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>O que você acha da gestão do dinheiro da formartura?</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <select name="oqgestao">
+                                <option value="ruim">Ruim</option>
+                                <option value="Mediano">Mediano(diria que sou neutro)</option>
+                                <option value="BomP">Bom, porém não ligo muito</option>
+                                <option value="Bom">Bom</option>
+                                <option value="Muito">Muito bom</option>
+                                <option value="na" selected> </option>
+                            </select>
+                        </div>
+                        <div class="input-box">
+                            <label for="question4">Como é feito o controle atualmente? (quem faz, onde é depositado,
+                                como é avisado sobre transações, etc)</label>
+                            <input id="question4" type="text" name="question3" maxlength="800" required>
+                        </div>
+                        <div class="input-box">
+                            <label for="question5">E qual o nível de transparência e controle deste dinheiro? Caso
+                                consiga comente sobre como é realizado e passado essas informações aos demais
+                                formandos.</label>
+                            <input id="question5" type="text" name="question4" maxlength="800" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <label for="question6">Algo mais que queria adicionar sobre o tema formatura? Quer pontuar algo
+                        sobre a vaga?</label>
+                    <input id="question6" type="text" name="question5">
+                </div>
+
+        </div>
+
+        <div class="continue-button">
+            <button type="submit" data-button>Enviar</button>
+        </div>
+        </form>
+    </div>
+    </div>
+</body>
+
+</html>
