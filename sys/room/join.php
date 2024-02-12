@@ -1,14 +1,15 @@
 <?php
 include"../conexao.php";
 
-justLog($__EMAIL__);
-
 header('Content-Type: application/json; charset=utf-8');
 
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
 $room_code = $json->room_code;
+$token = $json->token;
+
+checkToken($token);
 
 $room_code = mysqli_real_escape_string($conexao, $room_code);
 
@@ -24,12 +25,9 @@ if(mysqli_num_rows($queryRoom) < 1){
     endCode($obj);
 }
 
-$checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'") or endCodeError();
+$checkUser = mysqli_query($conexao, "select * from users where authToken='$token'") or endCodeError();
 
-if(mysqli_num_rows($checkUser) < 1){
-    $obj = array("status" => $__STATUS__, "response" => false, "message" => "Logue para continuar");
-    endCode($obj);
-}
+$__ID__ = mysqli_fetch_assoc($checkUser)["id"];
 
 $queryRoomUser = mysqli_query($conexao, "select * from join_room where room_code='$room_code' and iduser='$__ID__'");
 

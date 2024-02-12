@@ -1,7 +1,7 @@
 <?php
 include"../conexao.php";
 
-justLog($__EMAIL__);
+// justLog($__EMAIL__);
 
 header('Content-Type: application/json; charset=utf-8');
 
@@ -10,6 +10,9 @@ $json = json_decode($request);
 
 $room_name = $json->room_name;
 $assinatura = $json->assinatura;
+$token = $json->token;
+
+checkToken($token);
 
 $room_name = mysqli_real_escape_string($conexao, $room_name);
 $assinatura = mysqli_real_escape_string($conexao, $assinatura);
@@ -37,7 +40,7 @@ function generateCode(){
 
 $randomCode = generateCode();
 
-$checkUser = mysqli_query($conexao, "select * from users where email='$__EMAIL__' and password='$__PASSWORD__'") or endCodeError();
+$checkUser = mysqli_query($conexao, "select * from users where authToken='$token'") or endCodeError();
 
 $__ID__ = mysqli_fetch_assoc($checkUser)["id"];
 

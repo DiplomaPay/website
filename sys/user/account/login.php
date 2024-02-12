@@ -55,7 +55,7 @@ if(!password_verify($password, $userPasswordHash)){
 
 // STEP 6 -> Update last login
 $time = time();
-$token = hash('sha256', microtime());
+$token = newToken();
 
 mysqli_query($conexao, "update users set last_login='$time', authToken='$token' where email='$userEmail'") or endCodeError();
 
