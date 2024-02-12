@@ -12,7 +12,7 @@ $room_name = $json->room_name;
 $assinatura = $json->assinatura;
 $token = $json->token;
 
-checkToken($token);
+checkToken($conexao,$token);
 
 $room_name = mysqli_real_escape_string($conexao, $room_name);
 $assinatura = mysqli_real_escape_string($conexao, $assinatura);

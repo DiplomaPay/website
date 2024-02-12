@@ -9,7 +9,7 @@ $json = json_decode($request);
 $room_code = $json->room_code;
 $token = $json->token;
 
-checkToken($token);
+checkToken($conexao,$token);
 
 $room_code = mysqli_real_escape_string($conexao, $room_code);
 

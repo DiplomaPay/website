@@ -56,7 +56,7 @@ function newToken(){
     return $token;
 }
 
-function checkToken($token){
+function checkToken($conexao, $token){
     $queryToken = mysqli_query($conexao, "select * from users where authToken='$token'");
 
     if(mysqli_num_rows($queryToken) < 1){

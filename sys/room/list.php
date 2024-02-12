@@ -8,7 +8,8 @@ $json = json_decode($request);
 
 $token = $json->token;
 
-checkToken($token);
+checkToken($conexao,$token);
+
 
 $checkUser = mysqli_query($conexao, "select * from users where authToken='$token'") or endCodeError();
 
