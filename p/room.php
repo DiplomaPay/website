@@ -164,31 +164,36 @@
 	    }
 
         const myrooms = (e) => {
-    fetch("https://diplomapay.com/sys/room/list.php")
-        .then(e => e.json())
-        .then(e => {
-            let data = e;
-            console.log(data);
+            fetch("https://diplomapay.com/sys/room/list.php",{
+                method: "POST",
+                body: JSON.stringify({
+                    token: localStorage.token
+                })
+            })
+            .then(e => e.json())
+            .then(e => {
+                let data = e;
+                console.log(data);
 
-            myrooms_list.innerHTML = "";
+                myrooms_list.innerHTML = "";
 
-            for (let i = 0; i < data.length; i++) {
-                myrooms_list.innerHTML += `
-                    <div class="sala ${data[i].typeuser_bool}">
-                        <h2>${data[i].room_name}</h2>
-                        <div class="qtnAlunos info">
-                            <p>${data[i].user_room}</p>
-                            <p>Alunos</p>
+                for (let i = 0; i < data.length; i++) {
+                    myrooms_list.innerHTML += `
+                        <div class="sala ${data[i].typeuser_bool}">
+                            <h2>${data[i].room_name}</h2>
+                            <div class="qtnAlunos info">
+                                <p>${data[i].user_room}</p>
+                                <p>Alunos</p>
+                            </div>
+                            <div class="qtnSaldo info">
+                                <p>R$${data[i]}</p><p>Saldo</p>
+                            </div>
+                            <button>Entrar no painel</button>
                         </div>
-                        <div class="qtnSaldo info">
-                            <p>R$${data[i]}</p><p>Saldo</p>
-                        </div>
-                        <button>Entrar no painel</button>
-                    </div>
-                `;
-            }
-        });
-};
+                    `;
+                }
+            });
+        };
 
 
         myrooms();
