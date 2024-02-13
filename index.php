@@ -74,6 +74,7 @@
 	        .then(e=>e.json())
 	        .then(e=>{
             console.log(e); 
+            localStorage.token = e.token;
             let mensagem = e.message;
 
             console.log(mensagem)

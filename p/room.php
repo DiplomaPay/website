@@ -129,7 +129,8 @@
             console.log("a");
 			let data = {
 				room_name: room_name.value,
-				assinatura: "concordo"
+				assinatura: "concordo",
+                token: localStorage.token
 			}
             
 	        fetch("https://diplomapay.com/sys/room/create.php", {
@@ -163,7 +164,12 @@
 	    }
 
         const myrooms = (e) => {
-    fetch("https://diplomapay.com/sys/room/list.php")
+    fetch("https://diplomapay.com/sys/room/list.php",{
+        method: "POST",
+        body: JSON.stringify({
+            token: localStorage.token
+        })
+    })
         .then(e => e.json())
         .then(e => {
             let data = e;
