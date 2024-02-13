@@ -37,7 +37,7 @@
                     <img src="" alt="">    
                     <p>Entrar em uma sala</p>
                 </div>
-                <div class="criar" id="criarSala">
+                <div class="criar" id=" ">
                     <img src="" alt="">    
                     <p>+ Criar turma</p>
                 </div>

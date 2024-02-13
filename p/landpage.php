@@ -8,6 +8,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../items/css/global.css">
+    <link rel="stylesheet" href="../items/css/landpage.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
     <title>Landpage</title>
 </head>
 <body>
@@ -23,36 +29,36 @@
     </header>
 
     <section class="start">
-        <div>
+        <div class="startInfo">
             <h1>A conta online para grupos de formaturas</h1>
             <p>O único serviço digital que te auxilia a organizar uma formatura incrível de forma segura e econômica.</p>
             <button>Abrir conta grátis</button>
         </div>
     
 
-        <div>
-            <div>
+        <div class="startGrid">
+            <article>
                 <div>
                     <p>Mais de</p>
                     <strong>R$ 200 MIL</strong>
                     <p>Arrecadados por turma</p>
                 </div>
-                <strong>+400</strong>
-                <p>Formandos registrados</p>
-                <strong>+20</strong>
-                <p>Turmas que contam conosco</p>
+                <strong class="strongInfo">+400</strong>
+                <p class="pStrongInfo">Formandos registrados</p>
+                <strong class="strongInfo">+20</strong>
+                <p  class="pStrongInfo">Turmas que contam conosco</p>
                 <button>Faça uma simulação</button>
-            </div>
-            <div>
-                <div>
+            </article>
+            <div class="secondStartGrid">
+                <article>
                     <h2>Conheça nossos planos</h2>
-                    <a href="Ver agora >"></a>
-                </div>
-                <div>
+                    <a href="Ver agora >">Ver agora ></a>
+                </article>
+                <article>
                     <h2>Para empresas</h2>
                     <p>Focado em conectar formandos e empresas </p>
-                    <a href="Ver agora >"></a>
-                </div>
+                    <a href="Ver agora >">Ver agora ></a>
+                </article>
             </div>
         </div>
     </section>
