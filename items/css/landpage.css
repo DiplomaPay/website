@@ -1,0 +1,155 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--verde);
+    padding: 0 2vw;
+
+}
+
+header img{
+    width: 25vh;
+}
+
+header div{
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+}
+
+header a{
+    text-decoration: none;
+    color: var(--branco);
+    text-transform: uppercase;
+}
+
+header button{
+    background-color: var(--branco);
+    color: var(--verde);
+    padding: 1vh 2vw;
+    border-radius: 10px;
+    border: none;
+    font-family: 'alata';
+    font-size: 2.5vh;
+}
+
+.start{
+    background-color: var(--verde);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 8vh 0
+}
+
+.startInfo{
+    max-width: 30vw;
+    margin-left: 5vw;
+}
+
+.startInfo h1{
+    color: var(--branco);
+    font-size: 3vw;
+    margin-bottom: 3vh;
+}
+
+.startInfo p{
+    color: var(--branco);
+    font-size: 1.2vw;
+    opacity: 87%;
+    margin-bottom: 3vh;
+}
+
+.startInfo button{
+    background-color: var(--branco);
+    color: var(--verde);
+    padding: 1vh 1.5vw;
+    border-radius: 5px;
+    border: none;
+    font-family: 'alata';
+    font-size: 2.5vh;
+}
+
+.startGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5vw;
+    margin-right: 5vw;
+}
+
+.startGrid article{
+    background-color: var(--branco);
+    border-radius: 5px;
+    padding: 1vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh
+}
+
+.secondStartGrid{
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 1.5vw
+}
+
+.startGrid article div{
+    background-color: var(--verde);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh
+}
+
+.startGrid article div p{
+    color: var(--branco);
+    font-size: 1.3vw;
+}
+
+.startGrid article div strong{
+    color: var(--branco);
+    font-size: 1.7vw;
+}
+
+.strongInfo{
+    color: var(--cinzaEscuro);
+    font-size: 1.5vw;
+    text-align: center;
+    margin-top: 2.5vh;
+}
+
+.pStrongInfo{
+    color: var(--cinza);
+    font-size: 1vw;
+    text-align: center;
+    margin-top: -1vh;
+}
+
+.startGrid article button{
+    background-color: var(--verde);
+    color: var(--branco);
+    border-radius: 5px;
+    border: none;
+    padding: 1.8vh;
+    font-size: 1.2vw;
+    margin-top: 3vh;
+}
+
+.secondStartGrid article {
+    justify-content: space-around;
+}
+
+.secondStartGrid article h2{
+    color: var(--cinzaEscuro);
+    font-size: 1.6vw;
+}
+
+.secondStartGrid article a{
+    color: var(--verde);
+    text-decoration: none;
+    font-size: 1.2vw;
+}
+
+.secondStartGrid article p{
+    color: var(--cinza);
+    font-size: 1vw;
+}
