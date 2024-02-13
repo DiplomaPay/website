@@ -21,7 +21,7 @@
     <section class="sidebar">
             <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" class = "logo">
             <div>
-                <div class="atual">
+                <div >
                     <img src="" alt="">
                     <p>Salas
                 </div>
@@ -37,7 +37,7 @@
                     <img src="" alt="">    
                     <p>Entrar em uma sala</p>
                 </div>
-                <div class="criar" id=" ">
+                <div class="criar" id="criarSala">
                     <img src="" alt="">    
                     <p>+ Criar turma</p>
                 </div>
@@ -54,11 +54,11 @@
 
         <div id='myrooms_list' class="salas">
             <div class="sala">
-                <button>
+                <!-- <button>
                     Entrar em uma sala
                 </button>
                 <p>OU</p>
-                <p>+ Crie sua própria sala</p>
+                <p>+ Crie sua própria sala</p> -->
             </div>
         </div>
     </section>
@@ -164,12 +164,7 @@
 	    }
 
         const myrooms = (e) => {
-        fetch("https://diplomapay.com/sys/room/list.php",{
-            method: "POST",
-            body: JSON.stringify({
-                token: localStorage.token
-            })
-        })
+    fetch("https://diplomapay.com/sys/room/list.php")
         .then(e => e.json())
         .then(e => {
             let data = e;
