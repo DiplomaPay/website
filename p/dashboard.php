@@ -18,29 +18,38 @@
     <title>ash</title>
 </head>
 <body>
-    <section class="sidebar">
-        <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" class = "logo">
-        <div>
+<section class="sidebar">
+        <div class="teste">
+            <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" class = "logo">
             <div>
-                <img src="" alt="">
-                <p>Controle de ganhos
+                <div class="atual">
+                    <img src="" alt="">
+                    <a>Visão geral</a>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <a>Rifas</a>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <a>Relatórios</a>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <a>Recados e enquetes</a>
+                </div>
+                <div>
+                    <img src="" alt="">
+                    <a>Sua carteira</a>
+                </div>
+                <div class="entrarSala">
+                    <img src="" alt="">    
+                    <a href="./room.php">Turmas</a>
+                </div>
+            
             </div>
-            <div>
-                <img src="" alt="">
-                <p>Rifas
             </div>
-            <div>
-                <img src="" alt="">
-                <p>Relatórios
-            </div>
-            <div>
-                <img src="" alt="">
-                <p>Recados e enquetes
-            </div>
-            <div>
-                <img src="" alt="">
-                <p>Sua carteira
-            </div>
+
         </div>
     </section>
     <section class="main">

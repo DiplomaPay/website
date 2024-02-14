@@ -9,20 +9,26 @@ body{
 
 .sidebar{
     background-color: var(--verde);
+   
+    
+}
+
+.teste{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
 }
 
 .logo{
     width: 14vw;
 }
 
-.sidebar div{
+.sidebar div div{
     width: 100%;
 }
 
-.sidebar div div{
+.sidebar div div div{
     color: var(--branco);
     padding: 1.3vh 0;
     margin-bottom: 1vh;
@@ -31,11 +37,11 @@ body{
 }
 
 
-.sidebar div div p{
+.sidebar div div div p, .sidebar div div div a{
     position: relative;
 }
 
-.sidebar div div p::after{
+.sidebar div div div p::after, .sidebar div div div a::after{
     content: "";
     position: absolute;
     bottom: -6px;
@@ -46,14 +52,14 @@ body{
     transition: 0.3s;
 }
 
-.sidebar div div p:hover::after{
+.sidebar div div div p:hover::after, .sidebar div div div a:hover::after{
     width: 85%;
 }
 
-.entrarSala p, .criar p{
+.entrarSala p, .criar p, .entrarSala a, .criar a{
     transition: .5s;
 }
-.entrarSala p:hover, .criar p:hover{
+.entrarSala p:hover, .criar p:hover, .entrarSala a:hover, .criar a:hover{
     transform: scale(1.1);
 }
 
@@ -66,13 +72,13 @@ body{
 
 }
 
-.atual p{
+.atual p, .atual a{
     color: var(--preto);
 }
 
 
 
-.sidebar div div p{
+.sidebar div div div p, .sidebar div div div a{
     margin-left: 1.5vw;
     font-size: 1vw;
     font-weight: 500;

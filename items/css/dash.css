@@ -7,47 +7,103 @@ body{
 }
 
 /* -----------SIDEBAR------------ */
-
 .sidebar{
     background-color: var(--verde);
+   
+    
+}
+
+.teste{
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
 }
 
 .logo{
     width: 14vw;
 }
 
-.sidebar div{
+.sidebar div div{
     width: 100%;
 }
 
-.sidebar div div{
-    width: 95%;
+.sidebar div div div{
     color: var(--branco);
     padding: 1.3vh 0;
     margin-bottom: 1vh;
     cursor: pointer;
+    width: fit-content;
 }
 
-.sidebar div div:hover{
-    width: 95%;
+
+.sidebar div div div a{
+    position: relative;
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.sidebar div div div a::after{
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--branco);
+    transition: 0.3s;
+}
+
+.sidebar div div div a:hover::after{
+    width: 85%;
+}
+
+.entrarSala a, .criar a{
+    transition: .5s;
+}
+.entrarSala a:hover, .criar a:hover{
+    transform: scale(1.1);
+}
+
+.atual{
+    width: 95% !important;
     border-radius: 0px 100px 100px 0px;
     background-color: var(--branco);
-    color: var(--preto);
-    padding: 1.3vh 0;
+    padding: 1.3vh 10vw 1.3vh 0;
     margin-bottom: 1vh;
 
 }
 
-.sidebar div div p{
+.atual a{
+    color: var(--preto) !important;
+}
+
+
+
+.sidebar div div div a{
     margin-left: 1.5vw;
     font-size: 1vw;
     font-weight: 500;
     width: 100%;
     white-space: nowrap;
 }
+
+.sidebar .entrarSala{
+    margin-top: 5vh;
+    position: relative;
+}
+
+.sidebar .entrarSala::before{
+    content: "";
+    display: flex;
+    position: absolute;
+    top: -2vh;
+    left: 0;
+    width: 14vw;
+    height: 2px;
+    background-color: var(--branco);
+}
+
 
 /* ------------------Main------------------ */
 .main{

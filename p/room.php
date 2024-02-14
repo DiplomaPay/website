@@ -19,19 +19,20 @@
 </head>
 <body>
     <section class="sidebar">
+        <div class="teste">
             <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" class = "logo">
             <div>
                 <div class="atual">
                     <img src="" alt="">
-                    <p>Salas
+                    <a>Salas</a>
                 </div>
                 <div>
                     <img src="" alt="">
-                    <p>Usuário
+                    <a>Usuário</a>
                 </div>
                 <div>
                     <img src="" alt="">
-                    <p>Configurações
+                    <a>Configurações</a>
                 </div>
                 <div id="entrarSala" class="entrarSala">
                     <img src="" alt="">    
@@ -43,6 +44,8 @@
                 </div>
             </div>
             </div>
+
+        </div>
     </section>
 
     <section class="main">
