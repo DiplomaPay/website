@@ -93,11 +93,13 @@
     
         voltarEntrarSala.onclick = function(){
             modalEntrarSala.close()
+            window.location.reload()
         }
 
         document.addEventListener('click', function (event) {
             if (event.target === modalEntrarSala) {
                 modalEntrarSala.close();
+                window.location.reload()
             }
         });
 
@@ -114,14 +116,16 @@
 
         voltarCriarSala.onclick = function () {
             modalCriarSala.close();
+            window.location.reload()
         };
 
         document.addEventListener('click', function (event) {
             if (event.target === modalCriarSala) {
                 modalCriarSala.close();
+                window.location.reload()
             }
         });
-
+        
 
         const room_name = document.getElementById("room_name");
         const salaAdmin = document.querySelector(".sala")
@@ -135,14 +139,16 @@
             
 	        fetch("https://diplomapay.com/sys/room/create.php", {
 	            method: "POST",
-	            body: JSON.stringify(data),
+	            body: JSON.stringify(
+                    data
+                ),
 	        })
 	        .then(e=>e.json())
 	        .then(e=>{
 	            res_create_room.innerText = JSON.stringify(e);
                 salaAdmin.classList.add('sala salaAdmin') = JSON.stringify(e);
 				myrooms();
-                reload();
+                reloadPage();
                 
 	        })  
 	    }
@@ -150,6 +156,7 @@
 	    const sendjoinRoom= () => {
 			let data = {
 				room_code: join_room_name.value,
+                token: localStorage.token   
 			}
 
 	        fetch("https://diplomapay.com/sys/room/join.php", {
@@ -160,6 +167,7 @@
 	        .then(e=>{
 	            res_join_room.innerText = JSON.stringify(e);
 				myrooms();
+                reloadPage();
 	        })
 	    }
 
@@ -192,11 +200,14 @@
                         </div>
                     `;
                 }
+                
             });
+          
         };
 
 
         myrooms();
+
 
 
 
