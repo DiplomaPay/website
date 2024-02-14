@@ -138,33 +138,16 @@ header span{
 }
 
 /* ---------------Legenda---------------- */
-.legend{
+.title{
     display: flex;
     gap: 4vw;
-    margin-top: 3vh;
 }
-.legend p{
-    margin-left: 3vw;
-    color: var(--cinza);
-    font-size: 1.2vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1vw
+.title h1{
+  color: var(--cinzaEscuro);
+  font-size: 2vw;
 }
 
-.legend p:before{
-    content: "";
-    display: flex;
-    width: 1.5vw;
-    height: 1.5vw;
-    border-radius: 5px;
-    background-color: var(--azulClaro);
-}
 
-.legend p:first-child:before{
-    background-color: var(--cinza);
-}
 
 /* ---------------Nota---------------- */
 

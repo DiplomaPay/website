@@ -60,9 +60,8 @@
             <img src="../items/img/profile.jpeg" alt="" class="userImage">
         </header>
 
-        <div class="legend">
-                <p>Dados da sala</p>
-                <p>Seus dados</p>
+        <div class="title">
+               <h1>Nome da turma</h1>
         </div>
         <div class="notaContribuinte">
             <h3>Vocé é um contribuinte nota:</h3> 
