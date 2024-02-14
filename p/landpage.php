@@ -64,24 +64,24 @@
     </section>
 
     <section class="info">
-        <div>
+        <div class="infoInicial">
             <p>O APP CHEGOU NA HORA CERTA</p>
             <h2>O sistema perfeito para organizar formaturas</h2>
         </div>
 
-        <div>
+        <div class="infoSec">
             <div>
-                <img src="" alt="">
+                <img src="../items/img/Dinheiro.svg" alt="">
                 <h3>Aqui seu dinheiro rende mais</h3>
                 <p>Com a nossa plataforma, seu dinheiro trabalha para você, rendendo 100% do CDI. Quanto mais você investe, mais você ganha!</p>
             </div>
             <div>
-                <img src="" alt="">
+                <img src="../items/img/Celular.svg" alt="">
                 <h3>Faça do seu jeito</h3>
                 <p>Arrecade com nossos diversos métodos, tenha total transparência do que acontece na conta de sua turma.</p>
             </div>
             <div>
-                <img src="" alt="">
+                <img src="../items/img/Cadeado.svg" alt="">
                 <h3>Segurança de ponta</h3>
                 <p>Proteger suas informações é nossa prioridade máxima, garantindo uma experiência segura e confiável para você.</p>
             </div>
