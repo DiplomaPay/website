@@ -21,7 +21,7 @@
     <section class="sidebar">
             <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" class = "logo">
             <div>
-                <div >
+                <div class="atual">
                     <img src="" alt="">
                     <p>Salas
                 </div>
