@@ -63,7 +63,7 @@ if(!$total_room){
     $total_room = 0;
 }
 
-$data = array("id"=>$room_id, "room_name"=>$room_name, "room_code"=>$room_code, "typeuser"=>$typeuser, "typeuser_bool"=>$type_bool, "ammount_room" => $total_room, "ammount_room_user" => $total_room_user,'user_room'=>mysqli_num_rows($numUsers));
+$data = array("id"=>$room_id, "room_name"=>$room_name, "room_code"=>$room_code, "typeuser"=>$typeuser, "typeuser_bool"=>$type_bool, "ammount_room" => $total_room, "ammount_room_user" => $total_room_user,'user_room'=>mysqli_num_rows($queryUniqueRoom));
 endCode($data);
 
 function endCode($obj){
