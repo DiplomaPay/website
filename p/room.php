@@ -197,7 +197,7 @@
                                 <p>Alunos</p>
                             </div>
                             <div class="qtnSaldo info">
-                                <p>R$${data[i]}</p><p>Saldo</p>
+                                <p>R$${data[i].ammount_room}</p><p>Saldo</p>
                             </div>
                             <button>Entrar no painel</button>
                         </div>
