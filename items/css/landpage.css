@@ -207,3 +207,199 @@ header button{
     font-size: 1.2vw;
     color: var(--cinza)
 }
+
+
+/* ---------------planos------------------ */
+.planos{
+    padding: 5vw
+}
+
+.planos h2{
+    color: var(--cinzaEscuro);
+    font-size: 2vw;
+    font-weight: 500;
+    position: relative;
+}
+
+.planos h2::after{
+    content: "";
+    position: absolute;
+    bottom: -50%;
+    left: 0;
+    width: 5rem;
+    height: 1rem;
+    background-color: var(--deco1);
+    opacity: 30%;
+    border-radius: 25px;
+}
+
+.planosGrid{
+    display: grid;
+    grid-template-columns: 48vw 40vw;
+    gap: 2vw;
+    margin-top: 3rem;
+}
+
+.planoGrid{
+    padding: 3vw;
+    position: relative;
+    
+}
+
+.planoGrid:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    background-color: var(--deco1);
+    opacity: 30%;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.free{
+    color: var(--deco2) !important
+}
+
+.buttonFree{
+    background-color: var(--deco2) !important;
+}
+
+.buttonFree:hover{
+    background-color: var(--deco2Escuro) !important;
+    cursor: pointer;
+}
+
+.free::after{
+    background-color: var(--deco2) !important;
+}
+
+.free::before{
+    background-color: var(--deco2) !important;
+}
+
+.planoGrid div{
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    background-color: var(--branco);
+    z-index: 2;
+    position: relative;
+    padding: 3vh 1vw 3vh 3vw;
+    margin-bottom: 5vh;
+}
+
+.planoGrid div::before{
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 1vw;
+    width: 0.4rem;
+    height: 90%;
+    background-color: var(--deco1);
+    opacity: 30%;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+
+
+.lista{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.lista img{
+    position: absolute;
+    right: 1vw;
+    top: 5%;
+    width: 1.5rem;
+}
+
+.lista h3{
+    color: var(--verde);
+    font-size: 1.1vw;
+    font-weight: 500;
+}
+
+.preco{
+    color: var(--preto);
+    font-size: 2vw;
+}
+
+.tamanhoMenor{
+    font-size: 1.5vw;
+}
+
+.mes{
+    color: var(--cinza);
+    font-size: 1.3vw;
+}
+
+.porAluno{
+    color: var(--cinza);
+    font-size: 1.3vw;
+    font-weight: 400;
+    margin-top: -0.5rem;
+    margin-bottom: 2vh;
+}
+
+.planosGrid ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.planosGrid li{
+    color: var(--cinzaEscuro);
+    font-size: 1.1vw;
+    margin-bottom: 1vh;
+}
+
+.planosGrid li::before{
+    content: "✓";
+    color: var(--verde);
+    margin-right: 0.5vw;
+}
+
+.lista button{
+    border: none;
+    background-color: var(--verde);
+    color: var(--branco);
+    font-family: 'Alata';
+    font-size: 1vw;
+    border-radius: 5px;
+    width: fit-content;
+    padding: 1.8vh 2vw;
+    margin-top: 5vh;
+    transition: .5s;
+}
+
+.lista button:hover{
+    background-color: var(--verdeEscuro);
+    cursor: pointer;
+}
+
+.taxas{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh
+}
+
+.taxas h3{
+    color: var(--verde);
+    font-size: 1vw;
+    font-weight: 100;
+}
+
+.taxas p{
+    color: var(--cinzaEscuro);
+    font-size: 1.2vw;
+}
+
+.taxas h4{
+    color: var(--cinzaEscuro);
+    font-size: 1.5vw;
+    font-weight: 100;
+}
+

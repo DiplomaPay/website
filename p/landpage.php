@@ -91,13 +91,13 @@
     <section class="planos">
         <h2>Nossos planos para sua turma</h2>
 
-        <div>
-            <div>
-                <div>
-                    <img src="" alt="estrela">
-                    <p>Premium</p>
-                    <p>R$0.99<span>/mês</span></p>
-                    <p>por aluno</p>
+        <div class="planosGrid">
+            <div class="planoGrid">
+                <div class="lista">
+                    <img src="../items/img/estrela.svg" alt="estrela">
+                    <h3>Premium</h3>
+                    <p class="preco">R$0<span class="tamanhoMenor">.99</span><span class="mes">/mês</span></p>
+                    <p class="porAluno">Por aluno</p>
 
                     <ul>
                         <li>
@@ -136,20 +136,20 @@
                     </ul>
                     <button>Começar agora</button>
                 </div>
-                <div>
-                    <p>Taxas premium</p>
+                <div class="taxas">
+                    <h3>Taxas premium</h3>
                     <p>Administrativo: 2% + R$0,20</p>
-                    <p>6% por Pix</p>
-                    <p>10% Cartão de crédito</p>
-                    <p>R$6 por Boleto</p>
+                    <h4>6% por Pix</h4>
+                    <h4>10% Cartão de crédito</h4>
+                    <h4>R$6 por Boleto</h4>
                 </div>
 
             </div>
-            <div>
-            <div>
-                    <p>Normal</p>
-                    <p>Sem mensalidade</p>
-                    <p>Não pague pelo serviço</p>
+            <div class="planoGrid free">
+                <div class="lista free">
+                    <h3 class="free">Normal</h3>
+                    <p class="preco">Sem mensalidade</p>
+                    <p class="porAluno">Não pague pelo serviço</p>
 
                     <ul>
                         <li>
@@ -168,14 +168,15 @@
                             Relatórios simples
                         </li>
                     </ul>
-                    <button>Criar agora</button>
+                    <button class="buttonFree">Criar agora</button>
                 </div>
-                <div>
-                    <p>Taxas normais</p>
+                <div class="taxas free">
+                    <h3 class="free">Taxas normais</h3>
                     <p>Administrativo: 3% + R$0,40</p>
-                    <p>9% por Pix</p>
-                    <p>14% Cartão de crédito</p>
-                    <p>R$8 por Boleto</p>
+                    <h4>9% por Pix</h4>
+                    <h4>14% Cartão de crédito</h4>
+                    <h4>R$8 por Boleto</h4>
+                </div>
                 </div>
             </div>
         </div>
