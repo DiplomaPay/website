@@ -29,14 +29,16 @@ if(mysqli_num_rows($queryUserRoom) < 1){
     endCode($obj);
 }
 
+$typeuser = mysqli_fetch_assoc($queryUserRoom)['typeuser'];
+
 // DADOS DA SALA 
 
 $queryUniqueRoom = mysqli_query($conexao, "select * from room where room_code='$room_code'");
 
 $assoc = mysqli_fetch_assoc($queryUniqueRoom);
 
-$room_name = $d['room_name'];
-$room_id = $d['id'];
+$room_name = $assoc['room_name'];
+$room_id = $assoc['id'];
 $user_room = mysqli_num_rows($queryUniqueRoom);
 
 $type_bool = $typeuser == "owner" ? true : false;
