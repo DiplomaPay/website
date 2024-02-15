@@ -200,7 +200,7 @@
                                 <p>R$${data[i].ammount_room}</p><p>Saldo</p>
                             </div>
                             <button>Entrar no painel</button>
-                            <button onclick="copy('${data[i].room_code}')" style="background: none; color: black; font-size: 1.1vw">Copiar código da sala</button>
+                            <button onclick="window.copy('${data[i].room_code}')" style="background: none; color: black; font-size: 1.1vw">Copiar código da sala</button>
                         </div>
                     `;
                 }
