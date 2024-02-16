@@ -171,7 +171,9 @@
 	            res_join_room.innerText = JSON.stringify(e);
 				myrooms();
                 reloadPage();
+                window.location.href = "./dashboard.php";
 	        })
+            
 	    }
 
         const myrooms = (e) => {
@@ -199,13 +201,18 @@
                             <div class="qtnSaldo info">
                                 <p>R$${data[i].ammount_room}</p><p>Saldo</p>
                             </div>
-                            <button>Entrar no painel</button>
+                            <button onclick="enterRoom('${data[i].room_code}')">Entrar no painel</button>
                         </div>
                     `;
                 }
                 
             });
           
+        };
+
+        const enterRoom = (roomCode) => {
+            localStorage.setItem('selectedRoomCode', roomCode);
+            window.location.href = "./dashboard.php";
         };
 
 

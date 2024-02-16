@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../items/css/dash.css">
+    <link rel="stylesheet" href="../items/css/recadosEnquetes.css">
   <link rel="stylesheet" href="../items/css/global.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +22,7 @@
         <div class="teste">
             <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" class = "logo" onclick="location.href='./room.php'">
             <div>
-                <div class="atual">
+                <div>
                     <img src="" alt="">
                     <a href="./dashboard.php">Visão geral</a>
                 </div>
@@ -34,7 +34,7 @@
                     <img src="" alt="">
                     <a href="./relatorios.php">Relatórios</a>
                 </div>
-                <div>
+                <div class="atual">
                     <img src="" alt="">
                     <a href="./recadosEnquetes.php">Recados e enquetes</a>
                 </div>
