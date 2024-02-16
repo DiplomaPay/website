@@ -31,6 +31,14 @@ header button{
     border: none;
     font-family: 'alata';
     font-size: 2.5vh;
+    cursor: pointer;
+    transition: .5s;
+}
+
+header button:hover{
+    background-color: var(--verde);
+    color: var(--branco);
+    border: 3px solid var(--branco);
 }
 
 /* -----------------Start------------------- */

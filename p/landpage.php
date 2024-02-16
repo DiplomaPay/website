@@ -24,7 +24,7 @@
             <a href="#">Preços</a>
             <a href="#">Simulador</a>
             <a href="#">Quem somos</a>
-            <button>Entrar</button>
+            <button onclick="location.href='../index.php'">Entrar</button>
         </div>
     </header>
 
