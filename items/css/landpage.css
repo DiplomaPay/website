@@ -403,3 +403,17 @@ header button{
     font-weight: 100;
 }
 
+
+/* ------------footer------------ */
+footer{
+    background-color: var(--verde);
+    padding: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer img{
+    width: 15vw;
+}
+
