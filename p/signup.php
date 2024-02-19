@@ -1,8 +1,7 @@
 
 <?php
-// include"../sys/conexao.php";
-//se estiver logado, não pode entrar
-// cantLog($__EMAIL__);
+include"../sys/conexao.php";
+cantLog($__EMAIL__);
 
 ?>
 <!DOCTYPE html>

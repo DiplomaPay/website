@@ -1,8 +1,7 @@
 
 <?php
-// include"../sys/conexao.php";
-//só consegue entrar logado
-// justLog($__EMAIL__);
+include"../sys/conexao.php";
+justLog($__EMAIL__);
 ?>
 <!DOCTYPE html>
 <html lang="en">
