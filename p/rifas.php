@@ -1,7 +1,7 @@
 
 <?php
 include"../sys/conexao.php";
-justLog($__EMAIL__);
+// justLog($__EMAIL__);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,73 +62,287 @@ justLog($__EMAIL__);
         <div class="title">
                <h1></h1>
         </div>
-        <div class="notaContribuinte">
-            <h3>Vocé é um contribuinte nota:</h3> 
-            <span class="nota">B</span>
-            <br>
-            <h4>(Coloque <span>R$8,94</span> e vire contribuinte nota <span>A</span>. Sua parte ficaria em <span>R$544,68</span>)</h4>
+        
+        <div class="rifasDados">
+            <h2>Rifas</h2>
+            <div class="rifasDadosGrid">
+                <div class="rifasDadoGrid">
+                    <h3>Números vendidos</h3>
+                    <p>22</p>
+                </div>
+                <div class="rifasDadoGrid">
+                    <h3>Total arrecadado</h3>
+                    <p>R$ 44,00</p>
+                </div>
+                <div class="rifasDadoGrid turma">
+                    <h3>Total de rifas</h3>
+                    <p class="turma">42</p>
+                    <p class="total">R$ 84,00 - 6 clientes</p>
+                </div>
+            </div>
         </div>
 
-        <div class="enquete">
-            <div>
-                <h3>Tem uma enquete acontecendo!</h3>
-                <img src="../items/img/estrelinha.svg" alt="" class="estrelinha">
-            </div>
-            <div>
-                <p>Devemos gastar a grana no cassino?</p>
-            </div>
-            <div>
-                <button>Votar agora</button>
-                <p>Acaba em 19 minutos</p>
-            </div>
-        </div>
-        <div class="mensagem">
-                <h3>Nova mensagem</h3>
-                <h4>Galerinha, teste de nova mensagem!</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus...</p>
-                <button>Ver completo</button>
+        <div class="botoes">
+            <button>+ Vender rifa</button>
+            <a href="">Copiar link</a>
         </div>
 
-        <div class="suaSala">
-            <h3>Sua sala -</h3>
-            <a>Ver relatório</a>
-            <div class="grid">
-                <div>
-                    <h4>Total guardado</h4>
-                    <p>R$ 12.244,96</p>
-                </div>
-                <div class="pessoal">
-                    <h4>Sua parte</h4>
-                    <p>R$ 385,83</p>
-                </div>
-                <div class="pessoal">
-                    <h4>Suas constribuições</h4>
-                    <p>R$ 129,33</p>
-                </div>
-                <div>
-                    <h4>Pessoas na sala</h4>
-                    <p>36</p>
-                </div>
-                <div>
-                    <h4>Total de clientes</h4>
-                    <p>6</p>
-                </div>
-                <div class="pessoal">
-                    <h4>Contribuição média</h4>
-                    <p>R$ 138,27</p>
-                </div>
-            </div>
-            <div class="graphic">
-                <h3>Titulo</h3>
-                <div class="graphicImage">
+        <div class="listaRifas">
+            <h2>Suas vendas -<span> 2 clientes</span></h2>
 
+            <div class="legendaLista">
+                <p>Nome</p>
+                <p>Quantidade</p>
+                <p>Total</p>
+                <p>Rifa</p>
+                <p>Informações</p>
+                <p>Data</p>
+                <p>Status</p>
+            </div>
+            <div class="listas">
+                <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Ana</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Enzo</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Venus</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Cairé</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Jaiza</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Bernardo</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Joao</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div> <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+
+                <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
+                </div>
+                <div class="lista">
+                    <p>Tite</p>
+                    <p>7 unidades</p>
+                    <p>R$14,00</p>
+                    <p>Iphone 13</p>
+                    <a>Ver mais</a>
+                    <p>00/00/0000</p>
+                    <p></p>
                 </div>
             </div>
+            <div class="pagination">
+                <ul>
+                    <!-- <li class="btn"><<</li>
+                    <li class="numb atualPagination">1</li>
+                    <li class="numb">2</li>
+                     <li class="dots">...</li>
+                    <li class="numb">4</li>
+                    <li class="numb">5</li>
+                    <li class="dots">...</li>
+                    <li class="numb">7</li>
+                    <li class="btn">>></li> -->
+
+                </ul>
+            </div>
+
+            <div class="rifas">
+                <h2>Rifas da sala</h2>
+                <div class="gridRifas">
+                    <div class="rifa">
+                        <h4>Nome</h4>
+                        <img src="../items/img/celular.png" alt="">
+                        <p>Preço</p>
+                        <button>Ver informações</button>
+                    </div>
+                    <div class="rifa">
+                        <h4>Nome</h4>
+                        <img src="../items/img/caixa.png" alt="">
+                        <p>Preço</p>
+                        <button>Ver informações</button>
+                    </div>
+                    <div class="rifa">
+                        <h4>Nome</h4>
+                        <img src="../items/img/caixa.png" alt="">
+                        <p>Preço</p>
+                        <button>Ver informações</button>
+                    </div>
+                    <div class="rifa">
+                        <h4>Nome</h4>
+                        <img src="../items/img/caixa.png" alt="">
+                        <p>Preço</p>
+                        <button>Ver informações</button>
+                    </div>
+                    <div class="rifa">
+                        <h4>Nome</h4>
+                        <img src="../items/img/caixa.png" alt="">
+                        <p>Preço</p>
+                        <button>Ver informações</button>
+                    </div>
+                    <div class="rifa">
+                        <h4>Nome</h4>
+                        <img src="../items/img/caixa.png" alt="">
+                        <p>Preço</p>
+                        <button>Ver informações</button>
+                    </div>
+                    <div class="rifa">
+                        <h4>Nome</h4>
+                        <img src="../items/img/caixa.png" alt="">
+                        <p>Preço</p>
+                        <button>Ver informações</button>
+                    </div>
+                </div>
+                
+            </div>
+
         </div>
-        <button class="question">?</button>
+            
     </section>
+    <button class="question">?</button>
     <script>
         const selectedRoomCode = localStorage.getItem('selectedRoomCode');
+
         if (selectedRoomCode !== null && selectedRoomCode !== undefined) {
             fetch("https://diplomapay.com/sys/room/infos.php", {
                 method: "POST",
@@ -144,6 +358,92 @@ justLog($__EMAIL__);
                 h1Turma.innerText = infoData.room_name;
             });
         }
+
+        const lista = document.querySelectorAll(".lista");
+        const itemsPerPage = 3;
+        let currentPage = 1;
+
+        function showItems(page) {
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+
+            lista.forEach((item, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    item.style.display = "grid";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+
+        function updatePagination(totalPages) {
+            const ulTag = document.querySelector("ul");
+            let liTag = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                liTag += `<li class="numb ${currentPage === i ? 'atualPagination' : ''}" onclick="changePage(${i})"><span>${i}</span></li>`;
+            }
+
+            ulTag.innerHTML = liTag;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            showItems(currentPage);
+            updatePagination(Math.ceil(lista.length / itemsPerPage));
+            element(Math.ceil(lista.length / itemsPerPage), currentPage);
+        }
+
+        function element(totalPages, page) {
+            const ulTag = document.querySelector("ul");
+            let liTag = '';
+            let activeLi;
+            let beforePages = page - 1;
+            let afterPages = page + 1;
+
+            if (page > 1) {
+                liTag += `<li class="btn" onclick="changePage(${page - 1})"><<</li>`;
+            }
+            if (page > 2) {
+                liTag += `<li class="numb" onclick="changePage(1)">1</li>`;
+                if (page > 3) {
+                    liTag += `<li class="dots">...</li>`;
+                }
+            }
+
+            for (let pageLength = beforePages; pageLength <= afterPages; pageLength++) {
+                if (pageLength > totalPages) {
+                    continue;
+                }
+                if (pageLength == 0) {
+                    pageLength = pageLength + 1;
+                }
+
+                if (page == pageLength) {
+                    activeLi = "atualPagination";
+                } else {
+                    activeLi = "";
+                }
+                liTag += `<li class="numb ${activeLi}" onclick="changePage(${pageLength})"><span>${pageLength}</span></li>`;
+            }
+
+            if (page < totalPages - 1) {
+                if (page < totalPages - 2) {
+                    liTag += `<li class="dots">...</li>`;
+                }
+                liTag += `<li class="numb" onclick="changePage(${totalPages})">${totalPages}</li>`;
+            }
+
+            if (page < totalPages) {
+                liTag += `<li class="btn" onclick="changePage(${page + 1})">>></li>`;
+            }
+
+            ulTag.innerHTML = liTag;
+        }
+
+        showItems(currentPage);
+        updatePagination(Math.ceil(lista.length / itemsPerPage));
+        element(Math.ceil(lista.length / itemsPerPage), currentPage);
     </script>
 </body>
 </html>
