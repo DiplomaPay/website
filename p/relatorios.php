@@ -68,63 +68,196 @@ justLog($__EMAIL__);
             <br>
             <h4>(Coloque <span>R$8,94</span> e vire contribuinte nota <span>A</span>. Sua parte ficaria em <span>R$544,68</span>)</h4>
         </div>
-
-        <div class="enquete">
+        <div class="infoRelatorio">
             <div>
-                <h3>Tem uma enquete acontecendo!</h3>
-                <img src="../items/img/estrelinha.svg" alt="" class="estrelinha">
+                <button class="salaButton relatorioAtual" onclick="ativar(this)">Relatório da sala</button>
+                <button class="voceButton" onclick="ativar(this)">Meu relatório</button>
             </div>
-            <div>
-                <p>Devemos gastar a grana no cassino?</p>
-            </div>
-            <div>
-                <button>Votar agora</button>
-                <p>Acaba em 19 minutos</p>
-            </div>
-        </div>
-        <div class="mensagem">
-                <h3>Nova mensagem</h3>
-                <h4>Galerinha, teste de nova mensagem!</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus...</p>
-                <button>Ver completo</button>
-        </div>
-
-        <div class="suaSala">
-            <h3>Sua sala -</h3>
-            <a>Ver relatório</a>
-            <div class="grid">
+            <div class="infoRelatorioGrid infoRelatorioSala">
                 <div>
-                    <h4>Total guardado</h4>
+                    <h3>Total guardado</h3>
                     <p>R$ 12.244,96</p>
                 </div>
-                <div class="pessoal">
-                    <h4>Sua parte</h4>
-                    <p>R$ 385,83</p>
-                </div>
-                <div class="pessoal">
-                    <h4>Suas constribuições</h4>
-                    <p>R$ 129,33</p>
+                <div>
+                    <h3>Últimos 6 meses</h3>
+                    <p>R$ 5.865,37</p>
                 </div>
                 <div>
-                    <h4>Pessoas na sala</h4>
-                    <p>36</p>
+                    <h3>Esse mês</h3>
+                    <p>R$ 1227,54</p>
                 </div>
                 <div>
-                    <h4>Total de clientes</h4>
-                    <p>6</p>
+                    <h3>Gastos  totais</h3>
+                    <p>R$ 1.314,76</p>
                 </div>
-                <div class="pessoal">
-                    <h4>Contribuição média</h4>
-                    <p>R$ 138,27</p>
+                <div>
+                    <h3>Gastos últimos 6 meses</h3>
+                    <p>R$ 367,12</p>
                 </div>
+                <div>
+                    <h3>Gastos esse mês</h3>
+                    <p>R$ 20,00</p>
+                </div>
+               
             </div>
-            <div class="graphic">
-                <h3>Titulo</h3>
-                <div class="graphicImage">
 
+            <div class="infoRelatorioGrid infoRelatorioVoce desativado">
+                <div>
+                    <h3>Total contribuido</h3>
+                    <p>R$ 640,00</p>
                 </div>
+                <div>
+                    <h3>Últimos 6 meses</h3>
+                    <p>R$ 302,00</p>
+                </div>
+                <div>
+                    <h3>Esse mês</h3>
+                    <p>R$ 20,50</p>
+                </div>
+               
+               
             </div>
         </div>
+
+        <div class="listaExtratos">
+            <h2>Suas vendas -<span> 2 clientes</span></h2>
+
+            <div class="legendaLista">
+                <p>Nome</p>
+                <p>Valor</p>
+                <p>Tipo</p>
+                <p>Data</p>
+
+            </div>
+            <div class="listas">
+                <div class="extrato">
+                    <p>12/04/2005</p>
+                    <p>R$ 244,38</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                   
+                </div>
+                <div class="extrato">
+                    <p>Admin</p>
+                    <p>R$ -20,00</p>
+                    <p>Saldo</p>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>12/04/50BCE</p>
+                    <p>R$ 118,00</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>29/04/2005</p>
+                    <p>R$ 118,00</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>12/04/2005</p>
+                    <p>R$ 244,38</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>Admin</p>
+                    <p>R$ -20,00</p>
+                    <p>Saldo</p>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>12/04/2005</p>
+                    <p>R$ 244,38</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>Admin</p>
+                    <p>R$ -20,00</p>
+                    <p>Saldo</p>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>12/04/50BCE</p>
+                    <p>R$ 118,00</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>29/04/2005</p>
+                    <p>R$ 118,00</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>12/04/2005</p>
+                    <p>R$ 244,38</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>Admin</p>
+                    <p>R$ -20,00</p>
+                    <p>Saldo</p>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>12/04/2005</p>
+                    <p>R$ 244,38</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>Admin</p>
+                    <p>R$ -20,00</p>
+                    <p>Saldo</p>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>12/04/50BCE</p>
+                    <p>R$ 118,00</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>29/04/2005</p>
+                    <p>R$ 118,00</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>12/04/2005</p>
+                    <p>R$ 244,38</p>
+                    <a>VER MAIS</a>
+                    <p>00/00/0000</p>
+                </div>
+                <div class="extrato">
+                    <p>Admin</p>
+                    <p>R$ -20,00</p>
+                    <p>Saldo</p>
+                    <p>00/00/0000</p>
+                </div>  
+            </div>
+            <div class="pagination">
+                <ul>
+                    <!-- <li class="btn"><<</li>
+                    <li class="numb atualPagination">1</li>
+                    <li class="numb">2</li>
+                     <li class="dots">...</li>
+                    <li class="numb">4</li>
+                    <li class="numb">5</li>
+                    <li class="dots">...</li>
+                    <li class="numb">7</li>
+                    <li class="btn">>></li> -->
+
+                </ul>
+            </div>
+
+
+        </div>
+       
         <button class="question">?</button>
     </section>
     <script>
@@ -144,6 +277,119 @@ justLog($__EMAIL__);
                 h1Turma.innerText = infoData.room_name;
             });
         }
+
+        const salaButton = document.querySelector('.salaButton');
+        const voceButton = document.querySelector('.voceButton');
+        const botoes = document.querySelectorAll('.infoRelatorio button')
+
+        const infoSala = document.querySelector('.infoRelatorioSala');
+        const infoVoce = document.querySelector('.infoRelatorioVoce');
+
+        console.log(botoes);
+
+        function ativar(element){
+            botoes.forEach(element => {
+                element.classList.remove('relatorioAtual')
+            });
+
+            element.classList.toggle('relatorioAtual')
+          
+            if(element === salaButton){
+                infoSala.classList.remove('desativado');
+                infoVoce.classList.add('desativado')
+            } else if (element === voceButton){
+                infoVoce.classList.remove('desativado');
+                infoSala.classList.add('desativado');
+            }
+        }
+
+        
+        const extrato = document.querySelectorAll(".extrato");
+        const itemsPerPage = 3;
+        let currentPage = 1;
+
+        function showItems(page) {
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+
+            extrato.forEach((item, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    item.style.display = "grid";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+
+        function updatePagination(totalPages) {
+            const ulTag = document.querySelector("ul");
+            let liTag = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                liTag += `<li class="numb ${currentPage === i ? 'atualPagination' : ''}" onclick="changePage(${i})"><span>${i}</span></li>`;
+            }
+
+            ulTag.innerHTML = liTag;
+        }
+
+        function changePage(page) {
+            currentPage = page;
+            showItems(currentPage);
+            updatePagination(Math.ceil(extrato.length / itemsPerPage));
+            element(Math.ceil(extrato.length / itemsPerPage), currentPage);
+        }
+
+        function element(totalPages, page) {
+            const ulTag = document.querySelector("ul");
+            let liTag = '';
+            let activeLi;
+            let beforePages = page - 1;
+            let afterPages = page + 1;
+
+            if (page > 1) {
+                liTag += `<li class="btn" onclick="changePage(${page - 1})"><<</li>`;
+            }
+            if (page > 2) {
+                liTag += `<li class="numb" onclick="changePage(1)">1</li>`;
+                if (page > 3) {
+                    liTag += `<li class="dots">...</li>`;
+                }
+            }
+
+            for (let pageLength = beforePages; pageLength <= afterPages; pageLength++) {
+                if (pageLength > totalPages) {
+                    continue;
+                }
+                if (pageLength == 0) {
+                    pageLength = pageLength + 1;
+                }
+
+                if (page == pageLength) {
+                    activeLi = "atualPagination";
+                } else {
+                    activeLi = "";
+                }
+                liTag += `<li class="numb ${activeLi}" onclick="changePage(${pageLength})"><span>${pageLength}</span></li>`;
+            }
+
+            if (page < totalPages - 1) {
+                if (page < totalPages - 2) {
+                    liTag += `<li class="dots">...</li>`;
+                }
+                liTag += `<li class="numb" onclick="changePage(${totalPages})">${totalPages}</li>`;
+            }
+
+            if (page < totalPages) {
+                liTag += `<li class="btn" onclick="changePage(${page + 1})">>></li>`;
+            }
+
+            ulTag.innerHTML = liTag;
+        }
+
+        showItems(currentPage);
+        updatePagination(Math.ceil(extrato.length / itemsPerPage));
+        element(Math.ceil(extrato.length / itemsPerPage), currentPage);
+
     </script>
 </body>
 </html>

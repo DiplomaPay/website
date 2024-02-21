@@ -78,7 +78,7 @@ justLog($__EMAIL__);
                 <p>Devemos gastar a grana no cassino?</p>
             </div>
             <div>
-                <button>Votar agora</button>
+                <button onclick="location.href='./room.php'">Votar agora</button>
                 <p>Acaba em 19 minutos</p>
             </div>
         </div>
@@ -86,24 +86,16 @@ justLog($__EMAIL__);
                 <h3>Nova mensagem</h3>
                 <h4>Galerinha, teste de nova mensagem!</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus...</p>
-                <button>Ver completo</button>
+                <button onclick="location.href='./room.php'">Ver completo</button>
         </div>
 
         <div class="suaSala">
             <h3>Sua sala -</h3>
-            <a>Ver relatório</a>
+            <a onclick="location.href='./relatorios.php'">Ver relatório</a>
             <div class="grid">
                 <div>
                     <h4>Total guardado</h4>
                     <p>R$ 12.244,96</p>
-                </div>
-                <div class="pessoal">
-                    <h4>Sua parte</h4>
-                    <p>R$ 385,83</p>
-                </div>
-                <div class="pessoal">
-                    <h4>Suas constribuições</h4>
-                    <p>R$ 129,33</p>
                 </div>
                 <div>
                     <h4>Pessoas na sala</h4>
@@ -113,15 +105,17 @@ justLog($__EMAIL__);
                     <h4>Total de clientes</h4>
                     <p>6</p>
                 </div>
-                <div class="pessoal">
-                    <h4>Contribuição média</h4>
+                <div>
+                    <h4>Contribuição média da turma</h4>
                     <p>R$ 138,27</p>
                 </div>
-            </div>
-            <div class="graphic">
-                <h3>Titulo</h3>
-                <div class="graphicImage">
-
+                <div class="pessoal">
+                    <h4>Sua parte</h4>
+                    <p>R$ 385,83</p>
+                </div>
+                <div class="pessoal">
+                    <h4>Suas constribuições</h4>
+                    <p>R$ 129,33</p>
                 </div>
             </div>
         </div>

@@ -324,6 +324,7 @@ header span{
     font-size: 1.4vw;
     font-weight: 500;
     color: var(--verde);
+    cursor: pointer;
 }
 
 .grid{
@@ -334,14 +335,16 @@ header span{
 }
 
 .grid div{
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
-    border-bottom: 2px solid var(--cinzaEscuro);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    border-bottom: 5px solid var(--cinza);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 3vh;
-    padding: 3vh 5vw 5vh 5vw
+    padding: 3vh 5vw 5vh 5vw;
+    text-align: center;
+    border-radius: 5px;
 }
 
 
@@ -357,7 +360,7 @@ header span{
 }
 
 .pessoal{
-    border-bottom: 2px solid var(--verdeClaro) !important;
+    border-bottom: 5px solid var(--verdeClaro) !important;
 }
 
 .pessoal p{

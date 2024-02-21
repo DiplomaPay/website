@@ -181,192 +181,193 @@ header span{
     font-weight: 500;
 }
 
-/* ----------------Enquete---------------- */
-.enquete{
-    background-color: var(--verde);
-    border-radius: 5px;
-    padding: 2.5vh 2.5vw;
-    position: relative;
+/* ----------------Info---------------- */
+.infoRelatorio{
     margin-top: 5vh;
 }
 
-.enquete::before{
-    content: "";
-    position: absolute;
-    background-color: var(--branco);
-    width: 0.4vw;
-    height: 90%;
-    top: 5%;
-    left: 0.5vw;
-    border-radius: 20px;
-
-}
-
-.enquete div{
-    display: flex;
-    justify-content: space-between;
-    color: var(--branco);
-}
-
-.enquete h3{
-    font-size: 1.3vw;
-    font-weight: 500
-
-}
-.enquete p{
-    font-size: 0.9vw;
-    font-weight: 500;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-
-}
-
-.enquete button{
-    border: none;
-    border-radius: 5px;
-    background-color: var(--branco);
-    color: var(--cinzaEscuro);
-    padding: 1vh 1.5vw;
-    font-size: 1vw;
+.infoRelatorio button{
+    border: 3px solid var(--cinza);
     font-family: 'Alata';
-    cursor: pointer;
-    transition: .5s;
-}
-
-.enquete button:hover{
-    transform: scale(1.1);
-    /* border: 3px solid var(--branco);
-    background-color: var(--verde);
-    color: var(--branco); */
-}
-
-.enquete img{
-    width: 1.5vw;
-}
-
-/* -----------Mensagem--------------- */
-.mensagem{
-    background-color: var(--branco);
+    font-size: 1vw;
     border-radius: 5px;
-    padding: 2.5vh 2.5vw;
-    position: relative;
-    margin-top: 3vh;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    background-color: transparent;
     color: var(--cinza);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.mensagem::before{
-    content: "";
-    position: absolute;
-    background-color: var(--verde);
-    width: 0.4vw;
-    height: 90%;
-    top: 5%;
-    left: 0.5vw;
-    border-radius: 20px;
-
-}
-
-.mensagem h3{
-    font-size: 1.3vw;
-    font-weight: 500
-
-}
-
-.mensagem h4{
-    font-size: 1vw;
-    font-weight: 500;
-    margin-top: 2vh;
-}
-.mensagem p{
-    font-size: 0.9vw;
-    font-weight: 500;
-    margin-top: 1.5vh;
-    margin-bottom: 1vh;
-
-}
-
-.mensagem button{
-    border: none;
-    border-radius: 5px;
-    background-color: var(--verde);
-    color: var(--branco);
-    padding: 1vh 1.5vw;
-    font-size: 1vw;
-    font-family: 'Alata';
-    cursor: pointer;
+    padding: 1vh 1vw;
     transition: .5s;
-
+    margin-right: 1.5vw;
 }
 
-.mensagem button:hover{
-    transform: scale(1.1);
-    /* border: 3px solid var(--branco);
-    background-color: var(--verde);
-    color: var(--branco); */
-}
-
-/* --------------------SuaSala----------------- */
-.suaSala{
-    margin-top: 5vh;
-    Color: var(--cinza)
-}
-
-.suaSala h3{
-    font-size: 1.4vw;
-    font-weight: 500;
-}
-
-.suaSala a{
-    font-size: 1.4vw;
-    font-weight: 500;
+.infoRelatorio button:hover{
+    border-color: var(--verde);
     color: var(--verde);
+    cursor: pointer;
+
 }
 
-.grid{
-    margin-top: 3vh;
+button.relatorioAtual{
+    background-color: var(--verde) !important;
+    border-color: var(--verde);
+    color: var(--branco)
+}
+
+button.relatorioAtual:hover{
+    cursor: default;
+    color: var(--branco)
+}
+
+.infoRelatorioGrid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 3vh 5vw;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3vh 3vw
 }
 
-.grid div{
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
-    border-bottom: 2px solid var(--cinzaEscuro);
+.infoRelatorioGrid div{
+    background-color: var(--branco);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
-    gap: 3vh;
-    padding: 3vh 5vw 5vh 5vw
-}
-
-
-.grid h4{
-    font-size: 1.2vw;
-    font-weight: 500;
+    padding: 5vh 0;
+    gap: 5vh;
+    border-bottom: 5px solid var(--cinza);
+    margin-top: 3vh;
 
 }
 
-.grid p{
-    font-size: 1.7vw;
-    font-weight: 500;
+.infoRelatorioGrid h3{
+    color: var(--cinza);
+    font-size: 1.3vw;
+    font-weight: 400;
 }
 
-.pessoal{
-    border-bottom: 2px solid var(--verdeClaro) !important;
+.infoRelatorioGrid p{
+    color: var(--cinza);
+    font-size: 1.8vw;
 }
 
-.pessoal p{
-    color: var(--verde) !important;
+.desativado{
+    display: none;
 }
 
-.graphic{
- margin-top: 5vh;
+.infoRelatorioVoce div{
+    border-bottom: 5px solid var(--verde);
 }
+
+.infoRelatorioVoce h3, .infoRelatorioVoce p{
+    color: var(--verde)
+
+}
+
+/* -----------------Lista----------------- */
+.listaExtratos{
+    margin-top: 5vh;
+ }
+
+ .listaExtratos h2{
+    color: var(--cinza);
+    font-weight: 400;
+    font-size: 1.5vw;
+ }
+
+ .listaExtratos h2 span{
+    font-size: 1.1vw;
+ }
+
+ .legendaLista{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+
+    color: var(--cinza);
+    font-size: 1.3vw;
+
+    background-color: var(--branco);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    border-radius: 5px;
+    padding: 2.5vh 2vw
+ }
+
+ .legendaLista p:nth-child(3){
+    grid-column: span 4 / span 6;
+ }
+/* 
+ .listas{
+    max-height: calc((3vh + 1.1vw + 2.5vh)*4.8);
+    overflow: hidden;
+ } */
+
+ .extrato{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    margin-top: 3vh;
+
+    color: var(--cinza);
+    font-size: 1.1vw;
+
+    background-color: var(--branco);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    border-radius: 5px;
+    padding: 2.5vh 2vw
+ }
+
+ .extrato > *:nth-child(3){
+    grid-column: span 4 / span 6;
+ }
+
+
+ .extrato a{
+    color: var(--verde)
+ }
+
+ /* --------pagination----------- */
+ .pagination ul{
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 3vh;
+ }
+
+ .pagination ul li{
+    list-style: none;
+    line-height: 3vh;
+    border: 2px solid var(--cinza);
+    border-radius: 5px;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: var(--cinza);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .1s;
+ }
+
+ .numb:hover, .btn:hover{
+    border-color: var(--verde);
+    color: var(--verde);
+    transform: scale(1.1);
+ }
+
+
+
+ .atualPagination{
+    background-color: var(--verde);
+    color: var(--branco) !important;
+    border-color: var(--verde) !important;
+    cursor:default !important;
+ }
+
+ .dots{
+    cursor:default !important;
+    border: none !important;
+ }
+
 
 
 /* ------------------------------------------- */

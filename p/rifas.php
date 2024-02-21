@@ -67,15 +67,16 @@ justLog($__EMAIL__);
             <h2>Rifas</h2>
             <div class="rifasDadosGrid">
                 <div class="rifasDadoGrid">
-                    <h3>Números vendidos</h3>
+                    <h3>Números vendidos - Você
+                    </h3>
                     <p>22</p>
                 </div>
                 <div class="rifasDadoGrid">
-                    <h3>Total arrecadado</h3>
+                    <h3>Total arrecadado - Você</h3>
                     <p>R$ 44,00</p>
                 </div>
                 <div class="rifasDadoGrid turma">
-                    <h3>Total de rifas</h3>
+                    <h3>Total de rifas - Turma</h3>
                     <p class="turma">42</p>
                     <p class="total">R$ 84,00 - 6 clientes</p>
                 </div>
