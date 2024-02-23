@@ -261,6 +261,128 @@ button.relatorioAtual:hover{
 
 }
 
+
+ /* ----------graficos----------- */
+
+ .graficos{
+    margin-top: 5vh;
+}
+
+.grafico{
+    padding: 3vh 2vw 4vh 2vw;
+    display: flex;
+    background-color: var(--branco);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    border-radius: 5px;
+    border-bottom: 5px solid var(--verdeClaro);
+
+    height: 100px
+
+}
+
+.graficoGasto{
+    border-bottom: 5px solid var(--vermelhoClaro) !important;
+}
+
+.numeros{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--cinza);
+    font-size: 1vw;
+}
+
+.numeros li{
+    list-style: none;
+}
+
+.numeros span{
+
+}
+
+.barras{
+    display: flex;
+    font-size: 1vw;
+    color: var(--cinzaEscuro);
+    width: 100%;
+    justify-content: space-around;
+    /* padding: 0 3vw; */
+    position: relative;
+}
+
+.barras span{
+    position: absolute;
+    bottom: -3vh;
+    
+}
+
+.barras .barra {
+    display: block;
+    background-color: var(--verdeClaro);
+    width: 5px;
+   
+    border-radius: 25px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 0.65vw;
+    transition: .2s;
+}
+
+.barraGasto{
+    background-color: var(--vermelho) !important;
+}
+
+
+.barra:hover{
+    background-color: var(--verde);
+    width: 15px;
+    margin-left: 0.35vw
+}
+
+
+.barraGasto:hover{
+    background-color: var(--vermelhoClaro) !important;
+}
+
+
+
+.graficos button{
+    border: 3px solid var(--cinza);
+    font-family: 'Alata';
+    font-size: 1vw;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--cinza);
+    padding: 1vh 1vw;
+    transition: .5s;
+    margin-right: 1.5vw;
+    margin-bottom: 3vh;
+}
+
+.graficos button:hover{
+    border-color: var(--verde);
+    color: var(--verde);
+    cursor: pointer;
+
+}
+
+button.graficoAtual{
+    background-color: var(--verde) !important;
+    border-color: var(--verde);
+    color: var(--branco)
+}
+
+button.graficoAtual:hover{
+    cursor: default;
+    color: var(--branco)
+}
+
+.graficoDesativado{
+    display: none;
+}
+
+
+
 /* -----------------Lista----------------- */
 .listaExtratos{
     margin-top: 5vh;
@@ -367,7 +489,6 @@ button.relatorioAtual:hover{
     cursor:default !important;
     border: none !important;
  }
-
 
 
 /* ------------------------------------------- */

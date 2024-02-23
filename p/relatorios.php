@@ -1,7 +1,7 @@
 
 <?php
-include"../sys/conexao.php";
-justLog($__EMAIL__);
+// include"../sys/conexao.php";
+// justLog($__EMAIL__);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -257,6 +257,63 @@ justLog($__EMAIL__);
 
 
         </div>
+
+        <div class="graficos">
+            <!-- <div class="botoesGraficos">
+                <button class="lucroButton graficoAtual" onclick="ativar(this)">Ganhos</button>
+                <button class="gastoButton" onclick="ativar(this)">Gastos</button>
+            </div> -->
+
+            <div class="grafico graficoLucro">
+                <ul class="numeros numerosLucro">
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                </ul>
+                <ul class="barras barrasLucro">
+                    
+                    <li><div class="barra barraLucro"></div> <span>Jan</span></li>
+                    <li><div class="barra barraLucro"></div> <span>Fev</span></li>
+                    <li><div class="barra barraLucro"></div> <span>Mar</span></li>
+                    <li><div class="barra barraLucro"></div> <span>Abr</span></li>
+                    <li><div class="barra barraLucro"></div> <span>Mai</span></li>
+                    <li><div class="barra barraLucro"></div> <span>Jun</span></li>
+                    <li><div class="barra barraLucro"></div> <span>Jul</span></li>
+                    <li><div class="barra barraLucro"></div> <span>Ago</span></li>
+                    <li><div class="barra barraLucro"></div> <span>Set</span></li>
+                    <li><div class="barra barraLucro"></div> <span>Out</span></li>
+                    <li><div class="barra barraLucro"></div> <span>Nov</span></li>
+                    <li><div class="barra barraLucro"></div> <span>Dez</span></li>
+                </ul>
+            </div>
+
+
+
+            <!-- <div class="grafico graficoGasto graficoDesativado">
+                <ul class="numeros numerosGasto">
+                    <li><span></span></li>
+                    <li><span></span></li>
+                    <li><span></span></li>
+                </ul>
+                <ul class="barras barrasGasto">
+                    
+                    <li><div class="barra barraGasto"></div> <span>Jan</span></li>
+                    <li><div class="barra barraGasto"></div> <span>Fev</span></li>
+                    <li><div class="barra barraGasto"></div> <span>Mar</span></li>
+                    <li><div class="barra barraGasto"></div> <span>Abr</span></li>
+                    <li><div class="barra barraGasto"></div> <span>Mai</span></li>
+                    <li><div class="barra barraGasto"></div> <span>Jun</span></li>
+                    <li><div class="barra barraGasto"></div> <span>Jul</span></li>
+                    <li><div class="barra barraGasto"></div> <span>Ago</span></li>
+                    <li><div class="barra barraGasto"></div> <span>Set</span></li>
+                    <li><div class="barra barraGasto"></div> <span>Out</span></li>
+                    <li><div class="barra barraGasto"></div> <span>Nov</span></li>
+                    <li><div class="barra barraGasto"></div> <span>Dez</span></li>
+                </ul>
+            </div> -->
+
+           
+        </div>
        
         <button class="question">?</button>
     </section>
@@ -391,5 +448,7 @@ justLog($__EMAIL__);
         element(Math.ceil(extrato.length / itemsPerPage), currentPage);
 
     </script>
+        <script type="text/javascript" src="../items/js/grafico.js"></script>
+
 </body>
 </html>
