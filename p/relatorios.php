@@ -1,7 +1,7 @@
 
 <?php
-// include"../sys/conexao.php";
-// justLog($__EMAIL__);
+include"../sys/conexao.php";
+justLog($__EMAIL__);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -254,6 +254,8 @@
 
                 </ul>
             </div>
+
+            <button class="imprimir">Imprimir relatório completo</button>
 
 
         </div>

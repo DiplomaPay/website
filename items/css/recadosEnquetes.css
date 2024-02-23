@@ -150,99 +150,18 @@ header span{
 
 
 
-/* ---------------Nota---------------- */
+/* ---------------Recados---------------- */
 
-.notaContribuinte{
+.recados{
     margin-top: 5vh;
 }
 
-.notaContribuinte h3{
+.recados h3{
     font-size: 1.4vw;
-    color: var(--cinza);
-    font-weight: 500;
-}
-
-.nota{
-    font-size: 1.4vw;
-    font-weight: 500;
-    color: var(--verde);
-}
-
-.notaContribuinte h4{
-    font-size: 1vw;
     color: var(--cinzaClaro);
     font-weight: 500;
-    margin-top: 1vh;
 }
 
-.notaContribuinte h4 span{
-    font-size: 1vw;
-    color: var(--verdeClaro);
-    font-weight: 500;
-}
-
-/* ----------------Enquete---------------- */
-.enquete{
-    background-color: var(--verde);
-    border-radius: 5px;
-    padding: 2.5vh 2.5vw;
-    position: relative;
-    margin-top: 5vh;
-}
-
-.enquete::before{
-    content: "";
-    position: absolute;
-    background-color: var(--branco);
-    width: 0.4vw;
-    height: 90%;
-    top: 5%;
-    left: 0.5vw;
-    border-radius: 20px;
-
-}
-
-.enquete div{
-    display: flex;
-    justify-content: space-between;
-    color: var(--branco);
-}
-
-.enquete h3{
-    font-size: 1.3vw;
-    font-weight: 500
-
-}
-.enquete p{
-    font-size: 0.9vw;
-    font-weight: 500;
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-
-}
-
-.enquete button{
-    border: none;
-    border-radius: 5px;
-    background-color: var(--branco);
-    color: var(--cinzaEscuro);
-    padding: 1vh 1.5vw;
-    font-size: 1vw;
-    font-family: 'Alata';
-    cursor: pointer;
-    transition: .5s;
-}
-
-.enquete button:hover{
-    transform: scale(1.1);
-    /* border: 3px solid var(--branco);
-    background-color: var(--verde);
-    color: var(--branco); */
-}
-
-.enquete img{
-    width: 1.5vw;
-}
 
 /* -----------Mensagem--------------- */
 .mensagem{
@@ -285,7 +204,8 @@ header span{
     font-size: 0.9vw;
     font-weight: 500;
     margin-top: 1.5vh;
-    margin-bottom: 1vh;
+    margin-bottom: 3vh;
+    width: 60%;
 
 }
 
@@ -309,64 +229,169 @@ header span{
     color: var(--branco); */
 }
 
-/* --------------------SuaSala----------------- */
-.suaSala{
-    margin-top: 5vh;
-    Color: var(--cinza)
-}
-
-.suaSala h3{
-    font-size: 1.4vw;
-    font-weight: 500;
-}
-
-.suaSala a{
-    font-size: 1.4vw;
-    font-weight: 500;
-    color: var(--verde);
-}
-
-.grid{
-    margin-top: 3vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 3vh 5vw;
-}
-
-.grid div{
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.05);
-    border-bottom: 2px solid var(--cinzaEscuro);
+/* --------pagination----------- */
+.paginationMensagem ul{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 3vh;
+ }
+
+ .paginationMensagem ul li{
+    list-style: none;
+    line-height: 3vh;
+    border: 2px solid var(--cinza);
+    border-radius: 5px;
+    width: 2rem;
+    height: 2rem;
     align-items: center;
-    gap: 3vh;
-    padding: 3vh 5vw 5vh 5vw
+    justify-content: center;
+    display: flex;
+    color: var(--cinza);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .1s;
+ }
+
+ .numb:hover, .btn:hover{
+    border-color: var(--verde);
+    color: var(--verde);
+    transform: scale(1.1);
+ }
+
+
+
+ .atualPagination{
+    background-color: var(--verde);
+    color: var(--branco) !important;
+    border-color: var(--verde) !important;
+    cursor:default !important;
+ }
+
+ .dots{
+    cursor:default !important;
+    border: none !important;
+ }
+
+
+/* ----------------Enquete---------------- */
+
+.votacoes{
+    margin-top: 5vh;
+
 }
 
-
-.grid h4{
-    font-size: 1.2vw;
+.votacoes h3{
+    font-size: 1.4vw;
+    color: var(--cinzaClaro);
     font-weight: 500;
+}
+
+.enquete{
+    background-color: var(--verde);
+    border-radius: 5px;
+    padding: 2.5vh 2.5vw;
+    position: relative;
+    margin-top: 3vh;
+}
+
+.enquete::before{
+    content: "";
+    position: absolute;
+    background-color: var(--branco);
+    width: 0.4vw;
+    height: 90%;
+    top: 5%;
+    left: 0.5vw;
+    border-radius: 20px;
 
 }
 
-.grid p{
-    font-size: 1.7vw;
+.enquete div{
+    display: flex;
+    justify-content: space-between;
+    color: var(--branco);
+}
+
+.enquete h3{
+    font-size: 1.3vw;
     font-weight: 500;
+    color: var(--branco)
+
+}
+.enquete p{
+    font-size: 0.9vw;
+    font-weight: 500;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+
 }
 
-.pessoal{
-    border-bottom: 2px solid var(--verdeClaro) !important;
+.enquete button{
+    border: none;
+    border-radius: 5px;
+    background-color: var(--branco);
+    color: var(--cinzaEscuro);
+    padding: 1vh 1.5vw;
+    font-size: 1vw;
+    font-family: 'Alata';
+    cursor: pointer;
+    transition: .5s;
 }
 
-.pessoal p{
-    color: var(--verde) !important;
+.enquete button:hover{
+    transform: scale(1.1);
+    /* border: 3px solid var(--branco);
+    background-color: var(--verde);
+    color: var(--branco); */
 }
 
-.graphic{
- margin-top: 5vh;
+.enquete img{
+    width: 1.5vw;
 }
+
+
+/* --------pagination Enquete----------- */
+.paginationEnquete ul{
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 3vh;
+ }
+
+ .paginationEnquete ul li{
+    list-style: none;
+    line-height: 3vh;
+    border: 2px solid var(--cinza);
+    border-radius: 5px;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: var(--cinza);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .1s;
+ }
+
+ .numb:hover, .btn:hover{
+    border-color: var(--verde);
+    color: var(--verde);
+    transform: scale(1.1);
+ }
+
+
+
+ .atualPagination{
+    background-color: var(--verde);
+    color: var(--branco) !important;
+    border-color: var(--verde) !important;
+    cursor:default !important;
+ }
+
+ .dots{
+    cursor:default !important;
+    border: none !important;
+ }
 
 
 /* ------------------------------------------- */

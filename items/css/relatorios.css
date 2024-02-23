@@ -266,6 +266,7 @@ button.relatorioAtual:hover{
 
  .graficos{
     margin-top: 5vh;
+    margin-bottom: 10vh;
 }
 
 .grafico{
@@ -445,6 +446,25 @@ button.graficoAtual:hover{
 
  .extrato a{
     color: var(--verde)
+ }
+
+ .imprimir{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+
+    border: none;
+    background-color: var(--verde);
+    color: var(--branco);
+    font-family: 'Alata';
+    font-size: 1vw;
+    padding: 2vh 2vw;
+    border-radius: 5px;
+    transition: .5s;
+    cursor: pointer;
+ }
+
+ .imprimir:hover{
+    transform: scale(1.1);
  }
 
  /* --------pagination----------- */
