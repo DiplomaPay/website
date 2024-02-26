@@ -10,6 +10,7 @@
 
         const dadosFinaisLucro = [];
         const conversaoLucro = []
+        
 
         dadosLucro.forEach((e) => {
             dadosFinaisLucro.push(e / maiorDadoLucro);

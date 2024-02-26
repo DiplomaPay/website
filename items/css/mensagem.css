@@ -1,0 +1,247 @@
+
+body{
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    height: 100vh;
+    background-color: var(--bc);
+}
+
+/* -----------SIDEBAR------------ */
+.sidebar{
+    background-color: var(--verde);
+   
+    
+}
+
+.teste{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+}
+
+.logo{
+    width: 14vw;
+    cursor: pointer;
+}
+
+.sidebar div div{
+    width: 100%;
+}
+
+.sidebar div div div{
+    color: var(--branco);
+    padding: 1.3vh 0;
+    margin-bottom: 1vh;
+    cursor: pointer;
+    width: fit-content;
+}
+
+
+.sidebar div div div a{
+    position: relative;
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.sidebar div div div a::after{
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--branco);
+    transition: 0.3s;
+}
+
+.sidebar div div div a:hover::after{
+    width: 85%;
+}
+
+.entrarSala a, .criar a{
+    transition: .5s;
+}
+.entrarSala a:hover, .criar a:hover{
+    transform: scale(1.1);
+}
+
+.atual{
+    width: 95% !important;
+    border-radius: 0px 100px 100px 0px;
+    background-color: var(--branco);
+    padding: 1.3vh 10vw 1.3vh 0;
+    margin-bottom: 1vh;
+
+}
+
+.atual a{
+    color: var(--preto) !important;
+}
+
+
+
+.sidebar div div div a{
+    margin-left: 1.5vw;
+    font-size: 1vw;
+    font-weight: 500;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.sidebar .entrarSala{
+    margin-top: 5vh;
+    position: relative;
+}
+
+.sidebar .entrarSala::before{
+    content: "";
+    display: flex;
+    position: absolute;
+    top: -2vh;
+    left: 0;
+    width: 14vw;
+    height: 2px;
+    background-color: var(--branco);
+}
+
+
+/* ------------------Main------------------ */
+.main{
+    margin: 5vh 3vw
+}
+
+/* -----------------Header---------------- */
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+header img{
+    width: 3vw;
+    height: 3vw;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--verde);
+
+}
+
+header h2{
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: var(--cinza)
+}
+
+header span{
+    font-size: 1.5vw;
+    font-weight: 500;
+    color: var(--verde)
+}
+
+/* ---------------Titulo---------------- */
+
+.titulo{
+    margin-top: 5vh;
+    color: var(--cinzaClaro);
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo h1{
+    font-weight: 500;
+    font-size: 2vw;
+}
+
+.titulo p{
+    margin-top: -1vh;
+    font-size: 1vw;
+}
+
+/*----------------Mensagem---------------------*/
+.mensagem{
+    margin-top: 3vh;
+}
+
+.mensagem h2{
+    font-weight: 500;
+    font-size: 1.5vw;
+    color: var(--cinza)
+}
+
+.conteudo{
+    margin-top: 1vh;
+    background-color: var(--branco);
+    border-radius: 5px;
+    padding: 2.5vh 2vw;
+    position: relative;
+    margin-top: 3vh;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    color: var(--cinza);
+    width: 50vw;
+}
+
+
+.conteudo::before{
+    content: "";
+    position: absolute;
+    background-color: var(--verde);
+    width: 0.4vw;
+    height: 90%;
+    top: 5%;
+    left: 0.5vw;
+    border-radius: 20px;
+
+}
+
+.reacao{
+    position: absolute;
+    right: -6vw;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh
+}
+
+.reacao div{
+    display: flex;
+    align-items: center;
+    gap: 1vw    
+}
+
+.reacao img{
+    border-radius: 100px;
+    padding: 0.5rem;
+    width: 2vw;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    background-color: var(--branco);
+    transition: .2s;
+    cursor: pointer;
+}
+
+.reacao img:hover{
+    transform: scale(1.1);
+}
+
+
+/* ------------------------------------------- */
+
+.question{
+    width: 4vw;
+    height: 4vw;
+    border-radius: 50px;
+    background-color: var(--verde);
+    border: 4px solid var(--branco);
+    font-size: 2vw;
+    font-family: 'Alata';
+    color: var(--branco);
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+    position: fixed;
+    bottom: 5vh;
+    right: 3vw;
+    transition: .2s;
+}
+
+.question:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
