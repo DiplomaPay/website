@@ -1,7 +1,7 @@
 
 <?php
-// include"../sys/conexao.php";
-// justLog($__EMAIL__);
+include"../sys/conexao.php";
+justLog($__EMAIL__);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,25 +71,25 @@
                     <h3>Mensagem</h3>
                     <h4>Galerinha, teste de nova mensagem!</h4>
                     <p class="conteudoMensagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus</p>
-                    <button onclick="location.href='./room.php'">Ver completo</button>
+                    <button onclick="location.href='./mensagem.php'">Ver completo</button>
                 </div>
                 <div class="mensagem">
                     <h3>Mensagem</h3>
                     <h4>Galerinha, teste de nova mensagem!</h4>
                     <p class="conteudoMensagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus</p>
-                    <button onclick="location.href='./room.php'">Ver completo</button>
+                    <button onclick="location.href='./mensagem.php'">Ver completo</button>
                 </div>
                 <div class="mensagem">
                     <h3>Mensagem</h3>
                     <h4>Galerinha, teste de nova mensagem!</h4>
                     <p class="conteudoMensagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus</p>
-                    <button onclick="location.href='./room.php'">Ver completo</button>
+                    <button onclick="location.href='./mensagem.php'">Ver completo</button>
                 </div>
                 <div class="mensagem">
                     <h3>Mensagem</h3>
                     <h4>Galerinha, teste de nova mensagem!</h4>
                     <p class="conteudoMensagem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus</p>
-                    <button onclick="location.href='./room.php'">Ver completo</button>
+                    <button onclick="location.href='./mensagem.php'">Ver completo</button>
                 </div>
                 
             </div>
@@ -124,7 +124,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -137,7 +137,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -202,7 +202,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -215,7 +215,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -228,7 +228,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -241,7 +241,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -254,7 +254,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -267,7 +267,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -280,7 +280,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -293,7 +293,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -306,7 +306,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -319,7 +319,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -332,7 +332,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -345,7 +345,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
@@ -358,7 +358,7 @@
                         <p>Devemos gastar a grana no cassino?</p>
                     </div>
                     <div>
-                        <button onclick="location.href='./room.php'">Votar agora</button>
+                        <button onclick="location.href='./enquete.php'">Votar agora</button>
                         <p>Acaba em 19 minutos</p>
                     </div>
                 </div>
