@@ -76,7 +76,7 @@
                     <br>
                     Eum itaque veniam et repellat ullam vel voluptas sint eum doloribus internos aut aspernatur quod. Et facere officia aut quas perferendis cum praesentium ipsam in rerum dignissimos eum dolor dolores. Quo ipsum quisquam sit odio mollitia vel delectus harum rem quibusdam explicabo et aspernatur perferendis et labore omnis eum obcaecati sunt!
                 </p>
-                <div class="reacao">
+                <!-- <div class="reacao">
                     <div id="like">
                         <img src="../items/img/likeCinza.svg" alt="" onclick="like()">
                         <p>0</p>
@@ -89,7 +89,7 @@
                         <img src="../items/img/comentarioCinza.svg" alt="" onclick="comentario()">
                         <p>0</p>
                     </div>
-                </div>
+                </div> -->
             </div>
           
         </div>
@@ -116,58 +116,58 @@
         }
 
 
-        let likeCount = 0;
-        let dislikeCount = 0;
-        let comentarioCount = 0;
+        // let likeCount = 0;
+        // let dislikeCount = 0;
+        // let comentarioCount = 0;
 
-        function like() {
-            const likeElement = document.getElementById('like');
-            const dislikeElement = document.getElementById('dislike');
+        // function like() {
+        //     const likeElement = document.getElementById('like');
+        //     const dislikeElement = document.getElementById('dislike');
 
-            if (likeElement.querySelector('img').src.includes('Cinza')) {
-                likeCount++;
-                likeElement.querySelector('img').src = '../items/img/likeVerde.svg';
-                likeElement.querySelector('p').innerText = likeCount;
+        //     if (likeElement.querySelector('img').src.includes('Cinza')) {
+        //         likeCount++;
+        //         likeElement.querySelector('img').src = '../items/img/likeVerde.svg';
+        //         likeElement.querySelector('p').innerText = likeCount;
 
-                if (dislikeElement.querySelector('img').src.includes('Vermelho')) {
-                    dislikeElement.querySelector('img').src = '../items/img/dislikeCinza.svg';
-                    dislikeCount--;
-                    dislikeElement.querySelector('p').innerText = dislikeCount;
-                }
-            } else {
-                likeElement.querySelector('img').src = '../items/img/likeCinza.svg';
-                likeCount--;
-                likeElement.querySelector('p').innerText = likeCount;
-            }
-        }
+        //         if (dislikeElement.querySelector('img').src.includes('Vermelho')) {
+        //             dislikeElement.querySelector('img').src = '../items/img/dislikeCinza.svg';
+        //             dislikeCount--;
+        //             dislikeElement.querySelector('p').innerText = dislikeCount;
+        //         }
+        //     } else {
+        //         likeElement.querySelector('img').src = '../items/img/likeCinza.svg';
+        //         likeCount--;
+        //         likeElement.querySelector('p').innerText = likeCount;
+        //     }
+        // }
 
-        function dislike() {
-            const dislikeElement = document.getElementById('dislike');
-            const likeElement = document.getElementById('like');
+        // function dislike() {
+        //     const dislikeElement = document.getElementById('dislike');
+        //     const likeElement = document.getElementById('like');
 
-            if (dislikeElement.querySelector('img').src.includes('Cinza')) {
-                dislikeCount++;
-                dislikeElement.querySelector('img').src = '../items/img/dislikeVermelho.svg';
-                dislikeElement.querySelector('p').innerText = dislikeCount;
+        //     if (dislikeElement.querySelector('img').src.includes('Cinza')) {
+        //         dislikeCount++;
+        //         dislikeElement.querySelector('img').src = '../items/img/dislikeVermelho.svg';
+        //         dislikeElement.querySelector('p').innerText = dislikeCount;
 
-                if (likeElement.querySelector('img').src.includes('Verde')) {
-                    likeElement.querySelector('img').src = '../items/img/likeCinza.svg';
-                    likeCount--;
-                    likeElement.querySelector('p').innerText = likeCount;
-                }
-            } else {
-                dislikeElement.querySelector('img').src = '../items/img/dislikeCinza.svg';
-                dislikeCount--;
-                dislikeElement.querySelector('p').innerText = dislikeCount;
-            }
-        }
+        //         if (likeElement.querySelector('img').src.includes('Verde')) {
+        //             likeElement.querySelector('img').src = '../items/img/likeCinza.svg';
+        //             likeCount--;
+        //             likeElement.querySelector('p').innerText = likeCount;
+        //         }
+        //     } else {
+        //         dislikeElement.querySelector('img').src = '../items/img/dislikeCinza.svg';
+        //         dislikeCount--;
+        //         dislikeElement.querySelector('p').innerText = dislikeCount;
+        //     }
+        // }
 
-        function comentario() {
-            const comentarioElement = document.getElementById('comentario');
-            comentarioCount++;
-            comentarioElement.querySelector('img').src = '../items/img/comentarioAzul.svg';
-            comentarioElement.querySelector('p').innerText = comentarioCount;
-        }
+        // function comentario() {
+        //     const comentarioElement = document.getElementById('comentario');
+        //     comentarioCount++;
+        //     comentarioElement.querySelector('img').src = '../items/img/comentarioAzul.svg';
+        //     comentarioElement.querySelector('p').innerText = comentarioCount;
+        // }
 
     </script>
 </body>
