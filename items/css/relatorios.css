@@ -181,12 +181,7 @@ header span{
     font-weight: 500;
 }
 
-/* ----------------Info---------------- */
-.infoRelatorio{
-    margin-top: 5vh;
-}
-
-.infoRelatorio button{
+.salaButton, .voceButton{
     border: 3px solid var(--cinza);
     font-family: 'Alata';
     font-size: 1vw;
@@ -196,14 +191,22 @@ header span{
     padding: 1vh 1vw;
     transition: .5s;
     margin-right: 1.5vw;
+    margin-top: 3vh;
 }
 
-.infoRelatorio button:hover{
+.salaButton:hover, .voceButton:hover{
     border-color: var(--verde);
     color: var(--verde);
     cursor: pointer;
 
 }
+
+/* ----------------Info---------------- */
+.infoRelatorio{
+    margin-top: 3vh;
+}
+
+
 
 button.relatorioAtual{
     background-color: var(--verde) !important;
@@ -361,7 +364,12 @@ button.relatorioAtual:hover{
     background-color: var(--vermelhoClaro) !important;
 }
 
-
+.graficos h2{
+    font-size: 1.5vw;
+    color: var(--cinza);
+    font-weight: 500;
+    margin-bottom: 3vh;
+}
 
 .graficos button{
     border: 3px solid var(--cinza);
@@ -485,6 +493,90 @@ button.graficoAtual:hover{
     transform: scale(1.1);
  }
 
+ /* -----------------ListaVoce----------------- */
+.listaExtratosVoce{
+    margin-top: 5vh;
+ }
+
+ .listaExtratosVoce h2{
+    color: var(--cinza);
+    font-weight: 400;
+    font-size: 1.5vw;
+ }
+
+ .listaExtratosVoce h2 span{
+    font-size: 1.1vw;
+ }
+
+ .legendaListaVoce{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+
+    color: var(--cinza);
+    font-size: 1.3vw;
+
+    background-color: var(--branco);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    border-radius: 5px;
+    padding: 2.5vh 2vw
+ }
+
+ .legendaListaVoce p:nth-child(3){
+    grid-column: span 4 / span 6;
+ }
+/* 
+ .listas{
+    max-height: calc((3vh + 1.1vw + 2.5vh)*4.8);
+    overflow: hidden;
+ } */
+
+ .extratoVoce{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+
+    margin-top: 3vh;
+
+    color: var(--cinza);
+    font-size: 1.1vw;
+
+    background-color: var(--branco);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    border-radius: 5px;
+    padding: 2.5vh 2vw
+ }
+
+ .extratoVoce > *:nth-child(3){
+    grid-column: span 4 / span 6;
+ }
+
+
+ .extratoVoce a{
+    color: var(--verde)
+ }
+
+ .imprimir{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+
+    border: none;
+    background-color: var(--verde);
+    color: var(--branco);
+    font-family: 'Alata';
+    font-size: 1vw;
+    padding: 2vh 2vw;
+    border-radius: 5px;
+    transition: .5s;
+    cursor: pointer;
+ }
+
+ .imprimir:hover{
+    transform: scale(1.1);
+ }
+
+
  /* --------pagination----------- */
  .pagination ul{
     display: flex;
@@ -524,6 +616,50 @@ button.graficoAtual:hover{
  }
 
  .dots{
+    cursor:default !important;
+    border: none !important;
+ }
+
+
+ /* --------pagination Voce----------- */
+ .paginationVoce ul{
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 3vh;
+ }
+
+ .paginationVoce ul li{
+    list-style: none;
+    line-height: 3vh;
+    border: 2px solid var(--cinza);
+    border-radius: 5px;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: var(--cinza);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .1s;
+ }
+
+ .numbVoce:hover, .btnVoce:hover{
+    border-color: var(--verde);
+    color: var(--verde);
+    transform: scale(1.1);
+ }
+
+ 
+
+ .atualPaginationVoce{
+    background-color: var(--verde);
+    color: var(--branco) !important;
+    border-color: var(--verde) !important;
+    cursor:default !important;
+ }
+
+ .dotsVoce{
     cursor:default !important;
     border: none !important;
  }

@@ -78,19 +78,20 @@
         const graficoGasto = document.querySelector('.graficoGasto');
 
       
+        console.log(botoesGrafico);
 
-        function ativar(element){
-            botoesGrafico.forEach(element => {
-                element.classList.remove('graficoAtual')
-            });
+        // function ativar(element){
+        //     botoesGrafico.forEach(element => {
+        //         element.classList.remove('graficoAtual')
+        //     });
 
-            element.classList.toggle('graficoAtual')
+        //     element.classList.toggle('graficoAtual')
           
-            if(element === lucroButton){
-                graficoLucro.classList.remove('graficoDesativado');
-                graficoGasto.classList.add('graficoDesativado')
-            } else if (element === gastoButton){
-                graficoGasto.classList.remove('graficoDesativado');
-                graficoLucro.classList.add('graficoDesativado');
-            }
-        }
+        //     if(element === lucroButton){
+        //         graficoLucro.classList.remove('graficoDesativado');
+        //         graficoGasto.classList.add('graficoDesativado')
+        //     } else if (element === gastoButton){
+        //         graficoGasto.classList.remove('graficoDesativado');
+        //         graficoLucro.classList.add('graficoDesativado');
+        //     }
+        // }
