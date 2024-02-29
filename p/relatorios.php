@@ -1,7 +1,7 @@
 
 <?php
-include"../sys/conexao.php";
-justLog($__EMAIL__);
+// include"../sys/conexao.php";
+// justLog($__EMAIL__);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -274,18 +274,18 @@ justLog($__EMAIL__);
                 </ul>
                 <ul class="barras barrasLucro">
                     
-                    <li><div class="barra barraLucro"></div> <span>Jan</span></li>
-                    <li><div class="barra barraLucro"></div> <span>Fev</span></li>
-                    <li><div class="barra barraLucro"></div> <span>Mar</span></li>
-                    <li><div class="barra barraLucro"></div> <span>Abr</span></li>
-                    <li><div class="barra barraLucro"></div> <span>Mai</span></li>
-                    <li><div class="barra barraLucro"></div> <span>Jun</span></li>
-                    <li><div class="barra barraLucro"></div> <span>Jul</span></li>
-                    <li><div class="barra barraLucro"></div> <span>Ago</span></li>
-                    <li><div class="barra barraLucro"></div> <span>Set</span></li>
-                    <li><div class="barra barraLucro"></div> <span>Out</span></li>
-                    <li><div class="barra barraLucro"></div> <span>Nov</span></li>
-                    <li><div class="barra barraLucro"></div> <span>Dez</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Jan</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Fev</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Mar</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Abr</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Mai</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Jun</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Jul</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Ago</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Set</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Out</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Nov</span></li>
+                    <li><div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Dez</span></li>
                 </ul>
             </div>
 

@@ -1,7 +1,7 @@
 
 <?php
-include"../sys/conexao.php";
-justLog($__EMAIL__);
+// include"../sys/conexao.php";
+// justLog($__EMAIL__);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -174,7 +174,7 @@ justLog($__EMAIL__);
             opcao3Button.style.backgroundColor = 'var(--verde)'
         }
 
-        let votos = [15, 35, 3]
+        let votos = [20, 35, 3]
         let votosTotais = votos.reduce((acc, e) => {
             acc += e
             return acc;

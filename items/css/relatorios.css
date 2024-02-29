@@ -311,7 +311,7 @@ button.relatorioAtual:hover{
     position: relative;
 }
 
-.barras span{
+.mes{
     position: absolute;
     bottom: -3vh;
     
@@ -327,6 +327,22 @@ button.relatorioAtual:hover{
     bottom: 0;
     margin-left: 0.65vw;
     transition: .2s;
+}
+
+.tooltipLucro{
+    position: absolute;
+    color: var(--verdeEscuro);
+    font-size: 1vw;
+    width: 200%;
+    transition: .3s;
+    top: -3vh;
+    left: 0;
+
+    opacity: 0;
+}
+
+.barra:hover .tooltipLucro{
+    opacity: 100;
 }
 
 .barraGasto{
@@ -381,6 +397,8 @@ button.graficoAtual:hover{
 .graficoDesativado{
     display: none;
 }
+
+
 
 
 

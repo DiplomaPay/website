@@ -14,7 +14,6 @@
 
         dadosLucro.forEach((e) => {
             dadosFinaisLucro.push(e / maiorDadoLucro);
-            console.log(dadosFinaisLucro);
 
         })
 
@@ -28,6 +27,13 @@
                 e.style.height = conversaoLucro[i] + '%'
 
         });
+
+        const tooltip = document.querySelectorAll('.tooltipLucro')
+        tooltip.forEach((e, i) => {
+            
+            
+            e.textContent = `R$${dadosLucro[i]}`
+        })
 
 
 
