@@ -78,7 +78,7 @@ justLog($__EMAIL__);
                 <p>Devemos gastar a grana no cassino?</p>
             </div>
             <div>
-                <button onclick="location.href='./room.php'">Votar agora</button>
+                <button onclick="location.href='./enquete.php'">Votar agora</button>
                 <p>Acaba em 19 minutos</p>
             </div>
         </div>
@@ -86,7 +86,7 @@ justLog($__EMAIL__);
                 <h3>Nova mensagem</h3>
                 <h4>Galerinha, teste de nova mensagem!</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel mollis libero, a ornare lectus. Sed efficitur in lectus nec porta. Sed varius tellus in justo cursus...</p>
-                <button onclick="location.href='./room.php'">Ver completo</button>
+                <button onclick="location.href='./mensagem.php'">Ver completo</button>
         </div>
 
         <div class="suaSala">
