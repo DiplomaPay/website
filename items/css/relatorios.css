@@ -406,6 +406,147 @@ button.graficoAtual:hover{
     display: none;
 }
 
+/* ----------graficos Voce----------- */
+
+.graficosVoce{
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+}
+
+.graficoVoce{
+    padding: 3vh 2vw 4vh 2vw;
+    display: flex;
+    background-color: var(--branco);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.151);
+    border-radius: 5px;
+    border-bottom: 5px solid var(--verdeClaro);
+
+    height: 100px
+
+}
+
+.graficoGastoVoce{
+    border-bottom: 5px solid var(--vermelhoClaro) !important;
+}
+
+.numerosVoce{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--cinza);
+    font-size: 1vw;
+}
+
+.numerosVoce li{
+    list-style: none;
+}
+
+.numerosVoce span{
+
+}
+
+.barrasVoce{
+    display: flex;
+    font-size: 1vw;
+    color: var(--cinzaEscuro);
+    width: 100%;
+    justify-content: space-around;
+    /* padding: 0 3vw; */
+    position: relative;
+}
+
+.mesVoce{
+    position: absolute;
+    bottom: -3vh;
+    
+}
+
+.barrasVoce .barraVoce {
+    display: block;
+    background-color: var(--verdeClaro);
+    width: 5px;
+   
+    border-radius: 25px;
+    position: absolute;
+    bottom: 0;
+    margin-left: 0.65vw;
+    transition: .2s;
+}
+
+.tooltipLucroVoce{
+    position: absolute;
+    color: var(--verdeEscuro);
+    font-size: 1vw;
+    width: 200%;
+    transition: .3s;
+    top: -3vh;
+    left: 0;
+
+    opacity: 0;
+}
+
+.barraVoce:hover .tooltipLucroVoce{
+    opacity: 100;
+}
+
+.barraGastoVoce{
+    background-color: var(--vermelho) !important;
+}
+
+
+.barraVoce:hover{
+    background-color: var(--verde);
+    width: 15px;
+    margin-left: 0.35vw
+}
+
+
+.barraGastoVoce:hover{
+    background-color: var(--vermelhoClaro) !important;
+}
+
+.graficosVoce h2{
+    font-size: 1.5vw;
+    color: var(--cinza);
+    font-weight: 500;
+    margin-bottom: 3vh;
+}
+
+.graficosVoce button{
+    border: 3px solid var(--cinza);
+    font-family: 'Alata';
+    font-size: 1vw;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--cinza);
+    padding: 1vh 1vw;
+    transition: .5s;
+    margin-right: 1.5vw;
+    margin-bottom: 3vh;
+}
+
+.graficosVoce button:hover{
+    border-color: var(--verde);
+    color: var(--verde);
+    cursor: pointer;
+
+}
+
+button.graficoAtualVoce{
+    background-color: var(--verde) !important;
+    border-color: var(--verde);
+    color: var(--branco)
+}
+
+button.graficoAtualVoce:hover{
+    cursor: default;
+    color: var(--branco)
+}
+
+.graficoDesativadoVoce{
+    display: none;
+}
+
 
 
 
@@ -650,7 +791,7 @@ button.graficoAtual:hover{
     transform: scale(1.1);
  }
 
- 
+
 
  .atualPaginationVoce{
     background-color: var(--verde);

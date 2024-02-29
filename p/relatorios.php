@@ -107,7 +107,7 @@
             </div>
             <div class="listaExtratos">
                 <!-- <h2>Suas vendas -<span> 2 clientes</span></h2> -->
-                <h2>Extrato</h2>
+                <h2>Extrato da turma</h2>
 
                 <div class="legendaLista">
                     <p>Nome</p>
@@ -247,7 +247,7 @@
 
             </div>
             <div class="graficos">
-                <h2>Lucros durante o ano</h2>
+                <h2>Lucros da turma durante o ano</h2>
                 <!-- <div class="botoesGraficos">
                 <button class="lucroButton graficoAtual" onclick="ativar(this)">Ganhos</button>
                 <button class="gastoButton" onclick="ativar(this)">Gastos</button>
@@ -348,7 +348,7 @@
             </div>
             <div class="listaExtratosVoce">
                 <!-- <h2>Suas vendas -<span> 2 clientes</span></h2> -->
-                <h2>Extrato</h2>
+                <h2>Seu extrato</h2>
 
                 <div class="legendaListaVoce">
                     <p>Nome</p>
@@ -487,56 +487,56 @@
 
 
             </div>
-            <div class="graficos">
-                <h2>Lucros durante o ano</h2>
+            <div class="graficosVoce">
+                <h2>Seus lucros durante o ano</h2>
                 <!-- <div class="botoesGraficos">
                 <button class="lucroButton graficoAtual" onclick="ativar(this)">Ganhos</button>
                 <button class="gastoButton" onclick="ativar(this)">Gastos</button>
             </div> -->
 
-                <div class="grafico graficoLucro">
-                    <ul class="numeros numerosLucro">
+                <div class="graficoVoce graficoLucroVoce">
+                    <ul class="numerosVoce numerosLucroVoce">
                         <li><span></span></li>
                         <li><span></span></li>
                         <li><span></span></li>
                     </ul>
-                    <ul class="barras barrasLucro">
+                    <ul class="barrasVoce barrasLucroVoce">
 
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Jan</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Jan</span>
                         </li>
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Fev</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Fev</span>
                         </li>
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Mar</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Mar</span>
                         </li>
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Abr</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Abr</span>
                         </li>
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Mai</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Mai</span>
                         </li>
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Jun</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Jun</span>
                         </li>
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Jul</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Jul</span>
                         </li>
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Ago</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Ago</span>
                         </li>
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Set</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Set</span>
                         </li>
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Out</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Out</span>
                         </li>
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Nov</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Nov</span>
                         </li>
                         <li>
-                            <div class="barra barraLucro"> <span class="tooltipLucro"></span></div> <span class="mes">Dez</span>
+                            <div class="barraVoce barraLucroVoce"> <span class="tooltipLucroVoce"></span></div> <span class="mesVoce">Dez</span>
                         </li>
                     </ul>
                 </div>
