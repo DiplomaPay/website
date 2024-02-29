@@ -283,12 +283,21 @@ dialog{
     text-align: center;
 }
 
+.modalCriarSala{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 5vw;
+}
+
 
 dialog h1,
 dialog input,
 dialog button,
 dialog a {
-    width: 60%; 
+    width: 70%; 
     box-sizing: border-box;
     margin-bottom: 3vh;
 }
@@ -321,6 +330,8 @@ dialog button{
     padding: 1vh;
     transition: .5s;
     margin-top: 3vh;
+    font-size: 1vw;
+    padding: 1.5vh 2vw
 }
 
 dialog button:hover{
@@ -342,7 +353,8 @@ dialog p{
     color: var(--cinza);
     text-align: start;
     display: inline;
-
+    margin-bottom: 1vh;
+    max-width: 60%;
 }
 
 dialog span{

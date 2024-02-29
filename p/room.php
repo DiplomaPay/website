@@ -68,20 +68,27 @@
     <dialog id="modalEntrarSala">
         <h1>Código da sala </h1>
         <input id='join_room_name' type="text" placeholder="EX:AB1C2D">
+        <br>
+        <p style="color: var(--vermelho)" id='res_join_room'></p>  
         <button onclick="sendjoinRoom()">Entrar</button>
         <a id="voltarEntrarSala" href="">Voltar</a>
-        <p id='res_join_room'></p>
+       
 
     </dialog>
 
     <dialog id="modalCriarSala">
-        <h1>Criar sala</h1>
-        <input type="text" id='room_name' placeholder="Nome da sala">
-        <br>
-        <p>Digite <span>"Concordo"</span> para aceitar nossos <a href="#">Termos de uso</a></p>
-        <button onclick="sendCreateRoom()">Criar</button>
-        <a id="voltarCriarSala" href="#">Voltar</a>
-        <p id='res_create_room'></p>    
+        <div class="modalCriarSala">
+            <h1>Criar sala</h1>
+            <input type="text" id='room_name' placeholder="Nome da sala">
+            <br>
+            <p style="color: var(--vermelho)" id='res_create_room'></p>    
+            <br>
+            <p>Digite <span>"Concordo"</span> para aceitar nossos <a href="#">Termos de uso</a></p>
+            <input type="text" placeholder="Digite aqui">
+            <button onclick="sendCreateRoom()">Criar</button>
+            <a id="voltarCriarSala" href="#">Voltar</a>
+
+        </div>
     </dialog>
     <script>
         const buttonEntrarSala = document.querySelector('#entrarSala')
@@ -148,7 +155,8 @@
 	        })
 	        .then(e=>e.json())
 	        .then(e=>{
-	            res_create_room.innerText = JSON.stringify(e);
+                let message = JSON.stringify(e.message).slice(1, -1);
+	            res_create_room.innerText = message
                 salaAdmin.classList.add('sala salaAdmin') = JSON.stringify(e);
 				myrooms();
                 reloadPage();
@@ -168,7 +176,8 @@
 	        })
 	        .then(e=>e.json())
 	        .then(e=>{
-	            res_join_room.innerText = JSON.stringify(e);
+                let message = JSON.stringify(e.message).slice(1, -1);
+	            res_join_room.innerText = message;
 				myrooms();
                 reloadPage();
                 window.location.href = "./dashboard.php";
