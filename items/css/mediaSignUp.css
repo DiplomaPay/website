@@ -2,7 +2,8 @@
 @media (max-width: 768px) {
     .container{
         width: 35vw;
-        padding: 5vh 5vw
+        padding: 5vh 5vw;
+      
     }
 
     .title{

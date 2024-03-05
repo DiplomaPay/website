@@ -12,6 +12,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../items/css/change.css">
   <link rel="stylesheet" href="../items/css/global.css">
+  <link rel="stylesheet" href="../items/css/mediaSignUp.css">
+
   <title>Cadastro</title>
 </head>
 <body>
