@@ -250,3 +250,12 @@ button:hover{
     left: 1.7vw;
     background-color: var(--branco)
 };
+
+/* ----------------------------------------- */
+@media (max-width: 768px){
+    .logo{
+        opacity: 0%;
+    }
+    
+    
+}

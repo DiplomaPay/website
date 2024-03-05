@@ -1,7 +1,7 @@
 
 <?php
-include"../sys/conexao.php";
-cantLog($__EMAIL__);
+// include"../sys/conexao.php";
+// cantLog($__EMAIL__);
 
 ?>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@ cantLog($__EMAIL__);
   <title>Cadastro</title>
 </head>
 <body>
-  <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo">
+  <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" class="logo">
   <div class="container">
     <div class="form-outer">
       <form action="javascript:void(0)">
