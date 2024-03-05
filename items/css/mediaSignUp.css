@@ -1,0 +1,75 @@
+
+@media (max-width: 768px) {
+    .container{
+        width: 35vw;
+        padding: 5vh 5vw
+    }
+
+    .title{
+        font-size: 2.3vh;
+        width: 35vw;
+    }
+
+    .label{
+        font-size: 1.9vh;
+        
+    }
+
+    input{
+        padding: 2vw 0.5vw;
+        font-size: 1.5vh;
+        width: 33vw;
+    }
+
+    .field[data-error]::after, .codigo[data-error]::after {
+        font-size: 1.7vh;
+    }
+
+    input::placeholder{
+        font-size: 1.8vh;
+    }
+
+    .next{
+        font-size: 1.9vh;
+        width: 34.6vw;
+    }
+      
+    .prev{
+        font-size: 1.9vh;
+        width: 34vw;
+    }
+      
+    .text{
+        font-size: 1.9vh;
+    }
+
+    .Resend{
+        font-size: 2vh;
+        margin-bottom: 3vh;
+    }
+
+    .progress-bar{
+        width: 40vw;
+    }
+
+    .bullet{
+        width: 2.5vh;
+        height: 2.5vh;
+        font-size: 2vh;
+    }
+
+    .progress-bar .step .bullet:before,
+    .progress-bar .step .bullet:after{
+        width: 6vw;
+        left: 6vw
+    }
+
+
+    .page{
+        max-width: 36.5vw;
+    }
+
+
+    
+      
+}

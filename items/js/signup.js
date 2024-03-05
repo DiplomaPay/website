@@ -114,8 +114,14 @@ const sendSignup = () => {
       pages[3].style.height = "auto";
       slidePage.style.marginLeft = "-129%";
       progress.style.display = "none";
-      container.style.height = "35vh";
-      container.style.width = "20vw"
+      container.style.height = "38vh";
+      if (window.innerWidth < 768) {
+        container.style.width = "46.5vw";
+        console.log("a");
+      } else {
+        container.style.width = "20vw";
+        console.log("b");
+      }
       })
   }
 

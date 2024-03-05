@@ -4,6 +4,7 @@ img{
 
 }
 
+
 body{
     background-color: var(--verde);
     display: flex;
@@ -251,11 +252,3 @@ button:hover{
     background-color: var(--branco)
 };
 
-/* ----------------------------------------- */
-@media (max-width: 768px){
-    .logo{
-        opacity: 0%;
-    }
-    
-    
-}
