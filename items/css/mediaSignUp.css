@@ -21,6 +21,10 @@
         width: 33vw;
     }
 
+    .codigo input{
+        width: 3vw;
+    }
+
     .field[data-error]::after, .codigo[data-error]::after {
         font-size: 1.7vh;
     }
