@@ -20,7 +20,7 @@
 <body>
     <section class="sidebar">
         <div class="teste">
-            <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" class = "logo">
+            <img src="../items/img/IconBranco.svg" alt="DiplomaPay Logo" id="logo" class = "logo">
             <div>
                 <div class="atual">
                     <img src="" alt="">
@@ -51,8 +51,10 @@
     <section class="main">
         <div class="header">
             <h1>Suas turmas</h1>
-            <h4>Aluno</h4>
-            <h4 class="adminSquare">Admin</h4>
+            <div style="display: flex;">
+                <h4>Aluno</h4>
+                <h4 class="adminSquare">Admin</h4>
+            </div>
         </div>
 
         <div id='myrooms_list' class="salas">
@@ -228,8 +230,23 @@
         myrooms();
 
 
+        // --------------MudarImagemResponsivo-------------
+        window.addEventListener('load', function () {
+      alterarSrc();
+      window.addEventListener('resize', function () {
+        alterarSrc();
+      });
+    });
 
-
+    function alterarSrc() {
+      var larguraDaTela = window.innerWidth;
+      if (larguraDaTela <= 768) {
+        document.getElementById('logo').src = '../items/img/Pitch DiplomaPay.svg';
+        console.log("a");
+      } else {
+        document.getElementById('logo').src = '../items/img/IconBranco.svg';
+      }
+    }
     
     </script>
 </body>

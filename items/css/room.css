@@ -1,4 +1,4 @@
-body{
+    body{
     display: grid;
     grid-template-columns: 15vw 85vw;
     height: 100vh;
@@ -8,9 +8,7 @@ body{
 /* -----------SIDEBAR------------ */
 
 .sidebar{
-    background-color: var(--verde);
-   
-    
+    background-color: var(--verde); 
 }
 
 .teste{
@@ -367,4 +365,74 @@ dialog p a{
     color: var(--verde);
     display: inline;
     margin-left: 5px;
+}
+
+/* ---------------------------------------------- */
+
+@media (max-width: 768px){
+
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .teste{
+        display: block;
+        position: static;
+    }
+
+    .sidebar{
+        background-color: var(--bc);
+        display: flex;
+        justify-content: center
+    }
+
+    .sidebar div div{
+        display: none;
+    }
+
+    .logo{
+        width: 25vh;
+    }
+
+    /* ------------------Main------------------ */
+
+    .main{
+        margin: -2vh 3vw
+    }
+
+    /* -------------------Header------------------- */
+
+    .header{
+        flex-direction: column;
+        align-items: flex-start;
+    } 
+
+    .header h1{
+        font-size: 4vh;
+    }
+    
+    .header h4{
+        margin-left: 0;
+        margin-top: 1vh;
+        margin-right: 3vw;
+        font-size: 2vh;
+    }
+
+    .header h4:before{
+        width: 2vh;
+        height: 2vh;
+    }
+
+    /* ----------------Salas----------------- */
+
+    .salas{
+        grid-template-columns: 1fr;
+
+    }
+
+    .sala{
+        margin: 0 10vw
+    }
+
 }
