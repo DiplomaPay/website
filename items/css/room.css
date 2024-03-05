@@ -229,6 +229,27 @@
     background-color: var(--azul);
 }
 
+.salaPronta button{
+    padding: 3vh;
+    width: 70%;
+}
+
+.salaPronta p{
+    font-size: 1.5vw;
+    color: var(--cinza);
+}
+
+.salaPronta a{
+    color: var(--azul);
+    font-size: 1.3vw;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.salaPronta a:hover{
+    transform: scale(1.1);
+}
+
 /* .entrarSala p{
     color: var(--cinza);
     transition: .5s;
@@ -427,12 +448,63 @@ dialog p a{
     /* ----------------Salas----------------- */
 
     .salas{
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
 
     }
 
     .sala{
-        margin: 0 10vw
+        min-width: 40vw;
+        justify-self: center;
     }
+
+    .sala h2{
+        font-size: 2.5vh;
+    }
+
+    .info p{
+        font-size: 2vh;
+    }
+
+    .sala button{
+        padding: 3vw;
+        font-size: 2vh;
+    }
+
+    .salaPronta button{
+        font-size: 1.8vh;
+    }
+
+    .salaPronta p{
+        font-size: 2.5vh;
+    }
+
+    .salaPronta a{
+        font-size: 2vh;
+    }
+
+}
+
+/* ---------------------------------------------- */
+
+@media (max-width: 425px){
+
+    .header{
+        margin-left: 5vw;
+    }
+
+    /* ----------------Salas----------------- */
+
+    .salas{
+        grid-template-columns: 1fr;
+        margin-bottom: 10vh;
+    }
+
+    .sala{
+        max-width: 80vw;
+        min-width: 70vw;
+        justify-self: center;
+    }
+
+    
 
 }

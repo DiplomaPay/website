@@ -34,14 +34,14 @@
                     <img src="" alt="">
                     <a>Configurações</a>
                 </div>
-                <div id="entrarSala" class="entrarSala">
+                <!-- <div id="entrarSala" class="entrarSala">
                     <img src="" alt="">    
                     <p>Entrar em uma sala</p>
                 </div>
                 <div class="criar" id="criarSala">
                     <img src="" alt="">    
                     <p>+ Criar turma</p>
-                </div>
+                </div> -->
             </div>
             </div>
 
@@ -57,13 +57,13 @@
             </div>
         </div>
 
-        <div id='myrooms_list' class="salas">
-            <div class="sala">
-                <!-- <button>
+        <div id="myrooms_list" class="salas">
+            <div class="sala salaPronta">
+                <button id="entrarSala">
                     Entrar em uma sala
                 </button>
                 <p>OU</p>
-                <p>+ Crie sua própria sala</p> -->
+                <a id="criarSala">+ Crie sua própria sala</a>
             </div>
         </div>
     </section>
@@ -99,8 +99,6 @@
     
         buttonEntrarSala.onclick = function (){
             modalEntrarSala.showModal();
-            console.log("bbbb");
-    
         }
     
         voltarEntrarSala.onclick = function(){
@@ -123,7 +121,6 @@
 
         buttonCriarSala.onclick = function () {
             modalCriarSala.showModal();
-            console.log("aaaa");
         };
 
         voltarCriarSala.onclick = function () {
@@ -165,6 +162,7 @@
                 
 	        })  
 	    }
+
         const join_room_name = document.getElementById("join_room_name");
 	    const sendjoinRoom= () => {
 			let data = {
@@ -199,10 +197,10 @@
                 let data = e;
                 console.log(data);
 
-                myrooms_list.innerHTML = "";
-
+                // myrooms_list.innerHTML = "";
+                let newRoomsHTML = "";
                 for (let i = 0; i < data.length; i++) {
-                    myrooms_list.innerHTML += `
+                    newRoomsHTML += `
                         <div class="sala ${data[i].typeuser_bool}">
                             <h2>${data[i].room_name}</h2>
                             <div class="qtnAlunos info">
@@ -216,6 +214,9 @@
                         </div>
                     `;
                 }
+
+                myrooms_list.insertAdjacentHTML('afterbegin', newRoomsHTML);
+
                 
             });
           
