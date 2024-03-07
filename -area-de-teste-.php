@@ -205,7 +205,7 @@
 	    }
 	</script> 
 
-<h1>join room </h1>
+<h1>join room</h1>
 	<input id='join_room_name' type="text" placeholder="Room code"/>
 	<button onclick="sendjoinRoom()">join Room</button>
 	<p id='res_join_room'></p>
