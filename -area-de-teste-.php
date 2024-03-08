@@ -49,7 +49,7 @@
 <!--SIGNUP-->
 	
 	<hr>
-	<h1>SignUp área </h1>
+	<h1>SignUp área</h1>
 	<form action="javascript:void(0)" onsubmit="sendSignup()">
 	    <input id='email_signup' type="text" placeholder="Email"/>
 	    <input id='password_signup' type="password" placeholder="Password"/>
