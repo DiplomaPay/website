@@ -1,5 +1,5 @@
 <?php
-include"../../conexao.php";
+include "../../conexao.php";
 
 cantLog($__EMAIL__);
 
@@ -28,14 +28,14 @@ $name = mysqli_real_escape_string($conexao, $name);
 
 
 // STEP 1 -> Verify data
-if(!$email or !$password or !$confirm_password or !$cpf or !$name){
+if (!$email or !$password or !$confirm_password or !$cpf or !$name) {
     $obj = array("status" => $__STATUS__, "response" => false, "message" => "Something is missing!");
     endCode($obj);
 }
 
 
 // STEP 2 -> Check password
-if($password !== $confirm_password){
+if ($password !== $confirm_password) {
     $obj = array("status" => $__STATUS__, "response" => false, "message" => "Check password and try again.");
     endCode($obj);
 }
@@ -46,7 +46,7 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 //STEP 3 -> Check user email database
 $queryCheckUserEmail = mysqli_query($conexao, "select * from users where email='$email'") or endCodeError();
 
-if(mysqli_num_rows($queryCheckUserEmail) > 0){
+if (mysqli_num_rows($queryCheckUserEmail) > 0) {
     $obj = array("status" => $__STATUS__, "response" => false, "message" => "Email already in use.");
     endCode($obj);
 }
@@ -54,18 +54,19 @@ if(mysqli_num_rows($queryCheckUserEmail) > 0){
 //STEP 4 -> Check user CPF database
 $queryCheckUserEmail = mysqli_query($conexao, "select * from users where cpf='$cpf'") or endCodeError();
 
-if(mysqli_num_rows($queryCheckUserEmail) > 0){
+if (mysqli_num_rows($queryCheckUserEmail) > 0) {
     $obj = array("status" => $__STATUS__, "response" => false, "message" => "CPF already in use.");
     endCode($obj);
 }
 
 //STEP 5 -> Generate activation code
-function generateCode(){
+function generateCode()
+{
     global $conexao;
     do {
         $code = bin2hex(random_bytes(3));
         $queryRoom = mysqli_query($conexao, "select * from users where set_code='$code'");
-    } while(mysqli_num_rows($queryRoom) > 0);
+    } while (mysqli_num_rows($queryRoom) > 0);
 
     return $code;
 }
@@ -110,12 +111,14 @@ $sendEmail = mail($to, $subject, $message, implode("\r\n", $__HEADERS__));
 $obj = array("status" => $__STATUS__, "response" => true, "message" => "Sucess.");
 endCode($obj);
 
-function endCode($obj){
+function endCode($obj)
+{
     echo json_encode($obj);
     exit;
 }
 
-function endCodeError(){
+function endCodeError()
+{
     echo json_encode(array("status" => $__STATUS__, "response" => false, "message" => "Failed to connect the server, try again."));
     exit;
 }

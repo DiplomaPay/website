@@ -79,9 +79,10 @@ const sendSignup = () => {
         if (mensagem !="Sucess.") {
         if (mensagem === "CPF already in use."){
           document.querySelector("#cpf").parentNode.setAttribute("data-error", "Esse CPF Já esta em uso");          
-          pages[0].style.height = "0px";
-          pages[1].style.height = "auto";
-          slidePage.style.marginLeft = "-50%";
+          pages[0].dataset.visibilidade="hidden"
+          pages[2].dataset.visibilidade="hidden"
+          pages[3].dataset.visibilidade="hidden"
+          pages[1].dataset.visibilidade="actual"
           two.style.backgroundColor = "var(--verdeClaro)";
           two.style.color = "var(--branco)";
           two.style.border = "3px solid var(--branco)";
@@ -89,39 +90,38 @@ const sendSignup = () => {
         } else
          if (mensagem === "Check password and try again."){
           document.querySelector("#confPassword").parentNode.setAttribute("data-error", "Senhas não estão iguais");          
-          pages[1].style.height = "0px";
-          pages[2].style.height = "auto";
-          slidePage.style.marginLeft = "-100%";
+          pages[0].dataset.visibilidade="hidden"
+          pages[1].dataset.visibilidade="hidden"
+          pages[3].dataset.visibilidade="hidden"
+          pages[2].dataset.visibilidade="actual"
           three.style.backgroundColor = "var(--verdeClaro)";
           three.style.color = "var(--branco)";
           three.style.border = "3px solid var(--branco)";
         } else 
         if (mensagem === "Email already in use."){
           document.querySelector("#email").parentNode.setAttribute("data-error", "Esse Email Já esta em uso");          
-          pages[0].style.height = "0px";
-          pages[1].style.height = "auto";
-          pages[2].style.height = "0px";
-          pages[3].style.height = "0px";
-          slidePage.style.marginLeft = "-50%";
+          pages[0].dataset.visibilidade="hidden"
+          pages[1].dataset.visibilidade="actual"
+          pages[2].dataset.visibilidade="hidden"
+          pages[3].dataset.visibilidade="hidden"
           two.style.backgroundColor = "var(--verdeClaro)";
           two.style.color = "var(--branco)";
           two.style.border = "3px solid var(--branco)";
         }
         return;
       } 
-      pages[1].style.height = "0px"
-      pages[2].style.height = "0px";
-      pages[3].style.height = "auto";
-      slidePage.style.marginLeft = "-129%";
+      pages[0].dataset.visibilidade="hidden"
+      pages[1].dataset.visibilidade="hidden"
+      pages[2].dataset.visibilidade="hidden"
+      pages[3].dataset.visibilidade="actual"
       progress.style.display = "none";
-      container.style.height = "38vh";
-      if (window.innerWidth < 768) {
-        container.style.width = "46.5vw";
-        console.log("a");
-      } else {
-        container.style.width = "20vw";
-        console.log("b");
-      }
+      // if (window.innerWidth < 768) {
+      //   container.style.width = "46.5vw";
+      //   console.log("a");
+      // } else {
+      //   container.style.width = "20vw";
+      //   console.log("b");
+      // }
       })
   }
 
@@ -193,10 +193,6 @@ const sendSignup = () => {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-pages.forEach(function (page) {
-  pages[0].style.height = "auto";
-  page.style.height = "0px";
-});
 
 firstNextBtn.addEventListener("click", function() {
   const nomeInput = document.querySelector("input[name='nome']");
@@ -209,9 +205,11 @@ firstNextBtn.addEventListener("click", function() {
   }
  
 
-  pages[0].style.height = "0px";
-  pages[1].style.height = "auto";
-  slidePage.style.marginLeft = "-50%";
+  pages[0].dataset.visibilidade="hidden"
+  pages[2].dataset.visibilidade="hidden"
+  pages[3].dataset.visibilidade="hidden"
+  pages[1].dataset.visibilidade="actual"
+  console.log("aaa");
   two.style.backgroundColor = "var(--verdeClaro)";
   two.style.color = "var(--branco)";
   two.style.border = "3px solid var(--branco)";
@@ -237,9 +235,11 @@ nextBtnSec.addEventListener("click", function() {
     return;
   }
 
-  pages[1].style.height = "0px";
-  pages[2].style.height = "auto";
-  slidePage.style.marginLeft = "-100%";
+
+  pages[1].dataset.visibilidade="hidden"
+  pages[0].dataset.visibilidade="hidden"
+  pages[3].dataset.visibilidade="hidden"
+  pages[2].dataset.visibilidade="actual"
   three.style.backgroundColor = "var(--verdeClaro)";
   three.style.color = "var(--branco)";
   three.style.border = "3px solid var(--branco)";
@@ -275,9 +275,11 @@ nextBtnThird.addEventListener("click", function() {
 prevBtnSec.addEventListener("click", function() {
 
   
-  pages[1].style.height = "0px";
-  pages[0].style.height = "auto";
-  slidePage.style.marginLeft = "0%";
+ 
+  pages[1].dataset.visibilidade="hidden"
+  pages[2].dataset.visibilidade="hidden"
+  pages[3].dataset.visibilidade="hidden"
+  pages[0].dataset.visibilidade="actual"
   two.style.backgroundColor = "var(--branco)";
   two.style.color = "var(--verde)";
   two.style.border = "3px solid var(--verdeClaro)";
@@ -285,9 +287,11 @@ prevBtnSec.addEventListener("click", function() {
 
 prevBtnThird.addEventListener("click", function() {
   
-  pages[2].style.height = "0px";
-  pages[1].style.height = "auto";
-  slidePage.style.marginLeft = "-50%";
+
+  pages[2].dataset.visibilidade="hidden"
+  pages[0].dataset.visibilidade="hidden"
+  pages[3].dataset.visibilidade="hidden"
+  pages[1].dataset.visibilidade="actual"
   three.style.backgroundColor = "var(--branco)";
   three.style.color = "var(--verde)";
   three.style.border = "3px solid var(--verdeClaro)";

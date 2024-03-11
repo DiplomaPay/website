@@ -49,10 +49,10 @@
           }
           return;
         } 
-        pages[0].style.height = "0px";
-        pages[1].style.height = "auto";
-        container.style.width = "20vw"
-        slidePage.style.marginLeft = "-41.5%";
+        pages[0].dataset.visibilidade="hidden"
+        pages[2].dataset.visibilidade="hidden"
+        pages[3].dataset.visibilidade="hidden"
+        pages[1].dataset.visibilidade="actual"
         two.style.backgroundColor = "var(--verdeClaro)";
         two.style.color = "var(--branco)";
         two.style.border = "3px solid var(--branco)";
@@ -100,9 +100,10 @@
           }
           return;
         }
-        pages[1].style.height = "0px";
-        pages[2].style.height = "auto";
-        slidePage.style.marginLeft = "-100%";
+        pages[1].dataset.visibilidade="hidden"
+        pages[3].dataset.visibilidade="hidden"
+        pages[0].dataset.visibilidade="hidden"
+        pages[0].dataset.visibilidade="actual"
         three.style.backgroundColor = "var(--verdeClaro)";
         three.style.color = "var(--branco)";
         three.style.border = "3px solid var(--branco)";

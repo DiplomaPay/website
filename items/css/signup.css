@@ -5,6 +5,7 @@ img{
 }
 
 
+
 body{
     background-color: var(--verde);
     display: flex;
@@ -19,7 +20,6 @@ body{
     background-color: var(--branco);
     padding: 5vh 2vw;
     border-radius: 10px;
-    width: 15vw;
     height: 100%;
     transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
 }
@@ -126,20 +126,17 @@ button:hover{
 
 }
 
-.container .form-outer{
+/* .container .form-outer{
     width: 100%;
     overflow: hidden;
-}
+} */
 
-.form-outer form{
+/* .form-outer form{
     display: flex;
     width: 400%;
-}
+} */
 
-.form-outer form .page{
-    margin-right: 25%;
-    transition: margin-left 0.3s ease-in-out
-}
+
 
 .page{
    transition: height 0.3s ease-in-out;
@@ -169,6 +166,8 @@ button:hover{
 .email{
   color: var(--verde)
 }
+
+
 
 .codigo{
     display: flex;
@@ -215,6 +214,7 @@ button:hover{
     display: flex;
 }
 
+
 .bullet{
     background-color: var(--branco);
     border-radius: 50%;
@@ -232,6 +232,8 @@ button:hover{
 
 }
 
+
+
 .one{
     background-color: var(--verdeClaro);
     color: var(--branco);
@@ -242,6 +244,8 @@ button:hover{
 .progress-bar .step:last-child .bullet:after{
     display: none;
 }
+
+
 .progress-bar .step .bullet:before,
 .progress-bar .step .bullet:after{
     position: absolute;
@@ -250,5 +254,12 @@ button:hover{
     width: 6vw;
     left: 1.7vw;
     background-color: var(--branco)
-};
+}
+
+
+.page[data-visibilidade="hidden"] {
+   display: none;
+}
+
+
 

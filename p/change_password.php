@@ -21,7 +21,7 @@
   <div class="container">
     <div class="form-outer">
       <form action="javascript:void(0)">
-        <div class="page slidePage">
+        <div class="page slidePage" data-visibilidade="actual">
           <div class="title">
                 RECUPERAR
           </div>
@@ -36,7 +36,7 @@
           <a class="prev" href="../index.php">Logar</a>
         </div>
 
-        <div class="page">
+        <div class="page" data-visibilidade="hidden">
           <div class="title">
                 VERFICIAÇÃO DE EMAIL
           </div>
@@ -61,7 +61,7 @@
           </div>
         </div>
 
-        <div class="page">
+        <div class="page" data-visibilidade="hidden">
           <div class="title">
                 RECUPERAR
           </div>
