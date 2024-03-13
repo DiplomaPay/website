@@ -23,6 +23,7 @@ Bruno W.
 <br><br>
 Previsão para término: 15/03/2024 às 22:00
 ";
+exit;
 
 $conexao = mysqli_connect('localhost','u752370168_dpay','Easycodex123','u752370168_dpay') or die ("Atualize a página e tente novamente!");
 
