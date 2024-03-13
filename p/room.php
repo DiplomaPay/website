@@ -1,5 +1,5 @@
 <?php
-// include"../sys/conexao.php";
+include"../sys/conexao.php";
 //  justLog($__EMAIL__);
 ?>
 
