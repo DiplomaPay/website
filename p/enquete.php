@@ -71,7 +71,7 @@ justLog($__EMAIL__);
                     Galerinha, teste de nova mensagem!
                     <br>
                     <br>
-                    Lorem ipsum dolor sit amet. Eo mollitia suscipit sit veniam accusantium qui rerum voluptas est expedita iusto. Sit voluptas explicabo vel amet itaque ut praesentium enim a quibusdam nihil aut voluptate nobis aut autem aliquam qui adipisci dolore. Rem nihil facere aut autem suscipit ut consectetur fuga et incidunt autem aut consequatur numquam aut tempore officia.
+                    Lorem ipsum dolor sit met. Eo mollitia suscipit sit veniam accusantium qui rerum voluptas est expedita iusto. Sit voluptas explicabo vel amet itaque ut praesentium enim a quibusdam nihil aut voluptate nobis aut autem aliquam qui adipisci dolore. Rem nihil facere aut autem suscipit ut consectetur fuga et incidunt autem aut consequatur numquam aut tempore officia.
                     Quo eaque velit aut voluptatum sint et molestiae vero quo facere placeat? Vel exercitationem reprehenderit est molestiae nihil ab suscipit eaque ut quia modi. Id cumque omnis et perferendis dolor aut laudantium quasi et amet dicta.
                 </p>
                 <div class="reacao">
