@@ -17,13 +17,6 @@ $__URL__ = $_SERVER["HTTP_HOST"];
 $__HOST__ = $_SERVER['HTTP_HOST'];
 $__WEB__ = $_SERVER['REQUEST_SCHEME'] . "://" . $__HOST__;
 
-$_ON_ = file_get_contents("https://painel.anizero.cc/sys/api/checkweb?site=$__HOST__");
-$_ON_ = json_decode($_ON_);
-
-if($_ON_->response == false){
-    endCode("Site inativo", false);
-}
-
 $__CONEXAO__ = mysqli_connect(
     LOG_DB_LOCAL,
     LOG_DB_USER,
