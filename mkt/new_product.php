@@ -16,7 +16,7 @@
         <input type='number' id='quantAdd'>
         <input type='file' id='imageAdd' accept="image/jpeg, image/jpg, image/png">
         <button>Enviar</button>
-    <form>
+    </form>
 
     <script>
         const addProduct = () => {
