@@ -19,7 +19,7 @@
     </form>
 
     <script>
-        const addProduct = () => {
+        function addProduct() {
             let name = nameAdd.value;
             let desc = descAdd.value;
             let price = priceAdd.value;
