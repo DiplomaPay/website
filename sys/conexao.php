@@ -1,29 +1,6 @@
 <?php
 session_start();
 date_default_timezone_set('America/Sao_Paulo');
-echo "
-Manutenção preventiva Back-end.
-
-<br><br>
-
-Todas as páginas foram desativadas com o fim de corrigir problemas relacionados a XSS.
-<br>
-Após o termino dessa atividade, as páginas voltarão normalmente.
-<br><br>
-Correções a serem feitas:<br>
-- Impedir SQL injection.<br>
-- Impedir ataque XSS.<br>
-- Retirar qualquer caracter 'perigoso'. <br>
-- Aumentar segurança das páginas.<br>
-- Colocar níveis de acesso.<br>
-- Modificações em conexao.<br>
-- Criar funções para melhorar a estrutura.<br>
-<br><br>
-Bruno W.
-<br><br>
-Previsão para término: 15/03/2024 às 22:00
-";
-exit;
 
 $conexao = mysqli_connect('localhost','u752370168_dpay','Easycodex123','u752370168_dpay') or die ("Atualize a página e tente novamente!");
 
