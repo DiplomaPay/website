@@ -19,7 +19,7 @@
     </form>
 
     <script>
-        const addNewProduct = () => {
+        const addNewProduct = async () => {
             let name = nameAdd.value;
             let desc = descAdd.value;
             let price = priceAdd.value;
