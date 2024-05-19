@@ -17,9 +17,6 @@ $desc   = setNoXss($desc);
 $price  = encrypt(floatval($price));
 $quant  = setNum($quant);
 
-// nome temporario pra image 
-$image = $__CODE__;
-
 checkMissing(
     array(
         $name,
@@ -35,6 +32,8 @@ if(mysqli_num_rows($checkExist) > 0){
     endCode("Produto já cadastrado.", false);
 }
 
-mysqli_query($__CONEXAO__, "insert into products (name, description, price, image, quant) values ('$name','$desc','$price','$image', '$quant')");
+$imgName = salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, "/images/products");
+
+mysqli_query($__CONEXAO__, "insert into products (name, description, price, image, quant) values ('$name','$desc','$price','$imageName', '$quant')");
 
 endCode("Cadastrado com sucesso!", true);
