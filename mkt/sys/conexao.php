@@ -4,7 +4,7 @@ session_start();
 include"checkmobile.php";
 include"functions.php";
 include"checkflood.php";
-include"auth.php";
+include"tokens.php";
 
 date_default_timezone_set('America/Sao_Paulo');
 header('Content-Type: text/html; charset=utf-8');
