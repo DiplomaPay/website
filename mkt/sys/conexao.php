@@ -18,10 +18,10 @@ $__HOST__ = $_SERVER['HTTP_HOST'];
 $__WEB__ = $_SERVER['REQUEST_SCHEME'] . "://" . $__HOST__;
 
 $__CONEXAO__ = mysqli_connect(
-    LOG_DB_LOCAL,
-    LOG_DB_USER,
-    LOG_DB_PASSWORD,
-    LOG_DB_USER
+    "localhost",
+    "u752370168_dpaymkt",
+    "Easycodex123#$#$",
+    "u752370168_dpaymkt"
 ) or die ("Atualize a página e tente novamente!");
 
 header('Access-Control-Allow-Origin: *');
