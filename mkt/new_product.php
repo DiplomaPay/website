@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="javascript:void(0)" onSubmit='addProduct()'>
+    <form action="javascript:void(0)" onSubmit='addNewProduct()'>
         <input type='text' id='nameAdd'>
         <input type='text' id='descAdd'>
         <input type='number' id='priceAdd'>
@@ -19,7 +19,7 @@
     </form>
 
     <script>
-        function addProduct() {
+        const addNewProduct = () => {
             let name = nameAdd.value;
             let desc = descAdd.value;
             let price = priceAdd.value;
