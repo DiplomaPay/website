@@ -20,7 +20,7 @@ while($data = mysqli_fetch_array($getAllProducts)){
         "quant"         =>$quant,
         "price"         =>$price,
         "description"   =>$description
-    )
+    );
 
     array_push($arrayProducts, $items);
 }

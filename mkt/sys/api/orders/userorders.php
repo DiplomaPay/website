@@ -20,7 +20,7 @@ while($data = mysqli_fetch_array($getAllActiveOrders)){
         "total"     =>decrypt($total),
         "status"    =>decrypt($status),
         "products"  =>decrypt($products), 
-    )
+    );
 
     array_push($arrayProducts, $items);
 }
