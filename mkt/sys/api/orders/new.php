@@ -9,7 +9,7 @@ $json = json_decode($request);
 $total = 0;
 
 $products = $json->items;
-endCode($products);
+endCode($products, false);
 
 foreach($products as &$item){
     $item = setArray($item, 'setNum');
