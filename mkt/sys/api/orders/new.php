@@ -8,6 +8,7 @@ $json = json_decode($request);
 
 
 $items   = scapeString($__CONEXAO__, $json->items); // array de objetos
+$items  =
 // separar array acima, fazer loop e verificar item por item, checkmissing dentro
 // do loop e encrypt tambem (sets)
 
