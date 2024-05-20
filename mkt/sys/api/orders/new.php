@@ -8,7 +8,9 @@ $json = json_decode($request);
 
 $total = 0;
 
-$products  = $json->items;
+$products = $json->items;
+endCode($products);
+
 foreach($products as &$item){
     $item = setArray($item, 'setNum');
     $item = setArray($item, 'decrypt');
