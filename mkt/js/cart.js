@@ -1,5 +1,5 @@
+let cart = [];
 setCart();
-let cart;
 
 function setCart(){
     if(!localStorage.cart){
