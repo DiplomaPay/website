@@ -42,9 +42,10 @@ function setNum($string){
 }
 
 function setArray($array, $type){
-    foreach($array as $item){
+    foreach($array as &$item){
         $type($item);
     }
+    return $array;
 }
 
 function checkMissing($array){
