@@ -16,7 +16,7 @@ function updateItem(id, type, limit){
     let index = cart.findIndex(obj => obj.id === id);
     
     if(index === -1 && type == 1){
-        cart.push({id: 0, quant: 1})
+        cart.push({id: id, quant: 1})
     } else {
         let val = cart[index].quant
 
