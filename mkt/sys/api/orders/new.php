@@ -17,6 +17,9 @@ foreach($products as &$item){
     $id = $item->id;
     $qt = $item->quant;
 
+    // {"mensagem":{"id":2,"quant":2},"response":false}
+    endCode("$id, $qt", false);
+
     checkMissing(array(
         $id,
         $qt
