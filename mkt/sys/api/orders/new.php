@@ -8,7 +8,7 @@ $json = json_decode($request);
 
 $total = 0;
 
-$products  = scapeString($__CONEXAO__, $json->items);
+$products  = $json->items;
 foreach($products as $item){
     $item = setArray($item, 'setNum');
     $item = setArray($item, 'decrypt');
@@ -33,7 +33,6 @@ foreach($products as $item){
     
     $total += $price * $qt;
 }
-endCode($products, false);
 
 $total = setNoXss(($total));
 
