@@ -12,15 +12,17 @@ $products = $json->items;
 
 foreach($products as &$item){
     $item = setArray($item, 'setNum');
+
+    $id = $item->id;
+    $qt = $item->quant;
     
     checkMissing(array(
-        $item->id,
-        $item->quant
+        $id,
+        $qt
     ));
     
     $item = setArray($item, 'decrypt');
-    $id = $item->id;
-    $qt = $item->quant;
+    
     
     $query  = mysqli_query($__CONEXAO__, "select price, quant from products where id='$id'");
 
