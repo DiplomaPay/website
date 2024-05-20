@@ -32,7 +32,7 @@ foreach($products as &$item){
         endCode("Produto inválido - $id", false);
     }
     
-    $data   = mysqli_fetch_assoc($data);
+    $data   = mysqli_fetch_assoc($query);
     $quant  = $data['quant'];
     $price  = $data['price'];
     $quant  = decrypt($quant);
