@@ -13,7 +13,7 @@ $products = $json->items;
 var_dump($products);
 
 foreach($products as &$item){
-    endCode($item)
+    endCode($item, false);
     $item = setArray($item, 'setNum');
     $item = setArray($item, 'decrypt');
 
