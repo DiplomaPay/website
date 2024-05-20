@@ -33,7 +33,7 @@ foreach($products as $item){
     
     $total += $price * $qt;
 }
-
+endCode($products, false);
 $total = setNoXss(($total));
 
 // n da para passar somente code, ele muda, deixei dinamico 
