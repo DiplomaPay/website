@@ -23,7 +23,7 @@ function updateItem(id, type, limit){
 
         if(type == 0){
             if(val < 2){
-                delete cart[index];
+                cart.splice(index, 1);
             } else {
                 cart[index].quant -= 1;
             }
