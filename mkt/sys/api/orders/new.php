@@ -23,13 +23,18 @@ foreach($products as &$item){
     $qt = $item->quant;
     
     $query  = mysqli_query($__CONEXAO__, "select price, quant from products where id='$id'");
+
+    if(mysqli_num_rows($query) < 1){
+        endCode("Produto inválido - $id", false);
+    }
+    
     $data   = mysqli_fetch_assoc($data);
     $quant  = $data['quant'];
     $price  = $data['price'];
     $price  = decrypt($price);
 
     if($qt > $quant){
-        endCode('Quantidade de itens selecionada superior a presente no estoque. Item: ' . $id, false);
+        endCode("Quantidade de itens selecionada superior a presente no estoque. Item: $id", false);
     }
     
     $total += $price * $qt;

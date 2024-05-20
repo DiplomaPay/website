@@ -11,14 +11,14 @@ function setCart(){
 function updateCart(){
     localStorage.cart = JSON.stringify(cart);
 }
-// id quant 
+
 function updateItem(id, type, limit){
     let index = cart.findIndex(obj => obj.id === id);
     
     if(index === -1 && type == 1){
         cart.push({id: id, quant: 1})
     } else {
-        let val = cart[index].quant
+        let val = cart[index].quant;
         console.log(val);
 
         if(type == 0){
@@ -38,5 +38,6 @@ function updateItem(id, type, limit){
 }
 
 function sendCart(){
-    console.log(cart)
+    let local = 'orders/new.php';
+    addNewData(local, cart);
 }
