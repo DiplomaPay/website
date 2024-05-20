@@ -19,17 +19,18 @@ function updateItem(id, type, limit){
         cart.push({id: id, quant: 1})
     } else {
         let val = cart[index].quant
+        console.log(val);
 
         if(type == 0){
             if(val < 2){
                 delete cart[index];
             } else {
-                if(val < limit){
-                    cart[index].quant += 1;
-                }
+                cart[index].quant -= 1;
             }
         } else {
-            cart[index].quant += 1;
+            if(val < limit){
+                cart[index].quant += 1;
+            }
         }
     }
     updateCart();
