@@ -10,7 +10,10 @@ $total = 0;
 
 $products = $json->items;
 
+var_dump($products);
+
 foreach($products as &$item){
+    endCode($item)
     $item = setArray($item, 'setNum');
     $item = setArray($item, 'decrypt');
 
