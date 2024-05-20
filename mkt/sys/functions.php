@@ -41,6 +41,12 @@ function setNum($string){
     return encrypt($string);
 }
 
+function setArray($array, $type){
+    foreach($array as $item){
+        $type($item);
+    }
+}
+
 function checkMissing($array){
     for($i = 0; $i < count($array); $i++){
         $item = decrypt($array[$i]);

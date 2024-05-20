@@ -15,11 +15,11 @@ while($data = mysqli_fetch_array($getAllProducts)){
 
     $items = array(
         "id"            =>$id, 
-        "name"          =>$name, 
-        "image"         =>$image,
-        "quant"         =>$quant,
-        "price"         =>$price,
-        "description"   =>$description
+        "name"          =>decrypt($name), 
+        "image"         =>decrypt($image),
+        "quant"         =>decrypt($quant),
+        "price"         =>decrypt($price),
+        "description"   =>decrypt($description)
     );
 
     array_push($arrayProducts, $items);
