@@ -9,7 +9,7 @@
 <body>
     <div id='productsList'>
         <button onclick="updateItem(1, 0, 10)">Remove</button>
-        <button onclick="addCart(1, 1, 10)">Add</button>
+        <button onclick="updateItem(1, 1, 10)">Add</button>
         <button onclick="sendCart()">Send</button>
     </div>
 
