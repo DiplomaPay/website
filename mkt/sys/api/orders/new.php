@@ -35,6 +35,7 @@ foreach($products as &$item){
     $data   = mysqli_fetch_assoc($data);
     $quant  = $data['quant'];
     $price  = $data['price'];
+    $quant  = decrypt($quant);
     $price  = decrypt($price);
 
     if($qt > $quant){
