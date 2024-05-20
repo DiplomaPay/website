@@ -12,18 +12,28 @@ $products  = scapeString($__CONEXAO__, $json->items);
 foreach($products as $item){
     $item = setArray($item, 'setNum');
     $item = setArray($item, 'decrypt');
+
     $id = $item->id;
     $qt = $item->quant;
+
     checkMissing(array(
         $id,
         $qt
     ));
-    $query = mysqli_query($__CONEXAO__, "select price from products where id='$id'");
-    $price = mysqli_fetch_assoc($query)['price'];
-    $price = decrypt($price);
+
+    $query  = mysqli_query($__CONEXAO__, "select price, quant from products where id='$id'");
+    $data   = mysqli_fetch_assoc($data);
+    $quant  = $data['quant'];
+    $price  = $data['price'];
+    $price  = decrypt($price);
+
+    if($qt > $quant){
+        endCode('Quantidade de itens selecionada superior a presente no estoque. Item: ' . $id, false);
+    }
     
     $total += $price * $qt;
 }
+endCode($products, false);
 
 $total = setNoXss(($total));
 

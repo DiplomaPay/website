@@ -12,8 +12,8 @@
     <form action="javascript:void(0)" onSubmit='addNewProduct()'>
         <input type='text' id='nameAdd'>
         <input type='text' id='descAdd'>
-        <input type='number' id='priceAdd'>
-        <input type='number' id='quantAdd'>
+        <input type='number' step="0.01" id='priceAdd'>
+        <input type='number' step='1' id='quantAdd'>
         <input type='file' id='imageAdd' accept="image/jpeg, image/jpg, image/png">
         <button>Enviar</button>
     </form>
