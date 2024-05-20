@@ -22,8 +22,10 @@ foreach($products as &$item){
     ));
     
     $item = setArray($item, 'decrypt');
-    
-    
+
+    $id = $item->id;
+    $qt = $item->quant;
+
     $query  = mysqli_query($__CONEXAO__, "select price, quant from products where id='$id'");
 
     if(mysqli_num_rows($query) < 1){
