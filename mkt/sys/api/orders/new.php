@@ -7,12 +7,14 @@ $request = file_get_contents('php://input');
 $json = json_decode($request);
 
 
-$items   = scapeString($__CONEXAO__, $json->items); // array de objetos
-$items  =
-// separar array acima, fazer loop e verificar item por item, checkmissing dentro
-// do loop e encrypt tambem (sets)
-
-$products = array(); // repassar itens aqui dentro apos verificação
+$products  = scapeString($__CONEXAO__, $json->items);
+foreach($products as $item){
+    $item = setArray($item, 'setNoXss');
+    checkMissing(array(
+        $item->id,
+        $item->quant
+    ));
+}
 
 // colocar valor total dos itens somados (somar do loop) 
 $total = 0;

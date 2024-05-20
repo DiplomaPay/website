@@ -162,6 +162,7 @@ function converterHora($time){
 // type 3 - Admin
 
 function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $caminho){
+    $caminho = "../../../../../../$caminho";
     if($image){
         if (!file_exists($caminho)) {
             if (!mkdir($caminho, 0777, true)) {
