@@ -10,6 +10,7 @@ function addNewData(local, data){
     .then(e=>{
         isActive = false;
         newMsg(e);
+        console.log(e);
     })
     .catch(e=>newMsg({
         mensagem: "Ocorreu algum erro, contate o administrador",
