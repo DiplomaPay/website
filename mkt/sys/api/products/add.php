@@ -12,7 +12,7 @@ $price  = scapeString($__CONEXAO__, $json->price);
 $image  = scapeString($__CONEXAO__, $json->image);
 $quant  = scapeString($__CONEXAO__, $json->quant);
 
-$name   = setName($name);
+$name   = setString($name);
 $desc   = setNoXss($desc);
 $price  = setNoXss($price);
 $quant  = setNum($quant);
