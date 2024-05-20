@@ -10,27 +10,12 @@ $total = 0;
 
 $products = $json->items;
 
-var_dump($products);
-// array(1) {
-//     [0]=>
-//     object(stdClass)#2 (2) {
-//       ["id"]=>
-//       int(2)
-//       ["quant"]=>
-//       int(2)
-//     }
-//   }
-//   {"mensagem":", ","response":false}
 foreach($products as &$item){
     $item = setArray($item, 'setNum');
     $item = setArray($item, 'decrypt');
-    endCode($item, false);
 
     $id = $item->id;
     $qt = $item->quant;
-
-    // endCode("$id, $qt", false);
-
 
     checkMissing(array(
         $id,
