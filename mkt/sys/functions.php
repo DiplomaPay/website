@@ -43,7 +43,7 @@ function setNum($string){
 
 function setArray($array, $type){
     foreach($array as &$item){
-        $type($item);
+        $item = $type($item);
     }
     return $array;
 }
