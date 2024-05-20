@@ -8,8 +8,10 @@
 </head>
 <body>
     <div id='productsList'>
-        <button onclick="updateItem(1, 0, 10)">Remove</button>
-        <button onclick="updateItem(1, 1, 10)">Add</button>
+        <button onclick="updateItem(1, 0, 10)">Remove 1</button>
+        <button onclick="updateItem(1, 1, 10)">Add 1</button>
+        <button onclick="updateItem(2, 0, 10)">Remove 2</button>
+        <button onclick="updateItem(2, 1, 10)">Add 2</button>
         <button onclick="sendCart()">Send</button>
     </div>
 
