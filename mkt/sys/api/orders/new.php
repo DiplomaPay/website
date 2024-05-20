@@ -35,6 +35,8 @@ $bankid     = encrypt(1751264738);
 $paytype    = encrypt("pix");
 $status     = encrypt("pending");
 
+$products = encrypt(json_encode($products));
+
 // passar primeiro o banco, se der erro n mostra pro usuario
 mysqli_query($__CONEXAO__, "insert into paymentOrders (orderCode, status, bankcode, bankid, paymentType) values ('$code','$status','$bankcode','$bankid','$paytype')") or endCode("Erro ao salvar pagamento");
 

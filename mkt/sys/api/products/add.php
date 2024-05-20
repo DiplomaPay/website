@@ -32,7 +32,7 @@ if(mysqli_num_rows($checkExist) > 0){
     endCode("Produto já cadastrado.", false);
 }
 
-// $imgName = salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, "../images/products");
+$imageName = salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, "../images/products");
 
 mysqli_query($__CONEXAO__, "insert into products (name, description, price, image, quant) values ('$name','$desc','$price','$imageName', '$quant')");
 
