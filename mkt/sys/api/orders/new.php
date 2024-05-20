@@ -6,21 +6,26 @@ include"../../conexao.php";
 $request = file_get_contents('php://input');
 $json = json_decode($request);
 
+$total = 0;
 
 $products  = scapeString($__CONEXAO__, $json->items);
 foreach($products as $item){
-    $item = setArray($item, 'setNoXss');
+    $item = setArray($item, 'setNum');
+    $item = setArray($item, 'decrypt');
+    $id = $item->id;
+    $qt = $item->quant;
     checkMissing(array(
-        $item->id,
-        $item->quant
+        $id,
+        $qt
     ));
+    $query = mysqli_query($__CONEXAO__, "select price from products where id='$id'");
+    $price = mysqli_fetch_assoc($query)['price'];
+    $price = decrypt($price);
+    
+    $total += $price * $qt;
 }
 
-// colocar valor total dos itens somados (somar do loop) 
-$total = 0;
-
-// n tem set ainda pra float, so pra num int 
-$total = encrypt(floatval($total));
+$total = setNoXss(($total));
 
 // n da para passar somente code, ele muda, deixei dinamico 
 $code = $__CODE__;
@@ -37,6 +42,10 @@ $status     = encrypt("pending");
 
 $products = encrypt(json_encode($products));
 $code = encrypt($code);
+
+do{
+    $code = encrypt($__CODE__);
+} while(mysqli_num_rows(mysqli_query($__CONEXAO__, "select id from orders where code='$code'")) > 0);
 
 // passar primeiro o banco, se der erro n mostra pro usuario
 mysqli_query($__CONEXAO__, "insert into paymentOrders (orderCode, status, bankcode, bankid, paymentType) values ('$code','$status','$bankcode','$bankid','$paytype')") or endCode("Erro ao salvar pagamento");
