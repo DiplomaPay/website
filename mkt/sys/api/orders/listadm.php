@@ -1,7 +1,7 @@
 <?php
 include"../../conexao.php";
 
-justLog($__EMAIL__, $__TYPE__, 2);
+// justLog($__EMAIL__, $__TYPE__, 2);
 
 $getAllActiveOrders = mysqli_query($__CONEXAO__, "select * from orders where status='1'");
 

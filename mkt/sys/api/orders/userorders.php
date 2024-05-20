@@ -1,7 +1,7 @@
 <?php
 include"../../conexao.php";
 
-justLog($__EMAIL__, $__TYPE__, 1);
+// justLog($__EMAIL__, $__TYPE__, 1);
 
 $getAllActiveOrders = mysqli_query($__CONEXAO__, "select * from orders where user='$__ID__'");
 

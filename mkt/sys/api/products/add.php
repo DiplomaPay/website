@@ -1,7 +1,7 @@
 <?php
 include"../../conexao.php";
 
-justLog($__EMAIL__, $__TYPE__, 2);
+// justLog($__EMAIL__, $__TYPE__, 2);
 
 $request = file_get_contents('php://input');
 $json = json_decode($request);
