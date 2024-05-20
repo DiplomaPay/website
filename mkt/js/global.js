@@ -17,6 +17,18 @@ function addNewData(local, data){
     }))
 }
 
+function defineColor(e){
+    let color = "sucesso-add";
+
+    if(e == "aguardando" || e == 'ag'){
+        color = "aguardando-add";
+    } else if(!e){
+        color = "erro-add";
+    }
+
+    return color;
+}
+
 async function newMsg(e){
     let msg = document.createElement("div");
     let color = defineColor(e.response);
