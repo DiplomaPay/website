@@ -8,13 +8,13 @@ $json = json_decode($request);
 
 $name   = scapeString($__CONEXAO__, $json->name);
 $desc   = scapeString($__CONEXAO__, $json->desc);
-$price  = scapeString($__CONEXAO__, floatval($json->price));
+$price  = scapeString($__CONEXAO__, $json->price);
 $image  = scapeString($__CONEXAO__, $json->image);
-$quant  = scapeString($__CONEXAO__, intval($json->quant));
+$quant  = scapeString($__CONEXAO__, $json->quant);
 
 $name   = setName($name);
 $desc   = setNoXss($desc);
-$price  = encrypt($price);
+$price  = setNoXss($price);
 $quant  = setNum($quant);
 
 checkMissing(
@@ -24,7 +24,7 @@ checkMissing(
         $price,
         $quant
     )
-)
+);
 
 $checkExist = mysqli_query($__CONEXAO__, "select id from products where name='$name'");
 
