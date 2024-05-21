@@ -36,8 +36,3 @@ function updateItem(id, name, type, limit, price){
     updateCart();
     setCart();
 }
-
-function sendCart(){
-    let local = 'orders/new.php';
-    return addNewData(local, { items: cart});
-}

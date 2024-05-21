@@ -33,7 +33,9 @@
         }
 
         function newPayment(){
-            let infos = sendCart();
+            let local = 'orders/new.php';
+            let infos = addNewData(local, { items: cart});
+
             let data = infos.mensagem;
 
             payimg.src = data.base64;
