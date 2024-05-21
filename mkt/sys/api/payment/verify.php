@@ -3,10 +3,13 @@ include"../../conexao.php";
 
 header('Content-Type: application/json; charset=utf-8');
 
-$code = $_GET["code"];
+$request = file_get_contents('php://input');
+$json = json_decode($request);
+
+$code = scapeString($__CONEXAO__, $json->code);
 $code = encrypt($code);
 $write = encrypt("pending");
-endCode($code, false);
+// endCode($code, false);
 
 $query = mysqli_query($__CONEXAO__, "select id from paymentOrders where orderCode='$code' and status='$write'") or die("erro 1");
 
