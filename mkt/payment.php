@@ -15,8 +15,9 @@
     </div>
 
     <button onclick="newPayment()">Gerar pagamento</button>
+    <br>
 
-    <img id="payimg" src='#'>
+    <img id="payimg" src='#' style="max-width: 100px">
     <p id='paycodepix'></p>
     <p id='payprice'></p>
     <p id='paycode'></p>
@@ -38,7 +39,7 @@
 
             let data = infos.mensagem;
 
-            payimg.src = data.base64;
+            payimg.src = `data:image/jpeg;base64,${data.base64}`;
             paycodepix.innerHTML = data.code_pix;
             payprice.innerHTML = `R$${data.ammount}`;
             paycode.innerHTML = `#${data.code}`;
