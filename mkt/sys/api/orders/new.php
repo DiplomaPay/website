@@ -45,9 +45,10 @@ foreach($products as &$item){
     $total += $price * $qt;
 }
 
-$total = setNoXss($total);
 
 $infosPix = pixPay($total, $__AUTH__, $__KEY__);
+
+$total = setNoXss($total);
 
 $code = encrypt($__CODE__);
 

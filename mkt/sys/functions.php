@@ -219,8 +219,6 @@ function pixPay($ammount, $__AUTH__, $__KEY__){
 
     $curl = curl_init();
 
-    $ammount = floatval($ammount);
-
     $data = array(
         'transaction_amount' => $ammount,
         'description' => "[diplomapay.com][mkt][pix] - Diplomapay",
