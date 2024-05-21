@@ -14,6 +14,7 @@ $write = encrypt("pending");
 $query = mysqli_query($__CONEXAO__, "select bankid from paymentOrders where orderCode='$code' and status='$write'") or die("erro 1");
 
 $pay_id = decrypt(mysqli_fetch_assoc($query)['bankid']);
+endCode($pay_id, false);
 
 if(mysqli_num_rows($query) < 1){
     endCode("Pagamento não encontrado.", false);
