@@ -52,11 +52,11 @@ var_dump($infosPix);
 
 $code = encrypt($__CODE__);
 
-$total      = setNoXss($infosPix[0]->ammount);
-$bankcode   = encrypt($infosPix[0]->code_pix);
-$bankid     = encrypt($infosPix[0]->pix_id);
+$total      = setNoXss($infosPix[0]["ammount"]);
+$bankcode   = encrypt($infosPix[0]["code_pix"]);
+$bankid     = encrypt($infosPix[0]["pix_id"]);
 $paytype    = encrypt("pix");
-$status     = encrypt($infosPix[0]->status_pix);
+$status     = encrypt($infosPix[0]["status_pix"]);
 $products   = encrypt(json_encode($products));
 
 do{
