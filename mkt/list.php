@@ -33,7 +33,7 @@
                     <div class='item-out'>
                         <h1>${name}</h1>
                         <div class='img-out'>
-                            <img src='./sys/api/image/${image}'>
+                            <img src='./sys/api/images/products${image}'>
                         </div>
                         <p>R$${price}</p>
                         <button onclick='updateItem(${id}, 1, ${quant})'>Adicionar</button>
