@@ -22,6 +22,8 @@
     <p id='payprice'></p>
     <p id='paycode'></p>
 
+    <button onclick='verifyPayment()'>Verificar pagamento</button>
+
     <script>
         for(let i of cart){
             lista.innerHTML += `
@@ -32,7 +34,7 @@
                 </div>
             `;
         }
-
+        let code = "";
         async function newPayment(){
             let local = 'orders/new.php';
             let infos = await addNewData(local, { items: cart});
@@ -44,7 +46,16 @@
             payprice.innerHTML = `R$${data.ammount}`;
             paycode.innerHTML = `#${data.code}`;
 
+            code = data.code;
+
             console.log(infos);
+            console.log(data);
+        }
+
+        function verifyPayment(){
+            let infos = addNewData('payment/verify.php', {code: code});
+            
+            let data = infos.mensagem;
             console.log(data);
         }
     </script>
