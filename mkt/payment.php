@@ -32,9 +32,9 @@
             `;
         }
 
-        function newPayment(){
+        async function newPayment(){
             let local = 'orders/new.php';
-            let infos = addNewData(local, { items: cart});
+            let infos = await addNewData(local, { items: cart});
 
             let data = infos.mensagem;
 
