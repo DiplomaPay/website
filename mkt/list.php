@@ -13,14 +13,33 @@
         <button onclick="updateItem(1, 1, 10)">Add 1</button>
         <button onclick="updateItem(2, 0, 10)">Remove 2</button>
         <button onclick="updateItem(2, 1, 10)">Add 2</button>
-        <button onclick="sendCart()">Send</button>
     </div>
+
+    <button onclick="sendCart()">Send</button>
+
 
     <script>
         fetch("./sys/api/products/list.php")
         .then(e=>e.json())
         .then(e=>{
-            console.log(e);
+            for(let i of e.mensagem){
+                let id = i.id;
+                let name = i.name;
+                let price = i.price;
+                let image = i.image;
+                let quant = i.quant;
+
+                productsList.innerHTML += `
+                    <div class='item-out'>
+                        <h1>${name}</h1>
+                        <div class='img-out'>
+                            <img src='./sys/api/image/${image}'>
+                        </div>
+                        <p>R$${price}</p>
+                        <button onclick='updateItem(${id}, 1, ${quant})'>Adicionar</button>
+                    </div>
+                `;
+            }
         })
     </script>
 </body>
