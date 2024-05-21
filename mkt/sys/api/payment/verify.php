@@ -6,10 +6,9 @@ header('Content-Type: application/json; charset=utf-8');
 $code = $_GET["code"];
 $code = encrypt($code);
 $write = encrypt("pending");
+endCode($code, false);
 
 $query = mysqli_query($__CONEXAO__, "select id from paymentOrders where orderCode='$code' and status='$write'") or die("erro 1");
-
-$assoc = mysqli_fetch_assoc($query);
 
 if(mysqli_num_rows($query) < 1){
     endCode("Pagamento não encontrado.", false);
