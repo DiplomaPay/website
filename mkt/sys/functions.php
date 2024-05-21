@@ -261,5 +261,5 @@ function pixPay($ammount, $__AUTH__, $__KEY__){
         return array($obj, true);
     }
 
-    return array($res, false);
+    return array(array($res), false);
 }
