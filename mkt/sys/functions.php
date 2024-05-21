@@ -256,8 +256,10 @@ function pixPay($ammount, $__AUTH__, $__KEY__){
     $pay_code_img = $res->point_of_interaction->transaction_data->qr_code_base64;
     $pay_ammount = $res->transaction_amount;
 
+    return array(array($pay_idd), true);
+
     if($pay_code){
-        $obj = array("status_pix" => "$status", "pix_id" => $pay_id, "code_pix" => "$pay_code", "ammount_pix" => $ammount, "img64" => "$pay_code_img");
+        $obj = array("status_pix" => "$status", "pix_idd" => $pay_idd, "code_pix" => "$pay_code", "ammount_pix" => $ammount, "img64" => "$pay_code_img");
         return array($obj, true);
     }
 
