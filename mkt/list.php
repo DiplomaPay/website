@@ -30,10 +30,10 @@
                     <div class='item-out'>
                         <h1>${name}</h1>
                         <div class='img-out'>
-                            <img src='./sys/api/images/products/${image}'>
+                            <img style='max-width: 100px' src='./sys/api/images/products/${image}'>
                         </div>
                         <p>R$${price}</p>
-                        <button onclick='updateItem(${id}, ${name}, 1, ${quant}, ${price})'>Adicionar</button>
+                        <button onclick='updateItem(${id}, '${name}', 1, ${quant}, ${price})'>Adicionar</button>
                     </div>
                 `;
             }
