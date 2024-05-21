@@ -47,9 +47,6 @@ foreach($products as &$item){
 
 $infosPix = pixPay($total, $__AUTH__, $__KEY__);
 
-var_dump($infosPix);
-
-
 $code = encrypt($__CODE__);
 
 $total      = setNoXss($infosPix[0]["ammount"]);
