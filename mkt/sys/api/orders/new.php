@@ -58,7 +58,7 @@ $paytype    = encrypt("pix");
 $status     = encrypt($infosPix[0]["status_pix"]);
 $products   = encrypt(json_encode($products));
 
-endCode($bankid, false);
+endCode(decrypt($bankid), false);
 
 do{
     $code = encrypt($__CODE__);
