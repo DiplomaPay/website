@@ -57,6 +57,9 @@ $paytype    = encrypt("pix");
 $status     = encrypt($infosPix[0]["status_pix"]);
 $products   = encrypt(json_encode($products));
 
+var_dump($infosPix[0]);
+echo "+";
+var_dump($infosPix[0]["img64"]);
 do{
     $code = encrypt($__CODE__);
 } while(mysqli_num_rows(mysqli_query($__CONEXAO__, "select id from orders where code='$code'")) > 0);
