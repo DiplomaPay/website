@@ -51,5 +51,4 @@ if($status_res){
     endCode("Aprovado!", "aprovado");
 }
 
-endCode("$status", false);
-
+endCode(array($res), false);
