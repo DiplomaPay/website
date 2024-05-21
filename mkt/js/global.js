@@ -3,7 +3,7 @@ async function addNewData(local, data){
     if(isActive) return;
     isActive = true;
 
-    let data = {};
+    let dtt = {};
 
     await fetch(`/mkt/sys/api/${local}`,{
         method: "POST",
@@ -13,14 +13,14 @@ async function addNewData(local, data){
     .then(e=>{
         isActive = false;
         newMsg(e);
-        data = e;
+        dtt = e;
     })
     .catch(e=>newMsg({
         mensagem: "Ocorreu algum erro, contate o administrador",
         response: false
     }))
 
-    return data;
+    return dtt;
 }
 
 function defineColor(e){

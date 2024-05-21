@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento</title>
-    
+    <script src="js/global.js"></script>
+    <script src="js/cart.js"></script>
 </head>
 <body>
     Lista de itens
@@ -20,8 +21,6 @@
     <p id='payprice'></p>
     <p id='paycode'></p>
 
-    <script src="./js/global.js"></script>
-    <script src="./js/cart.js"></script>
     <script>
         for(let i of cart){
             lista.innerHTML += `
