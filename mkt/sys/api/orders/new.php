@@ -47,6 +47,8 @@ foreach($products as &$item){
 
 $infosPix = pixPay($total, $__AUTH__, $__KEY__);
 
+var_dump($infosPix);
+
 
 $code = encrypt($__CODE__);
 
@@ -66,4 +68,4 @@ mysqli_query($__CONEXAO__, "insert into paymentOrders (orderCode, status, bankco
 mysqli_query($__CONEXAO__, "insert into orders (user, products, total, code, status) values ('$__ID__', '$products', '$total', '$code', '0')") or endCode('Erro ao gerar pedido');
 
 $obj = array("ammount"=> decrypt($total), "base64"=>$infosPix[0]->img64, "code_pix"=>decrypt($bankcode), "code"=>decrypt($code), "pix_id"=>decrypt($bankid));
-endCode($obj, "ag");
+endCode($obj, "dontreload");
