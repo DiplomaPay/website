@@ -8,14 +8,11 @@
     <script src="js/cart.js"></script>
 </head>
 <body>
+    <a href='payment.php'>Ir para pagamento</a>
+
     <div id='productsList'>
-        <button onclick="updateItem(1, 0, 10)">Remove 1</button>
-        <button onclick="updateItem(1, 1, 10)">Add 1</button>
-        <button onclick="updateItem(2, 0, 10)">Remove 2</button>
-        <button onclick="updateItem(2, 1, 10)">Add 2</button>
     </div>
 
-    <button onclick="sendCart()">Send</button>
 
 
     <script>
@@ -36,7 +33,7 @@
                             <img src='./sys/api/images/products/${image}'>
                         </div>
                         <p>R$${price}</p>
-                        <button onclick='updateItem(${id}, 1, ${quant})'>Adicionar</button>
+                        <button onclick='updateItem(${id}, ${name}, 1, ${quant}, ${price})'>Adicionar</button>
                     </div>
                 `;
             }

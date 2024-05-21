@@ -12,11 +12,11 @@ function updateCart(){
     localStorage.cart = JSON.stringify(cart);
 }
 
-function updateItem(id, type, limit){
+function updateItem(id, name, type, limit, price){
     let index = cart.findIndex(obj => obj.id === id);
     
     if(index === -1 && type == 1){
-        cart.push({id: id, quant: 1})
+        cart.push({id: id, quant: 1, name: name, price: price})
     } else {
         let val = cart[index].quant;
         console.log(val);
