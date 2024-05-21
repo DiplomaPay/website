@@ -14,7 +14,7 @@
 
     </div>
 
-    <button onclick="neePayment()">Gerar pagamento</button>
+    <button onclick="newPayment()">Gerar pagamento</button>
 
     <img id="payimg" src='#'>
     <p id='paycodepix'></p>
@@ -40,6 +40,9 @@
             paycodepix.innerHTML = data.code_pix;
             payprice.innerHTML = `R$${data.ammount}`;
             paycode.innerHTML = `#${data.code}`;
+
+            console.log(infos);
+            console.log(data);
         }
     </script>
 </body>
