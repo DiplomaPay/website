@@ -45,11 +45,12 @@ foreach($products as &$item){
     $total += $price * $qt;
 }
 
+$total = setNoXss($total);
+
 $infosPix = pixPay($total, $__AUTH__, $__KEY__);
 
 $code = encrypt($__CODE__);
 
-$total      = setNoXss($infosPix[0]["ammount"]);
 $bankcode   = encrypt($infosPix[0]["code_pix"]);
 $bankid     = encrypt($infosPix[0]["pix_id"]);
 $paytype    = encrypt("pix");
@@ -64,5 +65,5 @@ mysqli_query($__CONEXAO__, "insert into paymentOrders (orderCode, status, bankco
 
 mysqli_query($__CONEXAO__, "insert into orders (user, products, total, code, status) values ('$__ID__', '$products', '$total', '$code', '0')") or endCode('Erro ao gerar pedido');
 
-$obj = array("ammount"=> decrypt($total), "base64"=>$infosPix[0]->img64, "code_pix"=>decrypt($bankcode), "code"=>decrypt($code), "pix_id"=>decrypt($bankid));
+$obj = array("ammount"=> decrypt($total), "base64"=>$infosPix[0]["img64"], "code_pix"=>decrypt($bankcode), "code"=>decrypt($code), "pix_id"=>decrypt($bankid));
 endCode($obj, "dontreload");
