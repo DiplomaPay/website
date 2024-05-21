@@ -1,4 +1,7 @@
 <?php
+$__AUTH__ = "Bearer APP_USR-5056284625992718-010720-8f3ef5796104ab4ed6dd46bda8cc493c-50812775";
+$__KEY__  = "APP_USR-7fb9bd3b-0834-4195-8c52-2c22ba74253c";
+
 // BANCO DE DADOS
 define('LOG_DB_PASSWORD', 'Easycodex123#$#$');
 define('LOG_DB_USER', 'u752370168_dpaymkt');

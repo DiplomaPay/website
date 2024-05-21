@@ -214,3 +214,52 @@ function salvarImg($__CONEXAO__, $__TIME__, $__CODE__, $image, $caminho){
     }
     return $novoNomeEnc;
 }
+
+function pixPay($ammount, $__AUTH__, $__KEY__){
+
+    $curl = curl_init();
+
+    $data = array(
+        'transaction_amount' => $ammount,
+        'description' => "[diplomapay.com][mkt][pix] - Diplomapay",
+        'payment_method_id' => "pix",
+        'payer' => [
+        'email' => "mkt-dp@gmail.com",
+        'first_name' => "DP Pagamento MKT",
+        ]
+    );
+
+    curl_setopt_array($curl, array(
+    CURLOPT_URL => 'https://api.mercadopago.com/v1/payments',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'POST',
+    CURLOPT_POSTFIELDS => json_encode($data),
+    CURLOPT_HTTPHEADER => array(
+        "Authorization: $__AUTH__",
+        "Public-Key: $__KEY__",
+        'Content-Type: application/json'
+    ),
+    ));
+
+    $response = curl_exec($curl);
+    $res = json_decode($response);
+    curl_close($curl);
+
+    $pay_id = $res->id;
+    $status = $res->status;
+    $pay_code = $res->point_of_interaction->transaction_data->qr_code;
+    $pay_code_img = $res->point_of_interaction->transaction_data->qr_code_base64;
+    $pay_ammount = $res->transaction_amount;
+
+    if($pay_code){
+        $obj = array("status_pix" => "$status", "pix_id" => $pay_id, "code_pix" => "$pay_code", "ammount_pix" => $ammount, "img64" => "$pay_code_img");
+        return array($obj, true);
+    }
+
+    return array("Erro", false);
+}

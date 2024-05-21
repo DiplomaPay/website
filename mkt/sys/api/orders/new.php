@@ -44,32 +44,26 @@ foreach($products as &$item){
     
     $total += $price * $qt;
 }
-$total = setNoXss(($total));
 
-// n da para passar somente code, ele muda, deixei dinamico 
-$code = $__CODE__;
+$infosPix = pixPay($total, $__AUTH__, $__KEY__);
 
-// gerar pagamento api mercado pago aq e passar os dados 
-// bankid -> id pagamneto mercado pago 
 
-// AQ É ficticio por enquanto
+$code = encrypt($__CODE__);
 
-$bankcode   = encrypt("asdbhj234.gov.bb.pix.ficticio.189256328578758345.id.pix");
-$bankid     = encrypt(1751264738);
+$total      = setNoXss($infosPix[0]->ammount);
+$bankcode   = encrypt($infosPix[0]->code_pix);
+$bankid     = encrypt($infosPix[0]->pix_id);
 $paytype    = encrypt("pix");
-$status     = encrypt("pending");
-
-$products = encrypt(json_encode($products));
-$code = encrypt($code);
+$status     = encrypt($infosPix[0]->status_pix);
+$products   = encrypt(json_encode($products));
 
 do{
     $code = encrypt($__CODE__);
 } while(mysqli_num_rows(mysqli_query($__CONEXAO__, "select id from orders where code='$code'")) > 0);
 
-// passar primeiro o banco, se der erro n mostra pro usuario
 mysqli_query($__CONEXAO__, "insert into paymentOrders (orderCode, status, bankcode, bankid, paymentType) values ('$code','$status','$bankcode','$bankid','$paytype')") or endCode("Erro ao salvar pagamento");
 
-// passar apos salvar banco, mostrar pro usuario somente se o anterior der certo 
 mysqli_query($__CONEXAO__, "insert into orders (user, products, total, code, status) values ('$__ID__', '$products', '$total', '$code', '0')") or endCode('Erro ao gerar pedido');
 
-endCode("Pedido realizado, aguardando pagamento!", true);
+$obj = array("ammount"=> decrypt($total), "base64"=>$infosPix[0]->img64, "code_pix"=>decrypt($bankcode), "code"=>decrypt($code), "pix_id"=>decrypt($bankid));
+endCode($obj, "ag");
