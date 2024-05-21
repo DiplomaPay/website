@@ -33,7 +33,7 @@
                             <img style='max-width: 100px' src='./sys/api/images/products/${image}'>
                         </div>
                         <p>R$${price}</p>
-                        <button onclick='updateItem(${id}, '${name}', 1, ${quant}, ${price})'>Adicionar</button>
+                        <button onclick='updateItem(${id}, "${name}", 1, ${quant}, ${price})'>Adicionar</button>
                     </div>
                 `;
             }
