@@ -39,5 +39,5 @@ function updateItem(id, name, type, limit, price){
 
 function sendCart(){
     let local = 'orders/new.php';
-    addNewData(local, { items: cart});
+    return addNewData(local, { items: cart});
 }

@@ -1,8 +1,11 @@
 isActive = false;
-function addNewData(local, data){
+async function addNewData(local, data){
     if(isActive) return;
     isActive = true;
-    fetch(`/mkt/sys/api/${local}`,{
+
+    let data = {};
+
+    await fetch(`/mkt/sys/api/${local}`,{
         method: "POST",
         body: JSON.stringify(data)
     })
@@ -10,12 +13,14 @@ function addNewData(local, data){
     .then(e=>{
         isActive = false;
         newMsg(e);
-        console.log(e);
+        data = e;
     })
     .catch(e=>newMsg({
         mensagem: "Ocorreu algum erro, contate o administrador",
         response: false
     }))
+
+    return data;
 }
 
 function defineColor(e){

@@ -14,7 +14,12 @@
 
     </div>
 
-    <button onclick="sendCart()">Gerar pagamento</button>
+    <button onclick="neePayment()">Gerar pagamento</button>
+
+    <img id="payimg" src='#'>
+    <p id='paycodepix'></p>
+    <p id='payprice'></p>
+    <p id='paycode'></p>
 
     <script>
         for(let i of cart){
@@ -25,6 +30,16 @@
                     <p>total: ${i.quant * i.price}</p>
                 </div>
             `;
+        }
+
+        function newPayment(){
+            let infos = sendCart();
+            let data = infos.mensagem;
+
+            payimg.src = data.base64;
+            paycodepix.innerHTML = data.code_pix;
+            payprice.innerHTML = `R$${data.ammount}`;
+            paycode.innerHTML = `#${data.code}`;
         }
     </script>
 </body>
