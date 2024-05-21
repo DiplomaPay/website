@@ -34,6 +34,7 @@
                         </div>
                         <p>R$${price}</p>
                         <button onclick='updateItem(${id}, "${name}", 1, ${quant}, ${price})'>Adicionar</button>
+                        <button onclick='updateItem(${id}, "${name}", 0, ${quant}, ${price})'>Remover</button>
                     </div>
                 `;
             }
