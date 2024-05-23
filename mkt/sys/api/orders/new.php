@@ -10,12 +10,13 @@ $total = 0;
 
 $products = $json->items;
 
+$newArr = array();
+
 foreach($products as &$item){
     $item = setArray($item, 'setNum');
 
     $id = $item->id;
     $qt = $item->quant;
-    $priceI = $item->price;
     
     checkMissing(array(
         $id,
@@ -39,12 +40,18 @@ foreach($products as &$item){
     $quant  = decrypt($quant);
     $price  = decrypt($price);
 
+    array_push($newArr, array(
+        "id"=>$id,
+        "price"=>$price,
+        "quant"=>$qt,
+    ))
+
     if($qt > $quant){
         endCode("Quantidade de itens selecionada superior a presente no estoque. Item: $id", false);
     }
 
-    $priceI = $price * $qt;
-    $total += $priceI;
+    $item->price = $price * $qt;
+    $total += $item->price;
 }
 
 
@@ -58,7 +65,7 @@ $bankcode   = encrypt($infosPix[0]["code_pix"]);
 $bankid     = setNum($infosPix[0]["pix_id"]);
 $paytype    = encrypt("pix");
 $status     = encrypt($infosPix[0]["status_pix"]);
-$products = encrypt(json_encode($products));
+$products = encrypt(json_encode($newArr));
 
 do{
     $code = encrypt($__CODE__);
