@@ -15,6 +15,7 @@ foreach($products as &$item){
 
     $id = $item->id;
     $qt = $item->quant;
+    $priceI = $item->price;
     
     checkMissing(array(
         $id,
@@ -41,8 +42,9 @@ foreach($products as &$item){
     if($qt > $quant){
         endCode("Quantidade de itens selecionada superior a presente no estoque. Item: $id", false);
     }
-    
-    $total += $price * $qt;
+
+    $priceI = $price * $qt;
+    $total += $priceI;
 }
 
 
@@ -56,7 +58,7 @@ $bankcode   = encrypt($infosPix[0]["code_pix"]);
 $bankid     = setNum($infosPix[0]["pix_id"]);
 $paytype    = encrypt("pix");
 $status     = encrypt($infosPix[0]["status_pix"]);
-$products   = encrypt(json_encode($products));
+$products = encrypt(json_encode($products));
 
 do{
     $code = encrypt($__CODE__);
