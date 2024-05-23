@@ -47,8 +47,6 @@ if($status_res){
     $status = encrypt($status);
     mysqli_query($__CONEXAO__, "update orders set status='1' where code='$code'");
     mysqli_query($__CONEXAO__, "update paymentOrders set status='$status' where orderCode='$code'");
-    
-    endCode("Aprovado!", "aprovado");
 }
 
 endCode("$status", false);
