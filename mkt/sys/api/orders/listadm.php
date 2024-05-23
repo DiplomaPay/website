@@ -12,7 +12,6 @@ while($data = mysqli_fetch_array($getAllActiveOrders)){
     $code       = $data["code"];
     $products   = $data["products"];
 
-
     $items = array(
         "id"        =>$id, 
         "code"      =>decrypt($code),
