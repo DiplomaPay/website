@@ -47,6 +47,7 @@ foreach($products as &$item){
 
 
 $infosPix = pixPay($total, $__AUTH__, $__KEY__);
+endCode($infosPix, false);
 
 $total = setNoXss($total);
 
