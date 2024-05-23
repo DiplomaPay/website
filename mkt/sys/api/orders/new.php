@@ -54,7 +54,7 @@ $total = setNoXss($total);
 $code = encrypt($__CODE__);
 
 $bankcode   = encrypt($infosPix[0]["code_pix"]);
-$bankid     = encrypt($infosPix[0]["pix_idd"]);
+$bankid     = encrypt($infosPix[0]["pix_id"]);
 $paytype    = encrypt("pix");
 $status     = encrypt($infosPix[0]["status_pix"]);
 $products   = encrypt(json_encode($products));
