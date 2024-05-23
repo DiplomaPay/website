@@ -42,9 +42,9 @@ $pay_ammount = $res->transaction_amount;
 
 $status_res = $status == "approved" ? true : false;
 
-$status = encrypt($status);
 
 if($status_res){
+    $status = encrypt($status);
     mysqli_query($__CONEXAO__, "update orders set status='1' where code='$code'");
     mysqli_query($__CONEXAO__, "update paymentOrders set status='$status' where orderCode='$code'");
     

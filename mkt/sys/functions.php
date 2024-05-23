@@ -248,7 +248,6 @@ function pixPay($ammount, $__AUTH__, $__KEY__){
 
     $response = curl_exec($curl);
     $res = json_decode($response);
-    // endCode($res, false);
     curl_close($curl);
 
     $pay_id = $res->id;
