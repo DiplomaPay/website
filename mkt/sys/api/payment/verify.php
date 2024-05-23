@@ -45,9 +45,41 @@ $status_res = $status == "approved" ? true : false;
 
 if($status_res){
     $status = encrypt($status);
+    $query = mysqli_query($__CONEXAO__, "select products from orders where code='$code'");
+    $prod = mysqli_fetch_assoc($query)['products'];
+    $prod = json_decode(decrypt($prod));
+    foreach($prod as $item){
+        $iditem = $item->id;
+        $qtitem = $item->quant;
+        
+        $query2 = mysqli_query($__CONEXAO__, "select quant from products where id='$iditem'");
+        $qtitematual = mysqli_fetch_assoc($query2)['quant'];
+        $qtitematual = decrypt($qtitematual);
+        if($qtitematual - $qtitem < 0){
+            $status = encrypt("declined");
+            mysqli_query($__CONEXAO__, "update paymentOrders set status='$status' where orderCode='$code'");
+            mysqli_query($__CONEXAO__, "update orders set status='2' where code='$code'"); //cancelado
+            endCode('Desculpe pelo erro, já retornaremos seu dinheiro.', false);
+        }
+    }
+
+    foreach($prod as $item){
+        $iditem = $item->id;
+        $qtitem = $item->quant;
+        
+        $query2 = mysqli_query($__CONEXAO__, "select quant from products where id='$iditem'");
+        $qtitematual = mysqli_fetch_assoc($query2)['quant'];
+        $qtitematual = decrypt($qtitematual);
+        $val = $qtitematual - $qtitem;
+        $val = setNum($val);
+        mysqli_query($__CONEXAO__, "update products set quant='$val' where id='$iditem'");
+    }
+
     mysqli_query($__CONEXAO__, "update orders set status='1' where code='$code'");
     mysqli_query($__CONEXAO__, "update paymentOrders set status='$status' where orderCode='$code'");
     $status = decrypt($status);
+    
+    // reembolso caso tenha acabado o estoque e retirar do estoque
 }
 
 endCode("$status", false);
