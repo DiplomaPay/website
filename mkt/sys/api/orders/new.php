@@ -12,7 +12,7 @@ $products = $json->items;
 
 $newArr = array();
 
-foreach($products as &$item){
+foreach($products as $item){
     $item = setArray($item, 'setNum');
 
     $id = $item->id;
@@ -40,18 +40,18 @@ foreach($products as &$item){
     $quant  = decrypt($quant);
     $price  = decrypt($price);
 
+    
+    if($qt > $quant){
+        endCode("Quantidade de itens selecionada superior a presente no estoque. Item: $id", false);
+    }
+    
     array_push($newArr, array(
         "id"=>$id,
         "price"=>$price,
         "quant"=>$qt,
     ))
-
-    if($qt > $quant){
-        endCode("Quantidade de itens selecionada superior a presente no estoque. Item: $id", false);
-    }
-
-    $item->price = $price * $qt;
-    $total += $item->price;
+    
+    $total += $price * $qt;
 }
 
 
