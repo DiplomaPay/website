@@ -15,7 +15,7 @@ while($data = mysqli_fetch_array($getAllActiveOrders)){
     $items = array(
         "id"        =>$id, 
         "code"      =>decrypt($code),
-        "products"  =>decrypt($products), 
+        "products"  =>json_decode(decrypt($products)), 
     );
 
     array_push($arrayProducts, $items);
