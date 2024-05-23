@@ -50,4 +50,4 @@ if($status_res){
     endCode("Aprovado!", "aprovado");
 }
 
-endCode(array($res), false);
+endCode("Pendente..", false);
