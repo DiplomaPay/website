@@ -49,7 +49,7 @@ foreach($products as $item){
         "id"=>$id,
         "price"=>$price,
         "quant"=>$qt,
-    ))
+    ));
     
     $total += $price * $qt;
 }
